@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=78.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hardware-sca"
+version = "0.1.0"
+description = "Reproducible small-budget AES profiling side-channel experiments"
+requires-python = ">=3.11"
+dependencies = ["numpy==2.2.6", "h5py==3.14.0", "torch==2.8.0", "matplotlib==3.10.5"]
+
+[project.scripts]
+sca = "sca.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
