@@ -52,6 +52,18 @@ def test_uniform_ties_never_claim_recovery_and_censoring():
         evaluate_key_recovery(lp, np.arange(10, dtype=np.uint8), 42, budget=11)
 
 
+def test_success_criterion_and_nonfinite_predictions():
+    p = np.arange(12, dtype=np.uint8)
+    lp = np.full((12, 256), -10.)
+    lp[np.arange(12), SBOX[p ^ 5]] = -0.01
+    summary, _ = evaluate_key_recovery(lp, p, 5, budget=8, repetitions=4)
+    assert summary["sr_at_budget"] == 1 and summary["ge_at_budget"] == 0
+    assert summary["traces_to_sustained_success"] == 1 and not summary["recovery_censored"]
+    lp[0, 0] = np.nan
+    with pytest.raises(ValueError):
+        rank_curve(lp, p, 5)
+
+
 def test_rank_randomization_is_reproducible():
     p = np.arange(20, dtype=np.uint8)
     lp = np.random.default_rng(5).normal(size=(20, 256))
@@ -140,6 +152,7 @@ def test_checkpoint_continuation_matches_uninterrupted_training_and_evaluation(t
         for key, value in state.items():
             torch.testing.assert_close(value, b["optimizer"]["state"][parameter_id][key], rtol=0, atol=0)
     assert full["optimization_steps"] == continued["optimization_steps"] == 4
+    assert (full_dir / "code_snapshot.zip").exists()
     assert a["history"][1]["train_loss"] == b["history"][1]["train_loss"]
     assert not json.loads((full_dir / "inspection.json").read_text())["groups"]["Attack_traces"]["labels_verified"]
     evaluation = {"budget": 8, "repetitions": 3, "success_threshold": 0.9,
@@ -148,5 +161,8 @@ def test_checkpoint_continuation_matches_uninterrupted_training_and_evaluation(t
     results = evaluate(full_dir, evaluation, device="cpu")
     assert results[0]["synthetic"]
     assert (full_dir / "evaluation_attack/key_recovery.png").exists()
+    validation_results = evaluate(full_dir, evaluation, device="cpu", split="validation")
+    assert validation_results[0]["split"] == "validation"
+    assert validation_results[0]["attack_pool_size"] == 16
     with pytest.raises(ValueError, match="mismatch"):
         train({**base, "run_dir": str(resumed_dir), "epochs": 3, "seed": 2}, resume=True)

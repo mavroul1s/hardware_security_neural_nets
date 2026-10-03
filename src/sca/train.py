@@ -8,6 +8,7 @@ import platform
 import random
 import subprocess
 import time
+import zipfile
 from datetime import datetime, timezone
 from importlib.metadata import version
 from pathlib import Path
@@ -48,10 +49,14 @@ def seed_everything(seed):
     torch.backends.cudnn.benchmark = False
 
 
+def source_files(root):
+    return sorted([*root.glob("src/**/*.py"), *root.glob("scripts/*.py"),
+                   *root.glob("configs/*.json"), root / "pyproject.toml"])
+
+
 def code_identity():
     root = Path(__file__).resolve().parents[2]
-    files = sorted([*root.glob("src/**/*.py"), *root.glob("scripts/*.py"),
-                    *root.glob("configs/*.json"), root / "pyproject.toml"])
+    files = source_files(root)
     digest = hashlib.sha256()
     for file in files:
         digest.update(str(file.relative_to(root)).replace("\\", "/").encode())
@@ -148,6 +153,11 @@ def train(config, resume=False):
         if config["epochs"] <= start_epoch:
             raise ValueError("Requested epochs must exceed completed epochs")
     np.savez(run_dir / "splits.npz", training=train_indices, validation=val_indices)
+    if not resume:
+        root = Path(__file__).resolve().parents[2]
+        with zipfile.ZipFile(run_dir / "code_snapshot.zip", "w", zipfile.ZIP_DEFLATED) as archive:
+            for path in source_files(root):
+                archive.write(path, path.relative_to(root).as_posix())
     write_json(run_dir / "config.json", config)
     write_json(run_dir / "inspection.json", inspection)
     manifest = {"started_utc": datetime.now(timezone.utc).isoformat(), "config": config,
@@ -155,7 +165,8 @@ def train(config, resume=False):
         "split_id": split_id, "normalizer": stats, "environment": current_environment, "code": code,
         "parameters": sum(p.numel() for p in model.parameters()),
         "expected_steps": config["epochs"] * len(training_loader), "resumed_at_epoch": start_epoch,
-        "selection_rule": "minimum clean profiling-validation cross-entropy across fixed epochs"}
+        "selection_rule": "minimum clean profiling-validation cross-entropy across fixed epochs",
+        "source_snapshot": "code_snapshot.zip"}
     write_json(run_dir / "manifest.json", manifest)
     for epoch in range(start_epoch, config["epochs"]):
         model.train()
