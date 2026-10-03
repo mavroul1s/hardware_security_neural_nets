@@ -1,0 +1,22 @@
+{
+  "scope": "fixed-weight gradient probe on 128 training rows, no optimizer steps",
+  "candidate_change": "ReLU -> LeakyReLU(negative_slope=0.1), all three activations",
+  "checkpoint_epoch": 50,
+  "models": {
+    "existing": {
+      "parameters": 197424,
+      "dense_units_zero_weight_gradient": 53,
+      "dense_units_nonzero_weight_gradient": 11,
+      "loss_at_existing_weights": 5.418123722076416,
+      "meaning": "candidate logits/loss are a diagnostic, not trained model performance"
+    },
+    "candidate": {
+      "parameters": 197424,
+      "dense_units_zero_weight_gradient": 0,
+      "dense_units_nonzero_weight_gradient": 64,
+      "loss_at_existing_weights": 5.432831287384033,
+      "meaning": "candidate logits/loss are a diagnostic, not trained model performance"
+    }
+  },
+  "checkpoint_unchanged": true
+}

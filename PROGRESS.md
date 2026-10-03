@@ -168,3 +168,23 @@ setup/inspection/checkpoint I/O. Το CNN έχει 197.424 parameters. Τα mani
   το ολοκληρωμένο checkpoint. Η πραγματική εκτέλεση είναι η version3.
 - Management CLI στα Windows χρειάζεται native paths και PYTHONUTF8=1.
   Οι handlers βρίσκονται μόνο στο ignored `runs/kaggle_control/`, εκτός training hash.
+
+## Διάγνωση baseline χωρίς GPU training — 2026-10-03
+
+Με το αίτημα «πάμε στο επόμενο» έγινε read-only CPU διάγνωση, χωρίς attack evaluation.
+Ελέγχθηκαν50k profiling labels, checksum, ακριβή/disjoint splits, normalizer, finite
+parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσεις έχουν22–56 training traces.
+
+- Best epoch2: validation CE5,547229 έναντι5,547203 με μία fixed shuffled-label control.
+- Last epoch50: validation CE5,616101 έναντι5,611338 στο ίδιο control.
+- Στο validation, best dense48/64 και last dense53/64 ReLU units δεν ενεργοποιούνται.
+  Last conv2:12/16 inactive channels. Δεν αποδεικνύεται μοναδική αιτία αποτυχίας.
+- Προετοιμάστηκε `notebooks/candidate_cnn.py`: μόνο ReLU→LeakyReLU0,1, ίδιο197.424 parameters.
+  Fixed-weight gradient probe σε128 training rows: zero dense gradients53/64→0/64,
+  χωρίς optimizer step ή αλλαγή checkpoint. Δεν αποτελεί trained-performance evidence.
+- `src/scripts/configs` δεν άλλαξαν· ίδιο pinned source hash. Δεν έγινε νέο Kaggle run.
+- Πρόταση: μία διορθωτική baseline εκπαίδευση, ίδιο10k/5k/seed0/50epochs/LR0,001.
+  Με διατήρηση παλιού failure και4 νέα study models, το σύνολο θα είναι5 trainings.
+  Χρειάζεται επιλογή χρήστη λόγω της ρητής οδηγίας AGENTS για additional models.
+- Εναλλακτική: οι ήδη προγραμματισμένες3 augmentations στο παλιό CNN, σύνολο4 trainings.
+- Αναφορά και αριθμητικά δεδομένα: `outputs/baseline_diagnosis_2026-10-03/REPORT_EL.md`.
