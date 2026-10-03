@@ -97,7 +97,7 @@ def sync(device):
         torch.cuda.synchronize(device)
 
 
-def train(config, resume=False):
+def train(config, resume=False, reuse_completed=False):
     config = dict(config)
     for key in ("epochs", "batch_size", "threads"):
         if not isinstance(config[key], int) or config[key] < 1:
@@ -151,6 +151,16 @@ def train(config, resume=False):
         total_validation_seconds = checkpoint["validation_seconds"]
         restore_rng(checkpoint["rng"], loader_generator)
         if config["epochs"] <= start_epoch:
+            if reuse_completed:
+                # Validate config/data/code/environment above before reusing a completed run.
+                # A later benchmark stage may request fewer epochs than an already finished run.
+                return {"epochs": start_epoch, "optimization_steps": steps,
+                    "train_seconds": total_train_seconds, "validation_seconds": total_validation_seconds,
+                    "best_validation_loss": best_loss,
+                    "parameters": sum(p.numel() for p in model.parameters()),
+                    "best_checkpoint_bytes": (run_dir / "best.pt").stat().st_size,
+                    "synthetic": inspection["synthetic"], "device": str(device),
+                    "timing_scope": "epoch loops, including augmentation/transfers; excludes setup, inspection and checkpoint I/O"}
             raise ValueError("Requested epochs must exceed completed epochs")
     np.savez(run_dir / "splits.npz", training=train_indices, validation=val_indices)
     if not resume:

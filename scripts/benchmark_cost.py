@@ -23,7 +23,8 @@ def estimate(run_dir, matrix_path):
         "estimated_training_hours_same_device": steps * seconds_per_step / 3600,
         "estimated_hours_with_50pct_margin": steps * seconds_per_step * 1.5 / 3600,
         "scope": "training loop only; excludes validation, evaluation, I/O, HPO and corruption overhead differences",
-        "warning": "CPU estimate is not a Kaggle GPU estimate; benchmark every strategy on the selected GPU before a sweep"}
+        "matrix_snapshot": matrix,
+        "warning": "Same-device reference estimate only; one strategy does not measure the others' augmentation overhead. CPU timings are not Kaggle GPU timings."}
 
 
 if __name__ == "__main__":

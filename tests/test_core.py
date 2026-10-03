@@ -154,6 +154,17 @@ def test_checkpoint_continuation_matches_uninterrupted_training_and_evaluation(t
     assert full["optimization_steps"] == continued["optimization_steps"] == 4
     assert (full_dir / "code_snapshot.zip").exists()
     assert a["history"][1]["train_loss"] == b["history"][1]["train_loss"]
+    original_checkpoint = (resumed_dir / "last.pt").read_bytes()
+    original_history = (resumed_dir / "history.json").read_bytes()
+    reused = train({**base, "run_dir": str(resumed_dir)}, resume=True, reuse_completed=True)
+    assert reused == continued
+    assert (resumed_dir / "last.pt").read_bytes() == original_checkpoint
+    assert (resumed_dir / "history.json").read_bytes() == original_history
+    earlier_stage = train({**base, "run_dir": str(resumed_dir), "epochs": 1},
+                          resume=True, reuse_completed=True)
+    assert earlier_stage["epochs"] == 2 and earlier_stage["optimization_steps"] == 4
+    with pytest.raises(ValueError, match="mismatch"):
+        train({**base, "run_dir": str(resumed_dir), "seed": 2}, resume=True, reuse_completed=True)
     assert not json.loads((full_dir / "inspection.json").read_text())["groups"]["Attack_traces"]["labels_verified"]
     evaluation = {"budget": 8, "repetitions": 3, "success_threshold": 0.9,
         "attack_order_seed": 8001, "corruption_seed": 9001, "batch_size": 8,
