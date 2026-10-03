@@ -1,0 +1,6 @@
+{
+  "stage": "baseline",
+  "training_call_seconds": 29.174518647000014,
+  "requested_epochs": 50,
+  "resume_or_reuse": true
+}
