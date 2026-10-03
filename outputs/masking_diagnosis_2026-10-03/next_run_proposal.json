@@ -1,0 +1,36 @@
+{
+  "status": "prepared_not_authorized_or_executed",
+  "model": "literature_cnn_prototype",
+  "proposed_baseline": {
+    "training_rows": 10000,
+    "validation_rows": 5000,
+    "split_seed": 2026,
+    "seed": 0,
+    "epochs": 50,
+    "batch_size": 128,
+    "steps": 3950,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "scheduler": null,
+    "normalization": "per_sample_position_minmax_fitted_on_training_only",
+    "target": "unmasked Sbox byte2 identity256",
+    "parameters": 16952
+  },
+  "differences_from_authors": [
+    "10k training rather than45k",
+    "training-only normalization fit",
+    "constant Adam LR0.001 rather than OneCycle with max0.005",
+    "batch128 rather than50",
+    "PyTorch rather than Keras; running-variance and RNG conventions differ"
+  ],
+  "minimal_followup_option": {
+    "additional_baseline_trainings": 1,
+    "conditional_combined_trainings": 1,
+    "total_gpu_trainings_including_two_failures_at_most": 4,
+    "single_augmentation_trainings": 0,
+    "gate": "Clean validation SR@2000 >= 0.90 (18/20) using minimum-CE checkpoint; otherwise stop before combined",
+    "notebooks": 1,
+    "research_scope": "baseline versus combined robustness; cannot attribute benefit to combination versus each single"
+  },
+  "no_new_gpu_training_started": true
+}

@@ -1,0 +1,64 @@
+{
+  "scope": "Untrained CPU prototype; forward/backward only; no optimizer step or attack read",
+  "current_training_source_sha256_unchanged": "6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126",
+  "current_cnn": {
+    "parameters": 197424,
+    "temporal_layers": [
+      {
+        "type": "Conv1d",
+        "output_samples": 700,
+        "input_receptive_field": 11,
+        "input_stride": 1
+      },
+      {
+        "type": "AvgPool1d",
+        "output_samples": 350,
+        "input_receptive_field": 12,
+        "input_stride": 2
+      },
+      {
+        "type": "Conv1d",
+        "output_samples": 350,
+        "input_receptive_field": 32,
+        "input_stride": 2
+      },
+      {
+        "type": "AvgPool1d",
+        "output_samples": 175,
+        "input_receptive_field": 34,
+        "input_stride": 4
+      }
+    ],
+    "dense_global_receptive_field": 700,
+    "global_hidden_nonlinear_layers": 1
+  },
+  "candidate": {
+    "parameters": 16952,
+    "architecture": "Sequential(\n  (0): Unflatten(dim=1, unflattened_size=(1, 700))\n  (1): Conv1d(1, 4, kernel_size=(1,), stride=(1,))\n  (2): SELU()\n  (3): BatchNorm1d(4, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)\n  (4): AvgPool1d(kernel_size=(2,), stride=(2,), padding=(0,))\n  (5): Flatten(start_dim=1, end_dim=-1)\n  (6): Linear(in_features=1400, out_features=10, bias=True)\n  (7): SELU()\n  (8): Linear(in_features=10, out_features=10, bias=True)\n  (9): SELU()\n  (10): Linear(in_features=10, out_features=256, bias=True)\n)",
+    "global_hidden_nonlinear_layers": 2,
+    "finite_forward_and_gradients": true,
+    "performance_evidence": null,
+    "kaggle_notebook_uses_candidate": false
+  },
+  "conditioning": {
+    "global_normalized_feature_mean_range": [
+      -1.9500187635421753,
+      1.8795558214187622
+    ],
+    "global_normalized_feature_std_range": [
+      0.023061629384756088,
+      0.2454068809747696
+    ],
+    "candidate_training_minmax_range": [
+      0.0,
+      1.0
+    ],
+    "candidate_validation_minmax_range": [
+      -0.20000000298023224,
+      1.1666666269302368
+    ],
+    "validation_values_outside_training_minmax_fraction": 6.342857142857143e-05,
+    "normalization_fitted_only_on_training": true
+  },
+  "source": "https://github.com/gabzai/Methodology-for-efficient-CNN-architectures-in-SCA/blob/master/ASCAD/N0%3D0/cnn_architecture.py"
+}

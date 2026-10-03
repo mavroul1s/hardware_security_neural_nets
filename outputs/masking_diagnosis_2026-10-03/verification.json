@@ -1,0 +1,20 @@
+{
+  "scope": "profiling CPU diagnosis and untrained prototype",
+  "new_kaggle_training_started": false,
+  "full_gpu_trainings_total": 2,
+  "notebook_count": 1,
+  "current_training_source_sha256": "6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126",
+  "checkpoint_hashes_verified_unchanged": true,
+  "points_and_centering_selected_on_training_only": true,
+  "final_attack_group_read_by_diagnosis": false,
+  "tests": {
+    "passed": 29,
+    "warnings": 14,
+    "seconds": 13.23
+  },
+  "visual_qa_files": [
+    "share_snr.png",
+    "second_order_evidence.png"
+  ],
+  "new_model_proposal_status": "awaiting_user_agreement"
+}

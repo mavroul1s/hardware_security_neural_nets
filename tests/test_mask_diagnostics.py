@@ -27,3 +27,14 @@ def test_selected_points_are_separated_and_reproducible():
     assert diagnostic.select_separated_points(values, count=3, separation=3) == [1, 4, 7]
     with pytest.raises(ValueError):
         diagnostic.select_separated_points(values, count=4, separation=3)
+
+
+def test_candidate_scaler_keeps_training_statistics_for_out_of_range_validation():
+    candidate_spec = importlib.util.spec_from_file_location("candidate", Path(__file__).parents[1] / "notebooks/candidate_literature_cnn.py")
+    candidate = importlib.util.module_from_spec(candidate_spec)
+    candidate_spec.loader.exec_module(candidate)
+    stats = candidate.fit_feature_minmax(np.array([[2., 7.], [6., 7.]]))
+    result = candidate.apply_feature_minmax(np.array([[0., 9.], [8., 7.]]), stats)
+    assert np.array_equal(result, [[-0.5, 2.], [1.5, 0.]])
+    assert np.array_equal(stats["minimum"], [2., 7.])
+    assert np.array_equal(stats["scale"], [4., 1.])

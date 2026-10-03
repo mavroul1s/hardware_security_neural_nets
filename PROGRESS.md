@@ -245,3 +245,38 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
   και85 αρχείων χωρίς credentials, η ίδια ενέργεια εγκρίθηκε και ολοκληρώθηκε.
 - Τεκμήρια διατήρησης: `outputs/leaky_artifact_verification.json`,
   `outputs/kaggle_preservation_scope.json`, `outputs/kaggle_leaky_execution_status.json`.
+
+## Διάγνωση masking / model geometry χωρίς νέα GPU εκτέλεση — 2026-10-03
+
+Με το «προχώρα» ολοκληρώθηκε η profiling-only CPU διάγνωση στο ίδιο10k/5k split.
+Το final attack group δεν ανοίχθηκε. Training source/checkpoint hashes αμετάβλητα.
+Παραμένουν δύο πλήρη GPU trainings και ένα `.ipynb`.
+
+- Επιβεβαιώθηκε ο επίσημος unmasked ID στόχος· masked ASCAD δεν σημαίνει λάθος labels.
+  Paper metadata mapping: masks[0]=r[3], masks[15]=rout, ASCADv1.
+- Weighted SNR σε ID/HW classes,8 shuffled controls/seed20261004. HW(z) observed peak
+  0,001897 train /0,004026 val έναντι control maxima0,002801/0,005249.
+  Mask/share peaks ισχυρά και σε κοινές θέσεις των δύο splits.
+- Training-selected centered products181×521 και156×517: validation HW(z) SNR
+  0,042566 και0,044072, έναντι max shuffled controls0,004420 και0,003810.
+  Train-only centering και selection25 candidate pairs ανά family. Περιγραφικά controls,
+  όχι confidence interval, trained classifier ή key-recovery evaluation.
+- Local convolution RF34samples· dense64 layer βλέπει όλα700 samples. Η απόσταση
+  των informative pairs340/361 δεν αποδεικνύει αδυναμία ολόκληρου του CNN.
+- Untrained PyTorch literature candidate: Conv4/k1, SELU/BN, pool2, dense10×2,
+  logits256 /16.952 parameters. Finite forward/backward128train rows, no optimizer step.
+  Train-only per-position MinMax, χωρίς validation clipping/refit. Δεν προστέθηκε
+  στο ενεργό pinned source/config/notebook και δεν υπάρχει performance evidence.
+- Πρόταση: ένα επιπλέον baseline με ίδιο10k/5k/seed0/50epochs/batch128/Adam LR0,001.
+  Gate clean SR@2000≥0,90 (18/20), minimum-CE checkpoint. Μόνο αν περάσει, ένα combined.
+  Έως4 full GPU trainings συμπεριλαμβανομένων δύο failures. Αποσύρονται οι singles μόνο
+  αν συμφωνήσει ο χρήστης· νέο ερώτημα baseline-versus-combined, χωρίς factorial attribution.
+- Ζητήθηκε συμφωνία με async question για νέα αρχιτεκτονική/μικρότερο research scope,
+  βάσει AGENTS: additional models/budgets/seeds require research reason/user agreement.
+  Η απάντηση εκκρεμεί. Μην ξεκινήσεις εξαρτώμενο training χωρίς να δοθεί.
+- Tests29 passed,14 warnings σε13,23s. Τα3 νέα arithmetic/scaling tests πέρασαν.
+  Η suite περιέχει τα προηγούμενα synthetic CPU training checks, όχι νέα Kaggle runs.
+- Έγινε visual QA στα `share_snr.png` και `second_order_evidence.png`.
+- Scripts `notebooks/diagnose_masking.py`, `candidate_literature_cnn.py`,
+  `audit_candidate_architecture.py`, `plot_masking_diagnosis.py`. Αναφορά και JSON:
+  `outputs/masking_diagnosis_2026-10-03/REPORT_EL.md`.

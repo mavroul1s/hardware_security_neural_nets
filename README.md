@@ -94,6 +94,12 @@ baseline από epoch0→50. Best epoch1 / CE5,547114, clean validation GE89,25 
 Η [αναφορά διορθωτικού baseline](outputs/kaggle_leaky_v5_2026-10-03/REPORT_EL.md)
 περιέχει την επαλήθευση και τη σύγκριση. Έγιναν δύο πλήρη GPU trainings συνολικά.
 Οι άλλες3 στρατηγικές μένουν σε αναμονή για διάγνωση, χωρίς νέο αυτόματο training.
+Η [διάγνωση masking](outputs/masking_diagnosis_2026-10-03/REPORT_EL.md) βρήκε
+mask/share leakage και training-selected centered products που διατηρούν διαρροή
+στο validation. Δεν αποδεικνύουν key recovery. Προετοιμάστηκε untrained literature
+CNN prototype16.952 parameters. Πρόταση για νέο baseline και μόνο combined μετά
+από clean SR≥90%: έως4 total trainings μαζί με τα δύο failures· αναμένει συμφωνία
+χρήστη για νέο μοντέλο και κατάργηση των noise/shift single comparisons.
 Το `outputs/kaggle_resume_input_leaky.zip` περιέχει τον νέο κώδικα, ASCAD/provenance
 και το ολοκληρωμένο διορθωμένο epoch50 checkpoint. Η πρώτη cell απαιτεί checkpoint.
 Για νέο session χρησιμοποίησε αυτό το ενεργό πακέτο. Το παλιό `kaggle_resume_input.zip`
@@ -119,6 +125,8 @@ clean validation cross-entropy, από κοινό και σταθερό πλήθ
 - [Πρωτόκολλο](docs/EXPERIMENT_PROTOCOL.md): splits, threat model, μετασχηματισμοί και μετρικές.
 - [Kaggle](docs/KAGGLE.md): setup, έλεγχος GPU quota, benchmark και αποθήκευση.
 - [Βιβλιογραφία](literature/REVIEW.md): συγκριτικός πίνακας, επιβεβαιωμένα στοιχεία και κενά πρόσβασης.
+- [Διάγνωση masking και αρχιτεκτονικής](outputs/masking_diagnosis_2026-10-03/REPORT_EL.md):
+  profiling-only έλεγχοι και συγκεκριμένη πρόταση συνέχειας χωρίς νέα GPU εκτέλεση.
 - [Αναφορά πρώτης συνεδρίας](outputs/SESSION_REPORT_EL.md): τι εκτελέστηκε και τι σημαίνουν τα αποτελέσματα.
 - [Πρώτο Kaggle benchmark](outputs/kaggle_benchmark_2026-10-03_07b13e6f/REPORT_EL.md):
   πραγματικό 3-epoch T4 output και συνέχεια στο ίδιο baseline checkpoint.

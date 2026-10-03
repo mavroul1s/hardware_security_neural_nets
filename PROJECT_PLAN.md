@@ -11,6 +11,10 @@
 στο ίδιο notebook. Validation gate πριν τις άλλες3, χωρίς αυτόματο hyperparameter search.
 Έχουν ολοκληρωθεί δύο baseline trainings. Το διορθωμένο baseline επίσης έχει SR0/20
 στο clean validation· οι άλλες3 στρατηγικές παραμένουν σε αναμονή για διάγνωση.
+Η read-only masking διάγνωση βρήκε δεύτερης τάξης leakage που διατηρείται στο
+validation. Προετοιμάστηκε untrained literature-inspired CNN16.952 parameters.
+Εκκρεμεί πρόταση περιορισμού σε νέο baseline και conditional combined (έως4 trainings
+μαζί με τα δύο failures). Δεν εγκρίθηκε ακόμη αλλαγή ερωτήματος/μοντέλου/πλάνου.
 
 ## Προσωρινό ερευνητικό ερώτημα
 
