@@ -1,0 +1,38 @@
+{
+  "run_tag": "minimal_v2_leaky",
+  "notebook_count": 1,
+  "notebook_syntax_checked_code_cells": 6,
+  "default_stage": "baseline",
+  "require_checkpoint": true,
+  "source_sha256": "6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126",
+  "latest_tests": {
+    "passed": 26,
+    "warnings": 14,
+    "seconds": 10.37
+  },
+  "bundle_files": 38,
+  "bundle_sha256": "e49fafef11c597b33969e1314d9ae724bf62cca2eaba34f54bd2a661e85bc047",
+  "packet_sha256": "1ae6cf3608e51d9db453af26729c04e004e327840d94e8ed05b3f3a2a7e0a27f",
+  "packet_bytes": 29749979,
+  "packet_members": [
+    "kaggle_project.zip",
+    "ASCAD.h5",
+    "ASCAD.provenance.json",
+    "sca_runs_minimal_v2_leaky.zip"
+  ],
+  "restored_checkpoint_epoch": 50,
+  "fully_extracted_packet_bootstrap_verified": true,
+  "checkpoint_bytes_unchanged_after_repeated_bootstrap": true,
+  "archive_sha256": "7f9590e617ed70b9ba42eaea3afc0c2102989064cc9d8837c4ab07c072d4baa0",
+  "training_started_during_preservation": false,
+  "kernel_ref": "con1los/hw-sec-exp2",
+  "executed_kernel_version": 5,
+  "fully_trained_gpu_models_total": 2,
+  "remote_preservation_verified": true,
+  "saved_kernel_version": 6,
+  "saved_execution_type": "QUICK_SAVE",
+  "saved_notebook_source_verified": true,
+  "remote_epoch50_input_verified": true,
+  "resume_dataset_version": 4,
+  "is_private": true
+}

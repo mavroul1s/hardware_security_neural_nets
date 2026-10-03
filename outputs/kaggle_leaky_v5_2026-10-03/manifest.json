@@ -1,0 +1,57 @@
+{
+  "started_utc": "2026-10-03T11:33:27.647738+00:00",
+  "config": {
+    "dataset": "/kaggle/input/hardware-sca-resume/ASCAD.h5",
+    "run_dir": "/kaggle/working/runs/minimal_v2_leaky/none_seed0",
+    "model": "cnn_leaky",
+    "target_byte": 2,
+    "seed": 0,
+    "split_seed": 2026,
+    "n_train": 10000,
+    "n_validation": 5000,
+    "epochs": 50,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "threads": 2,
+    "device": "cuda",
+    "augmentation": {
+      "noise_std": 0.0,
+      "max_shift": 0,
+      "padding": "zero"
+    }
+  },
+  "dataset_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+  "synthetic": false,
+  "split_id": "1c9656f9ba13791a7ba4781a5518420f4fef4e303c979d4c307cc6ed27ee9090",
+  "normalizer": {
+    "mean": -11.597467571428572,
+    "std": 25.747462766837103,
+    "kind": "global_scalar_training_only"
+  },
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "logical_cpu_count": 4,
+    "versions": {
+      "torch": "2.8.0+cu126",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cuda",
+    "device_name": "Tesla T4",
+    "cuda_runtime": "12.6",
+    "torch_threads": 2
+  },
+  "code": {
+    "git_commit": null,
+    "git_dirty": null,
+    "source_sha256": "6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126"
+  },
+  "parameters": 197424,
+  "expected_steps": 3950,
+  "resumed_at_epoch": 0,
+  "selection_rule": "minimum clean profiling-validation cross-entropy across fixed epochs",
+  "source_snapshot": "code_snapshot.zip"
+}

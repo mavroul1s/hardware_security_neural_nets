@@ -178,6 +178,6 @@ DATASET_PATH = bootstrap_inputs(
     INPUT_ROOT, PROJECT_ROOT, RUN_ROOT,
     expected_dataset_sha256="f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
     expected_source_sha256="6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126",
-    require_checkpoint=False,  # Approved fresh baseline; require restore after completion.
+    require_checkpoint=True,
 )
 os.chdir(PROJECT_ROOT)

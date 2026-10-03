@@ -1,0 +1,12 @@
+{
+  "destination": "con1los/hardware-sca-resume",
+  "is_private": true,
+  "existing_dataset_version": 3,
+  "payload_path": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\runs\\kaggle_control\\leaky_input\\kaggle_resume_input_leaky.zip",
+  "payload_files_inspected_recursively": 85,
+  "no_credential_value_or_credential_paths_present": true,
+  "payload_scope": "Same project code, official public ASCAD.h5/provenance and own completed Kaggle checkpoint",
+  "authorization": "User: εχω φτιαξει φακελο με api key απο το kaggle τρεξε το μονος σου; followed by συνεχιση του corrective baseline",
+  "privacy_change_requested": false,
+  "new_gpu_execution_requested": false
+}

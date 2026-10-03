@@ -4,11 +4,13 @@
 χωρίς ακόμη συγκεκριμένη ημερομηνία ή κριτήρια μαθήματος. Έχει ήδη πρόσβαση Kaggle GPU.
 Δεν μετατρέπουμε αυθαίρετα το εξάμηνο σε δεσμευτική ημερομηνία παράδοσης.
 Ο χρήστης ζήτησε ελαχιστοποίηση Kaggle εκπαιδεύσεων και notebooks. Το προηγούμενο
-πλάνο 46 trainings αντικαταστάθηκε: **ένα notebook, τέσσερα CNN trainings συνολικά**.
+πλάνο 46 trainings αντικαταστάθηκε: **ένα notebook, τέσσερις CNN στρατηγικές**.
 Μετά το αποτυχημένο baseline και τη διάγνωση inactive ReLU units, ο χρήστης ενέκρινε
 μία διορθωτική εκπαίδευση με LeakyReLU0,1, ίδιο10k/5k/seed0/50epochs/LR0,001.
 Το original failure διατηρείται· έως5 trainings συνολικά με4 διορθωμένες στρατηγικές,
 στο ίδιο notebook. Validation gate πριν τις άλλες3, χωρίς αυτόματο hyperparameter search.
+Έχουν ολοκληρωθεί δύο baseline trainings. Το διορθωμένο baseline επίσης έχει SR0/20
+στο clean validation· οι άλλες3 στρατηγικές παραμένουν σε αναμονή για διάγνωση.
 
 ## Προσωρινό ερευνητικό ερώτημα
 
@@ -42,7 +44,8 @@ optimization steps, βελτιώνει ο συνδυασμός Gaussian noise κ
 1. ASCAD original fixed-key 700 samples, zero-based byte 2, 256 identity classes.
 2. JSON configs, PyTorch 2.8.0, global scalar normalization fit μόνο στα training rows.
 3. MLP 700→128→64→256. CNN Conv(1→8,k11), pool2, Conv(8→16,k11), pool2,
-   dense64→256, ReLU. Μικρό δικό μας baseline, όχι αναπαραγωγή SOTA αρχιτεκτονικής.
+   dense64→256, αρχικά ReLU και στην εγκεκριμένη διορθωτική έκδοση LeakyReLU0,1.
+   Μικρό δικό μας baseline, όχι αναπαραγωγή SOTA αρχιτεκτονικής.
 4. Ίδια epochs και batches στις 4 στρατηγικές εντός κάθε budget. Online replacement
    augmentation: μία όψη ανά αρχικό trace ανά epoch, χωρίς αύξηση αριθμού batches.
 5. Split seed 2026, training seed 0, test-corruption seed 9001, attack-order seed 8001.

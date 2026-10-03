@@ -1,0 +1,30 @@
+{
+  "scope": "CPU checkpoint review; profiling only; no optimizer steps or attack reads",
+  "uniform_cross_entropy": 5.545177444479562,
+  "checkpoints": {
+    "best": {
+      "epoch": 1,
+      "steps": 79,
+      "validation_cross_entropy": 5.547114207382581,
+      "validation_accuracy": 0.0026,
+      "shuffled_validation_label_cross_entropy": 5.547113637575681,
+      "dense_units_nonzero_gradient_in_fixed_128_training_rows": 64,
+      "dense_units": 64,
+      "checkpoint_sha256": "a4b47b52d13079189493425f35b112a8db714e219f75de7766301284f03452e5",
+      "checkpoint_unchanged": true,
+      "leaky_relu_layers": 3
+    },
+    "last": {
+      "epoch": 50,
+      "steps": 3950,
+      "validation_cross_entropy": 5.809435441925201,
+      "validation_accuracy": 0.0038,
+      "shuffled_validation_label_cross_entropy": 5.812335582276397,
+      "dense_units_nonzero_gradient_in_fixed_128_training_rows": 64,
+      "dense_units": 64,
+      "checkpoint_sha256": "65d41dc244fb5777b37a6006278c6704bef2d7da893d7eb107620cd7731c88b6",
+      "checkpoint_unchanged": true,
+      "leaky_relu_layers": 3
+    }
+  }
+}

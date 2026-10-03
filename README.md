@@ -70,7 +70,7 @@ py -3.12 -m venv .venv
 ## Baseline και τελική αξιολόγηση
 
 Το [Kaggle notebook](notebooks/kaggle_baseline.ipynb) καλεί τον ίδιο κώδικα.
-Κρατάμε **ένα notebook και τέσσερις CNN εκπαιδεύσεις συνολικά**: none/noise/shift/combined,
+Κρατάμε **ένα notebook και τέσσερις CNN στρατηγικές**: none/noise/shift/combined,
 10.000 traces, seed0, 50 epochs. Το προηγούμενο πλάνο 46 trainings αντικαταστάθηκε μετά
 από αίτημα του χρήστη για ελάχιστο Kaggle κόστος. Το MLP και δεύτερα budgets/seeds δεν εκτελούνται.
 
@@ -88,16 +88,22 @@ best checkpoint epoch2. Η [αναφορά baseline](outputs/kaggle_baseline_v3_
 Ο χρήστης ενέκρινε ένα διορθωτικό baseline με LeakyReLU0,1 μετά τη διάγνωση inactive units.
 Η ενεργή έκδοση χρησιμοποιεί `model="cnn_leaky"`, `RUN_TAG="minimal_v2_leaky"`, ίδιο
 seed/split/budget/optimizer. Το παλιό ReLU run διατηρείται. Το σύνολο μπορεί να φτάσει5
-trainings αν ολοκληρωθούν οι4 διορθωμένες στρατηγικές. Υποβλήθηκε notebook version5.
-Το `outputs/kaggle_resume_input_leaky.zip` είναι το αρχικό code/data Input χωρίς checkpoint·
-fresh-start opt-in επιτρέπεται μόνο για αυτό το εγκεκριμένο baseline.
-Για νέο session ανέβασε το ενιαίο `outputs/kaggle_resume_input.zip` ως Input.
+trainings αν ολοκληρωθούν οι4 διορθωμένες στρατηγικές. Η version5 ολοκλήρωσε το διορθωμένο
+baseline από epoch0→50. Best epoch1 / CE5,547114, clean validation GE89,25 / SR0/20.
+Στην epoch50 train CE5,267826, validation CE5,809435: η γενίκευση παραμένει ανεπαρκής.
+Η [αναφορά διορθωτικού baseline](outputs/kaggle_leaky_v5_2026-10-03/REPORT_EL.md)
+περιέχει την επαλήθευση και τη σύγκριση. Έγιναν δύο πλήρη GPU trainings συνολικά.
+Οι άλλες3 στρατηγικές μένουν σε αναμονή για διάγνωση, χωρίς νέο αυτόματο training.
+Το `outputs/kaggle_resume_input_leaky.zip` περιέχει τον νέο κώδικα, ASCAD/provenance
+και το ολοκληρωμένο διορθωμένο epoch50 checkpoint. Η πρώτη cell απαιτεί checkpoint.
+Για νέο session χρησιμοποίησε αυτό το ενεργό πακέτο. Το παλιό `kaggle_resume_input.zip`
+αφορά αποκλειστικά το ιστορικό ReLU run και δεν ταιριάζει με τον τρέχοντα source hash.
 Η διορθωμένη πρώτη cell κάνει discovery/restore και εμφανίζει τα paths και το ολοκληρωμένο epoch.
 Για αντιγραφή στο ίδιο Kaggle notebook υπάρχει το `outputs/kaggle_first_cell.py`.
 
 ```powershell
 # Only after freezing the protocol and checkpoint-selection rule:
-& .\.venv\Scripts\python.exe -m sca.cli evaluate --run-dir runs/minimal_v1/none_seed0 --config configs/evaluation_final.json --split attack
+& .\.venv\Scripts\python.exe -m sca.cli evaluate --run-dir runs/minimal_v2_leaky/none_seed0 --config configs/evaluation_final.json --split attack
 ```
 
 Κάθε run γράφει config, inspection, train/validation indices, split ID, normalizer,

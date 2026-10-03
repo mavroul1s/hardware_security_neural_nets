@@ -211,3 +211,37 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
   ASCAD/provenance. Το παλιό checkpoint δεν μεταφέρθηκε στη διορθωτική εκπαίδευση.
 - Υποβλήθηκε version5 του ίδιου `hw-sec-exp2`, baseline50 epochs/T4/original Docker.
   Record: `outputs/kaggle_leaky_execution_status.json`. Η ολοκλήρωση εκκρεμεί.
+
+### Επαληθευμένη ολοκλήρωση διορθωτικού baseline
+
+- Version5 COMPLETE: fresh epoch0→50 / 3.950 steps, `cnn_leaky`,197.424 parameters.
+  Ίδιο dataset, splits/normalizer, initialization, training config και GPU runtime.
+- Best epoch1 / validation CE5,547114. Στην epoch50 train CE5,267826 / accuracy1,95%,
+  validation CE5,809435 / accuracy0,38%. Uniform CE5,545177.
+- Validation20 permutations / 2.000 traces: clean GE89,25 / SR0/20,
+  matched GE92,50 / SR0/20 και OOD GE96,65 / SR0/20. Όλα τα curves επανελέγχθηκαν.
+- Archive CRC21 αρχεία·7 independent downloads byte-identical. SHA256
+  `7f9590e617ed70b9ba42eaea3afc0c2102989064cc9d8837c4ab07c072d4baa0`.
+  Archive: `runs/kaggle_control/leaky_v5_output/sca_runs_minimal_v2_leaky.zip`.
+- Read-only CPU review αναπαράγει best/last CE, ελέγχει3 Leaky layers και unchanged
+  checkpoint hashes. Fixed128-row backward: dense nonzero gradient64/64 και στα δύο.
+  No optimizer step / no extra training. Αυτό δεν αποκατέστησε τη γενίκευση.
+- Training loops19,110s, validation3,925s, call33,796s. Notebook log περίπου359,754s
+  μαζί με setup/tests/export. Προσωπικό quota παραμένει μη επαληθευμένο.
+- Δύο πλήρη GPU trainings συνολικά. Baseline gate απέτυχε· οι άλλες3 augmentations
+  μένουν σε αναμονή. Final attack evaluation δεν έγινε, protocol freeze=false.
+- Αναφορά: `outputs/kaggle_leaky_v5_2026-10-03/REPORT_EL.md`.
+  Επόμενο βήμα: profiling/model/label diagnosis χωρίς νέο GPU training.
+- Επαναφέρθηκε `require_checkpoint=True`. Το ενεργό resume packet περιλαμβάνει
+  το completed Leaky epoch50 archive. Fully extracted layout: restore50 verified,
+  repeated bootstrap διατηρεί αμετάβλητο checkpoint χωρίς training.
+- Το ίδιο private Input ενημερώθηκε σε version4 και επιβεβαιώθηκε ready.
+  Remote history κατέβηκε και συμφωνεί byte-for-byte με τις50 epochs.
+- Το ίδιο private notebook αποθηκεύτηκε σε version6 ως QUICK_SAVE, χωρίς νέα GPU
+  εκτέλεση. Pulled notebook: όλα τα cell sources, ID136887556 και Input verified.
+  Η πραγματική εκτέλεση παραμένει version5. Κανένα δεύτερο notebook δεν δημιουργήθηκε.
+- Ο πρώτος έλεγχος έγκρισης απέρριψε την ενημέρωση Input ως μη ειδικά εξουσιοδοτημένη.
+  Με πρόσθετα read-only στοιχεία του ιδιωτικού προορισμού, του εγκεκριμένου scope
+  και85 αρχείων χωρίς credentials, η ίδια ενέργεια εγκρίθηκε και ολοκληρώθηκε.
+- Τεκμήρια διατήρησης: `outputs/leaky_artifact_verification.json`,
+  `outputs/kaggle_preservation_scope.json`, `outputs/kaggle_leaky_execution_status.json`.

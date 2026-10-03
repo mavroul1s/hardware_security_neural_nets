@@ -7,18 +7,31 @@
   "kernel_ref": "con1los/hw-sec-exp2",
   "source_sha256": "6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126",
   "packet_path": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\outputs\\kaggle_resume_input_leaky.zip",
-  "packet_sha256": "626178aa97739be550b10ffe0d5f7741150134e8c8e7bcca2fd9b71c77bcafee",
+  "packet_sha256": "1ae6cf3608e51d9db453af26729c04e004e327840d94e8ed05b3f3a2a7e0a27f",
   "packet_members": [
     "kaggle_project.zip",
     "ASCAD.h5",
-    "ASCAD.provenance.json"
+    "ASCAD.provenance.json",
+    "sca_runs_minimal_v2_leaky.zip"
   ],
   "previous_checkpoint_included": false,
-  "status": "submitted",
+  "status": "COMPLETE",
   "kernel_version": 5,
   "submitted_utc": "2026-10-03T11:28:23.674491+00:00",
   "tests_passed": 26,
   "tests_warnings": 14,
   "tests_seconds": 10.37,
-  "completion_verified": false
+  "completion_verified": true,
+  "verification": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\outputs\\kaggle_leaky_v5_2026-10-03\\verification.json",
+  "submitted_packet_sha256": "626178aa97739be550b10ffe0d5f7741150134e8c8e7bcca2fd9b71c77bcafee",
+  "completed_checkpoint_included": true,
+  "require_checkpoint": true,
+  "saved_kernel_version": 6,
+  "saved_execution_type": "QUICK_SAVE",
+  "saved_notebook_source_verified": true,
+  "remote_epoch50_input_verified": true,
+  "resume_dataset_version": 4,
+  "remote_preservation_verified": true,
+  "training_started_during_preservation": false,
+  "is_private": true
 }
