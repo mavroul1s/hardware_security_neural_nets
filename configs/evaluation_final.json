@@ -1,0 +1,14 @@
+{
+  "budget": 2000, "repetitions": 100, "success_threshold": 0.9,
+  "attack_order_seed": 8001, "corruption_seed": 9001, "batch_size": 256,
+  "conditions": [
+    {"name": "clean", "noise_std": 0.0, "max_shift": 0, "padding": "zero"},
+    {"name": "noise_matched", "noise_std": 0.1, "max_shift": 0, "padding": "zero"},
+    {"name": "shift_matched", "noise_std": 0.0, "max_shift": 5, "padding": "zero"},
+    {"name": "combined_matched", "noise_std": 0.1, "max_shift": 5, "padding": "zero"},
+    {"name": "combined_mild", "noise_std": 0.05, "max_shift": 2, "padding": "zero"},
+    {"name": "combined_noise_ood", "noise_std": 0.2, "max_shift": 5, "padding": "zero"},
+    {"name": "combined_shift_ood", "noise_std": 0.1, "max_shift": 10, "padding": "zero"},
+    {"name": "combined_both_ood", "noise_std": 0.2, "max_shift": 10, "padding": "zero"}
+  ]
+}

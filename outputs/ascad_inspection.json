@@ -1,0 +1,30 @@
+{
+  "path": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\data\\ASCAD.h5",
+  "bytes": 46566904,
+  "sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+  "target_byte": 2,
+  "groups": {
+    "Profiling_traces": {
+      "traces_shape": [
+        50000,
+        700
+      ],
+      "traces_dtype": "int8",
+      "labels_dtype": "int64",
+      "metadata_dtype": "[('plaintext', 'u1', (16,)), ('ciphertext', 'u1', (16,)), ('key', 'u1', (16,)), ('masks', 'u1', (16,)), ('desync', '<u4', (1,))]",
+      "labels_verified": true
+    },
+    "Attack_traces": {
+      "traces_shape": [
+        10000,
+        700
+      ],
+      "traces_dtype": "int8",
+      "labels_dtype": "int64",
+      "metadata_dtype": "[('plaintext', 'u1', (16,)), ('ciphertext', 'u1', (16,)), ('key', 'u1', (16,)), ('masks', 'u1', (16,)), ('desync', '<u4', (1,))]",
+      "labels_verified": true
+    }
+  },
+  "synthetic": false,
+  "official_checksum_match": true
+}

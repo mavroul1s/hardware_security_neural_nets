@@ -91,6 +91,17 @@ def load_attack(path, target_byte=2):
         return g["traces"][:].astype(np.float32), m["plaintext"][:, target_byte], int(keys[0])
 
 
+def load_validation_evaluation(path, indices, target_byte=2):
+    """Use held-out profiling rows for diagnostics without opening the final attack set."""
+    with h5py.File(path, "r") as f:
+        g = f["Profiling_traces"]
+        m = g["metadata"][indices]
+        keys = np.unique(m["key"][:, target_byte])
+        if len(keys) != 1:
+            raise ValueError("This evaluator requires a constant validation key byte")
+        return g["traces"][indices].astype(np.float32), m["plaintext"][:, target_byte], int(keys[0])
+
+
 def fit_normalizer(training_traces):
     mean = float(np.mean(training_traces, dtype=np.float64))
     std = float(np.std(training_traces, dtype=np.float64))

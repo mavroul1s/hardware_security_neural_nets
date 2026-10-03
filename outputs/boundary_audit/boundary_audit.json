@@ -1,0 +1,31 @@
+{
+  "dataset": "data/ASCAD.h5",
+  "training_rows": 10000,
+  "validation_rows": 5000,
+  "split_seed": 2026,
+  "classes_present": 256,
+  "peak_identity_first_order_snr_sample": 567,
+  "caution": "Finite-sample upward bias; identity first-order SNR cannot certify masked multi-point leakage retention",
+  "edge_diagnostics": {
+    "2": {
+      "discarded_fraction_max": 0.002857142857142857,
+      "edge_max_snr": 0.027762653016374927,
+      "overall_max_snr": 0.03234485111644969
+    },
+    "5": {
+      "discarded_fraction_max": 0.007142857142857143,
+      "edge_max_snr": 0.027762653016374927,
+      "overall_max_snr": 0.03234485111644969
+    },
+    "10": {
+      "discarded_fraction_max": 0.014285714285714285,
+      "edge_max_snr": 0.027948842139662578,
+      "overall_max_snr": 0.03234485111644969
+    },
+    "20": {
+      "discarded_fraction_max": 0.02857142857142857,
+      "edge_max_snr": 0.028973652899413248,
+      "overall_max_snr": 0.03234485111644969
+    }
+  }
+}

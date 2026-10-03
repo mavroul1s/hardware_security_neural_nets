@@ -1,0 +1,5 @@
+{
+  "budget": 128, "repetitions": 10, "success_threshold": 0.9,
+  "attack_order_seed": 8001, "corruption_seed": 9001, "batch_size": 256,
+  "conditions": [{"name": "clean", "noise_std": 0.0, "max_shift": 0, "padding": "zero"}]
+}

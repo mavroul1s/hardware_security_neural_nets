@@ -1,0 +1,100 @@
+{
+  "evaluation_config": {
+    "budget": 128,
+    "repetitions": 10,
+    "success_threshold": 0.9,
+    "attack_order_seed": 8001,
+    "corruption_seed": 9001,
+    "batch_size": 256,
+    "conditions": [
+      {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      }
+    ]
+  },
+  "training_manifest": {
+    "started_utc": "2026-10-03T07:15:32.944481+00:00",
+    "config": {
+      "dataset": "data/ASCAD.h5",
+      "run_dir": "runs/ascad_cpu_pilot",
+      "model": "cnn",
+      "target_byte": 2,
+      "seed": 0,
+      "split_seed": 2026,
+      "n_train": 2048,
+      "n_validation": 512,
+      "epochs": 3,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "threads": 2,
+      "device": "cpu",
+      "augmentation": {
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      }
+    },
+    "dataset_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+    "synthetic": false,
+    "split_id": "04e6fd01e108ee8843f60b4022c10bde73002ef44b1ef03c9fe4cf08d5c2e583",
+    "normalizer": {
+      "mean": -11.606598074776786,
+      "std": 25.748638326904583,
+      "kind": "global_scalar_training_only"
+    },
+    "environment": {
+      "python": "3.12.14",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+      "logical_cpu_count": 12,
+      "versions": {
+        "torch": "2.8.0+cpu",
+        "numpy": "2.2.6",
+        "h5py": "3.14.0",
+        "matplotlib": "3.10.5"
+      },
+      "device": "cpu",
+      "device_name": "CPU",
+      "cuda_runtime": null,
+      "torch_threads": 2
+    },
+    "code": {
+      "git_commit": "3cc007dbb366964995c25749d046603ea7d60425",
+      "git_dirty": true,
+      "source_sha256": "136458da56c71668434af019b4fa6d7b50cbeeab3a4726c91b817684066b16eb"
+    },
+    "parameters": 197424,
+    "expected_steps": 48,
+    "resumed_at_epoch": 0,
+    "selection_rule": "minimum clean profiling-validation cross-entropy across fixed epochs"
+  },
+  "checkpoint": "best.pt",
+  "checkpoint_epoch": 1,
+  "split": "validation",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "versions": {
+      "torch": "2.8.0+cpu",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "cuda_runtime": null,
+    "torch_threads": 2
+  },
+  "code": {
+    "git_commit": "3cc007dbb366964995c25749d046603ea7d60425",
+    "git_dirty": true,
+    "source_sha256": "136458da56c71668434af019b4fa6d7b50cbeeab3a4726c91b817684066b16eb"
+  },
+  "synthetic": false,
+  "dataset_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91"
+}

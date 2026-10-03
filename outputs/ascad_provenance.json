@@ -1,0 +1,14 @@
+{
+  "source_url": "https://www.data.gouv.fr/api/1/datasets/r/e7ab6f9e-79bf-431f-a5ed-faf0ebe9b08e",
+  "resolved_url": "https://static.data.gouv.fr/resources/ascad/20180530-163000/ASCAD_data.zip",
+  "archive_etag": "\"4ada9b8464e0d0a522b95c33f16f611b-846\"",
+  "archive_bytes": 4435199469,
+  "member": "ASCAD_data/ASCAD_databases/ASCAD.h5",
+  "file_bytes": 46566904,
+  "downloaded_range_bytes": 23880483,
+  "sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+  "expected_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+  "verified": true,
+  "retrieved_utc": "2026-10-03T07:07:04.694292+00:00",
+  "version": "ASCAD fixed-key original synchronized, official 20180530 archive"
+}

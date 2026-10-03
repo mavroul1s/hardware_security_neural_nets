@@ -1,0 +1,47 @@
+# Αρχική βιβλιογραφική χαρτογράφηση
+
+Επαλήθευση συνδέσμων/metadata: 2026-10-03. Πρόκειται για αρχικό έλεγχο πρωτογενών πηγών,
+όχι ολοκληρωμένο systematic review. Ο πίνακας ξεχωρίζει πλήρες κείμενο, preprint και abstract.
+Οι αξιολογήσεις/περιορισμοί στη δεξιά στήλη είναι δική μας ερμηνεία, εκτός όπου δηλώνεται ρητά.
+
+## Πίνακας σύγκρισης
+
+| Εργασία, συγγραφείς, έτος/venue, επαληθευμένο αναγνωριστικό | Ερώτημα/συνεισφορά που επιβεβαιώνει η πηγή | Datasets / μοντέλα / αλλοιώσεις / μετρικές | Κώδικας / πρόσβαση | Σχέση και περιορισμοί |
+|---|---|---|---|---|
+| **Deep learning for side-channel analysis and introduction to ASCAD database** — Ryad Benadjila, Emmanuel Prouff, Rémi Strullu, Eleonora Cagli, Cécile Dumas. J. Cryptographic Engineering 10, 163–188 (2020), online 2019. [DOI](https://doi.org/10.1007/s13389-019-00220-8), [long preprint 2018](https://eprint.iacr.org/2018/053.pdf) | Αναπαραγώγιμο benchmark και μελέτη parametrization για DL profiling. | Boolean-masked AES/ATmega8515 ASCADf, MLP/CNN, συγχρονισμένες και desynchronized traces, key rank/GE. | [ANSSI code/data](https://github.com/ANSSI-FR/ASCAD). Διαβάστηκε long preprint και publisher metadata. | Καθορίζει το αρχικό dataset. Fixed-key/same campaign περιορίζει τη γενίκευση σε νέο key/device. |
+| **Convolutional Neural Networks with Data Augmentation Against Jitter-Based Countermeasures** — Eleonora Cagli, Cécile Dumas, Emmanuel Prouff. CHES 2017, 45–68. [DOI](https://doi.org/10.1007/978-3-319-66787-4_3), [preprint](https://eprint.iacr.org/2017/740.pdf) | CNN profiling με augmentation για misalignment χωρίς realignment. | AES measurements με software delays και hardware clock jitter, CNN/TA, shifting και add/remove deformation, GE και traces-to-recovery. | Πλήρες preprint προσβάσιμο· ανεξάρτητο code repository δεν επαληθεύτηκε. | Augmentation για shifting/jitter δεν είναι νέα ιδέα. Δεν αποδεικνύει το δικό μας μικρό-data joint-noise protocol. |
+| **A systematic study of data augmentation for protected AES implementations** — Huimin Li, Guilherme Perin. J. Cryptographic Engineering 14, 649–666 (2024). [DOI/full text](https://link.springer.com/article/10.1007/s13389-024-00363-3) | Επίδραση augmentation intensity/ποσότητας ανά architecture και countermeasure. | ASCADr/DPAv4.2, CNN, ID/HW, Gaussian noise ή desynchronization, GE/traces-to-success, HPO και augmentation search. | Publisher full text προσβάσιμο. Code για την εργασία δεν εντοπίστηκε στις ελεγμένες παραπομπές. | Στο τέλος δηλώνει ότι οι countermeasures μελετήθηκαν χωριστά και οι συνδυασμοί μένουν μελλοντική δουλειά. Αυτό δεν τεκμηριώνει αυτομάτως σημερινή πρωτοτυπία. |
+| **Shift-Invariance Robustness of Convolutional Neural Networks in Side-Channel Analysis** — Marina Krček, Lichao Wu, Guilherme Perin, Stjepan Picek. Mathematics 12(20), 3279 (2024). [DOI](https://doi.org/10.3390/math12203279), [preprint 2023/1100](https://eprint.iacr.org/2023/1100.pdf) | Μελετά τα όρια CNN shift robustness και augmentation ensembles. | ASCADf/ASCADr/DPAv4.2, διαφορετικά CNN/pooling, shifts και ensembles, GE/attack traces. | MDPI άμεση πρόσβαση απέτυχε. Πλήρες preprint διαβάστηκε· τελική έκδοση δεν συγκρίθηκε. Dedicated code δεν επαληθεύτηκε. | Η ευρωστία πέρα από training shifts έχει ήδη εξεταστεί. Το δικό μας κενό πρέπει να περιλαμβάνει joint noise, μικρά data και μετρήσιμο budget. |
+| **Intra-class CutMix data augmentation based deep learning side channel attacks** — Runlian Zhang, Yu Mo, Zhaoxuan Pan, Hailong Zhang, Yongzhuang Wei, Xiaonian Wu. Integration (2025). [DOI](https://doi.org/10.1016/j.vlsi.2025.102373), [publisher preview](https://www.sciencedirect.com/science/article/pii/S0167926025000306) | CutMix ανά ίδια class για διατήρηση label dependency και class balance. | ASCAD/DPA-contest v4, MLP/CNN, intra-class CutMix, key recovery/traces και convergence. Ακριβές ASCAD variant/πλήρες metric protocol δεν επαληθεύτηκε από preview. | Μόνο abstract/section snippets διαθέσιμα· πλήρες paper/code όχι επαληθευμένα. | Άμεση συνάφεια με limited traces. Δεν συμπεραίνουμε από abstract αν αποκλείει ή καλύπτει το δικό μας matrix. |
+| **Diffuse Some Noise: Diffusion Models for Measurement Noise Removal in Side-channel Analysis** — Sengim Karayalçin, Guilherme Perin, Stjepan Picek. SAC 2025 preproceedings. [conference PDF](https://sacworkshop.org/SAC25/preproceedings/sac2025-2-paper1.pdf) | DDPM denoising χωρίς clean reference, ωφέλεια σε profiling και non-profiling attacks. | ESHARD, ASCADf/v2, AES-HD, AES-HD-MM, ASCON και ECC case study· MLP-based U-Net DDPM, synchronized traces, SNR/GE/attack complexity. | [Public code](https://github.com/Sengim/diff_release) επαληθευμένο. Πλήρες conference PDF· τελικό chapter DOI δεν επαληθεύτηκε. | Καταγράφει και περίπτωση ASCADf όπου profiling gain δεν είναι εμφανές. Συναφές noise treatment, αλλά denoising και δικό του επιπλέον κόστος. |
+| **Enhancing Scale and Shift Invariance in Deep Learning-based Side-channel Attacks through Equivariant Convolutional Neural Networks** — David Perez, Sengim Karayalcin, Stjepan Picek, Servio Paguada. CT-RSAC 2026, 198–228; preprint 2025/1379. [DOI](https://doi.org/10.1007/978-3-032-22931-1_8), [preprint](https://eprint.iacr.org/2025/1379.pdf) | EquivSCA για shift/temporal-scale robustness και μεταφορά μεταξύ clock frequencies. | ASCADv1, AES_RD, ESHARD, Nucleo96/168MHz, equivariant CNN και CNN/transformer comparisons, shifts/time dilation, GE και success rate. | Πλήρες preprint και publisher metadata. [Code link μέσα στο paper](https://shorturl.at/lxW7K)· προορισμός δεν επαληθεύτηκε ακόμη. | Νεότερος απαραίτητος comparator για claims shift robustness. Το joint-noise small-data cost study χρειάζεται έλεγχο πλήρους protocol πριν novelty claim. |
+| **RFA-SCA: Robust Feature Alignment for Side-Channel Analysis via Multi-Order Moment Alignment** — Yuanzhen Wang, Hongxin Zhang, Shaofei Sun, Yaqi Zhang, Xing Fang, Zhi Sun. Computers, Materials & Continua, online 11 June 2026. [DOI](https://doi.org/10.32604/cmc.2026.081308), [publisher PDF](https://file.techscience.com/files/onlinefirst/2026/6.11/TSP_CMC_81308/TSP_CMC_81308.pdf) | Unsupervised target adaptation με MMD/CORAL/entropy και shared-baseline comparisons. | ASCAD, CHES CTF2018, SAKURA-G, XMEGA, CNN, Gaussian noise/desync/jitter scenarios, GE/SR/MTD και ablations. | Πλήρες publisher PDF. Public code URL δεν βρέθηκε στο PDF. | Αλλάζει threat model επειδή χρησιμοποιεί unlabeled target traces. Δεν είναι ίδιο με το δικό μας χωρίς target adaptation. Χρειάζεται έλεγχος joint corruptions. |
+| **High-Fidelity Conditional Side-Channel Trace Synthesis using Diffusion Models** — Zekai Zhang, Donglong Chen, Wangchen Dai, Jinfa Hong, Yu Hin Chan, Çetin Kaya Koç, Patrick S. Y. Hung, Ray C. C. Cheung. IEEE Sensors Journal 26(14), 21527–21540 (2026), online 12 June. [DOI](https://doi.org/10.1109/JSEN.2026.3701075), [author institution](https://scholars.cityu.edu.hk/en/publications/high-fidelity-conditional-side-channel-trace-synthesis-using-diff/) | Conditional DDPM/U-Net για trace synthesis σε περιορισμένα sensor data. | ChipWhisperer-based traces· residual/self-attention U-Net, GE και classification metrics. Πλήρης λίστα datasets/evaluation δεν επαληθεύτηκε. | Institution metadata/abstract μόνο· πλήρες paper/code δεν αποκτήθηκαν. | Η γενική small-data augmentation συνεισφορά έχει νεότερο ανταγωνισμό. Δεν κάνουμε claims cross-device από δικές μας synthetic corruptions. |
+
+## Επιβεβαιωμένο έναντι υπόθεσης
+
+Επιβεβαιωμένα: noise augmentation και shifting έχουν προηγούμενες εργασίες· υπάρχουν
+εξαρτήσεις από architecture/intensity· η shift robustness δεν εγγυάται από μόνη της επιτυχία.
+Η systematic εργασία του 2024 αφήνει συνδυασμούς ως future work. Το 2026 περιλαμβάνει
+νεότερες αρχιτεκτονικές και adaptation/generative approaches. Δεν ισχυριζόμαστε ότι
+δεν υπάρχει εργασία που μετρά το ίδιο ερώτημα.
+
+Δική μας ελέγξιμη υπόθεση: online joint noise/shift μπορεί να βελτιώνει key recovery σε
+unseen joint intensities με λίγα μοναδικά traces και fixed steps· μπορεί επίσης να επιβαρύνει
+clean performance ή να μην υπερέχει των single transforms. Το πιθανό κενό είναι η
+ελεγχόμενη factorial σύγκριση και η συσχέτιση οφέλους με data budget και πραγματικό κόστος,
+χωρίς unlabeled target adaptation. Δεν παρουσιάζεται ως αποδεδειγμένα νέο.
+
+## Search log και επόμενος έλεγχος
+
+Queries: `side channel data augmentation combined noise desynchronization 2025 2026 AES`,
+`side-channel augmentation 2025 Gaussian desynchronization`,
+`side-channel augmentation 2026 AES profiling noise shift`,
+τίτλοι των supplied papers, CutMix, diffusion και shift/scale equivariance.
+Χρησιμοποιήθηκαν publisher, IACR ePrint, conference και author-institution πηγές.
+Δευτερογενή αποτελέσματα χρησιμοποιήθηκαν μόνο για εύρεση πρωτογενών συνδέσμων.
+
+Προτεραιότητα επόμενης συνεδρίας: λεπτομερής ανάγνωση EquivSCA/RFA experimental sections,
+έλεγχος final MDPI έναντι preprint, απόκτηση CutMix/IEEE πλήρους κειμένου από πανεπιστήμιο,
+και backward/forward citation search. Για κάθε κενό πρόσβασης κρατάμε `unknown`, όχι συμπέρασμα απουσίας.
+Οι παλιότερες GE=1 συμβάσεις δεν συγκρίνονται αριθμητικά με το δικό μας zero-based rank χωρίς μετατροπή.

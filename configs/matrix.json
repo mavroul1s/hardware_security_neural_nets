@@ -1,0 +1,16 @@
+{
+  "status": "provisional_freeze_after_validation_and_GPU_benchmark_before_final_attack",
+  "base_config": "configs/baseline_cnn.json",
+  "training_budgets": [5000, 10000],
+  "seeds": [0, 1, 2, 3, 4],
+  "strategies": {
+    "none": {"noise_std": 0.0, "max_shift": 0, "padding": "zero"},
+    "noise": {"noise_std": 0.1, "max_shift": 0, "padding": "zero"},
+    "shift": {"noise_std": 0.0, "max_shift": 5, "padding": "zero"},
+    "combined": {"noise_std": 0.1, "max_shift": 5, "padding": "zero"}
+  },
+  "training_runs": 40,
+  "primary_condition": "combined_both_ood",
+  "primary_metric": "sr_at_budget",
+  "secondary_metrics": ["ge_at_budget", "traces_to_sustained_success", "train_seconds", "parameters"]
+}
