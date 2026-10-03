@@ -44,7 +44,8 @@
   Προστέθηκαν ασφαλής επαναχρησιμοποίηση completed runs και cache evaluations.
   Ελέγχθηκαν συντακτικά οι 6 code cells, χωρίς αποθηκευμένα execution outputs.
   Το bundle εξαιρεί δεδομένα, runs, checkpoints, `.venv` και `.git`.
-  **Δεν εκτελέστηκε στο Kaggle** και δεν ελέγχθηκε το προσωπικό GPU quota.
+  Κατά την αρχική δημιουργία δεν είχε εκτελεστεί στο Kaggle. Αργότερα παραλήφθηκε
+  πραγματικό benchmark output (βλ. παρακάτω). Το προσωπικό GPU quota δεν καταγράφηκε.
 
 Οι τοπικοί stage checks είναι orchestration dry runs και synthetic CPU tests, όχι πραγματικές
 GPU εκτελέσεις. Ο νέος πηγαίος κώδικας έχει διαφορετικό hash από τα ιστορικά ASCAD pilots·
@@ -52,7 +53,7 @@ GPU εκτελέσεις. Ο νέος πηγαίος κώδικας έχει δ�
 
 ## Πραγματικά αποτελέσματα έως τώρα
 
-Τα pilots δεν απέδειξαν ανάκτηση. Clean validation GE@128=125,8, SR@128=0%,
+Τα CPU pilots δεν απέδειξαν ανάκτηση. Clean validation GE@128=125,8, SR@128=0%,
 10 attack-order repetitions από pool512, selected epoch1. Το τελικό attack/test δεν
 χρησιμοποιήθηκε για metrics ή επιλογή υπερπαραμέτρων. Δεν υπάρχουν πραγματικές συγκρίσεις
 augmentation ή πλήρης baseline 50 epochs ακόμη. Το τρέχον πλάνο έχει ένα seed και
@@ -64,12 +65,34 @@ setup/inspection/checkpoint I/O. Το CNN έχει 197.424 parameters. Τα mani
 αντιγράφηκαν στο `outputs/ascad_cpu_release_record/` και οι GE/SR curves βρίσκονται στο
 `outputs/ascad_cpu_release_validation/`. Η μικρή CPU extrapolation δεν είναι GPU κόστος.
 
+### Παραληφθέν Kaggle benchmark — 2026-10-03
+
+Εισήχθη το `C:/Users/nickb/Downloads/results.zip`, SHA-256
+`07b13e6f526e1e2fae5947da5f5bed489dfa4b541f63c53dbba5a045e5e16c5e`.
+Περιέχει μόνο το στάδιο benchmark: none CNN, seed0, 10k train/5k validation,
+3 epochs/237 steps, Tesla T4, Python3.13.15, torch2.8.0+cu126, CUDA12.6.
+
+- Training loops1,617s, validation loops0,239s· training call με setup/checkpoints11,495s.
+- Best epoch2, validation CE5,547229. Clean validation GE@128=113,1, SR@128=10%
+  (1/10 permutations). Το sustained SR90% criterion απέτυχε· `>128` censored.
+- Dataset/source/checkpoint checksums, splits, train-only normalizer και curves
+  ελέγχθηκαν ανεξάρτητα. Δεν έγινε νέα εκπαίδευση ή εκτέλεση uploaded κώδικα.
+- Source hash `e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87`
+  ταιριάζει με τον τρέχοντα κώδικα· δεν αλλάζουμε src/scripts/configs πριν τη συνέχεια.
+- Records/report: `outputs/kaggle_benchmark_2026-10-03_07b13e6f/REPORT_EL.md`.
+- Checkpoints: `runs/kaggle_imports/2026-10-03_07b13e6f/minimal_v1/none_seed0/`.
+- Έτοιμο restore Input: `runs/kaggle_imports/2026-10-03_07b13e6f/sca_runs_minimal_v1.zip`.
+- Δεν υπάρχουν ακόμη full baseline, οι άλλες 3 στρατηγικές ή τελικό attack metrics.
+  Πλήρεις εκπαιδεύσεις: 0/4· none έχει ολοκληρώσει τις πρώτες 3/50 epochs.
+- Προσωπικό quota/session limit παραμένει άγνωστο. Η πρόβλεψη1,81min αφορά μόνο
+  training loops του υπολοίπου, με margin50% από none, χωρίς measured augmentation overhead.
+
 ## Ακριβές επόμενο βήμα
 
-1. Ανέβασε `outputs/kaggle_project.zip` και το verified `data/ASCAD.h5` ως private Inputs,
-   εισήγαγε `notebooks/kaggle_baseline.ipynb` και διάβασε `docs/KAGGLE.md`.
-2. Κατάγραψε actual GPU/remaining quota και άφησε `STAGE="benchmark"`: none CNN, 3 epochs.
-3. Στο ίδιο notebook, `STAGE="baseline"` συνεχίζει το ίδιο run μέχρι 50 epochs.
+1. Κράτα το ίδιο Kaggle notebook και τον ίδιο κώδικα. Το πρώτο benchmark ολοκληρώθηκε.
+2. Σε νέο session ανέβασε το έτοιμο restore ZIP ως private Input και ρύθμισε
+   `RESTORE_ARCHIVE` όπως περιγράφει η νέα αναφορά. Σε ενεργό session κράτα τα υπάρχοντα run folders.
+3. `STAGE="baseline"`, `RUN_TAG="minimal_v1"`: το ίδιο none run συνεχίζει από epoch3 σε 50.
    Έλεγξε validation· μετά `STAGE="compare"` εκπαιδεύει noise/shift/combined, χωρίς νέο none run.
 4. Εξέτασε padding/boundary sensitivity στο validation και ακριβή overlap με EquivSCA/RFA/CutMix.
 5. Πάγωσε config/criterion/code πριν το `STAGE="attack"`, που μόνο αξιολογεί τα 4 μοντέλα.

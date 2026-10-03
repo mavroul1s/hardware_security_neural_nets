@@ -1,0 +1,38 @@
+{
+  "checkpoint_sha256": "c60d72a12fc674d41ed5b4eda24b7bc5684dc569322bd4b72d50e56dd384282a",
+  "dataset_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+  "source_sha256": "e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87",
+  "evaluation_config": {
+    "budget": 128,
+    "repetitions": 10,
+    "success_threshold": 0.9,
+    "attack_order_seed": 8001,
+    "corruption_seed": 9001,
+    "batch_size": 256,
+    "conditions": [
+      {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      }
+    ]
+  },
+  "split": "validation",
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "logical_cpu_count": 4,
+    "versions": {
+      "torch": "2.8.0+cu126",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cuda",
+    "device_name": "Tesla T4",
+    "cuda_runtime": "12.6",
+    "torch_threads": 2
+  }
+}

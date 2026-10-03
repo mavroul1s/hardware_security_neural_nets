@@ -1,0 +1,6 @@
+{
+  "stage": "benchmark",
+  "training_call_seconds": 11.494832233000011,
+  "requested_epochs": 3,
+  "resume_or_reuse": false
+}

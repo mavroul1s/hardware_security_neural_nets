@@ -5,7 +5,10 @@
 Η νέα επιλογή αντικαθιστά το παλιό πλάνο 46 trainings. Δεν δημιουργούμε ξεχωριστά notebooks ανά πείραμα.
 
 Έλεγχος δημόσιας τεκμηρίωσης: 2026-10-03. Ο χρήστης επιβεβαίωσε ενεργή πρόσβαση GPU.
-Δεν συνδεθήκαμε στον λογαριασμό, δεν επιθεωρήσαμε προσωπικό quota και δεν εκτελέσαμε Kaggle training.
+Δεν συνδεθήκαμε στον λογαριασμό ούτε επιθεωρήσαμε προσωπικό quota. Στις 2026-10-03
+παραλήφθηκε `results.zip` με πραγματικό 3-epoch benchmark στην Tesla T4· δείτε την
+[αναφορά benchmark](../outputs/kaggle_benchmark_2026-10-03_07b13e6f/REPORT_EL.md).
+Το επόμενο βήμα είναι `STAGE="baseline"` με συνέχεια του ίδιου run.
 
 Η [επίσημη τεκμηρίωση](https://www.kaggle.com/docs/notebooks) αναφέρει επιλογές P100/T4×2,
 sessions μέχρι 12 ώρες CPU/GPU και 20 GB αποθηκευόμενου χώρου `/kaggle/working`.
@@ -15,12 +18,12 @@ sessions μέχρι 12 ώρες CPU/GPU και 20 GB αποθηκευόμενο�
 
 ## Βήματα
 
-1. Δημιούργησε **private Kaggle Dataset** με το zip του κώδικα
-   `outputs/kaggle_project.zip`, που εξαιρεί `.venv`, datasets, runs και checkpoints.
-   Πρόσθεσε ξεχωριστό dataset με `data/ASCAD.h5` και `data/ASCAD.provenance.json`.
+1. Δημιούργησε **ένα private Kaggle Dataset** με `outputs/kaggle_project.zip`,
+   `data/ASCAD.h5` και `data/ASCAD.provenance.json`. Το code zip εξαιρεί `.venv`,
+   datasets, runs και checkpoints. Το notebook δέχεται όλα τα αρχεία στο ίδιο Input.
    Δεν χρειάζεται να ανεβάσεις το raw ZIP των 4,4 GB.
 2. Δημιούργησε notebook με **Import Notebook** και διάλεξε `notebooks/kaggle_baseline.ipynb`.
-   Με **Add Input** πρόσθεσε τα δύο datasets.
+   Με **Add Input** πρόσθεσε το παραπάνω dataset.
 3. Settings → Accelerator → διαθέσιμη GPU. Έλεγξε το εμφανιζόμενο remaining quota,
    runtime limit και internet toggle. Αποθήκευσε τα πραγματικά στοιχεία στο αρχείο budget
    του notebook. Το παρόν PyTorch pipeline χρησιμοποιεί **μία** GPU ακόμη και με T4×2.

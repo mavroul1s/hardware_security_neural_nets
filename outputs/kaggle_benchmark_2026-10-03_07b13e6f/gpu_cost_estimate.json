@@ -1,0 +1,10 @@
+{
+  "planned_unique_trainings": 4,
+  "benchmark_additional_trainings": 0,
+  "planned_total_steps": 15800,
+  "completed_steps": 237,
+  "reference_seconds_per_step_none": 0.00464194082278489,
+  "estimated_remaining_training_hours_with_50pct_margin": 0.030101052093750517,
+  "scope": "same GPU, none reference only; augmentation overhead unmeasured",
+  "excluded_costs": "validation, evaluation, HPO, setup and I/O"
+}

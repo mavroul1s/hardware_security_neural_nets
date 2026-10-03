@@ -1,0 +1,12 @@
+{
+  "epochs": 3,
+  "optimization_steps": 237,
+  "train_seconds": 1.6168071580000287,
+  "validation_seconds": 0.23887056500001336,
+  "best_validation_loss": 5.547228632354736,
+  "parameters": 197424,
+  "best_checkpoint_bytes": 2398713,
+  "synthetic": false,
+  "device": "cuda",
+  "timing_scope": "epoch loops, including augmentation/transfers; excludes setup, inspection and checkpoint I/O"
+}

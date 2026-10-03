@@ -99,6 +99,8 @@ clean validation cross-entropy, από κοινό και σταθερό πλήθ
 - [Kaggle](docs/KAGGLE.md): setup, έλεγχος GPU quota, benchmark και αποθήκευση.
 - [Βιβλιογραφία](literature/REVIEW.md): συγκριτικός πίνακας, επιβεβαιωμένα στοιχεία και κενά πρόσβασης.
 - [Αναφορά πρώτης συνεδρίας](outputs/SESSION_REPORT_EL.md): τι εκτελέστηκε και τι σημαίνουν τα αποτελέσματα.
+- [Πρώτο Kaggle benchmark](outputs/kaggle_benchmark_2026-10-03_07b13e6f/REPORT_EL.md):
+  πραγματικό 3-epoch T4 output και συνέχεια στο ίδιο baseline checkpoint.
 
 Τα `data/`, `runs/`, `.venv/` αγνοούνται από το Git. Τα επιλεγμένα παραδοτέα είναι στο `outputs/`.
 Μην διαβάζετε έναν χαμηλό classification loss ως απόδειξη ανάκτησης κλειδιού.

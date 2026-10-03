@@ -1,0 +1,26 @@
+[
+  {
+    "budget": 128,
+    "attack_pool_size": 5000,
+    "repetitions": 10,
+    "attack_order_seed": 8001,
+    "rank_convention": "zero_based_conservative_ties",
+    "ge_at_budget": 113.1,
+    "sr_at_budget": 0.1,
+    "success_threshold": 0.9,
+    "traces_to_sustained_success": null,
+    "recovery_censored": true,
+    "criterion": "SR >= threshold at every remaining trace count through budget",
+    "condition": "clean",
+    "corruption": {
+      "name": "clean",
+      "noise_std": 0.0,
+      "max_shift": 0,
+      "padding": "zero"
+    },
+    "prediction_seconds": 0.0488792610000246,
+    "ranking_seconds": 0.013284136999970997,
+    "synthetic": false,
+    "split": "validation"
+  }
+]

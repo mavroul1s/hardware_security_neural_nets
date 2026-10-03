@@ -1,0 +1,20 @@
+{
+  "dataset": "/kaggle/input/datasets/con1los/hw-sec-conilos/ASCAD.h5",
+  "run_dir": "/kaggle/working/runs/minimal_v1/none_seed0",
+  "model": "cnn",
+  "target_byte": 2,
+  "seed": 0,
+  "split_seed": 2026,
+  "n_train": 10000,
+  "n_validation": 5000,
+  "epochs": 3,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "threads": 2,
+  "device": "cuda",
+  "augmentation": {
+    "noise_std": 0.0,
+    "max_shift": 0,
+    "padding": "zero"
+  }
+}
