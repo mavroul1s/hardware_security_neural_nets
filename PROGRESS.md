@@ -188,3 +188,26 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
   Χρειάζεται επιλογή χρήστη λόγω της ρητής οδηγίας AGENTS για additional models.
 - Εναλλακτική: οι ήδη προγραμματισμένες3 augmentations στο παλιό CNN, σύνολο4 trainings.
 - Αναφορά και αριθμητικά δεδομένα: `outputs/baseline_diagnosis_2026-10-03/REPORT_EL.md`.
+
+## Εγκεκριμένο διορθωτικό baseline — 2026-10-03
+
+Ο χρήστης απάντησε «συνέχισε» στην πρόταση για ένα διορθωμένο baseline (+1 training).
+Εφαρμόζεται μόνο η αλλαγή ReLU→LeakyReLU0,1 με νέο model ID `cnn_leaky`.
+Το `cnn` παραμένει διαθέσιμο για ανάγνωση/διάγνωση των προηγούμενων checkpoints.
+Ίδια initialization/parameters, seed0,10k/5k split, LR0,001, batch128 και50 epochs.
+
+Το νέο study run tag είναι `minimal_v2_leaky`, από την αρχή με νέο source fingerprint.
+Το παλιό `minimal_v1` και το αρχείο epoch50 διατηρούνται ως καταγεγραμμένο failure.
+Δεν μεταφέρουμε weights/optimizer από το παλιό μοντέλο. Το initial Input δεν έχει
+παλιό checkpoint και το fresh-start opt-in αφορά μόνο αυτή την εγκεκριμένη εκτέλεση.
+Μετά την ολοκλήρωση επαναφέρουμε την απαίτηση checkpoint και ανεβάζουμε το νέο archive.
+Η ιστορική απαγόρευση αλλαγής του παλιού source hash δεν αφορά αυτή τη νέα study έκδοση.
+
+- Source hash νέας έκδοσης: `6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126`.
+  Από την υποβολή δεν αλλάζουμε src/scripts/configs μέχρι να ολοκληρωθεί το νέο study.
+- Tests:26 passed,14 warnings σε10,37s. Το model test επιβεβαιώνει identical initial
+  state_dict μεταξύ cnn/cnn_leaky στο ίδιο seed και negative-region gradient0,1.
+- Το private Input `con1los/hardware-sca-resume` version3 περιέχει μόνο νέο code bundle,
+  ASCAD/provenance. Το παλιό checkpoint δεν μεταφέρθηκε στη διορθωτική εκπαίδευση.
+- Υποβλήθηκε version5 του ίδιου `hw-sec-exp2`, baseline50 epochs/T4/original Docker.
+  Record: `outputs/kaggle_leaky_execution_status.json`. Η ολοκλήρωση εκκρεμεί.

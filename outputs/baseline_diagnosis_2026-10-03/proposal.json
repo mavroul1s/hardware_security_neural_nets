@@ -1,5 +1,5 @@
 {
-  "status": "prepared_not_trained",
+  "status": "approved_submitted",
   "candidate": "notebooks/candidate_cnn.py",
   "change": "three ReLU activations -> LeakyReLU negative_slope 0.1",
   "parameters": 197424,
@@ -20,5 +20,8 @@
   "notebook_count": 1,
   "attack_set_used_for_tuning": false,
   "future_training_gate": "review corrected baseline validation before training augmentations",
-  "current_training_source_sha256": "e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87"
+  "original_training_source_sha256": "e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87",
+  "approval": "User: continue",
+  "new_training_source_sha256": "6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126",
+  "kernel_version": 5
 }

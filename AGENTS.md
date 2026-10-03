@@ -6,6 +6,9 @@
 - Keep a single Kaggle notebook and the smallest useful study: four CNN strategies,
   one training budget, one seed. Reuse benchmark epochs and completed checkpoints.
   Additional budgets, models or seeds require a research reason and user agreement.
+- The user approved one corrective LeakyReLU baseline after the original CNN failed:
+  preserve the original run; at most five trainings including it and the four revised
+  strategies. Review the corrected baseline before the remaining augmentations.
 - No paid services, OpenAI API or API keys are required.
 - Start with ASCAD fixed-key, 700 samples, zero-based byte 2, identity labels.
 - Keep train/validation/attack separate. Fit normalization only on training traces.

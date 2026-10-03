@@ -101,3 +101,15 @@ def test_input_zip_cannot_write_outside_destination(tmp_path):
     with pytest.raises(ValueError, match="Unsafe"):
         BOOTSTRAP.extract_checked(archive, tmp_path / "destination")
     assert not (tmp_path / "escaped.txt").exists()
+
+
+def test_fresh_study_requires_explicit_bootstrap_opt_in(tmp_path):
+    inputs, _, dataset_sha, source_sha = make_inputs(tmp_path)
+    (inputs / "sca_runs_minimal_v1.zip").unlink()
+    project, runs = tmp_path / "work/project", tmp_path / "work/runs"
+    with pytest.raises(RuntimeError, match="Checkpoint Input is missing"):
+        BOOTSTRAP.bootstrap_inputs(inputs, project, runs, dataset_sha, source_sha)
+    dataset = BOOTSTRAP.bootstrap_inputs(inputs, project, runs, dataset_sha, source_sha,
+                                        require_checkpoint=False)
+    assert BOOTSTRAP.file_sha256(dataset) == dataset_sha
+    assert not (runs / "none_seed0/last.pt").exists()

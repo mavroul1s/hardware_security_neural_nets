@@ -9,7 +9,7 @@ import pytest
 from sca.train import write_json
 
 
-def test_single_notebook_reuses_benchmark_and_never_creates_a_fifth_training(tmp_path):
+def test_single_notebook_reuses_epochs_for_four_current_study_models(tmp_path):
     root = Path(__file__).resolve().parents[1]
     notebook_paths = list((root / "notebooks").glob("*.ipynb"))
     assert len(notebook_paths) == 1
@@ -24,7 +24,7 @@ def test_single_notebook_reuses_benchmark_and_never_creates_a_fifth_training(tmp
     source = {"source_sha256": "dry-run-source", "git_commit": None, "git_dirty": None}
 
     def fake_train(config, resume=False, reuse_completed=False):
-        assert reuse_completed and config["model"] == "cnn"
+        assert reuse_completed and config["model"] == base["model"]
         name = Path(config["run_dir"]).name
         assert resume == (name in states)
         path = Path(config["run_dir"])

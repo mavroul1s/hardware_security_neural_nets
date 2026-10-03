@@ -85,7 +85,7 @@ def bootstrap_inputs(input_root, project_root, run_root, expected_dataset_sha256
             if identity is not None:
                 code_candidates.append((path, identity, True))
         dataset_candidates.extend(search_root.rglob("ASCAD*.h5"))
-        restore_candidates.extend(search_root.rglob("sca_runs_minimal_v1.zip"))
+        restore_candidates.extend(search_root.rglob("sca_runs_*.zip"))
         restore_folders.extend(path.parent.parent for path in search_root.rglob("last.pt")
                                if path.parent.name == "none_seed0" and
                                (path.parent / "manifest.json").is_file() and

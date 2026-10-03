@@ -85,6 +85,12 @@ py -3.12 -m venv .venv
 συνέχεια epoch3→50, ίδιο περιβάλλον/splits/source. Clean validation SR@2.000=0/20·
 best checkpoint epoch2. Η [αναφορά baseline](outputs/kaggle_baseline_v3_2026-10-03/REPORT_EL.md)
 περιέχει ελεγμένες καμπύλες και περιορισμούς. Διάγνωση πριν τις άλλες3 στρατηγικές.
+Ο χρήστης ενέκρινε ένα διορθωτικό baseline με LeakyReLU0,1 μετά τη διάγνωση inactive units.
+Η ενεργή έκδοση χρησιμοποιεί `model="cnn_leaky"`, `RUN_TAG="minimal_v2_leaky"`, ίδιο
+seed/split/budget/optimizer. Το παλιό ReLU run διατηρείται. Το σύνολο μπορεί να φτάσει5
+trainings αν ολοκληρωθούν οι4 διορθωμένες στρατηγικές. Υποβλήθηκε notebook version5.
+Το `outputs/kaggle_resume_input_leaky.zip` είναι το αρχικό code/data Input χωρίς checkpoint·
+fresh-start opt-in επιτρέπεται μόνο για αυτό το εγκεκριμένο baseline.
 Για νέο session ανέβασε το ενιαίο `outputs/kaggle_resume_input.zip` ως Input.
 Η διορθωμένη πρώτη cell κάνει discovery/restore και εμφανίζει τα paths και το ολοκληρωμένο epoch.
 Για αντιγραφή στο ίδιο Kaggle notebook υπάρχει το `outputs/kaggle_first_cell.py`.

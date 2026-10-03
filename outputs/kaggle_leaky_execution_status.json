@@ -1,0 +1,24 @@
+{
+  "run_tag": "minimal_v2_leaky",
+  "stage": "baseline",
+  "target_epochs": 50,
+  "model": "cnn_leaky",
+  "fresh_start_authorized": true,
+  "kernel_ref": "con1los/hw-sec-exp2",
+  "source_sha256": "6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126",
+  "packet_path": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\outputs\\kaggle_resume_input_leaky.zip",
+  "packet_sha256": "626178aa97739be550b10ffe0d5f7741150134e8c8e7bcca2fd9b71c77bcafee",
+  "packet_members": [
+    "kaggle_project.zip",
+    "ASCAD.h5",
+    "ASCAD.provenance.json"
+  ],
+  "previous_checkpoint_included": false,
+  "status": "submitted",
+  "kernel_version": 5,
+  "submitted_utc": "2026-10-03T11:28:23.674491+00:00",
+  "tests_passed": 26,
+  "tests_warnings": 14,
+  "tests_seconds": 10.37,
+  "completion_verified": false
+}

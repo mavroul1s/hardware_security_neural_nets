@@ -85,7 +85,7 @@ def bootstrap_inputs(input_root, project_root, run_root, expected_dataset_sha256
             if identity is not None:
                 code_candidates.append((path, identity, True))
         dataset_candidates.extend(search_root.rglob("ASCAD*.h5"))
-        restore_candidates.extend(search_root.rglob("sca_runs_minimal_v1.zip"))
+        restore_candidates.extend(search_root.rglob("sca_runs_*.zip"))
         restore_folders.extend(path.parent.parent for path in search_root.rglob("last.pt")
                                if path.parent.name == "none_seed0" and
                                (path.parent / "manifest.json").is_file() and
@@ -173,11 +173,11 @@ import time
 os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
 PROJECT_ROOT = Path("/kaggle/working/hardware_sca")
 INPUT_ROOT = Path("/kaggle/input")
-RUN_ROOT = Path("/kaggle/working/runs/minimal_v1")
+RUN_ROOT = Path("/kaggle/working/runs/minimal_v2_leaky")
 DATASET_PATH = bootstrap_inputs(
     INPUT_ROOT, PROJECT_ROOT, RUN_ROOT,
     expected_dataset_sha256="f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
-    expected_source_sha256="e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87",
-    require_checkpoint=True,
+    expected_source_sha256="6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126",
+    require_checkpoint=False,  # Approved fresh baseline; require restore after completion.
 )
 os.chdir(PROJECT_ROOT)
