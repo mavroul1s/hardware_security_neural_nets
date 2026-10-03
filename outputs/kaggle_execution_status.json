@@ -1,0 +1,15 @@
+{
+  "recorded_utc": "2026-10-03T10:50:24.076317+00:00",
+  "kernel_ref": "con1los/hw-sec-exp2",
+  "kernel_version": 3,
+  "url": "https://www.kaggle.com/code/con1los/hw-sec-exp2",
+  "dataset_ref": "con1los/hardware-sca-resume",
+  "is_private": true,
+  "stage": "baseline",
+  "target_epochs": 50,
+  "resume_from_epoch": 3,
+  "submission": "accepted",
+  "completion": "not_yet_verified",
+  "accelerator_requested": "NvidiaTeslaT4",
+  "source_sha256": "e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87"
+}

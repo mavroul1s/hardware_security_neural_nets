@@ -125,3 +125,21 @@ setup/inspection/checkpoint I/O. Το CNN έχει 197.424 parameters. Τα mani
 - Τελικοί τοπικοί έλεγχοι: **22 passed, 14 warnings σε 9,64s**. Περιλαμβάνουν flat, packed,
   duplicate και results layouts, preservation υπάρχοντος checkpoint και missing-code diagnostics.
 - Δεν εκτελέστηκε η διόρθωση στο Kaggle ούτε προστέθηκε νέο training.
+
+## Εκτέλεση μέσω Kaggle API — 2026-10-03
+
+Με ρητή εξουσιοδότηση χρήστη χρησιμοποιήθηκε το τοπικό `api_key/kaggle.json`.
+Ο φάκελος credential και το ξεχωριστό `.venv-kaggle/` εξαιρούνται από Git/Inputs.
+Το επίσημο Kaggle CLI 2.2.4 εγκαταστάθηκε μόνο στο περιβάλλον διαχείρισης.
+
+- Εντοπίστηκε και διατηρήθηκε το υπάρχον ιδιωτικό notebook `con1los/hw-sec-exp2`.
+- Δημιουργήθηκε ιδιωτικό Input `con1los/hardware-sca-resume`, με ASCAD, ίδιο κώδικα
+  και verified checkpoint των 3 epochs. Κανένα credential δεν περιλαμβάνεται στο Input.
+- Το Kaggle αποσυμπιέζει αναδρομικά και τα εσωτερικά ZIP. Η πρώτη cell υποστηρίζει
+  πλέον και extracted checkpoint folders, απορρίπτει conflicting checkpoints και
+  προστατεύει υπάρχον advanced checkpoint. Το training source hash παραμένει ίδιο.
+- Τοπικοί έλεγχοι μετά τη διόρθωση: 24 passed, 14 warnings σε 8,42s.
+- Υποβλήθηκε version 3 του ίδιου notebook, `STAGE="baseline"`, target50 epochs,
+  GPU T4 και το προηγούμενο Docker image. Το API επιβεβαίωσε RUNNING· η ολοκλήρωση
+  και η ακριβής συνέχεια από epoch3 δεν έχουν ακόμη επαληθευθεί από τα outputs.
+- Submission record: `outputs/kaggle_execution_status.json`.
