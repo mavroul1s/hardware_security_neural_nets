@@ -304,3 +304,36 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
 - Fresh start μόνο για το εγκεκριμένο νέο baseline, χωρίς μεταφορά παλιών weights.
   Ετοιμάζεται νέο Input/code packet στο ίδιο private dataset/notebook. Καμία νέα
   Kaggle εκτέλεση δεν έχει υποβληθεί ακόμη.
+
+- Υποβλήθηκε η εγκεκριμένη εκτέλεση στο ίδιο private `con1los/hw-sec-exp2`, version7,
+  TeslaT4/original Docker, timeout3600s. Input `hardware-sca-resume` version5 ready.
+  Πακέτο41 source/test/doc files,44 συνολικά recursive members, credential scan clean.
+  Fresh bootstrap/code/data checks πέρασαν. Αναμονή αποτελεσμάτων και έλεγχος gate·
+  δεν δηλώνεται ολοκλήρωση training πριν κατέβουν και ελεγχθούν τα artifacts.
+
+## Αποτέλεσμα literature baseline — version7 COMPLETE
+
+- 50epochs/3.950steps,16.952parameters, ίδιοdata/split/environment. Best epoch4,
+  clean validation CE5,560782 / GE114,25 / SR0/20. Matched GE68,25 και OOD57,05,
+  επίσηςSR0/20. Epoch50 train CE5,265615 /2,26%, val CE5,814250 /0,44%.
+- Το gate18/20 απέτυχε. Combined παραλείφθηκε, χωρίς άλλο GPU training ή HPO.
+  Σύνολο3 πλήρη GPU trainings,1 notebook. Final attack δεν αξιολογήθηκε.
+- 33 Kaggle tests passed σε8,10s. Archive CRC22files,9 ανεξάρτητα downloaded files
+  byte-identical. MinMax refit μόνο σεtraining rows exact, best/last CPU forward CE
+  συμφωνεί εντός1e-7. GE/SR ranks20×2.000 επανυπολογίστηκαν.
+- Training14,854s, validation3,423s, training call25,912s, log έως300,285s μεsetup.
+  Archive SHA `52f71851f5c3584ba7af26d23296b07a7cb15355dfc771b39cb878267aba384c`.
+- Αναφορά `outputs/kaggle_literature_v7_2026-10-03/REPORT_EL.md`.
+  Επόμενο βήμα: διατήρηση ολοκληρωμένουcheckpoint/required restore χωρίς νέαGPU,
+  και κατόπιν CPU diagnosis πριν από οποιαδήποτε νέα ερευνητική πρόταση.
+
+- Ολοκληρώθηκε η διατήρηση χωρίς νέο training: private Input version6 ready,
+  ολοκληρωμένο literature epoch50 checkpoint. Fully extracted bootstrap/repeated
+  restore verified με αμετάβλητα checkpoint bytes, `require_checkpoint=True`.
+- Private notebook version8 QUICK_SAVE: κανένα νέο GPU session. Pulled notebook
+  όλα τα cell sources/ID136887556/private flag/Input verified. Remote Input history
+  κατέβηκε και συμφωνεί byte-for-byte με τις50 epochs/3.950steps.
+- Τεκμήρια: `outputs/literature_artifact_verification.json`,
+  `outputs/kaggle_literature_execution_status.json`, `outputs/kaggle_quick_save_literature.json`.
+  Το τρέχον GPU scope σταμάτησε μετά το failed gate. Επόμενο: CPU διάγνωση της
+  ανεπαρκούς γενίκευσης πριν από νέα πρόταση. Δεν έχει εγκριθεί τέταρτο baseline.

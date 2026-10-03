@@ -1,0 +1,169 @@
+{
+  "kernel_ref": "con1los/hw-sec-exp2",
+  "executed_kernel_version": 7,
+  "status": "COMPLETE",
+  "training_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "archive_sha256": "52f71851f5c3584ba7af26d23296b07a7cb15355dfc771b39cb878267aba384c",
+  "archive_path": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\runs\\kaggle_control\\literature_v7_output\\sca_runs_minimal_v3_literature.zip",
+  "archive_crc_verified": true,
+  "archive_verified_members": 22,
+  "independently_downloaded_files_match_archive": 9,
+  "normalizer_training_fit_verified": true,
+  "best_last_cpu_forward_verified": true,
+  "baseline_gate": {
+    "criterion": {
+      "condition": "clean",
+      "budget": 2000,
+      "repetitions": 20,
+      "min_clean_sr": 0.9
+    },
+    "eligible": true,
+    "passed": false,
+    "observed_clean_sr": 0.0,
+    "completed_epochs": 50,
+    "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+    "selection_rule": "minimum clean validation cross-entropy checkpoint"
+  },
+  "strategies_completed": [
+    "none"
+  ],
+  "current_unique_trainings": 1,
+  "full_gpu_trainings_completed_total": 3,
+  "maximum_total_gpu_trainings": 4,
+  "final_attack_evaluation_performed": false,
+  "training_results": {
+    "none": {
+      "best_epoch": 4,
+      "best_validation_loss": 5.5607820266723635,
+      "last_epoch": {
+        "epoch": 50,
+        "steps": 3950,
+        "train_loss": 5.265615475463867,
+        "train_accuracy": 0.0226,
+        "validation_loss": 5.814249849700928,
+        "validation_accuracy": 0.0044,
+        "train_seconds": 0.29015260899996065,
+        "validation_seconds": 0.06718170800002099
+      },
+      "summary": {
+        "epochs": 50,
+        "optimization_steps": 3950,
+        "train_seconds": 14.85448502999975,
+        "validation_seconds": 3.4228804469998977,
+        "best_validation_loss": 5.5607820266723635,
+        "parameters": 16952,
+        "best_checkpoint_bytes": 249271,
+        "synthetic": false,
+        "device": "cuda",
+        "timing_scope": "epoch loops, including augmentation/transfers; excludes setup, inspection and checkpoint I/O"
+      },
+      "checkpoint_checks": {
+        "best.pt": {
+          "sha256": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+          "epoch": 4,
+          "cpu_validation_loss": 5.560781929016113,
+          "cpu_validation_accuracy": 0.0044,
+          "saved_validation_loss": 5.5607820266723635
+        },
+        "last.pt": {
+          "sha256": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284",
+          "epoch": 50,
+          "cpu_validation_loss": 5.814249825286865,
+          "cpu_validation_accuracy": 0.0044,
+          "saved_validation_loss": 5.814249849700928
+        }
+      },
+      "training_call_seconds": 25.91209800699994,
+      "validation_results": [
+        {
+          "budget": 2000,
+          "attack_pool_size": 5000,
+          "repetitions": 20,
+          "attack_order_seed": 8001,
+          "rank_convention": "zero_based_conservative_ties",
+          "ge_at_budget": 114.25,
+          "sr_at_budget": 0.0,
+          "success_threshold": 0.9,
+          "traces_to_sustained_success": null,
+          "recovery_censored": true,
+          "criterion": "SR >= threshold at every remaining trace count through budget",
+          "condition": "clean",
+          "corruption": {
+            "name": "clean",
+            "noise_std": 0.0,
+            "max_shift": 0,
+            "padding": "zero"
+          },
+          "prediction_seconds": 0.025888821999956235,
+          "ranking_seconds": 0.19234019599991825,
+          "synthetic": false,
+          "split": "validation"
+        },
+        {
+          "budget": 2000,
+          "attack_pool_size": 5000,
+          "repetitions": 20,
+          "attack_order_seed": 8001,
+          "rank_convention": "zero_based_conservative_ties",
+          "ge_at_budget": 68.25,
+          "sr_at_budget": 0.0,
+          "success_threshold": 0.9,
+          "traces_to_sustained_success": null,
+          "recovery_censored": true,
+          "criterion": "SR >= threshold at every remaining trace count through budget",
+          "condition": "combined_matched",
+          "corruption": {
+            "name": "combined_matched",
+            "noise_std": 0.1,
+            "max_shift": 5,
+            "padding": "zero"
+          },
+          "prediction_seconds": 0.06348830799993266,
+          "ranking_seconds": 0.20525693899992348,
+          "synthetic": false,
+          "split": "validation"
+        },
+        {
+          "budget": 2000,
+          "attack_pool_size": 5000,
+          "repetitions": 20,
+          "attack_order_seed": 8001,
+          "rank_convention": "zero_based_conservative_ties",
+          "ge_at_budget": 57.05,
+          "sr_at_budget": 0.0,
+          "success_threshold": 0.9,
+          "traces_to_sustained_success": null,
+          "recovery_censored": true,
+          "criterion": "SR >= threshold at every remaining trace count through budget",
+          "condition": "combined_both_ood",
+          "corruption": {
+            "name": "combined_both_ood",
+            "noise_std": 0.2,
+            "max_shift": 10,
+            "padding": "zero"
+          },
+          "prediction_seconds": 0.06330673299999034,
+          "ranking_seconds": 0.18389528499994867,
+          "synthetic": false,
+          "split": "validation"
+        }
+      ],
+      "environment": {
+        "python": "3.13.15",
+        "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+        "processor": "x86_64",
+        "logical_cpu_count": 4,
+        "versions": {
+          "torch": "2.8.0+cu126",
+          "numpy": "2.2.6",
+          "h5py": "3.14.0",
+          "matplotlib": "3.10.5"
+        },
+        "device": "cuda",
+        "device_name": "Tesla T4",
+        "cuda_runtime": "12.6",
+        "torch_threads": 2
+      }
+    }
+  }
+}

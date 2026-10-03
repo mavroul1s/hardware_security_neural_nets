@@ -1,0 +1,33 @@
+{
+  "run_tag": "minimal_v3_literature",
+  "notebook_count": 1,
+  "default_stage": "compare",
+  "require_checkpoint": true,
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "bundle_files": 41,
+  "packet_sha256": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+  "packet_bytes": 25757923,
+  "packet_members": [
+    "kaggle_project.zip",
+    "ASCAD.h5",
+    "ASCAD.provenance.json",
+    "sca_runs_minimal_v3_literature.zip"
+  ],
+  "restored_checkpoint_epochs": {
+    "none": 50
+  },
+  "fully_extracted_bootstrap_verified": true,
+  "checkpoint_unchanged_after_repeated_bootstrap": true,
+  "archive_sha256": "52f71851f5c3584ba7af26d23296b07a7cb15355dfc771b39cb878267aba384c",
+  "training_started_during_preservation": false,
+  "kernel_ref": "con1los/hw-sec-exp2",
+  "executed_kernel_version": 7,
+  "full_gpu_trainings_completed_total": 3,
+  "remote_preservation_verified": true,
+  "saved_kernel_version": 8,
+  "saved_execution_type": "QUICK_SAVE",
+  "saved_notebook_source_verified": true,
+  "remote_epoch50_input_verified": true,
+  "resume_dataset_version": 6,
+  "is_private": true
+}

@@ -1,0 +1,6 @@
+{
+  "stage": "compare",
+  "training_call_seconds": 25.91209800699994,
+  "requested_epochs": 50,
+  "resume_or_reuse": false
+}

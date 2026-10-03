@@ -67,8 +67,9 @@ dense10×2, logits256,16.952 parameters. Initial σ=0,1, s=5 σε MinMax μον�
 Adam lr=0,001, batch128, 50 epochs, χωρίς early stopping. Ίδια initial model seed0 και
 ανεξάρτητος common shuffle generator `seed+10000`. 10.000 traces: 79 steps/epoch,
 3.950/run. Τα δύο τρέχοντα trainings έχουν έως7.900steps.
-Το none ξεκινά με 3 epochs ως benchmark και συνεχίζει άλλες 47 στο ίδιο checkpoint.
-Η επαναχρησιμοποίηση του benchmark δεν προσθέτει epochs ή πέμπτο μοντέλο.
+Το default compare εκτελεί το none σε50epochs και χρησιμοποιεί τις πρώτες3 για
+cost reference. Το προαιρετικό benchmark stage εκτελεί3 και συνεχίζει άλλες47 στο
+ίδιο checkpoint. Και στις δύο περιπτώσεις το σύνολο παραμένει50epochs.
 
 Μετράμε training-loop wall time μετά από CUDA synchronize, μαζί με augmentation και transfers.
 Validation time χωριστά. Setup, HDF5 inspection και checkpoint I/O δεν περιλαμβάνονται σε αυτόν
@@ -76,7 +77,7 @@ Validation time χωριστά. Setup, HDF5 inspection και checkpoint I/O δ�
 Ίδιο πλήθος steps δεν εγγυάται ίδιο wall time· αποφεύγουμε ισχυρισμό «ίδιο συνολικό compute».
 Κόστος HPO και exploratory pilots αναφέρεται χωριστά. Η πρώτη εκτίμηση χρησιμοποιεί τις
 3 αρχικές none epochs στην ίδια GPU. Το overhead των άλλων augmentations είναι ακόμη
-άγνωστο· αναφέρουμε πρόβλεψη αναφοράς με margin, όχι μετρημένο ίδιο κόστος τεσσάρων στρατηγικών.
+άγνωστο πριν εκτελεστεί· αναφέρουμε πρόβλεψη αναφοράς με margin και πραγματικό κόστος κάθε run.
 Τα πραγματικά κόστη όλων των runs καταγράφονται στο `study_summary.json`.
 
 Αν χρειαστεί tuning, αλλάζουμε μόνο βάσει validation και κρατάμε log κάθε δοκιμής.

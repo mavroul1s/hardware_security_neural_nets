@@ -1,0 +1,74 @@
+[
+  {
+    "budget": 2000,
+    "attack_pool_size": 5000,
+    "repetitions": 20,
+    "attack_order_seed": 8001,
+    "rank_convention": "zero_based_conservative_ties",
+    "ge_at_budget": 114.25,
+    "sr_at_budget": 0.0,
+    "success_threshold": 0.9,
+    "traces_to_sustained_success": null,
+    "recovery_censored": true,
+    "criterion": "SR >= threshold at every remaining trace count through budget",
+    "condition": "clean",
+    "corruption": {
+      "name": "clean",
+      "noise_std": 0.0,
+      "max_shift": 0,
+      "padding": "zero"
+    },
+    "prediction_seconds": 0.025888821999956235,
+    "ranking_seconds": 0.19234019599991825,
+    "synthetic": false,
+    "split": "validation"
+  },
+  {
+    "budget": 2000,
+    "attack_pool_size": 5000,
+    "repetitions": 20,
+    "attack_order_seed": 8001,
+    "rank_convention": "zero_based_conservative_ties",
+    "ge_at_budget": 68.25,
+    "sr_at_budget": 0.0,
+    "success_threshold": 0.9,
+    "traces_to_sustained_success": null,
+    "recovery_censored": true,
+    "criterion": "SR >= threshold at every remaining trace count through budget",
+    "condition": "combined_matched",
+    "corruption": {
+      "name": "combined_matched",
+      "noise_std": 0.1,
+      "max_shift": 5,
+      "padding": "zero"
+    },
+    "prediction_seconds": 0.06348830799993266,
+    "ranking_seconds": 0.20525693899992348,
+    "synthetic": false,
+    "split": "validation"
+  },
+  {
+    "budget": 2000,
+    "attack_pool_size": 5000,
+    "repetitions": 20,
+    "attack_order_seed": 8001,
+    "rank_convention": "zero_based_conservative_ties",
+    "ge_at_budget": 57.05,
+    "sr_at_budget": 0.0,
+    "success_threshold": 0.9,
+    "traces_to_sustained_success": null,
+    "recovery_censored": true,
+    "criterion": "SR >= threshold at every remaining trace count through budget",
+    "condition": "combined_both_ood",
+    "corruption": {
+      "name": "combined_both_ood",
+      "noise_std": 0.2,
+      "max_shift": 10,
+      "padding": "zero"
+    },
+    "prediction_seconds": 0.06330673299999034,
+    "ranking_seconds": 0.18389528499994867,
+    "synthetic": false,
+    "split": "validation"
+  }
+]

@@ -89,11 +89,11 @@ SR@2.000≥0,90 (18/20), με το minimum-CE checkpoint. Διαφορετικά
 Ιστορικό: το αρχικό ReLU baseline ολοκληρώθηκε στο ίδιο `con1los/hw-sec-exp2`, version3:
 συνέχεια epoch3→50, ίδιο περιβάλλον/splits/source. Clean validation SR@2.000=0/20·
 best checkpoint epoch2. Η [αναφορά baseline](outputs/kaggle_baseline_v3_2026-10-03/REPORT_EL.md)
-περιέχει ελεγμένες καμπύλες και περιορισμούς. Διάγνωση πριν τις άλλες3 στρατηγικές.
+περιέχει ελεγμένες καμπύλες και περιορισμούς.
 Ο χρήστης ενέκρινε ένα διορθωτικό baseline με LeakyReLU0,1 μετά τη διάγνωση inactive units.
 Η προηγούμενη έκδοση χρησιμοποίησε `model="cnn_leaky"`, `RUN_TAG="minimal_v2_leaky"`, ίδιο
-seed/split/budget/optimizer. Το παλιό ReLU run διατηρείται. Το σύνολο μπορεί να φτάσει5
-trainings αν ολοκληρωθούν οι4 διορθωμένες στρατηγικές. Η version5 ολοκλήρωσε το διορθωμένο
+seed/split/budget/optimizer. Το παλιό ReLU run διατηρείται. Το τότε πλάνο έως5
+trainings αντικαταστάθηκε πριν γίνουν οι augmentations. Η version5 ολοκλήρωσε το διορθωμένο
 baseline από epoch0→50. Best epoch1 / CE5,547114, clean validation GE89,25 / SR0/20.
 Στην epoch50 train CE5,267826, validation CE5,809435: η γενίκευση παραμένει ανεπαρκής.
 Η [αναφορά διορθωτικού baseline](outputs/kaggle_leaky_v5_2026-10-03/REPORT_EL.md)
@@ -105,6 +105,11 @@ mask/share leakage και training-selected centered products που διατη�
 CNN prototype16.952 parameters. Ο χρήστης ενέκρινε την ενσωμάτωσή του και το μειωμένο
 πλάνο baseline/combined. Η έκδοση δεν αποτελεί ακριβή αναπαραγωγή της δημοσίευσης.
 Το ενεργό Input packet είναι `outputs/kaggle_resume_input_literature.zip`.
+Η version7 ολοκλήρωσε το νέο baseline: best epoch4, clean validation CE5,560782,
+GE114,25 και SR0/20. Το gate18/20 απέτυχε, επομένως combined δεν εκπαιδεύτηκε.
+Έγιναν3 πλήρη GPU trainings συνολικά στο ίδιο notebook. Η
+[νέα αναφορά](outputs/kaggle_literature_v7_2026-10-03/REPORT_EL.md) περιέχει τους
+ελέγχους, το κόστος και τους περιορισμούς. Καμία νέαGPU εκτέλεση δεν ξεκινά αυτόματα.
 Το fresh-start opt-in αφορά μόνο το εγκεκριμένο νέο baseline· μετά την ολοκλήρωση
 το packet διατηρεί το νέο checkpoint και η πρώτη cell απαιτεί restore.
 Τα `kaggle_resume_input_leaky.zip` και `kaggle_resume_input.zip` διατηρούν τα παλιά

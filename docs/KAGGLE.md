@@ -21,13 +21,18 @@ hyperparameter search, ούτε single noise/shift training. Final attack παρ
 Το προσωπικό GPU quota παραμένει άγνωστο· τα loop seconds δεν είναι session cost.
 Το αρχικό Docker image/Tesla T4/Torch2.8.0+cu126/CUDA12.6 διατηρούνται.
 
+Η version7 ολοκληρώθηκε: baseline50epochs, clean SR0/20, gate failed, combined skipped.
+Σύνολο3 πλήρη trainings. Η version8 είναι QUICK_SAVE με required checkpoint,
+χωρίς νέαGPU εκτέλεση. Το private Input version6 περιέχει το ολοκληρωμένο run·
+remote history και notebook sources επαληθεύτηκαν. Η συνέχεια είναι CPU diagnosis.
+
 ## Πακέτο και checkpoints
 
 Ενεργό Input: outputs/kaggle_resume_input_literature.zip.
 Περιέχει whitelisted kaggle_project.zip, official ASCAD.h5 και provenance.
-Για την εγκεκριμένη πρώτη εκτέλεση δεν περιέχει παλιό checkpoint και επιτρέπεται
-ρητά fresh start. Μετά την ολοκλήρωση προστίθεται sca_runs_minimal_v3_literature.zip
-και επανέρχεται require_checkpoint=True. Κάθε νέος session επαναφέρει αυτό το archive.
+Στην εγκεκριμένη πρώτη εκτέλεση δεν περιείχε παλιό checkpoint και επιτράπηκε
+ρητά fresh start. Τώρα περιλαμβάνει sca_runs_minimal_v3_literature.zip και
+require_checkpoint=True. Κάθε νέος session επαναφέρει το ολοκληρωμένο archive.
 Η first cell υποστηρίζει και τα recursively extracted Kaggle ZIP layouts.
 
 Ολοκληρωμένα none/combined checkpoints και οι ίδιες evaluations επαναχρησιμοποιούνται,

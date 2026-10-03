@@ -1,0 +1,12 @@
+{
+  "destination": "con1los/hardware-sca-resume",
+  "is_private": true,
+  "existing_dataset_version": 5,
+  "payload_path": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\runs\\kaggle_control\\literature_input\\kaggle_resume_input_literature.zip",
+  "payload_files_inspected_recursively": 89,
+  "no_credential_value_or_credential_paths_present": true,
+  "payload_scope": "Same project source/notebook, official public ASCAD.h5/provenance; own completed checkpoints when preserving",
+  "authorization": "User authorized Kaggle API execution and continued the proposed literature baseline plus validation-gated combined (maximum four total trainings)",
+  "privacy_change_requested": false,
+  "destination_already_exists": true
+}

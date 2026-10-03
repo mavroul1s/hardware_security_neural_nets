@@ -1,0 +1,14 @@
+{
+  "criterion": {
+    "condition": "clean",
+    "budget": 2000,
+    "repetitions": 20,
+    "min_clean_sr": 0.9
+  },
+  "eligible": true,
+  "passed": false,
+  "observed_clean_sr": 0.0,
+  "completed_epochs": 50,
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "selection_rule": "minimum clean validation cross-entropy checkpoint"
+}

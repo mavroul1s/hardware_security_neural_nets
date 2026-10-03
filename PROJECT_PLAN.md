@@ -4,19 +4,20 @@
 χωρίς ακόμη συγκεκριμένη ημερομηνία ή κριτήρια μαθήματος. Έχει ήδη πρόσβαση Kaggle GPU.
 Δεν μετατρέπουμε αυθαίρετα το εξάμηνο σε δεσμευτική ημερομηνία παράδοσης.
 Ο χρήστης ζήτησε ελαχιστοποίηση Kaggle εκπαιδεύσεων και notebooks. Το προηγούμενο
-πλάνο 46 trainings αντικαταστάθηκε: **ένα notebook, τέσσερις CNN στρατηγικές**.
-Μετά το αποτυχημένο baseline και τη διάγνωση inactive ReLU units, ο χρήστης ενέκρινε
-μία διορθωτική εκπαίδευση με LeakyReLU0,1, ίδιο10k/5k/seed0/50epochs/LR0,001.
-Το original failure διατηρείται· έως5 trainings συνολικά με4 διορθωμένες στρατηγικές,
-στο ίδιο notebook. Validation gate πριν τις άλλες3, χωρίς αυτόματο hyperparameter search.
-Έχουν ολοκληρωθεί δύο baseline trainings. Το διορθωμένο baseline επίσης έχει SR0/20
-στο clean validation· οι άλλες3 στρατηγικές παραμένουν σε αναμονή για διάγνωση.
+πλάνο46 trainings και το μεταγενέστερο τεσσάρων στρατηγικών αντικαταστάθηκαν:
+**ένα notebook, νέο baseline και conditional combined, έως4 trainings συνολικά**.
+Έχουν ολοκληρωθεί δύο αποτυχημένα baseline trainings, ReLU και LeakyReLU0,1,
+με ίδιο10k/5k/seed0/50epochs/LR0,001. Και τα δύο είχαν clean validation SR0/20.
+Διατηρούμε τα αρνητικά αποτελέσματα. Δεν εκτελούμε single noise/shift ή αυτόματο HPO.
 Η read-only masking διάγνωση βρήκε δεύτερης τάξης leakage που διατηρείται στο
 validation. Προετοιμάστηκε untrained literature-inspired CNN16.952 parameters.
 Ο χρήστης ενέκρινε τον περιορισμό σε νέο baseline και conditional combined (έως4 trainings
 μαζί με τα δύο failures). Οι single noise/shift εκπαιδεύσεις καταργούνται.
 Ενεργό μοντέλο `cnn_literature` /16.952 parameters, train-only per-position MinMax.
 Gate πριν το combined: clean validation SR@2.000≥0,90, δηλαδή18/20 permutations.
+Αποτέλεσμα version7: baselineSR0/20, gate failed, combined skipped. Σύνολο3 πλήρη
+GPU trainings. Το M3 robustness comparison δεν ολοκληρώθηκε· δεν τεκμηριώνεται
+όφελος ή βλάβη του training augmentation. ΝέαGPU πρόταση μόνο μετά από διάγνωση.
 
 ## Προσωρινό ερευνητικό ερώτημα
 
