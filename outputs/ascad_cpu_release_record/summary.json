@@ -1,0 +1,12 @@
+{
+  "epochs": 3,
+  "optimization_steps": 48,
+  "train_seconds": 1.6401410005055368,
+  "validation_seconds": 0.15791750000789762,
+  "best_validation_loss": 5.543384552001953,
+  "parameters": 197424,
+  "best_checkpoint_bytes": 2397765,
+  "synthetic": false,
+  "device": "cpu",
+  "timing_scope": "epoch loops, including augmentation/transfers; excludes setup, inspection and checkpoint I/O"
+}

@@ -95,10 +95,11 @@ def plot_results(output, results, synthetic):
     axes[1].set_ylabel("Success rate")
     axes[1].set_ylim(-0.02, 1.02)
     for axis in axes:
-        axis.set_xlabel("Attack traces")
+        axis.set_xlabel("Evaluation traces")
         axis.grid(alpha=0.25)
         axis.legend(fontsize=8)
-    fig.suptitle("SYNTHETIC correctness check" if synthetic else "ASCAD fixed-key: measured traces, synthetic test corruption")
+    split_label = "profiling validation (diagnostic)" if results[0]["split"] == "validation" else "attack set"
+    fig.suptitle("SYNTHETIC correctness check" if synthetic else f"ASCAD fixed-key: {split_label}")
     fig.tight_layout()
     fig.savefig(output / "key_recovery.png", dpi=180)
     plt.close(fig)
