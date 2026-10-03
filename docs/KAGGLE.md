@@ -1,89 +1,61 @@
-# Εκτέλεση στο Kaggle
+# Kaggle: ενεργή μελέτη baseline/combined
 
-Χρησιμοποιούμε ένα notebook: [con1los/hw-sec-exp2](https://www.kaggle.com/code/con1los/hw-sec-exp2).
-Ο χρήστης εξουσιοδότησε εκτέλεση μέσω του τοπικού Kaggle API key.
-Το credential και το χωριστό `.venv-kaggle/` δεν ανεβαίνουν στα Inputs.
+Ένα ιδιωτικό notebook: https://www.kaggle.com/code/con1los/hw-sec-exp2.
+Ένα ιδιωτικό Input: con1los/hardware-sca-resume.
+Ο χρήστης εξουσιοδότησε API εκτέλεση και ενέκρινε νέα baseline/combined μελέτη.
+Credentials και .venv-kaggle δεν ανεβαίνουν στα Inputs.
 
-## Τρέχουσα κατάσταση — 2026-10-03
+## Τρέχουσα έκδοση
 
-- Version3: αρχικό ReLU baseline, συνέχεια των benchmark epochs3→50, COMPLETE.
-- Version5: εγκεκριμένο διορθωτικό LeakyReLU0,1 baseline από epoch0→50, COMPLETE.
-- Δύο πλήρη GPU trainings συνολικά. Το μοναδικό notebook διατηρήθηκε.
-- Το δεύτερο baseline έχει best epoch1, clean GE@2.000=89,25 και SR0/20.
-  Και οι τρεις validation συνθήκες έχουν SR0/20. Η γενίκευση παραμένει ανεπαρκής.
-- Οι noise/shift/combined εκπαιδεύσεις μένουν σε αναμονή για διάγνωση baseline.
-  Το final attack set δεν αξιολογήθηκε. Protocol freeze παραμένει false.
+RUN_TAG="minimal_v3_literature", STAGE="compare", model="cnn_literature".
+16.952 parameters, train-only per-position MinMax,10k/5k,seed0,50epochs,batch128,
+Adam LR0,001. Πρόκειται για προσαρμογή της reviewed μικρής αρχιτεκτονικής, όχι
+ακριβή αναπαραγωγή των δημοσιευμένων45k/OneCycle/batch50 αποτελεσμάτων.
 
-Αναφορές: [διορθωμένο baseline](../outputs/kaggle_leaky_v5_2026-10-03/REPORT_EL.md),
-[αρχικό baseline](../outputs/kaggle_baseline_v3_2026-10-03/REPORT_EL.md),
-[πρώτη διάγνωση](../outputs/baseline_diagnosis_2026-10-03/REPORT_EL.md).
-Η αποθηκευμένη έκδοση με QUICK_SAVE διατηρεί source/Inputs χωρίς νέα εκτέλεση GPU.
-Η πραγματική εκτέλεση του διορθωμένου μοντέλου είναι η version5.
-Η αποθηκευμένη έκδοση είναι η version6· το Input με το completed checkpoint είναι
-η version4. Remote history και notebook cell sources επαληθεύτηκαν.
+Το ίδιο Kaggle session εκπαιδεύει none50 και αξιολογεί το minimum-CE checkpoint.
+Combined ξεκινά μόνο με clean validation SR@2000≥0,90 (18/20 permutations).
+Αλλιώς παραλείπεται και εξάγεται το αρνητικό αποτέλεσμα. Δεν υπάρχει αυτόματο
+hyperparameter search, ούτε single noise/shift training. Final attack παραμένει locked.
 
-## Ενεργό πακέτο για νέο session
+Έως4 full GPU trainings συνολικά μαζί με τα δύο διατηρημένα ReLU/Leaky failures.
+Το προσωπικό GPU quota παραμένει άγνωστο· τα loop seconds δεν είναι session cost.
+Το αρχικό Docker image/Tesla T4/Torch2.8.0+cu126/CUDA12.6 διατηρούνται.
 
-Το `outputs/kaggle_resume_input_leaky.zip` περιέχει μόνο:
+## Πακέτο και checkpoints
 
-1. `kaggle_project.zip`: whitelisted κώδικας, configs, notebook, tests και τεκμηρίωση.
-2. `ASCAD.h5`: επίσημο synchronized fixed-key700, verified checksum.
-3. `ASCAD.provenance.json`: προέλευση και schema.
-4. `sca_runs_minimal_v2_leaky.zip`: completed epoch50 checkpoint, history και validation.
+Ενεργό Input: outputs/kaggle_resume_input_literature.zip.
+Περιέχει whitelisted kaggle_project.zip, official ASCAD.h5 και provenance.
+Για την εγκεκριμένη πρώτη εκτέλεση δεν περιέχει παλιό checkpoint και επιτρέπεται
+ρητά fresh start. Μετά την ολοκλήρωση προστίθεται sca_runs_minimal_v3_literature.zip
+και επανέρχεται require_checkpoint=True. Κάθε νέος session επαναφέρει αυτό το archive.
+Η first cell υποστηρίζει και τα recursively extracted Kaggle ZIP layouts.
 
-Το ιδιωτικό Input επαναχρησιμοποιείται: `con1los/hardware-sca-resume`.
-Η ενεργή πρώτη cell απαιτεί checkpoint· δεν επιτρέπεται αυτόματο fresh start.
-Το αρχικό fresh-start opt-in χρησιμοποιήθηκε αποκλειστικά στην εγκεκριμένη version5.
-Το παλιό `outputs/kaggle_resume_input.zip` αφορά το ReLU run με διαφορετικό source hash.
-Μην το συνδυάζεις με την ενεργή LeakyReLU έκδοση.
+Ολοκληρωμένα none/combined checkpoints και οι ίδιες evaluations επαναχρησιμοποιούνται,
+με config/data/source/environment fingerprints. Missing/conflicting checkpoint Input
+ή αλλαγή source/runtime σταματούν τη συνέχεια. Δεν αλλάζουμε το pinned source κατά τα runs.
+Το outputs/kaggle_first_cell.py αντιστοιχεί στην ενεργή first cell.
 
-Σε νέο session κράτα `RUN_TAG="minimal_v2_leaky"`, `STAGE="baseline"`,
-`RESTORE_ARCHIVE=None`. Η πρώτη cell πρέπει να εμφανίσει `Completed epoch: 50`.
-Ο runner επαναχρησιμοποιεί το ολοκληρωμένο baseline και δεν ξανακάνει optimization steps.
-Η πρώτη cell διατίθεται και στο `outputs/kaggle_first_cell.py`.
+Τα παλιά packets kaggle_resume_input.zip και kaggle_resume_input_leaky.zip είναι
+ιστορικά snapshots και δεν ταιριάζουν με το νέο source. Μην τα προσθέτεις μαζί.
+Version3: ReLU epoch3→50. Version5: Leaky epoch0→50. Version6: QUICK_SAVE του Leaky,
+χωρίς GPU εκτέλεση. Οι δύο ιστορικές εκπαιδεύσεις διατηρήθηκαν τοπικά και σε παλιές
+private Input versions. Η νέα εκτέλεση καταγράφεται χωριστά στο execution status.
 
-Το Kaggle αποσυμπιέζει αναδρομικά και τα εσωτερικά ZIP. Η bootstrap υποστηρίζει
-packed και extracted layouts, deduplicates identical code/data και απορρίπτει
-conflicting checkpoint Inputs. Διατηρεί ήδη υπάρχον advanced checkpoint.
-Missing code/checkpoint ή διαφορετικό source/data/runtime σταματούν την εκτέλεση.
+## Στάδια και περιορισμοί
 
-## Στάδια στο ίδιο notebook
+benchmark:3 πρώτες epochs του none, μέρος των50. baseline:none50 μόνο.
+compare:none50 και conditional combined. attack:μόνο evaluation μετά από πλήρη
+δύο νέα runs, review/freeze και PROTOCOL_FROZEN=True. Δεν ενεργοποιείται τώρα.
 
-`benchmark`: οι πρώτες3 epochs του baseline, μέρος των50, χωρίς ξεχωριστό μοντέλο.
-`baseline`: ολοκλήρωση/επαναχρησιμοποίηση του baseline, validation και review.
-`compare`: οι άλλες3 στρατηγικές, μόνο αφού περάσει το baseline review.
-`attack`: μόνο αξιολόγηση μετά την ολοκλήρωση των4 στρατηγικών και protocol freeze.
-Το `PROTOCOL_FROZEN=True` πρέπει να συμφωνεί με το αποθηκευμένο freeze αρχείο.
+Noise/shift εφαρμόζονται μετά το per-position MinMax. Πρόκειται για συγκεκριμένες
+feature-space corruptions, όχι ισοδύναμη προσομοίωση raw physical jitter/noise.
+Το zero padding αντιστοιχεί σε training minimum ανά output θέση.
+Το ενεργό πλάνο εκτιμά none-versus-combined, χωρίς single-strategy attribution.
 
-Η διορθωμένη μελέτη προβλέπει4×50epochs / 15.800steps, seed0 / training10k / validation5k.
-Μαζί με το διατηρημένο αρχικό failure, το εγκεκριμένο όριο μπορεί να φτάσει5 trainings.
-Αυτό δεν αποτελεί εντολή για πρόσθετα runs τώρα. Ένα seed επιτρέπει περιγραφική
-σύγκριση και δεν εκτιμά variability μεταξύ ανεξάρτητων trainings.
-Οι permutations και οι condition evaluations δεν αποτελούν νέα trainings.
-
-## Περιβάλλον, χρόνος και αποθήκευση
-
-Κρατάμε το αρχικό Docker image, Tesla T4, Torch2.8.0+cu126/CUDA12.6 και τις pinned
-dependencies για ακριβή reuse. Το notebook αποθηκεύει environment και pip freeze.
-Το pipeline χρησιμοποιεί μία GPU. Η εγκατάσταση εξαρτήσεων μπορεί να διαρκεί
-πολύ περισσότερο από τις training loops, όπως συνέβη στα δύο baselines.
-
-Το προσωπικό quota δεν επαληθεύτηκε. Το `account_budget.json` καταγράφει unknown
-πεδία και δεν τα μετατρέπει σε εκτιμήσεις. Έλεγξε το quota από τις ρυθμίσεις Kaggle
-πριν από νέα εγκεκριμένη εκτέλεση. Μην εξισώνεις loop seconds με χρέωση/κατανάλωση session.
-
-Μετά από κάθε εκτέλεση διατηρούμε output archive τοπικά και ως private Input,
-μαζί με config, manifest, splits, normalizer, RNG/optimizer και best/last checkpoints.
-Ένα νέο `/kaggle/working` δεν θεωρείται ότι έχει τα παλιά αρχεία.
-Ο runner ελέγχει fingerprints πριν από resume/reuse και οι evaluations έχουν
-cache με checkpoint/data/code/environment/config fingerprints.
-
-Μην εκτελείς `scripts/prepare_kaggle.py`: ο παλιός generator θα αντικαθιστούσε
-τη διορθωμένη notebook cell. Δεν αλλάζουμε `src/`, `scripts/`, `configs/` ή
-`pyproject.toml` μέσα στο ενεργό source snapshot.
-Source SHA256: `6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126`.
+Μην τρέχεις scripts/prepare_kaggle.py: ο παλιός generator θα αντικαθιστούσε το
+ενημερωμένο μοναδικό notebook. Το ενεργό notebook ενημερώνεται απευθείας.
 
 Επίσημη τεκμηρίωση:
-[Kaggle kernels](https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels.md),
-[metadata](https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels_metadata.md),
-[datasets](https://github.com/Kaggle/kaggle-cli/blob/main/docs/datasets.md).
+https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels.md
+https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels_metadata.md
+https://github.com/Kaggle/kaggle-cli/blob/main/docs/datasets.md

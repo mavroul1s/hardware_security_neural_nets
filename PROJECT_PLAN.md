@@ -13,18 +13,21 @@
 στο clean validation· οι άλλες3 στρατηγικές παραμένουν σε αναμονή για διάγνωση.
 Η read-only masking διάγνωση βρήκε δεύτερης τάξης leakage που διατηρείται στο
 validation. Προετοιμάστηκε untrained literature-inspired CNN16.952 parameters.
-Εκκρεμεί πρόταση περιορισμού σε νέο baseline και conditional combined (έως4 trainings
-μαζί με τα δύο failures). Δεν εγκρίθηκε ακόμη αλλαγή ερωτήματος/μοντέλου/πλάνου.
+Ο χρήστης ενέκρινε τον περιορισμό σε νέο baseline και conditional combined (έως4 trainings
+μαζί με τα δύο failures). Οι single noise/shift εκπαιδεύσεις καταργούνται.
+Ενεργό μοντέλο `cnn_literature` /16.952 parameters, train-only per-position MinMax.
+Gate πριν το combined: clean validation SR@2.000≥0,90, δηλαδή18/20 permutations.
 
 ## Προσωρινό ερευνητικό ερώτημα
 
 Με 10.000 μοναδικά profiling traces, κοινό μικρό CNN και ίδιο πλήθος
-optimization steps, βελτιώνει ο συνδυασμός Gaussian noise και
-μη κυκλικών χρονικών μετατοπίσεων το SR@2.000 απέναντι σε προκαθορισμένες ταυτόχρονες
-αλλοιώσεις εκτός των training εντάσεων, χωρίς adaptation σε δεδομένα του target;
+optimization steps, ποια είναι η επίδραση του συνδυασμού Gaussian noise και
+μη κυκλικών χρονικών μετατοπίσεων στο SR@2.000 απέναντι σε προκαθορισμένες ταυτόχρονες
+αλλοιώσεις εκτός των training εντάσεων, έναντι εκπαίδευσης χωρίς augmentation,
+χωρίς adaptation σε δεδομένα του target;
 Ποιο είναι το κόστος του σε πραγματικό χρόνο στην ίδια GPU και η επίδραση στο clean SR;
 
-Η αρχική μελέτη θα είναι διερευνητική σύγκριση interaction/robustness και κόστους
+Η ενεργή μελέτη είναι διερευνητική σύγκριση baseline/combined robustness και κόστους
 σε ένα περιορισμένο data budget. Με ένα seed δεν εκτιμάται μεταβλητότητα μεταξύ trainings
 ούτε εξάρτηση από διαφορετικά data budgets. Η ιδέα «augmentation βοηθά» έχει ήδη μελετηθεί. Η πρωτοτυπία
 του συγκεκριμένου συνδυασμού/πρωτοκόλλου **δεν έχει επιβεβαιωθεί**.
@@ -38,7 +41,7 @@ optimization steps, βελτιώνει ο συνδυασμός Gaussian noise κ
 | M0: υποδομή/αρχική χαρτογράφηση | εβδομάδες 1–2 | επίσημο checksum, schema/labels verified, tests, CPU pilot, Kaggle notebook |
 | M1: πραγματικό baseline | εβδομάδες 2–4 | πρώτες 3 CNN epochs ως benchmark, συνέχιση του ίδιου run σε 50, validation key-rank |
 | M2: οριστικοποίηση ερωτήματος | εβδομάδες 3–6 | πλήρης έλεγχος επικαλύψεων και padding/cropping, πάγωμα protocol/config hash πριν attack |
-| M3: μικρή σύγκριση | εβδομάδες 6–12 | 4 CNNs συνολικά: none/noise/shift/combined, ίδιο seed/split/steps, όλα τα failures |
+| M3: μικρή σύγκριση | εβδομάδες 6–12 | 2 τρέχοντα CNNs: none/combined, ίδιο seed/split/steps· δύο παλιότερα failures διατηρούνται |
 | M4: έλεγχος ευρήματος | εβδομάδες 12–17 | ανάλυση ορίων και overlap· πρόσθετα trainings μόνο με συγκεκριμένο λόγο και συμφωνία χρήστη |
 | M5: αναφορά | εβδομάδες 17–22 | ελληνική αναφορά με μεθόδους, γραφήματα, όρια και αρνητικά αποτελέσματα |
 | M6: σύνθεση/παράδοση | υπόλοιπο εξαμήνου | αναπαραγωγή από καθαρό environment, συζήτηση καθηγητή, αγγλικό draft μόνο αν επαρκούν τα ευρήματα |
@@ -46,11 +49,13 @@ optimization steps, βελτιώνει ο συνδυασμός Gaussian noise κ
 ## Αποφάσεις
 
 1. ASCAD original fixed-key 700 samples, zero-based byte 2, 256 identity classes.
-2. JSON configs, PyTorch 2.8.0, global scalar normalization fit μόνο στα training rows.
+2. JSON configs, PyTorch2.8.0, per-position MinMax fit μόνο στα training rows.
+   Global scalar normalization παραμένει για ανάγνωση των δύο ιστορικών runs.
 3. MLP 700→128→64→256. CNN Conv(1→8,k11), pool2, Conv(8→16,k11), pool2,
    dense64→256, αρχικά ReLU και στην εγκεκριμένη διορθωτική έκδοση LeakyReLU0,1.
    Μικρό δικό μας baseline, όχι αναπαραγωγή SOTA αρχιτεκτονικής.
-4. Ίδια epochs και batches στις 4 στρατηγικές εντός κάθε budget. Online replacement
+   Ενεργό CNN: Conv4/k1, SELU/BatchNorm, pool2, dense10×2 και logits256·16.952 parameters.
+4. Ίδια epochs και batches στις 2 στρατηγικές εντός κάθε budget. Online replacement
    augmentation: μία όψη ανά αρχικό trace ανά epoch, χωρίς αύξηση αριθμού batches.
 5. Split seed 2026, training seed 0, test-corruption seed 9001, attack-order seed 8001.
 6. Αρχικές training εντάσεις sigma=0,1 σε normalized μονάδες και shifts uniform{-5,…,5}.
@@ -63,14 +68,14 @@ optimization steps, βελτιώνει ο συνδυασμός Gaussian noise κ
     Πρώτα ελέγχουμε model capacity/εκπαίδευση σε validation και τη δυσκολία του budget.
 11. Ένα Kaggle notebook με `STAGE=benchmark/baseline/compare/attack`. Οι πρώτες 3 epochs
     του none αποτελούν μέρος των 50 epochs του baseline, όχι πρόσθετο training.
-    Ίδια ολοκληρωμένα checkpoints/evaluations επαναχρησιμοποιούνται. Συνολικά 15.800 steps.
+    Ίδια ολοκληρωμένα checkpoints/evaluations επαναχρησιμοποιούνται. Συνολικά7.900 τρέχοντα steps.
 12. MLP, δεύτερο budget και πολλά seeds μένουν διαθέσιμα ως μελλοντικές επιλογές,
-    χωρίς προεπιλεγμένη εκτέλεση. Τα τέσσερα μοντέλα είναι το ελάχιστο για τη σύγκριση
-    no augmentation / κάθε single / joint, όχι γενικό ελάχιστο κάθε SCA project.
+    χωρίς προεπιλεγμένη εκτέλεση. Με δύο μοντέλα συγκρίνουμε μόνο none/combined·
+    δεν αποδίδουμε αποτέλεσμα στον συνδυασμό έναντι κάθε single στρατηγικής.
 
 ## Πότε υποστηρίζεται ή αποδυναμώνεται η πρόταση
 
-Κύριο endpoint: paired διαφορά SR@2.000 για combined έναντι κάθε single augmentation,
+Κύριο endpoint: paired διαφορά SR@2.000 για combined έναντι none baseline,
 στην `combined_both_ood` με n_train=10.000. Ενδεικτικός στόχος πρακτικού οφέλους:
 τουλάχιστον +0,10 SR και clean υποβάθμιση όχι πάνω από 0,10. Αυτά είναι δικά μας
 προκαθορισμένα κριτήρια, όχι συμπεράσματα πηγών. Με seed0 τα αποτελέσματα είναι περιγραφικά.
@@ -80,7 +85,6 @@ optimization steps, βελτιώνει ο συνδυασμός Gaussian noise κ
 policy ή dataset· αυτά δεν καλύπτονται από το τωρινό ελάχιστο πλάνο.
 Αποδυνάμωση: μηδενικό/αρνητικό όφελος, όφελος μόνο in-distribution, μεγάλη clean ζημιά,
 ή αποτέλεσμα που εξηγείται από extra steps, tuning ή τεχνητά borders.
-Το factorial interaction `SR_combined − SR_noise − SR_shift + SR_none` αναφέρεται
-εξερευνητικά· δεν το ταυτίζουμε με τη διαφορά από την καλύτερη single στρατηγική.
+Το ενεργό πλάνο δεν εκτιμά factorial interaction ή την καλύτερη single στρατηγική.
 Αν νεότερη πρωτογενής εργασία καλύπτει το ίδιο protocol, αναπροσαρμόζουμε σε replication
 και cost/small-data analysis χωρίς ισχυρισμό νέας τεχνικής.

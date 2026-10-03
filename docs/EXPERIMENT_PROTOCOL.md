@@ -1,7 +1,9 @@
-# Πειραματικό πρωτόκολλο v0.2 — ελάχιστη διερευνητική μελέτη
+# Πειραματικό πρωτόκολλο v0.3 — εγκεκριμένη σύγκριση baseline/combined
 
 Αίτημα χρήστη: ένα Kaggle notebook και όσο λιγότερες εκπαιδεύσεις γίνεται.
-Συγκρίνουμε 4 CNNs, 10k training traces, seed0. Δεν τρέχουμε MLP, δεύτερο budget ή seed sweep.
+Συγκρίνουμε2 νέα CNNs,10k training traces,seed0. Διατηρούνται δύο ιστορικά failures.
+Έως4 GPU trainings συνολικά. Combined μόνο αν baseline clean SR@2000≥0,90 (18/20).
+Δεν τρέχουμε single noise/shift, MLP, δεύτερο budget ή seed sweep.
 
 ## Threat model και περιορισμοί
 
@@ -25,19 +27,23 @@
 κρατούνται αποκλειστικά για τελική αξιολόγηση. Τα μικρά pilot configs έχουν δικά τους μικρότερα splits.
 Κάθε online augmented view δημιουργείται αφού επιλεγεί το αρχικό trace από το training split.
 
-`z=(x−μ_train)/σ_train`, με έναν scalar μ και σ από όλα τα training samples, float64 fit και
-float32 inputs. Ο ίδιος μετασχηματισμός εφαρμόζεται σε validation/attack χωρίς νέο fit.
-Οι τέσσερις στρατηγικές έχουν κοινό training-only fit.
+Ενεργή έκδοση: `z[t]=(x[t]−min_train[t])/(max_train[t]−min_train[t])`, ανά χρονική θέση.
+Fit float64 στα10k training rows, output float32. Constant-column scale=1.
+Ίδια training-only στατιστικά για validation/attack, χωρίς refit ή clipping.
+Οι δύο στρατηγικές έχουν κοινό fit. Τα ιστορικά ReLU/Leaky runs είχαν global scalar μ/σ.
+Δεν αποτελούν matched ablation της νέας normalization/architecture.
 
 ## Αλλοιώσεις
 
 1. Μετά την κανονικοποίηση, κάθε trace παίρνει ανεξάρτητο integer shift
    `d ~ DiscreteUniform{-s,…,+s}`. `d>0` μετακινεί το σήμα δεξιά.
 2. Το output παραμένει μήκους 700. Τα samples έξω από το παράθυρο απορρίπτονται.
-   Οι κενές θέσεις παίρνουν 0 σε normalized μονάδες, δηλαδή training mean σε raw μονάδες.
+   Οι κενές θέσεις παίρνουν0 σε normalized μονάδες, δηλαδή per-position training minimum
+   στην ενεργή MinMax έκδοση. Η παλιά scalar έκδοση αντιστοιχούσε σε training mean.
    Δεν υπάρχει circular wrap. Κάθε trace μπορεί να χάσει έως s/700 των samples του.
 3. Ακολουθεί ανεξάρτητος θόρυβος σε **όλες** τις output θέσεις:
-   `ε[t] ~ Normal(0, a²)` σε normalized μονάδες, raw std `a × σ_train`.
+   `ε[t] ~ Normal(0,a²)` σε normalized μονάδες, per-position inverse raw std
+   `a × (max_train[t]−min_train[t])` στην ενεργή έκδοση.
    Άρα και το padding παίρνει θόρυβο στις combined/noise συνθήκες.
 4. Training: online αντικατάσταση, ένα view ανά trace ανά epoch. Validation training-loop: καθαρό.
    Δεν δημιουργούμε επιπλέον optimization steps.
@@ -50,13 +56,17 @@ float32 inputs. Ο ίδιος μετασχηματισμός εφαρμόζετ�
 First-order identity SNR σε masked implementation **δεν αποδεικνύει** ότι διατηρήθηκε όλη η διαρροή.
 Αν κρίσιμα samples είναι κοντά στα borders, μειώνουμε shifts ή αιτιολογούμε μεγαλύτερο window
 και τότε μόνο τη λήψη πρόσθετων δεδομένων. Τα shifts 5/10 είναι αρχικές επιλογές, όχι πιστοποιημένα ασφαλή.
+Με per-position scaling, shift μετά την normalization δεν ισοδυναμεί με physical raw shift
+πριν από αυτή. Η μελέτη αφορά αυτές τις συγκεκριμένες synthetic feature-space corruptions,
+χωρίς ισχυρισμό φυσικής προσομοίωσης jitter/noise ή γενίκευσης σε νέα συσκευή.
 
 ## Training και συγκρίσεις
 
-Το CNN είναι κοινό στις `none/noise/shift/combined`. Initial σ=0,1, s=5.
+Το `cnn_literature` είναι κοινό στις `none/combined`: Conv4/k1, SELU/BN, AvgPool2,
+dense10×2, logits256,16.952 parameters. Initial σ=0,1, s=5 σε MinMax μονάδες.
 Adam lr=0,001, batch128, 50 epochs, χωρίς early stopping. Ίδια initial model seed0 και
 ανεξάρτητος common shuffle generator `seed+10000`. 10.000 traces: 79 steps/epoch,
-3.950/run. Τα τέσσερα trainings έχουν συνολικά 15.800 steps.
+3.950/run. Τα δύο τρέχοντα trainings έχουν έως7.900steps.
 Το none ξεκινά με 3 epochs ως benchmark και συνεχίζει άλλες 47 στο ίδιο checkpoint.
 Η επαναχρησιμοποίηση του benchmark δεν προσθέτει epochs ή πέμπτο μοντέλο.
 

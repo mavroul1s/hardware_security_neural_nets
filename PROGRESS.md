@@ -280,3 +280,27 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
 - Scripts `notebooks/diagnose_masking.py`, `candidate_literature_cnn.py`,
   `audit_candidate_architecture.py`, `plot_masking_diagnosis.py`. Αναφορά και JSON:
   `outputs/masking_diagnosis_2026-10-03/REPORT_EL.md`.
+
+## Εγκεκριμένη νέα μελέτη baseline/combined — 2026-10-03
+
+Ο χρήστης απάντησε «συνέχισε» στην πρόταση νέου μικρού baseline και μόνο combined
+αν πετύχει clean SR≥90%. Καταργούνται τα single noise/shift trainings. Το εγκεκριμένο
+όριο είναι4 GPU trainings συνολικά:2 διατηρημένα failures και έως2 νέα.
+
+- Ενσωματώθηκε το ακριβές reviewed prototype ως `cnn_literature`:16.952 parameters,
+  Conv4/k1/SELU/BN/pool2/dense10×2/logits256, He hidden/Glorot output initialization.
+- Train-only per-position MinMax σε float64 και inputsfloat32, no validation refit/clipping.
+  Οι saved statistics χρησιμοποιούνται και στην evaluation και ελέγχονται στο resume.
+- Ίδιο10k/5k split/seed0/50epochs/batch128/Adam LR0,001. Στρατηγικές none/combined μόνο.
+  Corruption μετά το MinMax σε feature space· raw noise/shift equivalence δεν υπονοείται.
+- Ένα notebook,6 code cells, νέο run tag `minimal_v3_literature`, default `STAGE=compare`.
+  Αρχικά τρέχει none50· το ίδιο session κάνει combined μόνο αν minimum-CE checkpoint
+  clean SR@2000≥0,90,20 validation permutations. Gate record διατηρείται και failure
+  δεν εμποδίζει το output export. Final attack παραμένει locked/PROTOCOL_FROZEN=False.
+- Tests33 passed,14 warnings σε12,99s: BN/MinMax exact continuation, checkpoint reuse,
+  reviewed init parity, scaler checks και notebook gate στις17/20 και18/20 επιτυχίες.
+- Νέο source fingerprint `84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c`.
+  Πάγωμα src/scripts/configs/pyproject από την υποβολή μέχρι ολοκλήρωση των νέων runs.
+- Fresh start μόνο για το εγκεκριμένο νέο baseline, χωρίς μεταφορά παλιών weights.
+  Ετοιμάζεται νέο Input/code packet στο ίδιο private dataset/notebook. Καμία νέα
+  Kaggle εκτέλεση δεν έχει υποβληθεί ακόμη.

@@ -1,6 +1,7 @@
 {
-  "dataset": "data/ASCAD.h5", "run_dir": "runs/minimal_v2_leaky/none_seed0",
-  "model": "cnn_leaky", "target_byte": 2, "seed": 0, "split_seed": 2026,
+  "dataset": "data/ASCAD.h5", "run_dir": "runs/minimal_v3_literature/none_seed0",
+  "model": "cnn_literature", "normalization": "feature_minmax_training_only",
+  "target_byte": 2, "seed": 0, "split_seed": 2026,
   "n_train": 10000, "n_validation": 5000, "epochs": 50, "batch_size": 128,
   "learning_rate": 0.001, "threads": 2, "device": "auto",
   "augmentation": {"noise_std": 0.0, "max_shift": 0, "padding": "zero"}

@@ -116,7 +116,7 @@ def train(config, resume=False, reuse_completed=False):
     train_indices, val_indices = make_splits(n, config["n_train"], config["n_validation"], config["split_seed"])
     split_id = split_identifier(train_indices, val_indices)
     xt, yt, xv, yv = load_profiling(config["dataset"], train_indices, val_indices)
-    stats = fit_normalizer(xt)
+    stats = fit_normalizer(xt, config.get("normalization", "global_scalar_training_only"))
     xt, xv = normalize(xt, stats), normalize(xv, stats)
     loader_generator = torch.Generator().manual_seed(config["seed"] + 10000)
     training_loader = DataLoader(TensorDataset(torch.from_numpy(xt), torch.from_numpy(yt)),
@@ -139,6 +139,8 @@ def train(config, resume=False, reuse_completed=False):
             k: v for k, v in config.items() if k not in ignored
         } or checkpoint["dataset_sha256"] != inspection["sha256"] or checkpoint["split_id"] != split_id:
             raise ValueError("Resume config, dataset or splits mismatch")
+        if checkpoint["normalizer"] != stats:
+            raise ValueError("Resume training-only normalizer mismatch")
         if checkpoint["code"]["source_sha256"] != code["source_sha256"]:
             raise ValueError("Code changed since checkpoint; exact continuation cannot be claimed")
         if checkpoint["environment"] != current_environment:

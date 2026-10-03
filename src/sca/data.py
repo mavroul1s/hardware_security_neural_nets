@@ -102,7 +102,17 @@ def load_validation_evaluation(path, indices, target_byte=2):
         return g["traces"][indices].astype(np.float32), m["plaintext"][:, target_byte], int(keys[0])
 
 
-def fit_normalizer(training_traces):
+def fit_normalizer(training_traces, kind="global_scalar_training_only"):
+    if kind == "feature_minmax_training_only":
+        values = np.asarray(training_traces, dtype=np.float64)
+        if values.ndim != 2 or not len(values) or not np.isfinite(values).all():
+            raise ValueError("Expected finite nonempty 2D training traces")
+        minimum = values.min(axis=0)
+        scale = values.max(axis=0) - minimum
+        scale[scale == 0] = 1
+        return {"minimum": minimum.tolist(), "scale": scale.tolist(), "kind": kind}
+    if kind != "global_scalar_training_only":
+        raise ValueError("Unknown normalizer kind")
     mean = float(np.mean(training_traces, dtype=np.float64))
     std = float(np.std(training_traces, dtype=np.float64))
     if not np.isfinite([mean, std]).all() or std < 1e-8:
@@ -111,4 +121,12 @@ def fit_normalizer(training_traces):
 
 
 def normalize(traces, stats):
+    if stats.get("kind") == "feature_minmax_training_only":
+        values = np.asarray(traces, dtype=np.float64)
+        minimum, scale = np.asarray(stats["minimum"]), np.asarray(stats["scale"])
+        if (values.ndim != 2 or minimum.shape != (values.shape[1],) or scale.shape != minimum.shape
+                or not np.isfinite(minimum).all() or not np.isfinite(scale).all() or np.any(scale <= 0)):
+            raise ValueError("Invalid feature MinMax statistics or trace shape")
+        # Training fit only. Validation/attack values may lie outside [0,1]; do not clip.
+        return ((values - minimum) / scale).astype(np.float32)
     return ((traces - stats["mean"]) / stats["std"]).astype(np.float32)

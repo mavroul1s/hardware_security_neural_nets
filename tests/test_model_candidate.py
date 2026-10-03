@@ -21,3 +21,18 @@ def test_corrected_cnn_has_identical_initial_parameters_and_negative_gradients()
         assert torch.allclose(negative.grad, torch.full_like(negative, 0.1))
     logits = corrected(torch.zeros(3, 700))
     assert logits.shape == (3, 256) and torch.isfinite(logits).all()
+
+
+def test_literature_model_matches_reviewed_prototype_initialization():
+    import importlib.util
+    from pathlib import Path
+    spec = importlib.util.spec_from_file_location("reviewed_candidate", Path(__file__).parents[1] / "notebooks/candidate_literature_cnn.py")
+    prototype = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(prototype)
+    torch.manual_seed(0)
+    reviewed = prototype.build_candidate()
+    torch.manual_seed(0)
+    actual = build_model("cnn_literature")
+    assert sum(p.numel() for p in actual.parameters()) == 16952
+    assert all(torch.equal(value, actual.state_dict()[name]) for name, value in reviewed.state_dict().items())
+    assert actual(torch.zeros(3, 700)).shape == (3, 256)

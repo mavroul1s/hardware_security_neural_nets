@@ -70,46 +70,51 @@ py -3.12 -m venv .venv
 ## Baseline και τελική αξιολόγηση
 
 Το [Kaggle notebook](notebooks/kaggle_baseline.ipynb) καλεί τον ίδιο κώδικα.
-Κρατάμε **ένα notebook και τέσσερις CNN στρατηγικές**: none/noise/shift/combined,
+Κρατάμε **ένα notebook και δύο τρέχουσες CNN στρατηγικές**: none/combined,
 10.000 traces, seed0, 50 epochs. Το προηγούμενο πλάνο 46 trainings αντικαταστάθηκε μετά
 από αίτημα του χρήστη για ελάχιστο Kaggle κόστος. Το MLP και δεύτερα budgets/seeds δεν εκτελούνται.
 
 Στο ίδιο αρχείο αλλάζουμε μόνο `STAGE`: `benchmark` (οι πρώτες 3 epochs του none),
-`baseline` (συνέχιση του ίδιου checkpoint σε 50), `compare` (οι άλλες 3 στρατηγικές),
+`baseline` (ολοκλήρωση/επαναχρησιμοποίηση του baseline σε50), `compare` (baseline και conditional combined),
 `attack` (μόνο αξιολόγηση μετά το protocol freeze). Ολοκληρωμένα runs και ίδιες evaluations
 επαναχρησιμοποιούνται. Οι 3 benchmark epochs περιλαμβάνονται στις 50· δεν υπάρχει extra training.
 Ένα seed επιτρέπει διερευνητική σύγκριση και όχι εκτίμηση training variability.
 
-Η τελευταία έκδοση έχει προεπιλογή `STAGE="baseline"`, αφού το GPU benchmark ολοκληρώθηκε.
-Το baseline πλέον ολοκληρώθηκε μέσω API στο ίδιο `con1los/hw-sec-exp2`, version3:
+Η ενεργή έκδοση έχει `STAGE="compare"`, `RUN_TAG="minimal_v3_literature"`,
+`model="cnn_literature"`,16.952 parameters και train-only per-position MinMax.
+Το ίδιο notebook εκτελεί baseline50epochs και combined μόνο αν clean validation
+SR@2.000≥0,90 (18/20), με το minimum-CE checkpoint. Διαφορετικά εξάγει το failure
+χωρίς να ξεκινήσει combined. Έως4 trainings συνολικά με τα δύο ιστορικά failures.
+
+Ιστορικό: το αρχικό ReLU baseline ολοκληρώθηκε στο ίδιο `con1los/hw-sec-exp2`, version3:
 συνέχεια epoch3→50, ίδιο περιβάλλον/splits/source. Clean validation SR@2.000=0/20·
 best checkpoint epoch2. Η [αναφορά baseline](outputs/kaggle_baseline_v3_2026-10-03/REPORT_EL.md)
 περιέχει ελεγμένες καμπύλες και περιορισμούς. Διάγνωση πριν τις άλλες3 στρατηγικές.
 Ο χρήστης ενέκρινε ένα διορθωτικό baseline με LeakyReLU0,1 μετά τη διάγνωση inactive units.
-Η ενεργή έκδοση χρησιμοποιεί `model="cnn_leaky"`, `RUN_TAG="minimal_v2_leaky"`, ίδιο
+Η προηγούμενη έκδοση χρησιμοποίησε `model="cnn_leaky"`, `RUN_TAG="minimal_v2_leaky"`, ίδιο
 seed/split/budget/optimizer. Το παλιό ReLU run διατηρείται. Το σύνολο μπορεί να φτάσει5
 trainings αν ολοκληρωθούν οι4 διορθωμένες στρατηγικές. Η version5 ολοκλήρωσε το διορθωμένο
 baseline από epoch0→50. Best epoch1 / CE5,547114, clean validation GE89,25 / SR0/20.
 Στην epoch50 train CE5,267826, validation CE5,809435: η γενίκευση παραμένει ανεπαρκής.
 Η [αναφορά διορθωτικού baseline](outputs/kaggle_leaky_v5_2026-10-03/REPORT_EL.md)
 περιέχει την επαλήθευση και τη σύγκριση. Έγιναν δύο πλήρη GPU trainings συνολικά.
-Οι άλλες3 στρατηγικές μένουν σε αναμονή για διάγνωση, χωρίς νέο αυτόματο training.
+Οι τότε προγραμματισμένες3 augmentations δεν εκτελέστηκαν και το πλάνο αντικαταστάθηκε.
 Η [διάγνωση masking](outputs/masking_diagnosis_2026-10-03/REPORT_EL.md) βρήκε
 mask/share leakage και training-selected centered products που διατηρούν διαρροή
 στο validation. Δεν αποδεικνύουν key recovery. Προετοιμάστηκε untrained literature
-CNN prototype16.952 parameters. Πρόταση για νέο baseline και μόνο combined μετά
-από clean SR≥90%: έως4 total trainings μαζί με τα δύο failures· αναμένει συμφωνία
-χρήστη για νέο μοντέλο και κατάργηση των noise/shift single comparisons.
-Το `outputs/kaggle_resume_input_leaky.zip` περιέχει τον νέο κώδικα, ASCAD/provenance
-και το ολοκληρωμένο διορθωμένο epoch50 checkpoint. Η πρώτη cell απαιτεί checkpoint.
-Για νέο session χρησιμοποίησε αυτό το ενεργό πακέτο. Το παλιό `kaggle_resume_input.zip`
-αφορά αποκλειστικά το ιστορικό ReLU run και δεν ταιριάζει με τον τρέχοντα source hash.
+CNN prototype16.952 parameters. Ο χρήστης ενέκρινε την ενσωμάτωσή του και το μειωμένο
+πλάνο baseline/combined. Η έκδοση δεν αποτελεί ακριβή αναπαραγωγή της δημοσίευσης.
+Το ενεργό Input packet είναι `outputs/kaggle_resume_input_literature.zip`.
+Το fresh-start opt-in αφορά μόνο το εγκεκριμένο νέο baseline· μετά την ολοκλήρωση
+το packet διατηρεί το νέο checkpoint και η πρώτη cell απαιτεί restore.
+Τα `kaggle_resume_input_leaky.zip` και `kaggle_resume_input.zip` διατηρούν τα παλιά
+checkpoints/source snapshots και δεν ταιριάζουν με την ενεργή έκδοση.
 Η διορθωμένη πρώτη cell κάνει discovery/restore και εμφανίζει τα paths και το ολοκληρωμένο epoch.
 Για αντιγραφή στο ίδιο Kaggle notebook υπάρχει το `outputs/kaggle_first_cell.py`.
 
 ```powershell
 # Only after freezing the protocol and checkpoint-selection rule:
-& .\.venv\Scripts\python.exe -m sca.cli evaluate --run-dir runs/minimal_v2_leaky/none_seed0 --config configs/evaluation_final.json --split attack
+& .\.venv\Scripts\python.exe -m sca.cli evaluate --run-dir runs/minimal_v3_literature/none_seed0 --config configs/evaluation_final.json --split attack
 ```
 
 Κάθε run γράφει config, inspection, train/validation indices, split ID, normalizer,

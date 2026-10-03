@@ -133,10 +133,12 @@ def test_model_shape(name):
     assert build_model(name)(torch.zeros(4, 700)).shape == (4, 256)
 
 
-def test_checkpoint_continuation_matches_uninterrupted_training_and_evaluation(tmp_path, monkeypatch):
+@pytest.mark.parametrize("model,normalization", [
+    ("cnn", "global_scalar_training_only"), ("cnn_literature", "feature_minmax_training_only")])
+def test_checkpoint_continuation_matches_uninterrupted_training_and_evaluation(tmp_path, monkeypatch, model, normalization):
     dataset = tmp_path / "fixture.h5"
     create_fixture(dataset, n_profiling=64, n_attack=16)
-    base = {"dataset": str(dataset), "model": "cnn", "target_byte": 2, "seed": 1,
+    base = {"dataset": str(dataset), "model": model, "normalization": normalization, "target_byte": 2, "seed": 1,
         "split_seed": 2026, "n_train": 32, "n_validation": 16, "epochs": 2,
         "batch_size": 16, "learning_rate": 0.001, "threads": 2, "device": "cpu",
         "augmentation": {"noise_std": 0.1, "max_shift": 2, "padding": "zero"}}

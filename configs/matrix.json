@@ -1,15 +1,16 @@
 {
-  "status": "minimal_exploratory_single_seed_freeze_before_final_attack",
+  "status": "approved_baseline_vs_combined_single_seed_validation_gated",
   "base_config": "configs/baseline_cnn.json",
   "training_budgets": [10000],
   "seeds": [0],
   "strategies": {
     "none": {"noise_std": 0.0, "max_shift": 0, "padding": "zero"},
-    "noise": {"noise_std": 0.1, "max_shift": 0, "padding": "zero"},
-    "shift": {"noise_std": 0.0, "max_shift": 5, "padding": "zero"},
     "combined": {"noise_std": 0.1, "max_shift": 5, "padding": "zero"}
   },
-  "training_runs": 4,
+  "training_runs": 2,
+  "historical_failed_gpu_trainings": 2,
+  "maximum_total_gpu_trainings": 4,
+  "baseline_gate": {"condition": "clean", "budget": 2000, "repetitions": 20, "min_clean_sr": 0.9},
   "benchmark_strategy": "none",
   "benchmark_epochs": 3,
   "benchmark_reused_in_full_training": true,

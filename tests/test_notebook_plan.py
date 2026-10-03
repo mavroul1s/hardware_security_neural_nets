@@ -9,7 +9,8 @@ import pytest
 from sca.train import write_json
 
 
-def test_single_notebook_reuses_epochs_for_four_current_study_models(tmp_path):
+@pytest.mark.parametrize("clean_sr,expected_runs", [(0.85, 1), (0.90, 2)])
+def test_single_notebook_reuses_epochs_and_applies_baseline_gate(tmp_path, clean_sr, expected_runs):
     root = Path(__file__).resolve().parents[1]
     notebook_paths = list((root / "notebooks").glob("*.ipynb"))
     assert len(notebook_paths) == 1
@@ -18,7 +19,8 @@ def test_single_notebook_reuses_epochs_for_four_current_study_models(tmp_path):
     base = json.loads((root / "configs/baseline_cnn.json").read_text())
     matrix = json.loads((root / "configs/matrix.json").read_text())
     evaluation = json.loads((root / "configs/evaluation_final.json").read_text())
-    assert matrix["training_runs"] == 4 and matrix["seeds"] == [0]
+    assert matrix["training_runs"] == 2 and matrix["seeds"] == [0]
+    assert set(matrix["strategies"]) == {"none", "combined"}
     assert matrix["training_budgets"] == [10000]
     states, added_epochs, evaluations = {}, [], []
     source = {"source_sha256": "dry-run-source", "git_commit": None, "git_dirty": None}
@@ -42,7 +44,8 @@ def test_single_notebook_reuses_epochs_for_four_current_study_models(tmp_path):
 
     def fake_evaluate(*args, **kwargs):
         evaluations.append(kwargs["split"])
-        return []
+        return [{"condition": "clean", "sr_at_budget": clean_sr,
+                 "budget": 2000, "repetitions": 20, "split": kwargs["split"]}]
 
     namespace = {"json": json, "Path": Path, "time": time, "base": base, "matrix": matrix,
         "run_root": tmp_path / "runs", "DATASET_PATH": tmp_path / "unused.h5",
@@ -57,16 +60,20 @@ def test_single_notebook_reuses_epochs_for_four_current_study_models(tmp_path):
         namespace["STAGE"] = stage
         exec(training_cell, namespace)
         exec(comparison_cell, namespace)
-    assert len(states) == 4 and set(states.values()) == {50}
+    assert len(states) == expected_runs and set(states.values()) == {50}
     assert added_epochs[:2] == [3, 47]
-    assert sum(added_epochs) == 200
-    assert namespace["total_steps"] == 15800
+    assert sum(added_epochs) == 50 * expected_runs
+    assert namespace["total_steps"] == 7900
+    assert namespace["baseline_gate"]["passed"] == (expected_runs == 2)
     namespace["STAGE"] = "attack"
     before = len(added_epochs)
     with pytest.raises(RuntimeError, match="Freeze"):
         exec(comparison_cell, namespace)
+    if expected_runs == 1:
+        assert "combined_seed0" not in states
+        return
     namespace["PROTOCOL_FROZEN"] = True
     exec(training_cell, namespace)
     exec(comparison_cell, namespace)
     assert len(added_epochs) == before
-    assert evaluations.count("attack") == 4
+    assert evaluations.count("attack") == 2

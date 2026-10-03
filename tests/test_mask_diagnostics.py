@@ -38,3 +38,13 @@ def test_candidate_scaler_keeps_training_statistics_for_out_of_range_validation(
     assert np.array_equal(result, [[-0.5, 2.], [1.5, 0.]])
     assert np.array_equal(stats["minimum"], [2., 7.])
     assert np.array_equal(stats["scale"], [4., 1.])
+
+
+def test_production_minmax_matches_reviewed_scaler_and_rejects_wrong_dimensions():
+    from sca.data import fit_normalizer, normalize
+    training = np.array([[2., 7.], [6., 7.]])
+    stats = fit_normalizer(training, "feature_minmax_training_only")
+    assert normalize(np.array([[0., 9.], [8., 7.]]), stats).tolist() == [[-0.5, 2.], [1.5, 0.]]
+    assert stats["minimum"] == [2., 7.] and stats["scale"] == [4., 1.]
+    with pytest.raises(ValueError, match="shape"):
+        normalize(np.zeros((1, 3)), stats)
