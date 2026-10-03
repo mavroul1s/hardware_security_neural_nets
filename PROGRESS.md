@@ -89,9 +89,12 @@ setup/inspection/checkpoint I/O. Το CNN έχει 197.424 parameters. Τα mani
 
 ## Ακριβές επόμενο βήμα
 
-1. Κράτα το ίδιο Kaggle notebook και τον ίδιο κώδικα. Το πρώτο benchmark ολοκληρώθηκε.
-2. Σε νέο session ανέβασε το έτοιμο restore ZIP ως private Input και ρύθμισε
-   `RESTORE_ARCHIVE` όπως περιγράφει η νέα αναφορά. Σε ενεργό session κράτα τα υπάρχοντα run folders.
+1. Κράτα το ίδιο Kaggle notebook. Μετά από reported Input-discovery error διορθώθηκε
+   η πρώτη cell και η προεπιλογή είναι πλέον `STAGE="baseline"`.
+2. Προτεινόμενο νέο Input: `outputs/kaggle_resume_input.zip`, με code ZIP, ASCAD/provenance
+   και το verified checkpoint archive. Η πρώτη cell αναγνωρίζει packed/extracted Inputs,
+   duplicates με ίδιο source hash και το προηγούμενο `results.zip`, εμφανίζει paths και
+   επαναφέρει αυτόματα το none checkpoint. `RESTORE_ARCHIVE=None` αρκεί σε αυτό το workflow.
 3. `STAGE="baseline"`, `RUN_TAG="minimal_v1"`: το ίδιο none run συνεχίζει από epoch3 σε 50.
    Έλεγξε validation· μετά `STAGE="compare"` εκπαιδεύει noise/shift/combined, χωρίς νέο none run.
 4. Εξέτασε padding/boundary sensitivity στο validation και ακριβή overlap με EquivSCA/RFA/CutMix.
@@ -103,3 +106,22 @@ setup/inspection/checkpoint I/O. Το CNN έχει 197.424 parameters. Τα mani
 
 Ελληνική αναφορά: `outputs/SESSION_REPORT_EL.md`. Αγγλικό paper draft αναβάλλεται μέχρι
 να υπάρχουν επαρκή πραγματικά ευρήματα και συμφωνία με τον καθηγητή.
+
+## Διόρθωση αναζήτησης Kaggle Inputs — 2026-10-03
+
+Ο χρήστης ανέφερε `Add exactly one project code Input` στην αρχική cell. Το traceback
+δεν δείχνει τα actual Input paths/counts· μπορεί να λείπει code Input ή να υπάρχουν duplicates.
+Η διόρθωση εμφανίζει τα paths, αναγνωρίζει το results archive, deduplicates ίδιο κώδικα
+και ελέγχει fingerprints πριν copy/restore. Missing checkpoint δεν ξεκινά νέο baseline από την αρχή.
+
+- Διατηρήθηκε ένα `.ipynb`, με έξι code cells. Companion: `notebooks/kaggle_bootstrap.py`.
+- Η πρώτη cell δίνεται και ως `outputs/kaggle_first_cell.py` για αντιγραφή στο ίδιο Kaggle notebook.
+- Το training source hash παραμένει `e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87`.
+- `src/`, `scripts/`, `configs/`, `pyproject.toml` δεν άλλαξαν. Η notebook/bootstrap αλλαγή
+  είναι εκτός του υπάρχοντος training fingerprint· δεν αλλάζει μοντέλο, splits ή optimizer.
+- **Μην τρέξεις `scripts/prepare_kaggle.py` τώρα**: ο παλιός generator είναι μέρος του pinned
+  hash και θα αντικαθιστούσε τη διορθωμένη cell. Το υπάρχον notebook ενημερώνεται απευθείας
+  μέχρι να ολοκληρωθούν τα τρέχοντα runs. Μελλοντική αλλαγή generator απαιτεί νέο code snapshot.
+- Τελικοί τοπικοί έλεγχοι: **22 passed, 14 warnings σε 9,64s**. Περιλαμβάνουν flat, packed,
+  duplicate και results layouts, preservation υπάρχοντος checkpoint και missing-code diagnostics.
+- Δεν εκτελέστηκε η διόρθωση στο Kaggle ούτε προστέθηκε νέο training.

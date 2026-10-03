@@ -1,4 +1,8 @@
 .venv/
+.venv-kaggle/
+api_key/
+kaggle.json
+access_token
 __pycache__/
 *.py[cod]
 .pytest_cache/

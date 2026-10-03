@@ -1,3 +1,2 @@
 Command: .venv/Scripts/python.exe -m pytest -q --disable-warnings
-................                                                         [100%]
-16 passed, 14 warnings in 10.10s
+22 passed, 14 warnings in 9.64s

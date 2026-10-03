@@ -10,6 +10,26 @@
 [αναφορά benchmark](../outputs/kaggle_benchmark_2026-10-03_07b13e6f/REPORT_EL.md).
 Το επόμενο βήμα είναι `STAGE="baseline"` με συνέχεια του ίδιου run.
 
+## Προτεινόμενη συνέχεια μετά το Input-discovery error
+
+1. Ανέβασε το έτοιμο `outputs/kaggle_resume_input.zip` σε ένα private Kaggle Dataset
+   και πρόσθεσέ το ως Input στο **ίδιο notebook**. Περιέχει `kaggle_project.zip`,
+   `ASCAD.h5`, `ASCAD.provenance.json` και `sca_runs_minimal_v1.zip`.
+2. Αντικατάστησε την πρώτη code cell με το περιεχόμενο του `outputs/kaggle_first_cell.py`,
+   ή χρησιμοποίησε την ενημερωμένη έκδοση του μοναδικού `notebooks/kaggle_baseline.ipynb`.
+3. Κράτα `STAGE="baseline"`, `RUN_TAG="minimal_v1"`, `RESTORE_ARCHIVE=None`.
+   Η διορθωμένη πρώτη cell επαναφέρει το checkpoint αυτόματα και εμφανίζει
+   `Completed epoch: 3` πριν αρχίσει οποιαδήποτε εκπαίδευση. Προχωράμε στις υπόλοιπες cells.
+
+Η cell δέχεται είτε extracted περιεχόμενα είτε το ίδιο το Input ZIP, και αποδέχεται
+duplicate code Inputs όταν το source fingerprint είναι ίδιο. Διαφορετικές checkpoint
+εκδόσεις αναφέρονται ως ambiguity. Το `sca_runs_minimal_v1.zip` μόνο του δεν περιέχει
+ASCAD ή πλήρες project. Το `results.zip` περιέχει κώδικα/checkpoints αλλά επίσης χρειάζεται
+το ASCAD Input. Το ενιαίο πακέτο αποφεύγει αυτή την ασάφεια.
+
+Ο κώδικας εκπαίδευσης έχει το ίδιο hash με το υπάρχον checkpoint. Η διόρθωση αφορά μόνο
+την notebook bootstrap cell. Σε διαφορετική GPU/runtime παραμένει ο έλεγχος exact resume.
+
 Η [επίσημη τεκμηρίωση](https://www.kaggle.com/docs/notebooks) αναφέρει επιλογές P100/T4×2,
 sessions μέχρι 12 ώρες CPU/GPU και 20 GB αποθηκευόμενου χώρου `/kaggle/working`.
 Η [GPU τεκμηρίωση](https://www.kaggle.com/docs/efficient-gpu-usage) αναφέρει quota συνήθως
@@ -31,10 +51,10 @@ sessions μέχρι 12 ώρες CPU/GPU και 20 GB αποθηκευόμενο�
    ελέγχει checksum, CUDA και GPU name και κρατά `pip freeze`. Για pinned CUDA torch2.8
    επιλέγει το official cu126 wheel· μπορείς να χρησιμοποιήσεις το έτοιμο Kaggle torch
    απενεργοποιώντας εγκατάσταση, με τις αποκλίσεις καταγραμμένες και χωρίς ισχυρισμό ίδιο environment.
-5. Άφησε αρχικά `STAGE="benchmark"`. Γίνονται μόνο οι πρώτες 3 epochs του none CNN,
+5. Το πρώτο `STAGE="benchmark"` έχει ήδη εκτελεστεί. Έγιναν μόνο οι πρώτες 3 epochs του none CNN,
    n_train10k/validation5k. Το `gpu_cost_estimate.json` είναι πρόβλεψη αναφοράς από αυτό
    το μοντέλο, όχι μετρημένο overhead των άλλων στρατηγικών. Εξέτασε χρόνο/quota και diagnostics.
-6. Στο **ίδιο notebook**, βάλε `STAGE="baseline"` και ξανατρέξε τις settings/training/output
+6. Στο **ίδιο notebook**, η τρέχουσα προεπιλογή είναι `STAGE="baseline"`. Τρέξε τις settings/training/output
    cells. Το ίδιο run συνεχίζει από epoch3 σε epoch50. Έλεγξε clean/matched-joint/OOD-joint
    validation πριν αλλάξεις σε `STAGE="compare"`. Τότε εκπαιδεύονται οι άλλες τρεις
    στρατηγικές: noise, shift, combined. Το ήδη ολοκληρωμένο none δεν ξαναεκπαιδεύεται.

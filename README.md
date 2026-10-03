@@ -80,6 +80,11 @@ py -3.12 -m venv .venv
 επαναχρησιμοποιούνται. Οι 3 benchmark epochs περιλαμβάνονται στις 50· δεν υπάρχει extra training.
 Ένα seed επιτρέπει διερευνητική σύγκριση και όχι εκτίμηση training variability.
 
+Η τελευταία έκδοση έχει προεπιλογή `STAGE="baseline"`, αφού το GPU benchmark ολοκληρώθηκε.
+Για νέο session ανέβασε το ενιαίο `outputs/kaggle_resume_input.zip` ως Input.
+Η διορθωμένη πρώτη cell κάνει discovery/restore και εμφανίζει τα paths και το ολοκληρωμένο epoch.
+Για αντιγραφή στο ίδιο Kaggle notebook υπάρχει το `outputs/kaggle_first_cell.py`.
+
 ```powershell
 # Only after freezing the protocol and checkpoint-selection rule:
 & .\.venv\Scripts\python.exe -m sca.cli evaluate --run-dir runs/minimal_v1/none_seed0 --config configs/evaluation_final.json --split attack
