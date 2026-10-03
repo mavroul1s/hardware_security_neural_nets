@@ -95,8 +95,10 @@ setup/inspection/checkpoint I/O. Το CNN έχει 197.424 parameters. Τα mani
    και το verified checkpoint archive. Η πρώτη cell αναγνωρίζει packed/extracted Inputs,
    duplicates με ίδιο source hash και το προηγούμενο `results.zip`, εμφανίζει paths και
    επαναφέρει αυτόματα το none checkpoint. `RESTORE_ARCHIVE=None` αρκεί σε αυτό το workflow.
-3. `STAGE="baseline"`, `RUN_TAG="minimal_v1"`: το ίδιο none run συνεχίζει από epoch3 σε 50.
-   Έλεγξε validation· μετά `STAGE="compare"` εκπαιδεύει noise/shift/combined, χωρίς νέο none run.
+3. Το baseline ολοκληρώθηκε μέσω API (version3): epoch3→50, 3.950 συνολικά steps.
+   Clean validation SR@2.000=0/20 και best epoch2. Διάγνωσε πρώτα την έλλειψη χρήσιμης
+   generalization στο profiling/validation. Το `compare` παραμένει το επόμενο training stage,
+   αλλά δεν ξεκίνησε αυτόματα μετά αυτό το αρνητικό baseline. Επαναχρησιμοποίησε το epoch50 archive.
 4. Εξέτασε padding/boundary sensitivity στο validation και ακριβή overlap με EquivSCA/RFA/CutMix.
 5. Πάγωσε config/criterion/code πριν το `STAGE="attack"`, που μόνο αξιολογεί τα 4 μοντέλα.
    Το νέο matrix έχει 4 runs / 15.800 steps, χωρίς αυτόματες πρόσθετες εκπαιδεύσεις.
@@ -143,3 +145,26 @@ setup/inspection/checkpoint I/O. Το CNN έχει 197.424 parameters. Τα mani
   GPU T4 και το προηγούμενο Docker image. Το API επιβεβαίωσε RUNNING· η ολοκλήρωση
   και η ακριβής συνέχεια από epoch3 δεν έχουν ακόμη επαληθευθεί από τα outputs.
 - Submission record: `outputs/kaggle_execution_status.json`.
+
+### Επαληθευμένη ολοκλήρωση baseline
+
+- Το API επέστρεψε COMPLETE. Manifest `resumed_at_epoch=3`, history50 epochs,
+  steps3.950· οι πρώτες3 epochs, splits, normalizer και environment διατηρήθηκαν.
+- Best checkpoint παραμένει epoch2 / CE5,547229, byte-identical με το benchmark.
+  Στην epoch50 train CE5,450314 / accuracy1,10%, validation CE5,616101 / accuracy0,32%.
+- Validation20 permutations / 2.000 traces: clean GE103,50 / SR0%, matched GE109,85 / SR0%,
+  OOD GE109,25 / SR0%. Ελέγχθηκαν όλα τα curves από τα stored ranks.
+- Νέες training loops16,462s· συνολικές18,079s· continuation call29,175s.
+  Notebook log περίπου277s με setup/tests/export, χωρίς επαληθευμένο προσωπικό quota.
+- Output archive SHA256 `68940b28675fcb1f47937163723016871bdb96a378eb2c6637115a0b404a0132`,
+  CRC και49 αρχεία ελεγμένα byte-for-byte. Path `runs/kaggle_control/baseline_v3_output/sca_runs_minimal_v1.zip`.
+- Αναφορά/γραφικά: `outputs/kaggle_baseline_v3_2026-10-03/REPORT_EL.md`.
+- Ένα πλήρες CNN από4. Δεν εκτελέστηκαν noise/shift/combined ή final attack evaluation.
+  Πριν από τα επόμενα trainings, διάγνωση baseline χωρίς αλλαγή τρέχοντος fingerprint.
+- Το ιδιωτικό Input ενημερώθηκε σε version2 με το verified epoch50 archive και την
+  τρέχουσα bootstrap. Το fully extracted packet ελέγχθηκε τοπικά χωρίς training.
+- Η version4 του ίδιου notebook αποθηκεύτηκε ως QUICK_SAVE μέσω επίσημου SDK,
+  χωρίς νέα εκτέλεση GPU. Το default baseline μπορεί πλέον να επαναχρησιμοποιήσει
+  το ολοκληρωμένο checkpoint. Η πραγματική εκτέλεση είναι η version3.
+- Management CLI στα Windows χρειάζεται native paths και PYTHONUTF8=1.
+  Οι handlers βρίσκονται μόνο στο ignored `runs/kaggle_control/`, εκτός training hash.

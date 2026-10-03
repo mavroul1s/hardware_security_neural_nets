@@ -20,5 +20,7 @@
   "bundle_sha256": "99b774da756ecf64e6f11d8a3bc36dcafd0657f5d0f3fc2ee684d72ba696184c",
   "bundle_excludes_datasets_checkpoints_environment_git": true,
   "resume_input_bytes": 28054297,
-  "resume_input_sha256": "6e1cc94d8bd5277020eca9309c0271ab00129f3bc9677778fdbaaa5c1d7081c6"
+  "resume_input_sha256": "6e1cc94d8bd5277020eca9309c0271ab00129f3bc9677778fdbaaa5c1d7081c6",
+  "scope": "Historical initial bootstrap QA before API execution",
+  "current_execution_status": "kaggle_execution_status.json"
 }

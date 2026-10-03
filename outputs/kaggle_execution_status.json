@@ -13,5 +13,10 @@
   "accelerator_requested": "NvidiaTeslaT4",
   "source_sha256": "e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87",
   "status": "COMPLETE",
-  "verification": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\outputs\\kaggle_baseline_v3_2026-10-03\\verification.json"
+  "verification": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\outputs\\kaggle_baseline_v3_2026-10-03\\verification.json",
+  "saved_kernel_version": 4,
+  "saved_version_execution_type": "QUICK_SAVE",
+  "resume_input_epoch_verified": 50,
+  "saved_notebook_source_verified": true,
+  "additional_training_started": false
 }

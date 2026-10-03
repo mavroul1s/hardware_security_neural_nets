@@ -26,6 +26,8 @@ duplicate code Inputs όταν το source fingerprint είναι ίδιο. Δι
 εκδόσεις αναφέρονται ως ambiguity. Το `sca_runs_minimal_v1.zip` μόνο του δεν περιέχει
 ASCAD ή πλήρες project. Το `results.zip` περιέχει κώδικα/checkpoints αλλά επίσης χρειάζεται
 το ASCAD Input. Το ενιαίο πακέτο αποφεύγει αυτή την ασάφεια.
+Το Kaggle μπορεί να αποσυμπιέσει αναδρομικά όλα τα ZIP. Η πρώτη cell αναγνωρίζει
+τότε τον φάκελο `sca_runs_minimal_v1/none_seed0/` και επαναφέρει τα checkpoints αυτόματα.
 
 Ο κώδικας εκπαίδευσης έχει το ίδιο hash με το υπάρχον checkpoint. Η διόρθωση αφορά μόνο
 την notebook bootstrap cell. Σε διαφορετική GPU/runtime παραμένει ο έλεγχος exact resume.
@@ -71,7 +73,8 @@ sessions μέχρι 12 ώρες CPU/GPU και 20 GB αποθηκευόμενο�
 Μέσα στο ίδιο ενεργό session κρατάμε `RUN_TAG="minimal_v1"`. Σε νέο session ή νέο
 Save & Run All δεν θεωρούμε ότι το προηγούμενο `/kaggle/working` διατηρείται.
 Κατέβασε το `sca_runs_minimal_v1.zip`, ανέβασέ το ως private Input και βάλε
-`RESTORE_ARCHIVE="/kaggle/input/<your-input>/sca_runs_minimal_v1.zip"` στο ίδιο notebook.
+`RESTORE_ARCHIVE=None` στο ίδιο notebook για αυτόματο discovery, ακόμη και αν το Kaggle
+το αποσυμπίεσε. Εναλλακτικά, δήλωσε explicit path μόνο όταν το ZIP υπάρχει ακόμη ως αρχείο.
 Έπειτα διάλεξε το επόμενο `STAGE`. Η εξαγωγή δεν αντικαθιστά υπάρχοντα run folders.
 Κράτα το ίδιο source bundle, dependency versions και GPU/runtime για ακριβή resume.
 Αν αλλάξει το περιβάλλον, η συνέχεια απορρίπτεται· δεν ξεκινά αυτόματα νέο run.
@@ -89,3 +92,16 @@ evaluations και οι permutations δεν είναι πρόσθετα training
 Αν Internet είναι off, οι εξαρτήσεις πρέπει να είναι ήδη στο Kaggle image ή να προστεθούν
 ως wheel dataset. Δεν αντιγράφουμε το Windows CPU venv σε Linux CUDA. Δεν απαιτείται
 Kaggle API token για αυτή τη χειροκίνητη ροή.
+
+## Διαχείριση μέσω API
+
+Ο χρήστης εξουσιοδότησε εκτέλεση με το `api_key/kaggle.json`. Το credential και
+το `.venv-kaggle/` αγνοούνται από Git και δεν ανεβαίνουν ποτέ στα Inputs.
+Χρησιμοποιήθηκε το επίσημο Kaggle CLI σε χωριστό περιβάλλον, διατηρώντας το μοναδικό
+ιδιωτικό notebook `con1los/hw-sec-exp2`, την προηγούμενη Docker image και GPU T4.
+Η version3 ολοκλήρωσε το baseline3→50. Το ιδιωτικό Input είναι
+`con1los/hardware-sca-resume`. Reports/checkpoints βρίσκονται τοπικά στο project.
+
+Τεκμηρίωση: [Kaggle kernels](https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels.md),
+[metadata](https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels_metadata.md),
+[datasets](https://github.com/Kaggle/kaggle-cli/blob/main/docs/datasets.md).

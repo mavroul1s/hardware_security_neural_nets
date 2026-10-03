@@ -81,6 +81,10 @@ py -3.12 -m venv .venv
 Ένα seed επιτρέπει διερευνητική σύγκριση και όχι εκτίμηση training variability.
 
 Η τελευταία έκδοση έχει προεπιλογή `STAGE="baseline"`, αφού το GPU benchmark ολοκληρώθηκε.
+Το baseline πλέον ολοκληρώθηκε μέσω API στο ίδιο `con1los/hw-sec-exp2`, version3:
+συνέχεια epoch3→50, ίδιο περιβάλλον/splits/source. Clean validation SR@2.000=0/20·
+best checkpoint epoch2. Η [αναφορά baseline](outputs/kaggle_baseline_v3_2026-10-03/REPORT_EL.md)
+περιέχει ελεγμένες καμπύλες και περιορισμούς. Διάγνωση πριν τις άλλες3 στρατηγικές.
 Για νέο session ανέβασε το ενιαίο `outputs/kaggle_resume_input.zip` ως Input.
 Η διορθωμένη πρώτη cell κάνει discovery/restore και εμφανίζει τα paths και το ολοκληρωμένο epoch.
 Για αντιγραφή στο ίδιο Kaggle notebook υπάρχει το `outputs/kaggle_first_cell.py`.

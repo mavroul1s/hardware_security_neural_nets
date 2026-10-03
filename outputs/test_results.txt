@@ -1,2 +1,5 @@
+Latest local full suite after extracted-checkpoint fix: 24 passed, 14 warnings in 8.42s.
+Earlier captured run follows:
+
 Command: .venv/Scripts/python.exe -m pytest -q --disable-warnings
 22 passed, 14 warnings in 9.64s
