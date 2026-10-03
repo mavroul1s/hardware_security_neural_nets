@@ -1,5 +1,9 @@
 # Εκτέλεση στο Kaggle
 
+Χρησιμοποιούμε **ένα notebook και τέσσερα CNN trainings συνολικά**, σε ένα budget10k
+και seed0. Τα 3 benchmark epochs είναι μέρος του none baseline των 50 epochs.
+Η νέα επιλογή αντικαθιστά το παλιό πλάνο 46 trainings. Δεν δημιουργούμε ξεχωριστά notebooks ανά πείραμα.
+
 Έλεγχος δημόσιας τεκμηρίωσης: 2026-10-03. Ο χρήστης επιβεβαίωσε ενεργή πρόσβαση GPU.
 Δεν συνδεθήκαμε στον λογαριασμό, δεν επιθεωρήσαμε προσωπικό quota και δεν εκτελέσαμε Kaggle training.
 
@@ -24,19 +28,40 @@ sessions μέχρι 12 ώρες CPU/GPU και 20 GB αποθηκευόμενο�
    ελέγχει checksum, CUDA και GPU name και κρατά `pip freeze`. Για pinned CUDA torch2.8
    επιλέγει το official cu126 wheel· μπορείς να χρησιμοποιήσεις το έτοιμο Kaggle torch
    απενεργοποιώντας εγκατάσταση, με τις αποκλίσεις καταγραμμένες και χωρίς ισχυρισμό ίδιο environment.
-5. Άφησε πρώτα `RUN_BENCHMARK=True` και `RUN_BASELINES=False`. Γίνονται 3 epochs ανά
-   στρατηγική, n_train10k/validation5k, και παράγονται κόστη. Εξέτασε τα πραγματικά timings,
-   διαθέσιμο quota και validation diagnostics πριν ενεργοποιήσεις πλήρη εκπαίδευση.
-6. Μετά, ενεργοποίησε `RUN_BASELINES=True`. Γίνονται οι δύο seed0 baselines 50 epochs.
-   Το notebook έχει `RUN_FINAL_ATTACK=False`. Χρησιμοποιούμε αρχικά validation, ώστε
-   το attack set να παραμείνει τελικό. Το notebook δεν ξεκινά αυτόματα το matrix των 40 runs.
-7. Για συνέχεια, ανέβασε το προηγούμενο run folder ως private Input, αντέγραψέ το στο
-   `/kaggle/working`, κράτησε το ίδιο runtime/code/dependencies και κάλεσε train(..., resume=True)
-   με περισσότερα epochs. Κράτα όλα τα `.pt`, configs, indices και manifests. Η ακριβής
-   συνέχιση απορρίπτεται αν άλλαξε συσκευή ή περιβάλλον· νέα GPU συνιστά νέο run.
+5. Άφησε αρχικά `STAGE="benchmark"`. Γίνονται μόνο οι πρώτες 3 epochs του none CNN,
+   n_train10k/validation5k. Το `gpu_cost_estimate.json` είναι πρόβλεψη αναφοράς από αυτό
+   το μοντέλο, όχι μετρημένο overhead των άλλων στρατηγικών. Εξέτασε χρόνο/quota και diagnostics.
+6. Στο **ίδιο notebook**, βάλε `STAGE="baseline"` και ξανατρέξε τις settings/training/output
+   cells. Το ίδιο run συνεχίζει από epoch3 σε epoch50. Έλεγξε clean/matched-joint/OOD-joint
+   validation πριν αλλάξεις σε `STAGE="compare"`. Τότε εκπαιδεύονται οι άλλες τρεις
+   στρατηγικές: noise, shift, combined. Το ήδη ολοκληρωμένο none δεν ξαναεκπαιδεύεται.
+7. Με `STAGE="attack"` γίνονται **μόνο αξιολογήσεις**, χωρίς training. Προϋπόθεση:
+   τέσσερα πλήρη runs, review/freeze του protocol και `PROTOCOL_FROZEN=True`.
+   Το `protocol_freeze.json` αποθηκεύεται πριν τα πρώτα attack metrics και ελέγχεται σε
+   επανεκτέλεση. Δεν αλλάζουμε ρυθμίσεις επειδή είδαμε το attack αποτέλεσμα.
 8. **Save Version → Save & Run All** για αναπαραγώγιμη αποθηκευμένη εκτέλεση.
    Κατέβασε το output archive από `/kaggle/working`, μαζί με checkpoint/logs/versions.
    Quick Save μόνο δεν αποδεικνύει ότι εκτελέστηκε το notebook. Απενεργοποίησε GPU όταν τελειώσεις.
+
+## Συνέχιση χωρίς διπλές εκπαιδεύσεις
+
+Μέσα στο ίδιο ενεργό session κρατάμε `RUN_TAG="minimal_v1"`. Σε νέο session ή νέο
+Save & Run All δεν θεωρούμε ότι το προηγούμενο `/kaggle/working` διατηρείται.
+Κατέβασε το `sca_runs_minimal_v1.zip`, ανέβασέ το ως private Input και βάλε
+`RESTORE_ARCHIVE="/kaggle/input/<your-input>/sca_runs_minimal_v1.zip"` στο ίδιο notebook.
+Έπειτα διάλεξε το επόμενο `STAGE`. Η εξαγωγή δεν αντικαθιστά υπάρχοντα run folders.
+Κράτα το ίδιο source bundle, dependency versions και GPU/runtime για ακριβή resume.
+Αν αλλάξει το περιβάλλον, η συνέχεια απορρίπτεται· δεν ξεκινά αυτόματα νέο run.
+
+Ο runner ελέγχει config/data/source/environment πριν επαναχρησιμοποιήσει ολοκληρωμένο
+checkpoint. Οι evaluations έχουν cache με checksum checkpoint/dataset, code, συσκευή
+και ρυθμίσεις. Αλλαγή checkpoint ή conditions δημιουργεί νέα αξιολόγηση, όχι νέα εκπαίδευση.
+Το `study_summary.json` μετρά μοναδικά trainings, πραγματικά steps και training-loop χρόνους.
+
+Το ελάχιστο πλήρες πλάνο είναι **4 × 50 epochs = 200 epochs / 15.800 steps**,
+συμπεριλαμβανομένων των 3 αρχικών benchmark epochs. Τα 4 × 8 = 32 τελικά condition
+evaluations και οι permutations δεν είναι πρόσθετα trainings. Ένα seed δεν εκτιμά
+μεταβλητότητα μεταξύ ανεξάρτητων εκπαιδεύσεων. Πρόσθετα μοντέλα/budgets/seeds δεν εκκινούν αυτόματα.
 
 Αν Internet είναι off, οι εξαρτήσεις πρέπει να είναι ήδη στο Kaggle image ή να προστεθούν
 ως wheel dataset. Δεν αντιγράφουμε το Windows CPU venv σε Linux CUDA. Δεν απαιτείται

@@ -70,13 +70,19 @@ py -3.12 -m venv .venv
 ## Baseline και τελική αξιολόγηση
 
 Το [Kaggle notebook](notebooks/kaggle_baseline.ipynb) καλεί τον ίδιο κώδικα.
-Αρχικά τρέχει μικρό GPU benchmark. Μετά εκτελούνται CNN/MLP baselines 10.000 traces,
-50 epochs. Πρώτα εξετάζουμε μόνο validation. Το πλήρες matrix έχει 40 CNN trainings
-(4 strategies × 2 budgets × 5 seeds), και ξεκινά μετά από benchmark και έλεγχο του baseline.
+Κρατάμε **ένα notebook και τέσσερις CNN εκπαιδεύσεις συνολικά**: none/noise/shift/combined,
+10.000 traces, seed0, 50 epochs. Το προηγούμενο πλάνο 46 trainings αντικαταστάθηκε μετά
+από αίτημα του χρήστη για ελάχιστο Kaggle κόστος. Το MLP και δεύτερα budgets/seeds δεν εκτελούνται.
+
+Στο ίδιο αρχείο αλλάζουμε μόνο `STAGE`: `benchmark` (οι πρώτες 3 epochs του none),
+`baseline` (συνέχιση του ίδιου checkpoint σε 50), `compare` (οι άλλες 3 στρατηγικές),
+`attack` (μόνο αξιολόγηση μετά το protocol freeze). Ολοκληρωμένα runs και ίδιες evaluations
+επαναχρησιμοποιούνται. Οι 3 benchmark epochs περιλαμβάνονται στις 50· δεν υπάρχει extra training.
+Ένα seed επιτρέπει διερευνητική σύγκριση και όχι εκτίμηση training variability.
 
 ```powershell
 # Only after freezing the protocol and checkpoint-selection rule:
-& .\.venv\Scripts\python.exe -m sca.cli evaluate --run-dir runs/baseline_cnn_seed0 --config configs/evaluation_final.json --split attack
+& .\.venv\Scripts\python.exe -m sca.cli evaluate --run-dir runs/minimal_v1/none_seed0 --config configs/evaluation_final.json --split attack
 ```
 
 Κάθε run γράφει config, inspection, train/validation indices, split ID, normalizer,

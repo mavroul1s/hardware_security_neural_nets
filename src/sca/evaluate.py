@@ -1,5 +1,6 @@
 """Final attack evaluation is explicit and separate from training."""
 import csv
+import hashlib
 import json
 import time
 from pathlib import Path
@@ -7,10 +8,38 @@ from pathlib import Path
 import numpy as np
 import torch
 from .augment import augment_batch
-from .data import inspect_dataset, load_attack, load_validation_evaluation, normalize
+from .data import inspect_dataset, load_attack, load_validation_evaluation, normalize, sha256_file
 from .metrics import evaluate_key_recovery
 from .models import build_model
 from .train import select_device, write_json, environment, code_identity, sync
+
+
+def evaluate_cached(run_dir, evaluation_config, device="auto", split="validation", dataset_override=None):
+    """Reuse a finished evaluation only for identical data, checkpoint, code and settings."""
+    run_dir = Path(run_dir)
+    if split not in ("validation", "attack"):
+        raise ValueError("Unknown evaluation split")
+    config = json.loads((run_dir / "config.json").read_text(encoding="utf-8"))
+    torch.set_num_threads(config["threads"])
+    training_manifest = json.loads((run_dir / "manifest.json").read_text(encoding="utf-8"))
+    dataset = dataset_override if dataset_override is not None else config["dataset"]
+    if sha256_file(dataset) != training_manifest["dataset_sha256"]:
+        raise ValueError("Evaluation dataset differs from the training dataset")
+    identity = {"checkpoint_sha256": sha256_file(run_dir / "best.pt"),
+        "dataset_sha256": training_manifest["dataset_sha256"],
+        "source_sha256": code_identity()["source_sha256"],
+        "evaluation_config": evaluation_config, "split": split,
+        "environment": environment(select_device(device))}
+    digest = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()[:16]
+    output = run_dir / f"evaluation_{split}_{digest}"
+    if (output / "results.json").exists() and (output / "cache_identity.json").exists():
+        if json.loads((output / "cache_identity.json").read_text(encoding="utf-8")) != identity:
+            raise ValueError("Evaluation cache identity mismatch")
+        return json.loads((output / "results.json").read_text(encoding="utf-8"))
+    results = evaluate(run_dir, evaluation_config, device=device, output_dir=output,
+                       split=split, dataset_override=dataset_override)
+    write_json(output / "cache_identity.json", identity)
+    return results
 
 
 def evaluate(run_dir, evaluation_config, device="auto", output_dir=None, checkpoint_name="best.pt",

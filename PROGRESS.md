@@ -5,6 +5,9 @@
 Εξάμηνο διαθέσιμο, χωρίς συγκεκριμένα κριτήρια μαθήματος. Ο χρήστης έχει Kaggle GPU access.
 Ακριβής ημερομηνία παράδοσης και προσωπικό GPU quota δεν έχουν δοθεί/ελεγχθεί.
 Ανάπτυξη στα ελληνικά ως επικοινωνία, κώδικας στα αγγλικά. Καμία ανάγκη API keys/πληρωμένων υπηρεσιών.
+Νεότερη απαίτηση χρήστη: ελάχιστες Kaggle εκπαιδεύσεις/notebooks. Συμφωνημένο νέο πλάνο:
+**ένα notebook, 4 CNN trainings, 10k training traces, seed0**. Τα πρώτα 3 benchmark epochs
+συνεχίζονται στο ίδιο none baseline, χωρίς πρόσθετο run. Δεν εκτελούνται MLP/5k/multiple seeds.
 
 ## Ολοκληρωμένα στην πρώτη συνεδρία
 
@@ -24,6 +27,9 @@
   transforms, HDF5, model shapes, pipeline, exact resume και validation/attack paths.
   Τελικός έλεγχος: 15 passed, 14 dependency deprecation warnings, 5,99 s.
   Το `pip check` δεν βρήκε ασύμβατες εξαρτήσεις.
+  Μετά την αλλαγή σε ελάχιστο Kaggle πλάνο: **16 passed, 14 warnings, 10,10 s**.
+  Περιλαμβάνονται έλεγχοι ότι completed checkpoints/evaluations επαναχρησιμοποιούνται
+  και dry run των notebook stages χωρίς πέμπτο μοντέλο ή πρόσθετα training epochs.
 - Έγινε πραγματικός CPU pilot (2048 train / 512 validation / 3 epochs), και δύο
   επαναλήψεις verification με ακριβώς ίδια losses/GE/SR. Δεν είναι independent-seed replication.
   Κύριο τελικό artifact: `runs/ascad_cpu_release`, με snapshot του κώδικα και καταγεγραμμένο hash.
@@ -32,17 +38,25 @@
   δεν πιστοποιεί διατήρηση masked leakage· sensitivity παραμένει ανοιχτό.
 - Δημιουργήθηκαν literature comparison/BibTeX για 10 εργασίες, πρωτόκολλο και σχέδιο εξαμήνου.
   Πρόσβαση σε ορισμένα full papers παραμένει περιορισμένη και αναφέρεται ανά εργασία.
-- Δημιουργήθηκαν Kaggle notebook/code bundle, με 4 GPU benchmarks και CNN/MLP baselines.
+- Αρχικά δημιουργήθηκαν Kaggle notebook/code bundle με 4 GPU benchmarks και CNN/MLP baselines.
+  Αντικαταστάθηκαν από το ενιαίο ελάχιστο workflow `benchmark/baseline/compare/attack`:
+  ένα reusable benchmark, ίδιο none baseline και τρεις επιπλέον CNN στρατηγικές.
+  Προστέθηκαν ασφαλής επαναχρησιμοποίηση completed runs και cache evaluations.
   Ελέγχθηκαν συντακτικά οι 6 code cells, χωρίς αποθηκευμένα execution outputs.
   Το bundle εξαιρεί δεδομένα, runs, checkpoints, `.venv` και `.git`.
   **Δεν εκτελέστηκε στο Kaggle** και δεν ελέγχθηκε το προσωπικό GPU quota.
+
+Οι τοπικοί stage checks είναι orchestration dry runs και synthetic CPU tests, όχι πραγματικές
+GPU εκτελέσεις. Ο νέος πηγαίος κώδικας έχει διαφορετικό hash από τα ιστορικά ASCAD pilots·
+τα original snapshots/manifests διατηρούνται ώστε τα παλιά πραγματικά αποτελέσματα να είναι αναπαραγώγιμα.
 
 ## Πραγματικά αποτελέσματα έως τώρα
 
 Τα pilots δεν απέδειξαν ανάκτηση. Clean validation GE@128=125,8, SR@128=0%,
 10 attack-order repetitions από pool512, selected epoch1. Το τελικό attack/test δεν
 χρησιμοποιήθηκε για metrics ή επιλογή υπερπαραμέτρων. Δεν υπάρχουν πραγματικές συγκρίσεις
-augmentation, 5 independent seeds ή πλήρης baseline 50 epochs ακόμη.
+augmentation ή πλήρης baseline 50 epochs ακόμη. Το τρέχον πλάνο έχει ένα seed και
+επομένως δεν θα εκτιμά μεταξύ-training μεταβλητότητα.
 
 Στο `runs/ascad_cpu_release` μετρήθηκαν 48 optimization steps, 1,640 s training loops
 και 0,158 s validation loops, σε CPU με 2 PyTorch threads. Αυτοί οι χρόνοι εξαιρούν
@@ -54,11 +68,15 @@ setup/inspection/checkpoint I/O. Το CNN έχει 197.424 parameters. Τα mani
 
 1. Ανέβασε `outputs/kaggle_project.zip` και το verified `data/ASCAD.h5` ως private Inputs,
    εισήγαγε `notebooks/kaggle_baseline.ipynb` και διάβασε `docs/KAGGLE.md`.
-2. Κατάγραψε actual GPU/remaining quota και εκτέλεσε 3-epoch benchmark των 4 strategies.
-3. Εκτέλεσε CNN/MLP seed0 baseline10k/50epochs, διάγνωσε clean/corrupted validation.
+2. Κατάγραψε actual GPU/remaining quota και άφησε `STAGE="benchmark"`: none CNN, 3 epochs.
+3. Στο ίδιο notebook, `STAGE="baseline"` συνεχίζει το ίδιο run μέχρι 50 epochs.
+   Έλεγξε validation· μετά `STAGE="compare"` εκπαιδεύει noise/shift/combined, χωρίς νέο none run.
 4. Εξέτασε padding/boundary sensitivity στο validation και ακριβή overlap με EquivSCA/RFA/CutMix.
-5. Πάγωσε config/criterion/code πριν το τελικό attack. Μετρημένο GPU κόστος καθορίζει
-   αν χωράει το matrix40runs/119ksteps. Πέντε seeds είναι στόχος, όχι ολοκληρωμένο αποτέλεσμα.
+5. Πάγωσε config/criterion/code πριν το `STAGE="attack"`, που μόνο αξιολογεί τα 4 μοντέλα.
+   Το νέο matrix έχει 4 runs / 15.800 steps, χωρίς αυτόματες πρόσθετες εκπαιδεύσεις.
+   Πρόσθετα seeds/budgets μόνο με συγκεκριμένο λόγο και συμφωνία χρήστη. Το παλιό 40-run matrix αποσύρθηκε.
+6. Διατήρησε το output archive για restore σε νέο session, ώστε να μη χαθούν checkpoints
+   και να μη χρειαστούν επαναλήψεις. Ο ακριβής τρόπος περιγράφεται στο `docs/KAGGLE.md`.
 
 Ελληνική αναφορά: `outputs/SESSION_REPORT_EL.md`. Αγγλικό paper draft αναβάλλεται μέχρι
 να υπάρχουν επαρκή πραγματικά ευρήματα και συμφωνία με τον καθηγητή.

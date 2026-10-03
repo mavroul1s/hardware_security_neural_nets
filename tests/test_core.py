@@ -14,7 +14,7 @@ from sca.metrics import rank_curve, evaluate_key_recovery
 from sca.models import build_model
 from sca.synthetic import create_fixture
 from sca.train import train
-from sca.evaluate import evaluate
+from sca.evaluate import evaluate, evaluate_cached
 
 
 def test_aes_known_values_and_candidate_mapping():
@@ -133,7 +133,7 @@ def test_model_shape(name):
     assert build_model(name)(torch.zeros(4, 700)).shape == (4, 256)
 
 
-def test_checkpoint_continuation_matches_uninterrupted_training_and_evaluation(tmp_path):
+def test_checkpoint_continuation_matches_uninterrupted_training_and_evaluation(tmp_path, monkeypatch):
     dataset = tmp_path / "fixture.h5"
     create_fixture(dataset, n_profiling=64, n_attack=16)
     base = {"dataset": str(dataset), "model": "cnn", "target_byte": 2, "seed": 1,
@@ -175,5 +175,13 @@ def test_checkpoint_continuation_matches_uninterrupted_training_and_evaluation(t
     validation_results = evaluate(full_dir, evaluation, device="cpu", split="validation")
     assert validation_results[0]["split"] == "validation"
     assert validation_results[0]["attack_pool_size"] == 16
+    cached = evaluate_cached(full_dir, evaluation, device="cpu", split="validation")
+    def unexpected_evaluation(*args, **kwargs):
+        raise RuntimeError("Evaluation recomputed")
+    with monkeypatch.context() as context:
+        context.setattr("sca.evaluate.evaluate", unexpected_evaluation)
+        assert evaluate_cached(full_dir, evaluation, device="cpu", split="validation") == cached
+        with pytest.raises(RuntimeError, match="recomputed"):
+            evaluate_cached(full_dir, {**evaluation, "repetitions": 4}, device="cpu", split="validation")
     with pytest.raises(ValueError, match="mismatch"):
         train({**base, "run_dir": str(resumed_dir), "epochs": 3, "seed": 2}, resume=True)

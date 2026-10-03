@@ -1,4 +1,7 @@
-# Πειραματικό πρωτόκολλο v0.1 — προσωρινό
+# Πειραματικό πρωτόκολλο v0.2 — ελάχιστη διερευνητική μελέτη
+
+Αίτημα χρήστη: ένα Kaggle notebook και όσο λιγότερες εκπαιδεύσεις γίνεται.
+Συγκρίνουμε 4 CNNs, 10k training traces, seed0. Δεν τρέχουμε MLP, δεύτερο budget ή seed sweep.
 
 ## Threat model και περιορισμοί
 
@@ -17,14 +20,14 @@
 ## Split και κανονικοποίηση
 
 Χρησιμοποιούμε ανεξάρτητο `default_rng(split_seed=2026)` για permutation των profiling rows.
-Οι πρώτες 5.000 είναι validation· τα επόμενα 5.000/10.000 είναι nested training budgets.
+Οι πρώτες 5.000 είναι validation· τα επόμενα 10.000 είναι το μοναδικό training budget.
 Αποθηκεύουμε πραγματικά indices και SHA-256 split identifier. Τα 10.000 επίσημα attack rows
 κρατούνται αποκλειστικά για τελική αξιολόγηση. Τα μικρά pilot configs έχουν δικά τους μικρότερα splits.
 Κάθε online augmented view δημιουργείται αφού επιλεγεί το αρχικό trace από το training split.
 
 `z=(x−μ_train)/σ_train`, με έναν scalar μ και σ από όλα τα training samples, float64 fit και
 float32 inputs. Ο ίδιος μετασχηματισμός εφαρμόζεται σε validation/attack χωρίς νέο fit.
-Μεγαλύτερα budgets έχουν δικό τους training-only fit· οι στρατηγικές στο ίδιο budget έχουν κοινό fit.
+Οι τέσσερις στρατηγικές έχουν κοινό training-only fit.
 
 ## Αλλοιώσεις
 
@@ -51,17 +54,20 @@ First-order identity SNR σε masked implementation **δεν αποδεικνύ�
 ## Training και συγκρίσεις
 
 Το CNN είναι κοινό στις `none/noise/shift/combined`. Initial σ=0,1, s=5.
-Adam lr=0,001, batch128, 50 epochs, χωρίς early stopping. Ίδια initial model seed και
-ανεξάρτητος common shuffle generator `seed+10000`. 5.000 traces: 40 steps/epoch,
-2.000/run. 10.000 traces: 79 steps/epoch, 3.950/run. Το matrix 40 trainings έχει 119.000 steps.
-Τα steps μεταξύ **διαφορετικών** budgets δεν είναι ίσα· εξετάζουν χωριστές small-data συνθήκες.
+Adam lr=0,001, batch128, 50 epochs, χωρίς early stopping. Ίδια initial model seed0 και
+ανεξάρτητος common shuffle generator `seed+10000`. 10.000 traces: 79 steps/epoch,
+3.950/run. Τα τέσσερα trainings έχουν συνολικά 15.800 steps.
+Το none ξεκινά με 3 epochs ως benchmark και συνεχίζει άλλες 47 στο ίδιο checkpoint.
+Η επαναχρησιμοποίηση του benchmark δεν προσθέτει epochs ή πέμπτο μοντέλο.
 
 Μετράμε training-loop wall time μετά από CUDA synchronize, μαζί με augmentation και transfers.
 Validation time χωριστά. Setup, HDF5 inspection και checkpoint I/O δεν περιλαμβάνονται σε αυτόν
 τον training-loop χρόνο· για συνολικό κόστος καταγράφουμε επιπλέον notebook elapsed time.
 Ίδιο πλήθος steps δεν εγγυάται ίδιο wall time· αποφεύγουμε ισχυρισμό «ίδιο συνολικό compute».
-Κόστος HPO και exploratory pilots αναφέρεται χωριστά. Πριν GPU sweep εκτελούμε 3-epoch
-benchmarks ανά στρατηγική, στο ίδιο hardware, με margin και μετρημένο evaluation overhead.
+Κόστος HPO και exploratory pilots αναφέρεται χωριστά. Η πρώτη εκτίμηση χρησιμοποιεί τις
+3 αρχικές none epochs στην ίδια GPU. Το overhead των άλλων augmentations είναι ακόμη
+άγνωστο· αναφέρουμε πρόβλεψη αναφοράς με margin, όχι μετρημένο ίδιο κόστος τεσσάρων στρατηγικών.
+Τα πραγματικά κόστη όλων των runs καταγράφονται στο `study_summary.json`.
 
 Αν χρειαστεί tuning, αλλάζουμε μόνο βάσει validation και κρατάμε log κάθε δοκιμής.
 Οριστικοποιούμε configs/criterion/code hash σε artifact πριν την πρώτη τελική attack αξιολόγηση.
@@ -95,12 +101,12 @@ realization· robustness σε άλλα corruption seeds αποτελεί ξεχ�
 
 ## Αβεβαιότητα και ερμηνεία
 
-Κρατάμε ranks ανά attack repetition **μέσα** σε κάθε training seed. Επίσημα plots δείχνουν
-GE/SR curves και seed-level summaries. Οι 100 permutations δεν ισοδυναμούν με 100
-ανεξάρτητα trainings και έχουν κοινά traces. Αναφέρουμε Monte Carlo εύρος χωριστά από
-mean/SD μεταξύ 5 training seeds. Για paired διαφορές χρησιμοποιούμε seed-level bootstrap
-exploratorily, με σαφή προειδοποίηση ότι n=5 δίνει ασταθή intervals. Δεν κάνουμε
-pseudo-replication πολλαπλασιάζοντας seeds επί permutations.
+Κρατάμε ranks ανά attack repetition στο μοναδικό training seed0. Τα plots δείχνουν
+GE/SR curves και paired περιγραφικές διαφορές των τεσσάρων στρατηγικών. Οι 100 permutations
+έχουν κοινά traces και δεν είναι ανεξάρτητα trainings. Με ένα seed δεν υπολογίζουμε
+between-training SD, seed bootstrap intervals ή ισχυρισμούς σταθερού οφέλους μεταξύ seeds.
+Δεν ελέγχουμε εξάρτηση από το data budget με ένα μόνο budget. Πρόσθετα seeds/budgets
+απαιτούν συγκεκριμένο ερευνητικό λόγο και συμφωνία του χρήστη.
 
 Κύριο endpoint n_train10k, combined_both_ood, SR@2000. GE και censored threshold traces
 υποστηρίζουν την ερμηνεία, μαζί με clean ζημιά και GPU κόστος. Το ερευνητικό αποτέλεσμα

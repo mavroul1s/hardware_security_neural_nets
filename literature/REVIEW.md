@@ -33,6 +33,12 @@ clean performance ή να μην υπερέχει των single transforms. Το
 ελεγχόμενη factorial σύγκριση και η συσχέτιση οφέλους με data budget και πραγματικό κόστος,
 χωρίς unlabeled target adaptation. Δεν παρουσιάζεται ως αποδεδειγμένα νέο.
 
+Τρέχον περιορισμένο scope, μετά το αίτημα χρήστη για λίγες Kaggle εκπαιδεύσεις:
+4 στρατηγικές × 10k traces × seed0 σε ένα notebook. Αυτό ελέγχει περιγραφικά τις
+στρατηγικές σε μία συνθήκη περιορισμένων δεδομένων· δεν αρκεί για εξάρτηση από το data
+budget ή σταθερότητα μεταξύ ανεξάρτητων trainings. Αυτά είναι πιθανές επεκτάσεις, χωρίς
+αυτόματη εκτέλεση ή προεξόφληση paper.
+
 ## Search log και επόμενος έλεγχος
 
 Queries: `side channel data augmentation combined noise desynchronization 2025 2026 AES`,

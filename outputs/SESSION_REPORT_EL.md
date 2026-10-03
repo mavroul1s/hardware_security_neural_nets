@@ -5,6 +5,11 @@ dataset με επαληθευμένο checksum, αρχική βιβλιογρα�
 notebook. Η συνεδρία ολοκλήρωσε την υποδομή και τον CPU pilot. Δεν έχει ακόμη εκτελεστεί
 πλήρες baseline, σύγκριση augmentations ή εκπαίδευση στο Kaggle.
 
+**Ενημέρωση πλάνου:** ο χρήστης ζήτησε ελάχιστες εκπαιδεύσεις/notebooks. Το νέο πλάνο
+είναι ένα notebook και τέσσερα CNN trainings, 10k traces, seed0. Οι πρώτες 3 none epochs
+ως benchmark επαναχρησιμοποιούνται στις 50 baseline epochs. Τα ιστορικά CPU αποτελέσματα
+παρακάτω διατηρούν τον αρχικό κώδικα στα run snapshots· δεν επανεκτελέστηκαν λόγω αυτής της αλλαγής.
+
 ## Πλαίσιο και υλοποίηση
 
 Υπάρχει ένα εξάμηνο μέχρι την παράδοση και δεν έχουν οριστεί επιπλέον κριτήρια μαθήματος.
@@ -63,11 +68,16 @@ notebook. Η συνεδρία ολοκλήρωσε την υποδομή και 
 ## Έλεγχοι ορθότητας
 
 Η τελική εκτέλεση έδωσε **15 passed σε 5,99 s**· οι 14 warnings αφορούν deprecations
-εξαρτήσεων γραφημάτων. Το [test output](test_results.txt) είναι αποθηκευμένο.
+εξαρτήσεων γραφημάτων. Το [αρχικό test output](test_results_initial.txt) είναι αποθηκευμένο.
 Οι έλεγχοι καλύπτουν AES labels/candidates, oracle και λανθασμένο key, ties, censoring,
 reproducible attack orders, disjoint/nested splits, training-only normalization, shifts
 και noise, HDF5 failures, model shapes και ολόκληρη συνθετική διαδρομή training/evaluation.
 Η συνέχιση checkpoint συγκρίθηκε με αδιάκοπη εκπαίδευση: ίδια weights και optimizer state.
+
+Μετά την προσαρμογή στο ελάχιστο Kaggle πλάνο, ο [νεότερος έλεγχος](test_results.txt)
+έδωσε **16 passed, 14 warnings σε 10,10 s**. Επιπλέον ελέγχθηκαν η επαναχρησιμοποίηση
+ολοκληρωμένων checkpoints και αξιολογήσεων, καθώς και η ροή benchmark→baseline→compare→attack
+με dry-run orchestration: τέσσερα μοναδικά μοντέλα και καμία επιπλέον εκπαίδευση στο attack.
 
 Το ξεχωριστό synthetic smoke test χρησιμοποίησε 384 training/128 validation traces,
 2 epochs και 12 steps. Είναι τεχνητή unmasked διαρροή για έλεγχο κώδικα· δεν αποτελεί
@@ -127,10 +137,12 @@ checkpoint I/O. Το checkpoint έχει 2.397.765 bytes, με optimizer/RNG sta
 Το [γράφημα ορίων](boundary_audit/boundary_audit.png) και το GE/SR γράφημα ελέγχθηκαν οπτικά.
 Πριν οριστικοποιηθούν shifts 5/10 χρειάζεται sensitivity του zero/edge padding στο validation.
 
-Το [CPU cost estimate](cpu_cost_estimate_release.json) προβλέπει 119.000 training steps
+Το ιστορικό [CPU cost estimate](cpu_cost_estimate_release.json), για το προηγούμενο πλάνο
+40 trainings, προβλέπει 119.000 training steps
 σε περίπου 1,15 ώρες στην ίδια CPU, ή 1,72 με περιθώριο 50%. Είναι πρόχειρη πρόβλεψη
 από δύο μικρά epochs μετά το warm-up· εξαιρεί validation, evaluation, HPO, I/O και διαφορές
-augmentation overhead. Δεν είναι μετρημένος χρόνος πλήρους matrix ούτε εκτίμηση Kaggle GPU.
+augmentation overhead. Δεν είναι μετρημένος χρόνος πλήρους matrix ούτε εκτίμηση Kaggle GPU
+και δεν εφαρμόζεται στο νέο πλάνο 4 trainings / 15.800 steps.
 
 ## Βιβλιογραφία και προσωρινή συνεισφορά
 
@@ -140,10 +152,10 @@ diffusion, equivariant CNNs και feature alignment. Το [BibTeX](../literatur
 κρατά επαληθευμένα metadata/DOIs. Ο πίνακας δηλώνει ρητά αν εξετάστηκε πλήρες paper,
 preprint, slides ή μόνο abstract και ποιο code URL επαληθεύτηκε.
 
-Προσωρινό ερώτημα: με 5k/10k μοναδικά profiling traces, κοινό CNN και ίδιο πλήθος
-optimization steps ανά data budget, υπερέχει το joint noise/shift από τις δύο single
+Προσωρινό ερώτημα: με 10k μοναδικά profiling traces, κοινό CNN και ίδιο πλήθος
+optimization steps, υπερέχει το joint noise/shift από τις δύο single
 στρατηγικές σε προκαθορισμένες joint αλλοιώσεις μεγαλύτερης έντασης, χωρίς target adaptation;
-Κύριο προτεινόμενο endpoint είναι SR@2.000 στο 10k budget, με paired training seeds,
+Κύριο προτεινόμενο endpoint είναι SR@2.000 στο 10k budget, με κοινό training seed0,
 χωριστή αναφορά clean επίδοσης και μετρημένου χρόνου στην ίδια GPU.
 
 Αυτό είναι ελέγξιμη υπόθεση, όχι επιβεβαιωμένη πρωτοτυπία. Χρειάζεται λεπτομερής έλεγχος
@@ -151,7 +163,8 @@ EquivSCA/RFA και πρόσβαση σε CutMix/IEEE πλήρη κείμενα.
 ανεκτή clean ζημιά και επιβεβαίωση πέρα από μία padding policy θα υποστήριζαν τη συνεισφορά.
 Μηδενικό όφελος, όφελος μόνο σε γνωστές εντάσεις ή εξάρτηση από border artifacts θα την
 αποδυνάμωναν. Αγγλικό paper draft θα έχει νόημα μετά από πραγματικά ευρήματα και συζήτηση
-με τον καθηγητή.
+με τον καθηγητή. Το ελάχιστο πλάνο ενός seed δίνει περιγραφική ένδειξη· δεν καλύπτει
+σταθερότητα μεταξύ seeds ή εξάρτηση από διαφορετικά data budgets.
 
 ## Ακριβές επόμενο πείραμα
 
@@ -162,13 +175,12 @@ GPU/limits ελέγχθηκε· το προσωπικό quota και η διαθ
 
 1. Ανέβασε ιδιωτικά το `outputs/kaggle_project.zip` και ξεχωριστά το verified `data/ASCAD.h5`.
    Εισήγαγε το notebook και πρόσθεσε τα δύο Inputs. Δεν χρειάζεται το Windows `.venv`.
-2. Έλεγξε Accelerator, remaining quota και Internet. Άφησε `RUN_BENCHMARK=True`,
-   `RUN_BASELINES=False`: 3 epochs ανά `none/noise/shift/combined`, 10k train/5k validation,
-   στην ίδια πραγματική GPU. Κράτα χρόνους και validation diagnostics.
-3. Μετά τον έλεγχο κόστους, εκτέλεσε CNN και MLP seed0, 10k traces, 50 epochs, με clean
-   και corrupted validation. `RUN_FINAL_ATTACK=False` μέχρι να οριστικοποιηθεί το πρωτόκολλο.
+2. Έλεγξε Accelerator, remaining quota και Internet. Άφησε `STAGE="benchmark"`:
+   οι πρώτες 3 epochs του none CNN, 10k train/5k validation. Κράτα χρόνους και diagnostics.
+3. Με `STAGE="baseline"` στο ίδιο notebook συνέχισε το ίδιο checkpoint σε 50 epochs.
+   Μετά τον validation έλεγχο, `STAGE="compare"` εκπαιδεύει μόνο τις άλλες 3 στρατηγικές.
 4. Διάγνωσε baseline, padding και literature overlap· πάγωσε configs/κριτήρια/code hash.
-   Μόνο κατόπιν προχωράμε στο matrix μέχρι 40 trainings και στην τελική attack αξιολόγηση.
+   Το `STAGE="attack"` μόνο αξιολογεί τα τέσσερα υπάρχοντα μοντέλα, χωρίς νέα trainings.
 
 Αποθήκευση: Save Version → Save & Run All και λήψη logs/checkpoints/output archive.
 Το [PROGRESS.md](../PROGRESS.md) είναι το σημείο εκκίνησης της επόμενης συνεδρίας.

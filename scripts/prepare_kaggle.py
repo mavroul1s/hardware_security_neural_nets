@@ -18,12 +18,15 @@ def cell(kind, content):
 def prepare():
     cells = [
         cell("markdown", """
-# ASCAD fixed-key: GPU benchmark και πρώτο baseline
+# ASCAD fixed-key: ένα notebook, τέσσερις εκπαιδεύσεις
 
 Αυτό το notebook καλεί τον κοινό κώδικα `src/sca`, χωρίς αντιγραφή training/ranking.
 Δεν έχει εκτελεστεί στο Kaggle από τη δημιουργία του. Πρόσθεσε ως Inputs το code bundle
 και το επίσημο `ASCAD.h5`. Έλεγξε Accelerator/remaining GPU quota πριν την εκτέλεση.
-Αρχικά τρέχουμε μόνο benchmark. Το τελικό attack set μένει κλειστό μέχρι το protocol freeze.
+Στάδια στο ίδιο notebook: `benchmark` → `baseline` → `compare` → `attack`.
+Το benchmark είναι οι πρώτες 3 epochs του baseline και συνεχίζεται από checkpoint.
+Τέσσερα CNNs συνολικά: none/noise/shift/combined, 10k traces, seed0. Κανένα MLP ή seed sweep.
+Το τελικό attack set μένει κλειστό μέχρι το protocol freeze. Ένα seed δίνει διερευνητικό αποτέλεσμα.
         """),
         cell("code", """
 import os
@@ -79,7 +82,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 import torch
 from sca.train import train, environment, write_json, code_identity
 from sca.data import inspect_dataset
-from sca.evaluate import evaluate
+from sca.evaluate import evaluate_cached
 
 if not torch.cuda.is_available():
     raise RuntimeError("CUDA is unavailable. Select a GPU in Notebook Settings before the GPU experiment")
@@ -93,18 +96,32 @@ freeze = subprocess.check_output([sys.executable, "-m", "pip", "freeze"], text=T
 # Enter the quota shown in your account; no default quota is assumed.
 AVAILABLE_GPU_HOURS = None
 SESSION_LIMIT_HOURS = None
-RUN_BENCHMARK = True
-RUN_BASELINES = False
-RUN_FINAL_ATTACK = False
+STAGE = "benchmark"  # benchmark, baseline, compare, attack
 PROTOCOL_FROZEN = False
-RUN_TAG = "session1"
+RUN_TAG = "minimal_v1"
+RESTORE_ARCHIVE = None  # Previous sca_runs_minimal_v1.zip added as a private Input, if needed.
 
 base = json.loads(Path("configs/baseline_cnn.json").read_text())
 matrix = json.loads(Path("configs/matrix.json").read_text())
 validation_config = json.loads(Path("configs/evaluation_final.json").read_text())
-validation_config["budget"] = 1000
+validation_config["conditions"] = [c for c in validation_config["conditions"]
+    if c["name"] in ("clean", "combined_matched", matrix["primary_condition"])]
 validation_config["repetitions"] = 20
+benchmark_evaluation = json.loads(Path("configs/evaluation_pilot.json").read_text())
 run_root = Path("/kaggle/working/runs") / RUN_TAG
+if STAGE not in ("benchmark", "baseline", "compare", "attack"):
+    raise ValueError("Unknown STAGE")
+if matrix["training_budgets"] != [base["n_train"]] or matrix["seeds"] != [base["seed"]]:
+    raise ValueError("This notebook supports the minimal one-budget, one-seed study")
+if len(matrix["strategies"]) != matrix["training_runs"] or matrix["training_runs"] != 4:
+    raise ValueError("The minimal study requires exactly four strategies")
+if RESTORE_ARCHIVE and (not run_root.exists() or not any(run_root.iterdir())):
+    run_root.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(RESTORE_ARCHIVE) as previous:
+        for member in previous.infolist():
+            if not (run_root / member.filename).resolve().is_relative_to(run_root.resolve()):
+                raise ValueError("Unsafe run archive member")
+        previous.extractall(run_root)
 write_json(Path("/kaggle/working") / "account_budget.json", {
     "available_gpu_hours_user_entered": AVAILABLE_GPU_HOURS,
     "session_limit_hours_user_entered": SESSION_LIMIT_HOURS,
@@ -113,54 +130,98 @@ write_json(Path("/kaggle/working") / "account_budget.json", {
         cell("code", """
 import math
 
-benchmark_reports = []
-if RUN_BENCHMARK:
-    for strategy, augmentation in matrix["strategies"].items():
-        config = {**base, "dataset": str(DATASET_PATH), "device": "cuda", "epochs": 3,
-                  "run_dir": str(run_root / ("benchmark_" + strategy)), "augmentation": augmentation}
-        started = time.perf_counter()
-        summary = train(config)
-        elapsed = time.perf_counter() - started
-        evaluate(config["run_dir"], validation_config, device="cuda", split="validation")
-        history = json.loads((Path(config["run_dir"]) / "history.json").read_text())
-        per_step = sum(r["train_seconds"] for r in history[1:]) / (2 * math.ceil(config["n_train"] / config["batch_size"]))
-        estimated_steps = sum(math.ceil(n / base["batch_size"]) * base["epochs"] * len(matrix["seeds"])
-                              for n in matrix["training_budgets"])
-        estimated_hours = per_step * estimated_steps / 3600
-        benchmark_reports.append({"strategy": strategy, "training_summary": summary,
-            "benchmark_elapsed_seconds_including_setup_checkpoint": elapsed,
-            "estimated_matrix_training_hours_this_strategy": estimated_hours})
-    report = {"benchmarks": benchmark_reports,
-        "estimated_training_hours_with_50pct_margin": 1.5 * sum(r["estimated_matrix_training_hours_this_strategy"] for r in benchmark_reports),
-        "excluded_costs": "full validation, final attack evaluation, HPO, larger-run setup and I/O"}
+def train_strategy(strategy, epochs):
+    config = {**base, "dataset": str(DATASET_PATH), "device": "cuda", "epochs": epochs,
+              "run_dir": str(run_root / (strategy + "_seed0")),
+              "augmentation": matrix["strategies"][strategy]}
+    resume = (Path(config["run_dir"]) / "last.pt").exists()
+    started = time.perf_counter()
+    summary = train(config, resume=resume, reuse_completed=True)
+    print(strategy, summary)
+    write_json(Path(config["run_dir"]) / ("call_" + STAGE + ".json"), {
+        "stage": STAGE, "training_call_seconds": time.perf_counter() - started,
+        "requested_epochs": epochs, "resume_or_reuse": resume})
+    return config, summary
+
+if STAGE != "attack":
+    config, summary = train_strategy("none", matrix["benchmark_epochs"] if STAGE == "benchmark" else base["epochs"])
+    history = json.loads((Path(config["run_dir"]) / "history.json").read_text())
+    measured = history[1:matrix["benchmark_epochs"]]
+    steps_per_epoch = math.ceil(base["n_train"] / base["batch_size"])
+    per_step = sum(r["train_seconds"] for r in measured) / (len(measured) * steps_per_epoch)
+    total_steps = matrix["training_runs"] * base["epochs"] * steps_per_epoch
+    completed_steps = sum(json.loads(p.read_text())[-1]["steps"]
+                          for p in run_root.glob("*_seed0/history.json"))
+    report = {"planned_unique_trainings": 4, "benchmark_additional_trainings": 0,
+        "planned_total_steps": total_steps, "completed_steps": completed_steps,
+        "reference_seconds_per_step_none": per_step,
+        "estimated_remaining_training_hours_with_50pct_margin":
+            max(0, total_steps - completed_steps) * per_step * 1.5 / 3600,
+        "scope": "same GPU, none reference only; augmentation overhead unmeasured",
+        "excluded_costs": "validation, evaluation, HPO, setup and I/O"}
     write_json(Path("/kaggle/working") / "gpu_cost_estimate.json", report)
     print(json.dumps(report, indent=2))
+    diagnostics = benchmark_evaluation if STAGE == "benchmark" else validation_config
+    evaluate_cached(config["run_dir"], diagnostics, device="cuda", split="validation",
+                    dataset_override=DATASET_PATH)
         """),
         cell("markdown", """
 Διάβασε το `gpu_cost_estimate.json` και τα validation αποτελέσματα πριν την πλήρη εκπαίδευση.
 Τα benchmark runs δεν είναι ανεξάρτητα seed sweeps ούτε τελική ερευνητική απόδειξη.
-Το πλήρες matrix δεν εκκινείται από το παρόν notebook. Πάγωσε το πρωτόκολλο πριν δεις attack metrics.
+Στο `baseline` συνεχίζονται οι πρώτες 3 epochs μέχρι 50· δεν ξεκινά νέο μοντέλο.
+Έλεγξε το baseline στο validation πριν επιλέξεις `compare` για τις άλλες 3 στρατηγικές.
+Ολοκληρωμένα runs και ίδιες αξιολογήσεις επαναχρησιμοποιούνται. Πάγωσε το πρωτόκολλο πριν το `attack`.
         """),
         cell("code", """
-if RUN_BASELINES:
-    for model_name in ("cnn", "mlp"):
-        config = json.loads(Path("configs/baseline_" + model_name + ".json").read_text())
-        config.update(dataset=str(DATASET_PATH), device="cuda",
-                      run_dir=str(run_root / ("baseline_" + model_name + "_seed0")))
-        started = time.perf_counter()
-        train(config)
-        write_json(Path(config["run_dir"]) / "notebook_elapsed.json", {
-            "training_call_seconds": time.perf_counter() - started})
-        evaluate(config["run_dir"], validation_config, device="cuda", split="validation")
-        if RUN_FINAL_ATTACK:
-            if not PROTOCOL_FROZEN:
-                raise RuntimeError("Freeze the protocol before final attack evaluation")
-            final_config = json.loads(Path("configs/evaluation_final.json").read_text())
-            evaluate(config["run_dir"], final_config, device="cuda", split="attack")
+if STAGE == "compare":
+    for strategy in matrix["strategies"]:
+        if strategy == "none":
+            continue
+        config, summary = train_strategy(strategy, base["epochs"])
+        evaluate_cached(config["run_dir"], validation_config, device="cuda", split="validation",
+                        dataset_override=DATASET_PATH)
+
+if STAGE == "attack":
+    if not PROTOCOL_FROZEN:
+        raise RuntimeError("Freeze and review the protocol before final attack evaluation")
+    final_config = json.loads(Path("configs/evaluation_final.json").read_text())
+    records = {}
+    current_source = code_identity()["source_sha256"]
+    for strategy in matrix["strategies"]:
+        path = run_root / (strategy + "_seed0")
+        history = json.loads((path / "history.json").read_text())
+        if history[-1]["epoch"] != base["epochs"]:
+            raise RuntimeError("Complete all four trainings before the final attack stage")
+        records[strategy] = json.loads((path / "manifest.json").read_text())
+        actual = records[strategy]
+        expected = {**base, "augmentation": matrix["strategies"][strategy], "device": "cuda"}
+        ignored = {"dataset", "run_dir"}
+        if {k: v for k, v in actual["config"].items() if k not in ignored} != {
+            k: v for k, v in expected.items() if k not in ignored}:
+            raise RuntimeError("Training config differs from the planned four-strategy comparison")
+        if actual["code"]["source_sha256"] != current_source:
+            raise RuntimeError("Code changed since training; review before freezing the protocol")
+    freeze = {"matrix": matrix, "base_config": base, "evaluation_config": final_config,
+              "training_manifests": records, "evaluation_code": code_identity()}
+    freeze_path = run_root / "protocol_freeze.json"
+    if freeze_path.exists() and json.loads(freeze_path.read_text()) != freeze:
+        raise RuntimeError("Frozen protocol changed; do not tune after viewing attack results")
+    write_json(freeze_path, freeze)
+    for strategy in matrix["strategies"]:
+        evaluate_cached(run_root / (strategy + "_seed0"), final_config, device="cuda", split="attack",
+                        dataset_override=DATASET_PATH)
         """),
         cell("code", """
 # Save and download this archive plus the small output JSON files before ending the session.
 if run_root.exists():
+    summaries = {strategy: json.loads((run_root / (strategy + "_seed0") / "summary.json").read_text())
+                 for strategy in matrix["strategies"]
+                 if (run_root / (strategy + "_seed0") / "summary.json").exists()}
+    write_json(run_root / "study_summary.json", {"stage": STAGE, "training_summaries": summaries,
+        "unique_trainings": len(summaries), "planned_unique_trainings": 4,
+        "completed_training_steps": sum(s["optimization_steps"] for s in summaries.values()),
+        "measured_training_loop_seconds": sum(s["train_seconds"] for s in summaries.values()),
+        "uncertainty": "one seed; no estimate of between-training variability"})
     archive_path = shutil.make_archive(str(Path("/kaggle/working") / ("sca_runs_" + RUN_TAG)), "zip", run_root)
     print("Download:", archive_path)
 print("Notebook creation alone is not execution; retain Kaggle Save & Run All output")
