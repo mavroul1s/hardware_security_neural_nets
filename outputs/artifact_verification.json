@@ -1,10 +1,22 @@
 {
+  "notebook_count": 1,
   "notebook_syntax_checked_code_cells": 6,
-  "notebook_executed": false,
-  "bundle_files": 34,
-  "bundle_bytes": 55652,
-  "bundle_sha256": "d065e23abe97693504be689a75b7b59a406694c9de4fa5e386774f45101349eb",
+  "notebook_executed_on_kaggle": false,
+  "planned_unique_trainings": 4,
+  "benchmark_additional_trainings": 0,
+  "planned_total_steps": 15800,
+  "bundle_files": 35,
+  "bundle_bytes": 63618,
+  "bundle_sha256": "49551e238893ca4a954207d08ab296796813f49f7b8ffff7b29996c9d33d911d",
   "bundle_excludes_datasets_checkpoints_environment_git": true,
-  "report_local_links_checked": 23,
-  "report_missing_links": []
+  "report_local_links_checked": 24,
+  "report_missing_links": [],
+  "latest_tests": {
+    "passed": 16,
+    "warnings": 14,
+    "seconds": 10.1
+  },
+  "current_source_sha256": "e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87",
+  "historical_real_pilot_snapshot_verified": true,
+  "historical_real_pilot_source_sha256": "04fe2af58143ee2ab3f0c2f1357d952d8ef64aaa823d294dd31e6dd0c478be2e"
 }
