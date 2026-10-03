@@ -1,0 +1,44 @@
+{
+  "device": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "versions": {
+      "torch": "2.8.0+cpu",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "cuda_runtime": null,
+    "torch_threads": 2
+  },
+  "benchmark_config": {
+    "dataset": "data/ASCAD.h5",
+    "run_dir": "runs/ascad_cpu_verified",
+    "model": "cnn",
+    "target_byte": 2,
+    "seed": 0,
+    "split_seed": 2026,
+    "n_train": 2048,
+    "n_validation": 512,
+    "epochs": 3,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "threads": 2,
+    "device": "cpu",
+    "augmentation": {
+      "noise_std": 0.0,
+      "max_shift": 0,
+      "padding": "zero"
+    }
+  },
+  "measured_seconds_per_step": 0.03643178749916842,
+  "estimated_matrix_steps": 119000,
+  "estimated_training_hours_same_device": 1.2042729756669561,
+  "estimated_hours_with_50pct_margin": 1.8064094635004342,
+  "scope": "training loop only; excludes validation, evaluation, I/O, HPO and corruption overhead differences",
+  "warning": "CPU estimate is not a Kaggle GPU estimate; benchmark every strategy on the selected GPU before a sweep"
+}
