@@ -1,0 +1,793 @@
+{
+  "scope": "Consolidation of existing profiling-validation evidence; no new experiments",
+  "date": "2026-10-05",
+  "baseline_runs": [
+    {
+      "name": "ReLU",
+      "run_tag": "minimal_v1",
+      "parameters": 197424,
+      "normalization": "global_scalar_training_only",
+      "best_epoch": 2,
+      "minimum_validation_ce": 5.547228632354736,
+      "last_logged_training_ce": 5.450314231109619,
+      "last_validation_ce": 5.61610094909668,
+      "clean_ge_at_2000": 103.5,
+      "clean_sr_at_2000": 0.0,
+      "epochs": 50,
+      "optimization_steps": 3950,
+      "training_loop_seconds": 18.07870929900014,
+      "validation_loop_seconds": 3.4902456440007086,
+      "device_name": "Tesla T4",
+      "source_sha256": "e641690a163be60d7b7288f1ead8e9d1726a00e403a26af1146a41b1a38d8f87",
+      "best_checkpoint_bytes": 2398713
+    },
+    {
+      "name": "LeakyReLU",
+      "run_tag": "minimal_v2_leaky",
+      "parameters": 197424,
+      "normalization": "global_scalar_training_only",
+      "best_epoch": 1,
+      "minimum_validation_ce": 5.547114212036133,
+      "last_logged_training_ce": 5.267825524902344,
+      "last_validation_ce": 5.809435427856445,
+      "clean_ge_at_2000": 89.25,
+      "clean_sr_at_2000": 0.0,
+      "epochs": 50,
+      "optimization_steps": 3950,
+      "training_loop_seconds": 19.10983968699884,
+      "validation_loop_seconds": 3.9254122269994696,
+      "device_name": "Tesla T4",
+      "source_sha256": "6f72dd833c610ef73c9e1935dbd46b3acf245b3bf1910b9b80d09d3623d73126",
+      "best_checkpoint_bytes": 2398585
+    },
+    {
+      "name": "Literature CNN",
+      "run_tag": "minimal_v3_literature",
+      "parameters": 16952,
+      "normalization": "feature_minmax_training_only",
+      "best_epoch": 4,
+      "minimum_validation_ce": 5.5607820266723635,
+      "last_logged_training_ce": 5.265615475463867,
+      "last_validation_ce": 5.814249849700928,
+      "clean_ge_at_2000": 114.25,
+      "clean_sr_at_2000": 0.0,
+      "epochs": 50,
+      "optimization_steps": 3950,
+      "training_loop_seconds": 14.85448502999975,
+      "validation_loop_seconds": 3.4228804469998977,
+      "device_name": "Tesla T4",
+      "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+      "best_checkpoint_bytes": 249271
+    }
+  ],
+  "cnn_cpu_diagnosis": {
+    "best": {
+      "epoch": 4,
+      "training_eval_ce": 5.51666722083435,
+      "validation_eval_ce": 5.560781941575401,
+      "bn_recalibration_validation_ce": 5.56935525754618,
+      "validation_sr": 0.0
+    },
+    "last": {
+      "epoch": 50,
+      "training_eval_ce": 5.240487714193576,
+      "validation_eval_ce": 5.814249784536694,
+      "bn_recalibration_validation_ce": 5.814537693887805,
+      "validation_sr": 0.0
+    }
+  },
+  "correlation_results": {
+    "rout": {
+      "pair": [
+        181,
+        521
+      ],
+      "selection": "Existing training-only PoI selection; no validation pair search",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "full_validation_true_key_correlation": -0.19777475972903727,
+      "full_validation_absolute_rank": 0
+    },
+    "r3": {
+      "pair": [
+        156,
+        517
+      ],
+      "selection": "Existing training-only PoI selection; no validation pair search",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "full_validation_true_key_correlation": -0.20142479176531475,
+      "full_validation_absolute_rank": 0
+    }
+  },
+  "sensitivity_results": [
+    {
+      "condition": "clean",
+      "corruption": {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "clean",
+      "corruption": {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "clean",
+      "corruption": {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "clean",
+      "corruption": {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "noise_matched",
+      "corruption": {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 860,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "noise_matched",
+      "corruption": {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 860,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "noise_matched",
+      "corruption": {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1194,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "noise_matched",
+      "corruption": {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1194,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "shift_matched",
+      "corruption": {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 11.4,
+      "sr_at_budget": 0.3,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "shift_matched",
+      "corruption": {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "shift_matched",
+      "corruption": {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.15,
+      "sr_at_budget": 0.85,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "shift_matched",
+      "corruption": {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_matched",
+      "corruption": {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 37.35,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_matched",
+      "corruption": {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1205,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_matched",
+      "corruption": {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 3.3,
+      "sr_at_budget": 0.55,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_matched",
+      "corruption": {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1088,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_mild",
+      "corruption": {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1399,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_mild",
+      "corruption": {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 775,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_mild",
+      "corruption": {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1234,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_mild",
+      "corruption": {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 612,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_noise_ood",
+      "corruption": {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 115.25,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_noise_ood",
+      "corruption": {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 23.8,
+      "sr_at_budget": 0.2,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_noise_ood",
+      "corruption": {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 57.55,
+      "sr_at_budget": 0.2,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_noise_ood",
+      "corruption": {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.8,
+      "sr_at_budget": 0.7,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_shift_ood",
+      "corruption": {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 68.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_shift_ood",
+      "corruption": {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 887,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_shift_ood",
+      "corruption": {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 49.95,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_shift_ood",
+      "corruption": {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1003,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_both_ood",
+      "corruption": {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 118.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_both_ood",
+      "corruption": {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 4.7,
+      "sr_at_budget": 0.45,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_both_ood",
+      "corruption": {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 82.55,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_both_ood",
+      "corruption": {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 3.9,
+      "sr_at_budget": 0.5,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": false
+    }
+  ],
+  "local_tests": {
+    "passed": 44,
+    "warnings": 14,
+    "seconds": 32.51,
+    "log_sha256": "b0e5f25b5810b26687fd0472f6d082ce5bf1540da4f4f8522315c17f9cc6da55"
+  },
+  "input_sha256": {
+    "runs/kaggle_control/baseline_v3_output/runs/minimal_v1/none_seed0/manifest.json": "6e16d6134f5f922373cb02aed666e3af775e1209172093b07e64c9c27bdca826",
+    "runs/kaggle_control/baseline_v3_output/runs/minimal_v1/none_seed0/summary.json": "77b96784aa1c25a7a6d19d6bc378a54ca67f9f1f59e00f6219774dfe53ac6fc9",
+    "runs/kaggle_control/baseline_v3_output/runs/minimal_v1/none_seed0/history.json": "8aca20ee13cad85046758f928a297333c11ff4a8ecbc795f9a011e29e7824773",
+    "outputs/kaggle_baseline_v3_2026-10-03/verification.json": "072856bfd289ddc313a5571966dc195fd62ce3704840a950a8024a245714f88b",
+    "runs/kaggle_control/baseline_v3_output/sca_runs_minimal_v1.zip": "68940b28675fcb1f47937163723016871bdb96a378eb2c6637115a0b404a0132",
+    "runs/kaggle_control/leaky_v5_output/runs/minimal_v2_leaky/none_seed0/manifest.json": "a3e3b39e36e0d7d02913b843b87a6fbd4ba75cc44188e9ae9b46ca8e3e307f11",
+    "runs/kaggle_control/leaky_v5_output/runs/minimal_v2_leaky/none_seed0/summary.json": "11c7278ce9e9a2e957ae93ee9d829382db05c5fdc11a0e0e0c8775774cc1b919",
+    "runs/kaggle_control/leaky_v5_output/runs/minimal_v2_leaky/none_seed0/history.json": "e0892d83139339f725eb2d2081cd486541489595c5c95fb30b426596741a3d7d",
+    "outputs/kaggle_leaky_v5_2026-10-03/verification.json": "ce62bd091b384b809a7876a08fad0420dcf4b114e0ccaf712a066581dd12d760",
+    "runs/kaggle_control/leaky_v5_output/sca_runs_minimal_v2_leaky.zip": "7f9590e617ed70b9ba42eaea3afc0c2102989064cc9d8837c4ab07c072d4baa0",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/manifest.json": "1b159e5af59e4beb03a96762010498da88a2974e378dc171e61d785432e20f0c",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/summary.json": "5675308387b92aef1a4898bbeb92257bf5c05f3477b5f3b44139bb2905279eac",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/history.json": "7ea9e0d51dd96f6337ab54138ece8a4279a0e0d9e38ab00e5055e1563c5861e3",
+    "outputs/kaggle_literature_v7_2026-10-03/verification.json": "ebf50dd61985ccb1b9bfe3d624207e403f62cdc9adad77af0f66fef7f5db6541",
+    "runs/kaggle_control/literature_v7_output/sca_runs_minimal_v3_literature.zip": "52f71851f5c3584ba7af26d23296b07a7cb15355dfc771b39cb878267aba384c",
+    "outputs/literature_artifact_verification.json": "bb035daac1e1c6dd2f62275f03007e32dd9b22addb7240ba58c3dfa55e00d70a",
+    "outputs/literature_diagnosis_2026-10-04/diagnosis.json": "bb53f673219388b52d275cfdc1b032cb5d7a8b71ec9a3f296fdd3c3705f8340d",
+    "outputs/literature_diagnosis_2026-10-04/second_order_correlation.json": "1a3dfaf6fbcfcd1fd0a96bff9599e92a52faf7fa5d7a84597bb7d0d1353e1c49",
+    "outputs/correlation_robustness_2026-10-05/results.json": "701808df7594b9b67df6fa8646134d411e62a312f38c44bca7f6824e8b4aaad9",
+    "outputs/correlation_robustness_2026-10-05/artifact_verification.json": "a19262407e1602fe6dd3e0403565e78f037765c14a97e13022aab5715cf85cac",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/baseline_gate.json": "35a3811ea588990b92a0a82703bb77ba82fe521a58b3bfad1450bb9ebe34ed0f"
+  },
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "dataset_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+  "split_id": "1c9656f9ba13791a7ba4781a5518420f4fef4e303c979d4c307cc6ed27ee9090",
+  "full_gpu_trainings_total": 3,
+  "gpu_optimization_steps_total": 11850,
+  "training_loop_seconds_total": 52.04303401599873,
+  "validation_loop_seconds_total": 10.838538318000076,
+  "full_notebook_session_seconds_total": null,
+  "session_cost_note": "Total sessions/setup/IO not reconstructed from loop timings",
+  "comparison_status": "Combined absent after failed original minimum-CE CNN gate; augmentation effect unmeasured",
+  "cnn_gate_passed": false,
+  "remaining_full_gpu_trainings_under_cap": 1,
+  "notebook_count": 1,
+  "new_training_performed": false,
+  "new_kaggle_execution": false,
+  "final_attack_set_read": false,
+  "consolidation_seconds": 1.5060546998865902
+}

@@ -1,6 +1,7 @@
 # Αρχική βιβλιογραφική χαρτογράφηση
 
-Επαλήθευση συνδέσμων/metadata: 2026-10-03. Πρόκειται για αρχικό έλεγχο πρωτογενών πηγών,
+Αρχική επαλήθευση: 2026-10-03· στοχευμένη ενημέρωση: 2026-10-05, με
+[ξεχωριστό αρχείο ελέγχου](PRIMARY_AUDIT_2026-10-05.md). Πρόκειται για έλεγχο πρωτογενών πηγών,
 όχι ολοκληρωμένο systematic review. Ο πίνακας ξεχωρίζει πλήρες κείμενο, preprint και abstract.
 Οι αξιολογήσεις/περιορισμοί στη δεξιά στήλη είναι δική μας ερμηνεία, εκτός όπου δηλώνεται ρητά.
 
@@ -19,6 +20,8 @@
 | **RFA-SCA: Robust Feature Alignment for Side-Channel Analysis via Multi-Order Moment Alignment** — Yuanzhen Wang, Hongxin Zhang, Shaofei Sun, Yaqi Zhang, Xing Fang, Zhi Sun. Computers, Materials & Continua, online 11 June 2026. [DOI](https://doi.org/10.32604/cmc.2026.081308), [publisher PDF](https://file.techscience.com/files/onlinefirst/2026/6.11/TSP_CMC_81308/TSP_CMC_81308.pdf) | Unsupervised target adaptation με MMD/CORAL/entropy και shared-baseline comparisons. | ASCAD, CHES CTF2018, SAKURA-G, XMEGA, CNN, Gaussian noise/desync/jitter scenarios, GE/SR/MTD και ablations. | Πλήρες publisher PDF. Public code URL δεν βρέθηκε στο PDF. | Αλλάζει threat model επειδή χρησιμοποιεί unlabeled target traces. Δεν είναι ίδιο με το δικό μας χωρίς target adaptation. Χρειάζεται έλεγχος joint corruptions. |
 | **High-Fidelity Conditional Side-Channel Trace Synthesis using Diffusion Models** — Zekai Zhang, Donglong Chen, Wangchen Dai, Jinfa Hong, Yu Hin Chan, Çetin Kaya Koç, Patrick S. Y. Hung, Ray C. C. Cheung. IEEE Sensors Journal 26(14), 21527–21540 (2026), online 12 June. [DOI](https://doi.org/10.1109/JSEN.2026.3701075), [author institution](https://scholars.cityu.edu.hk/en/publications/high-fidelity-conditional-side-channel-trace-synthesis-using-diff/) | Conditional DDPM/U-Net για trace synthesis σε περιορισμένα sensor data. | ChipWhisperer-based traces· residual/self-attention U-Net, GE και classification metrics. Πλήρης λίστα datasets/evaluation δεν επαληθεύτηκε. | Institution metadata/abstract μόνο· πλήρες paper/code δεν αποκτήθηκαν. | Η γενική small-data augmentation συνεισφορά έχει νεότερο ανταγωνισμό. Δεν κάνουμε claims cross-device από δικές μας synthetic corruptions. |
 | **Make Some Noise. Unleashing the Power of Convolutional Neural Networks for Profiled Side-channel Analysis** — Jaehun Kim, Stjepan Picek, Annelie Heuser, Shivam Bhasin, Alan Hanjalic. TCHES 2019(3), 148–179. [DOI](https://doi.org/10.13154/tches.v2019.i3.148-179), [ePrint abstract](https://eprint.iacr.org/2018/1023) | CNN design και Gaussian noise ως regularization για profiling. | DPAcontest v4, AES_HD, AES_RD, ASCAD· CNN/TA, θόρυβος μετά το πρώτο BN στις επίσημες slides, GE και profiling-size/epoch sensitivity. | [Author code](https://github.com/eldrin/sca-nn-noise), [official slides](https://ches.iacr.org/2019/src/slides/Day3/Session14_MachineLearning/Paper1_Session14_CHES%202019%20Make%20Some%20Noise.pdf). Paper PDF access απέτυχε· abstract/slides/code metadata προσβάσιμα. | Άμεσο προηγούμενο για noise και limited data. Η noise-only σύγκριση απαιτεί αναφορά σε αυτή τη δουλειά· ο δικός μας normalization/noise placement διαφέρει. |
+| **Statistical Analysis of Second Order Differential Power Analysis** — Emmanuel Prouff, Matthieu Rivain, Régis Bévan. IEEE Transactions on Computers 58(6), 799–811 (2009), revised preprint 2010/646. [Primary record](https://eprint.iacr.org/2010/646) | Συνδυασμός διαρροών και correlation distinguishers για first-order masking. | Αναλυτικό HW + Gaussian noise μοντέλο, product/absolute-difference combining και αποτελεσματικότητα. | Metadata/abstract και indexed PDF excerpt επαληθεύτηκαν· άμεσο PDF blocked. Code δεν επαληθεύτηκε. | Η centered-product τεχνική δεν είναι νέα δική μας συνεισφορά· οι υποθέσεις του θεωρητικού μοντέλου δεν πιστοποιούν γενική optimality για ASCAD. |
+| **Second-order Scatter Attack** — Hugues Thiebeauld, Aurélien Vasselle, Antoine Wurcker. IACR ePrint 2019/345, preprint. [Record/PDF](https://eprint.iacr.org/2019/345) | Αντιμετώπιση misalignment με joint-distribution/window methods. | Masked AES-128 σε secure 32-bit device, EM/hardware jitter, Scatter/MI/Sobel, window-based συγκρίσεις και key-recovery effort. | PDF προσβάσιμο, ενότητες2/4 ελέγχθηκαν· public code δεν επαληθεύτηκε. | Centered products και ευαισθησία ευθυγράμμισης ήδη τεκμηριώνονται. Το oracle control μας δεν υλοποιεί Scatter ή πρακτικό realignment. |
 
 ## Επιβεβαιωμένο έναντι υπόθεσης
 
@@ -30,15 +33,19 @@
 
 Δική μας ελέγξιμη υπόθεση: online joint noise/shift μπορεί να βελτιώνει key recovery σε
 unseen joint intensities με λίγα μοναδικά traces και fixed steps· μπορεί επίσης να επιβαρύνει
-clean performance ή να μην υπερέχει των single transforms. Το πιθανό κενό είναι η
-ελεγχόμενη factorial σύγκριση και η συσχέτιση οφέλους με data budget και πραγματικό κόστος,
-χωρίς unlabeled target adaptation. Δεν παρουσιάζεται ως αποδεδειγμένα νέο.
+clean performance. Πιθανό ερώτημα είναι η paired none/combined σύγκριση στο συγκεκριμένο
+10k budget και πραγματικό κόστος, χωρίς unlabeled target adaptation. Δεν παρουσιάζεται
+ως αποδεδειγμένα νέο. Η σχέση με πολλαπλά data budgets ή η factorial interaction
+απαιτεί πειράματα έξω από το εγκεκριμένο ελάχιστο scope.
 
 Τρέχον περιορισμένο scope, μετά το αίτημα χρήστη για λίγες Kaggle εκπαιδεύσεις:
-4 στρατηγικές × 10k traces × seed0 σε ένα notebook. Αυτό ελέγχει περιγραφικά τις
-στρατηγικές σε μία συνθήκη περιορισμένων δεδομένων· δεν αρκεί για εξάρτηση από το data
-budget ή σταθερότητα μεταξύ ανεξάρτητων trainings. Αυτά είναι πιθανές επεκτάσεις, χωρίς
-αυτόματη εκτέλεση ή προεξόφληση paper.
+ένα notebook, baseline/conditional combined × 10k traces × seed0 × 50epochs,
+έως4 πλήρη GPU trainings μαζί με τα δύο ιστορικά failures. Το literature baseline
+ολοκληρώθηκε με clean SR0/20· το original minimum-CE gate18/20 απέτυχε και combined
+παραλείφθηκε. Άρα η επίδραση του augmentation δεν έχει μετρηθεί. Οι CPU diagnostics
+και η oracle sensitivity είναι ξεχωριστά validation ευρήματα. Η τρέχουσα συνεισφορά
+είναι αναπαραγώγιμη μελέτη περίπτωσης με αρνητικά CNN αποτελέσματα, όχι νέα τεχνική
+ή απόδειξη υπεροχής correlation έναντι DL. Παραμένουν3 trainings/1 notebook.
 
 ## Search log και επόμενος έλεγχος
 
@@ -49,7 +56,12 @@ Queries: `side channel data augmentation combined noise desynchronization 2025 2
 Χρησιμοποιήθηκαν publisher, IACR ePrint, conference και author-institution πηγές.
 Δευτερογενή αποτελέσματα χρησιμοποιήθηκαν μόνο για εύρεση πρωτογενών συνδέσμων.
 
-Προτεραιότητα επόμενης συνεδρίας: λεπτομερής ανάγνωση EquivSCA/RFA experimental sections,
-έλεγχος final MDPI έναντι preprint, απόκτηση CutMix/IEEE πλήρους κειμένου από πανεπιστήμιο,
-και backward/forward citation search. Για κάθε κενό πρόσβασης κρατάμε `unknown`, όχι συμπέρασμα απουσίας.
+Στις5/10 ελέγχθηκαν EquivSCA§5.2–5.3, RFA§3.6/4.1/4.3/5 και τα σχετικά Scatter sections.
+Στο EquivSCA το preprint χρησιμοποιεί GE-based epoch selection/5 trainings, όχι τον
+δικό μας minimum-clean-CE κανόνα. Το RFA περιλαμβάνει unlabeled target adaptation,
+ξεχωριστές ASCAD countermeasure συνθήκες και σημαντική seed sensitivity στο noise.
+Δεν προκύπτει ίσο πρωτόκολλο με το δικό μας. Δεν τεκμηριώνεται απουσία επικάλυψης
+στη συνολική βιβλιογραφία. Πρόσβαση σε τελικό EquivSCA chapter/πλήρες MDPI/CutMix/IEEE,
+επίλυση EquivSCA code URL και πλήρες backward/forward search παραμένουν ανοικτά.
+Για κάθε κενό πρόσβασης κρατάμε `unknown`, όχι συμπέρασμα απουσίας.
 Οι παλιότερες GE=1 συμβάσεις δεν συγκρίνονται αριθμητικά με το δικό μας zero-based rank χωρίς μετατροπή.

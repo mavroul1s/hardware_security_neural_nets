@@ -1,9 +1,15 @@
 # Πειραματικό πρωτόκολλο v0.3 — εγκεκριμένη σύγκριση baseline/combined
 
 Αίτημα χρήστη: ένα Kaggle notebook και όσο λιγότερες εκπαιδεύσεις γίνεται.
-Συγκρίνουμε2 νέα CNNs,10k training traces,seed0. Διατηρούνται δύο ιστορικά failures.
+Προβλεπόμενη σύγκριση:2 νέα CNNs,10k training traces,seed0. Διατηρούνται δύο ιστορικά failures.
 Έως4 GPU trainings συνολικά. Combined μόνο αν baseline clean SR@2000≥0,90 (18/20).
 Δεν τρέχουμε single noise/shift, MLP, δεύτερο budget ή seed sweep.
+
+Κατάσταση στις2026-10-05: το literature baseline ολοκληρώθηκε και το minimum-clean-CE
+checkpoint έδωσε SR0/20. Το gate απέτυχε και το combined δεν εκπαιδεύτηκε. Σύνολο3
+πλήρη GPU trainings/1 notebook. Η προβλεπόμενη σύγκριση augmentation δεν έχει μετρηθεί.
+Οι CPU masking/correlation/sensitivity diagnostics είναι ξεχωριστοί profiling-validation
+έλεγχοι. Η επιτυχία τους δεν αντικαθιστά το CNN gate και δεν ξεκλειδώνει final attack.
 
 ## Threat model και περιορισμοί
 
@@ -78,7 +84,9 @@ Validation time χωριστά. Setup, HDF5 inspection και checkpoint I/O δ�
 Κόστος HPO και exploratory pilots αναφέρεται χωριστά. Η πρώτη εκτίμηση χρησιμοποιεί τις
 3 αρχικές none epochs στην ίδια GPU. Το overhead των άλλων augmentations είναι ακόμη
 άγνωστο πριν εκτελεστεί· αναφέρουμε πρόβλεψη αναφοράς με margin και πραγματικό κόστος κάθε run.
-Τα πραγματικά κόστη όλων των runs καταγράφονται στο `study_summary.json`.
+Το Kaggle `study_summary.json` αφορά την εκάστοτε έκδοση. Η σύνθεση όλων των τριών
+ολοκληρωμένων baselines καταγράφεται στο `outputs/study_synthesis_2026-10-05/evidence.json`.
+Δεν προστίθενται CPU timings στους GPU loop χρόνους ως συγκρίσιμο κόστος.
 
 Αν χρειαστεί tuning, αλλάζουμε μόνο βάσει validation και κρατάμε log κάθε δοκιμής.
 Οριστικοποιούμε configs/criterion/code hash σε artifact πριν την πρώτη τελική attack αξιολόγηση.
@@ -113,7 +121,7 @@ realization· robustness σε άλλα corruption seeds αποτελεί ξεχ�
 ## Αβεβαιότητα και ερμηνεία
 
 Κρατάμε ranks ανά attack repetition στο μοναδικό training seed0. Τα plots δείχνουν
-GE/SR curves και paired περιγραφικές διαφορές των τεσσάρων στρατηγικών. Οι 100 permutations
+GE/SR curves και τις προβλεπόμενες paired περιγραφικές διαφορές none/combined. Οι 100 permutations
 έχουν κοινά traces και δεν είναι ανεξάρτητα trainings. Με ένα seed δεν υπολογίζουμε
 between-training SD, seed bootstrap intervals ή ισχυρισμούς σταθερού οφέλους μεταξύ seeds.
 Δεν ελέγχουμε εξάρτηση από το data budget με ένα μόνο budget. Πρόσθετα seeds/budgets
@@ -122,3 +130,24 @@ between-training SD, seed bootstrap intervals ή ισχυρισμούς σταθ
 Κύριο endpoint n_train10k, combined_both_ood, SR@2000. GE και censored threshold traces
 υποστηρίζουν την ερμηνεία, μαζί με clean ζημιά και GPU κόστος. Το ερευνητικό αποτέλεσμα
 θα κριθεί μετά το κύριο matrix, την επιβεβαίωση και συζήτηση με τον καθηγητή.
+
+## Ξεχωριστές CPU διαγνώσεις — τι εκτελέστηκε
+
+Το παγωμένο sensitivity protocol είναι στο
+`outputs/correlation_robustness_2026-10-05/plan.json`. Training-selected points και centers,
+ίδιο10k/5k split, profiling-validation pool5k,20 κοινές σειρές seed8001/budget2000,
+corruption9001/batch256. Οι eight corruption conditions αξιολογήθηκαν χωρίς training.
+Το μοντέλο HW hypothesis και τα προϊόντα δεν είναι identity-label neural classifier.
+Training mask/share metadata χρησιμοποιήθηκε μόνο στην προηγούμενη επιλογή σημείων,
+με διαφορετικό profiling information από το CNN. True validation key μόνο για reporting rank.
+
+Το oracle διαβάζει point+injected_shift με γνωστή τεχνητή μετατόπιση, δεν εκτιμά την
+ευθυγράμμιση από το trace. Fixed/oracle χρησιμοποιούν κοινά corrupted tensors εντός
+συνθήκης· common trace orders σε όλες. Interleaved shift/noise RNG δεν εγγυάται κοινά
+offsets μεταξύ διαφορετικών συνθηκών. Zero/edge padding δίνει ίδια επιλεγμένα προϊόντα,
+αλλά αυτό δεν αποκλείει CNN border cues. Feature-space corruptions μετά το MinMax.
+
+Πλήρεις μετρήσεις/περιορισμοί:
+[CPU correlation diagnosis](../outputs/literature_diagnosis_2026-10-04/REPORT_EL.md) και
+[CPU sensitivity](../outputs/correlation_robustness_2026-10-05/REPORT_EL.md).
+Δεν έγινε final attack ούτε επαναπροσδιορίστηκε checkpoint/μοντέλο από final attack metrics.
