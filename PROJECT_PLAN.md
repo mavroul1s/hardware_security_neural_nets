@@ -94,7 +94,8 @@ optimization steps, ποια είναι η επίδραση του συνδυα�
     Πρώτα ελέγχουμε model capacity/εκπαίδευση σε validation και τη δυσκολία του budget.
 11. Ένα Kaggle notebook με `STAGE=benchmark/baseline/compare/attack`. Οι πρώτες 3 epochs
     του none αποτελούν μέρος των 50 epochs του baseline, όχι πρόσθετο training.
-    Ίδια ολοκληρωμένα checkpoints/evaluations επαναχρησιμοποιούνται. Συνολικά7.900 τρέχοντα steps.
+    Ίδια ολοκληρωμένα checkpoints/evaluations επαναχρησιμοποιούνται. Η προβλεπόμενη
+    none/combined σύγκριση είχε έως7.900 steps· εκτελέστηκε μόνο το none3.950 μετά το failed gate.
 12. MLP, δεύτερο budget και πολλά seeds μένουν διαθέσιμα ως μελλοντικές επιλογές,
     χωρίς προεπιλεγμένη εκτέλεση. Με δύο μοντέλα συγκρίνουμε μόνο none/combined·
     δεν αποδίδουμε αποτέλεσμα στον συνδυασμό έναντι κάθε single στρατηγικής.

@@ -419,7 +419,7 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
   εκπαίδευση ή HDF5 trace-group reads. Ελέγχθηκαν50epochs/3950steps ανάrun, minimum-CE
   επιλογές, κοινό split/dataset, archive hashes και οι υπάρχοντες sensitivity hashes.
   Χρόνος σύνθεσης1,51s μετά τις εισαγωγές βιβλιοθηκών· νέο training δεν έγινε.
-- Τρία TensorT4 baselines:11.850 GPU updates συνολικά, training loops52,04s και
+- Τρία TeslaT4 baselines:11.850 GPU updates συνολικά, training loops52,04s και
   validation loops10,84s. Αυτά δεν είναι ο συνολικός session/setup χρόνος· δεν
   ανασυντέθηκε συνολικό session κόστος από τα loops. Benchmark3epochs ήδη μέσα στις50.
 - `literature/PRIMARY_AUDIT_2026-10-05.md`: στοχευμένα primary checks authorCNN,
