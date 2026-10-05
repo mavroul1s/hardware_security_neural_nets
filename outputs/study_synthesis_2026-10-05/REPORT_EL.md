@@ -16,17 +16,17 @@ combined augmentation δεν εκτελέστηκε.
 Οι CPU διαγνώσεις δείχνουν ότι η αποτυχία του τελευταίου CNN συνυπάρχει με αξιοποιήσιμη
 δεύτερης τάξης διαρροή: correlation scoring σε δύο training-selected centered
 products έδωσε 20/20 clean validation ανακτήσεις. Οι σταθερές θέσεις είναι ευαίσθητες
-σε τεχνητές μετατοπίσεις. Με σ=0,1 και shifts±5 οι επιτυχίες πέφτουν σε1/20 και11/20·
-γνωστή oracle διόρθωση επαναφέρει20/20. Αυτό είναι διαγνωστικό control, όχι πρακτική
+σε τεχνητές μετατοπίσεις. Με σ=0,1 και shifts±5 οι επιτυχίες πέφτουν σε 1/20 και 11/20·
+γνωστή oracle διόρθωση επαναφέρει 20/20. Αυτό είναι διαγνωστικό control, όχι πρακτική
 ευθυγράμμιση. Οι μέθοδοι έχουν διαφορετική profiling information και δεν αποτελούν
 δίκαιη σύγκριση υπεροχής CNN/correlation. Δεν χρησιμοποιήθηκε το τελικό attack set.
 
 ## 1. Στόχος και βασικές έννοιες
 
 Ένα trace είναι η ακολουθία μετρήσεων φυσικής διαρροής κατά την εκτέλεση AES σε hardware.
-Το νευρωνικό δίκτυο λαμβάνει μόνο αυτή την ακολουθία και προβλέπει256 πιθανότητες
+Το νευρωνικό δίκτυο λαμβάνει μόνο αυτή την ακολουθία και προβλέπει 256 πιθανότητες
 για την τιμή ενός ενδιάμεσου byte. Το γνωστό plaintext επιτρέπει να μετατρέψουμε
-αυτές τις πιθανότητες σε scores για256 υποψήφια key bytes. Η συσσώρευση πληροφορίας
+αυτές τις πιθανότητες σε scores για 256 υποψήφια key bytes. Η συσσώρευση πληροφορίας
 από πολλά traces αποσκοπεί στο να φέρει πρώτο το σωστό byte. Δεν επιχειρούμε
 ανάκτηση ολόκληρου του AES key.
 
@@ -48,8 +48,8 @@ combined comparator. Το ερώτημα που εξετάζει αυτή η α�
 Χρησιμοποιήσαμε το επίσημο προεπεξεργασμένο ASCAD fixed-key,700 samples ανά trace,
 zero-based byte2, με identity labels `Sbox(plaintext[2] XOR key[2])`.
 Η προέλευση και το schema ελέγχονται από το [επίσημο repository](https://github.com/ANSSI-FR/ASCAD).
-Το τοπικό HDF5 έχει50.000 profiling και10.000 attack traces. Για το κύριο scope
-επιλέξαμε10.000 training και5.000 validation rows από το profiling, splitseed2026.
+Το τοπικό HDF5 έχει 50.000 profiling και 10.000 attack traces. Για το κύριο scope
+επιλέξαμε 10.000 training και 5.000 validation rows από το profiling, splitseed 2026.
 Τα αποθηκευμένα indices είναι διακριτά και κοινά στα τρία baselines. Οι υπόλοιπες
 profiling rows δεν αυξάνουν το εγκεκριμένο training budget.
 
@@ -61,7 +61,7 @@ key μόνο για το πραγματικό rank. Η παλιότερη επι
 καταγράφεται και δεν αποδίδεται στο CNN.
 
 Το fixed-key campaign δεν αποδεικνύει μεταφορά σε νέο άγνωστο key ή άλλη συσκευή.
-Το700-point window είναι ήδη προεπιλεγμένο από τους δημιουργούς του dataset.
+Το 700-point window είναι ήδη προεπιλεγμένο από τους δημιουργούς του dataset.
 Όλα τα κύρια αποτελέσματα αυτής της αναφοράς προέρχονται από **profiling validation**,
 το οποίο έχει επανειλημμένα χρησιμοποιηθεί για διάγνωση. Δεν είναι ανεξάρτητο τελικό test.
 Το final attack παραμένει κλειστό· δεν εμφανίζουμε validation scores ως attack results.
@@ -71,8 +71,8 @@ Split ID: `1c9656f9ba13791a7ba4781a5518420f4fef4e303c979d4c307cc6ed27ee9090`.
 
 ## 3. CNN πρωτόκολλο και πραγματική εκτέλεση
 
-Κάθε baseline χρησιμοποίησε seed0,50epochs,batch128,AdamLR0,001 και10k/5k split:
-79updates ανά epoch,3.950 συνολικά. Το checkpoint επιλέχθηκε από την ελάχιστη
+Κάθε baseline χρησιμοποίησε seed 0,50 epochs, batch 128, Adam LR 0,001 και 10k/5k split:
+79 updates ανά epoch,3.950 συνολικά. Το checkpoint επιλέχθηκε από την ελάχιστη
 **clean validation cross-entropy**, πριν από τον έλεγχο ανάκτησης. Δεν επιλέγουμε
 epoch από final attack ή αλλάζουμε τον κανόνα για να περάσει το gate.
 
@@ -82,14 +82,14 @@ epoch από final attack ή αλλάζουμε τον κανόνα για να 
 | LeakyReLU0,1 |197.424|Training-only global scalar|1|5,547114|89,25|0/20|
 | Literature-inspired CNN |16.952|Training-only feature MinMax|4|5,560782|114,25|0/20|
 
-Το τελευταίο CNN έχει Conv1d1→4/kernel1,SELU/BatchNorm,AvgPool2 και dense10→10→256
+Το τελευταίο CNN έχει Conv1d1→4/kernel 1, SELU/BatchNorm, AvgPool2 και dense 10→10→256
 logits. Τα ReLU/Leaky αποτελέσματα διατηρούνται ως αρνητικά αποτελέσματα. Η αλλαγή
 normalization/architecture στην τρίτη έκδοση σημαίνει ότι η σύγκριση και των τριών
 δεν απομονώνει την επίδραση ενός παράγοντα. Η μικρότερη CE ή GE ανάμεσα σε failures
 δεν αρκεί για να ονομάσουμε ένα επιτυχές ή σταθερά ανώτερο μοντέλο.
 
-Το gate για combined ήταν cleanSR≥0,90, δηλαδή18/20, στο original minimum-CE
-checkpoint. Παρατηρήθηκε0/20. Το combined παραλείφθηκε, χωρίς single noise/shift
+Το gate για combined ήταν cleanSR≥0,90, δηλαδή 18/20, στο original minimum-CE
+checkpoint. Παρατηρήθηκε 0/20. Το combined παραλείφθηκε, χωρίς single noise/shift
 trainings ή αυτόματο search. Άρα δεν μετρήθηκαν augmentation effect, combined
 overhead ή factorial interaction.
 
@@ -104,23 +104,23 @@ set. Η ξεχωριστή CPU διάγνωση παρακάτω χρησιμο�
 ## 4. Ποια διαγνωστικά εκτελέστηκαν
 
 Τα best/last checkpoints του literature CNN αξιολογήθηκαν σε CPU χωρίς νέα weight
-updates. Η ελεγμένη, παγωμένη CE στο training ήταν5,516667 για best και5,240488
-για last· στο validation5,560782 και5,814250. Έλεγχοι label shuffles έδειξαν
-training alignment χωρίς αντίστοιχο held-out alignment. Οι10 dense μονάδες έχουν
+updates. Η ελεγμένη, παγωμένη CE στο training ήταν 5,516667 για best και 5,240488
+για last· στο validation5,560782 και 5,814250. Έλεγχοι label shuffles έδειξαν
+training alignment χωρίς αντίστοιχο held-out alignment. Οι 10 dense μονάδες έχουν
 μεταβλητά outputs, επομένως το τελευταίο failure δεν εξηγείται απλώς από πλήρη
 σταθεροποίηση των outputs. Διατηρείται mask/share signal στη hidden representation,
 ενώ η ένδειξη για τον unmasked στόχο παραμένει χαμηλή.
 
 Ελέγχθηκε BatchNorm με training-only exact moments σε frozen-weight clones.
-Δεν άλλαξαν τα αρχικά checkpoints. Η validation CE έγινε5,569355(best) και
+Δεν άλλαξαν τα αρχικά checkpoints. Η validation CE έγινε 5,569355(best) και
 5,814538(last), με SR0/20 και στα δύο. Αυτό αποκλείει ως επαρκή λύση τον συγκεκριμένο
 BN recalibration έλεγχο· δεν αποκλείει κάθε πιθανή αλλαγή training recipe.
 
 Στη δεύτερης τάξης διάγνωση επαναχρησιμοποιήθηκαν τα υπάρχοντα training-selected
-ζεύγη181×521 και156×517, χωρίς validation point search. Τα προϊόντα συσχετίζονται
+ζεύγη 181×521 και 156×517, χωρίς validation point search. Τα προϊόντα συσχετίζονται
 με `HW(Sbox(plaintext_byte XOR candidate_key))` για κάθε υποψήφιο byte.
-Η απόλυτη Pearson correlation δίνει τη βαθμολογία. Τα true-key ranks,GE,SR και
-sustainedSR90 προκύπτουν από20 κοινές σειρές των validation traces.
+Η απόλυτη Pearson correlation δίνει τη βαθμολογία. Τα true-key ranks, GE, SR και
+sustainedSR90 προκύπτουν από 20 κοινές σειρές των validation traces.
 
 | Παγωμένο ζεύγος | Clean GE@2000 | Clean SR@2000 | Πρώτο sustainedSR90 prefix |
 |---|---:|---:|---:|
@@ -135,9 +135,9 @@ sustainedSR90 προκύπτουν από20 κοινές σειρές των val
 ## 5. Θόρυβος, shifts και oracle control
 
 Οι οκτώ εντάσεις είχαν οριστεί στο υπάρχον evaluation grid. Χρησιμοποιήθηκαν
-train-only feature MinMax,παγωμένα normalized training centers,seed9001,batch256,
-shift→noise και20common orders/seed8001. Αυτό είναι **evaluation αλλοιώσεων**,
-όχι single-strategy training. Κάθε κελί παρακάτω αναφέρει επιτυχίες/20 στο budget2000.
+train-only feature MinMax, παγωμένα normalized training centers, seed 9001, batch 256,
+shift→noise και 20 common orders/seed 8001. Αυτό είναι **evaluation αλλοιώσεων**,
+όχι single-strategy training. Κάθε κελί παρακάτω αναφέρει επιτυχίες/20 στο budget 2000.
 
 | Συνθήκη (σ; shift range) |Fixed181×521|Fixed156×517|Oracle181×521|Oracle156×517|
 |---|---:|---:|---:|---:|
@@ -151,7 +151,7 @@ shift→noise και20common orders/seed8001. Αυτό είναι **evaluation �
 |Combined both OOD (0,2;±10)|0/20|1/20|9/20|10/20|
 
 Το oracle διαβάζει τις θέσειςpoint+δ με τη **γνωστή injected μετατόπιση** του trace.
-Δεν εκτιμά τη δ από μετρήσεις. Η επαναφορά σε20/20 για σ=0,1 είναι διαγνωστική
+Δεν εκτιμά τη δ από μετρήσεις. Η επαναφορά σε 20/20 για σ=0,1 είναι διαγνωστική
 ένδειξη ότι η θέση των features περιορίζει τη σταθερή εξαγωγή. Δεν αποτελεί learned
 shift invariance ή έτοιμη πρακτική επίθεση. Στο σ=0,2 ούτε η oracle εξαγωγή φτάνει
 18/20. Δεν βελτιστοποιήθηκαν οι εντάσεις ή τα ζεύγη από τις τωρινές επιδόσεις.
@@ -160,7 +160,7 @@ shift invariance ή έτοιμη πρακτική επίθεση. Στο σ=0,2 
 
 Τα selected products είναι ακριβώς ίδια με zero και edge padding, καθώς τα σημεία
 είναι εσωτερικά και κανένα δεν αποκόπηκε μέχρι±10. Αυτό δεν αποκλείει border cues
-σε CNN που διαβάζει700points. Οι μετατοπίσεις/θόρυβος εφαρμόστηκαν **μετά** το
+σε CNN που διαβάζει 700 points. Οι μετατοπίσεις/θόρυβος εφαρμόστηκαν **μετά** το
 per-position MinMax και δεν ισοδυναμούν με physical raw jitter/noise πριν από αυτό.
 
 Οι μέθοδοι μέσα σε κάθε συνθήκη έχουν ίδια corrupted traces. Οι σειρές traces
@@ -176,18 +176,18 @@ Rank0 σημαίνει πρώτο υποψήφιο. GE είναι ο μέσος 
 absolute prefix scores και συντηρητικά ties με tolerance1e−12. Οι δύο score methods
 διαφέρουν και δεν συγκρίνονται ως CE. SustainedSR90 σημαίνειSR≥0,90 σε όλα τα
 επόμενα prefixes μέχρι το budget, όχι μία μεμονωμένη πρώτη επιτυχία. Τα failures
-καταγράφονται ως μη επίτευξη εντός2000, όχι ως πλασματική επιτυχία στα2000.
+καταγράφονται ως μη επίτευξη εντός 2000, όχι ως πλασματική επιτυχία στα 2000.
 
-Οι20σειρές περιέχουν αλληλεπικαλυπτόμενα traces από κοινό pool· δεν είναι20training
+Οι 20 σειρές περιέχουν αλληλεπικαλυπτόμενα traces από κοινό pool· δεν είναι 20training
 seeds ή ανεξάρτητες φυσικές campaigns. Τα τρία CNNs έχουν ένα κοινό training seed,
 όχι επαναλήψεις της ίδιας αρχιτεκτονικής. Δεν αναφέρουμε confidence intervals ή
-μεταβλητότητα μεταξύ trainings,corruption seeds ή συσκευών που δεν μετρήθηκαν.
+μεταβλητότητα μεταξύ trainings, corruption seeds ή συσκευών που δεν μετρήθηκαν.
 Τα label/product shuffle controls είναι περιγραφικά, όχι αυτόματοι p-values.
 
 ## 7. Βιβλιογραφία και τι μπορεί να θεωρηθεί συνεισφορά
 
 Noise/shifting augmentation και τα όρια CNN shift robustness έχουν ήδη προηγούμενο.
-Η εργασίαLi–Perin του2024 εξετάζει countermeasures χωριστά και αναφέρει joint
+Η εργασίαLi–Perin του 2024 εξετάζει countermeasures χωριστά και αναφέρει joint
 strategies ως future work· αυτό δεν πιστοποιεί σημερινό κενό.
 [Publisher full text](https://link.springer.com/article/10.1007/s13389-024-00363-3).
 Η εργασίαKrček et al. μελετά shift robustness και augmentation ensembles.
@@ -203,9 +203,9 @@ adaptation, δηλαδή διαφορετική πρόσβαση σε target dat
 [Second-order Scatter Attack](https://eprint.iacr.org/2019/345.pdf).
 
 Η τρίτη CNN εκτέλεση είναι προσαρμογή της μικρής αρχιτεκτονικής τουZaid et al.,
-όχι ακριβής αναπαραγωγή αποτελεσμάτων. Ο δημόσιος κώδικας ορίζει45ktrain/batch50/
-OneCyclemaxLR0,005, ενώ εμείς10k/batch128/constantLR0,001. Από αυτά προκύπτουν
-45.000 έναντι3.950updates για50epochs, περίπου11,39φορές λιγότεροι δικοί μαςupdates.
+όχι ακριβής αναπαραγωγή αποτελεσμάτων. Ο δημόσιος κώδικας ορίζει 45ktrain/batch 50/
+OneCycle max LR 0,005, ενώ εμείς 10k/batch 128/constantLR0,001. Από αυτά προκύπτουν
+45.000 έναντι 3.950 updates για 50 epochs, περίπου 11,39 φορές λιγότεροι δικοί μαςupdates.
 Αυτή είναι δική μας αριθμητική σύγκριση· δεν αποδεικνύει αιτία failure ή ότι περισσότερα
 updates θα το διορθώσουν. Η training-only κανονικοποίηση διατηρείται.
 [Author code](https://github.com/gabzai/Methodology-for-efficient-CNN-architectures-in-SCA/blob/master/ASCAD/N0%3D0/cnn_architecture.py).
@@ -214,9 +214,9 @@ updates θα το διορθώσουν. Η training-only κανονικοποί�
 μελέτη περίπτωσης**: negative CNN results, diagnostics και περιορισμοί συγκεκριμένου
 feature-space corruption protocol. Δεν επιβεβαιώνεται νέα μέθοδος, όφελος augmentation
 ή δημοσιεύσιμο ερευνητικό κενό. Ο [πίνακας βιβλιογραφίας](../../literature/REVIEW.md)
-και ο [στοχευμένος έλεγχος της5/10](../../literature/PRIMARY_AUDIT_2026-10-05.md)
-καταγράφουν authors/venue/DOI,πρόσβαση,διαφορές και εκκρεμότητες. Η αναζήτηση δεν ήταν
-εξαντλητική· final chapters,code URLs και forward-citation gaps δεν ερμηνεύονται ως
+και ο [στοχευμένος έλεγχος της 5/10](../../literature/PRIMARY_AUDIT_2026-10-05.md)
+καταγράφουν authors/venue/DOI, πρόσβαση, διαφορές και εκκρεμότητες. Η αναζήτηση δεν ήταν
+εξαντλητική· final chapters, code URLs και forward-citation gaps δεν ερμηνεύονται ως
 απουσία εργασιών. Δεν αγοράστηκε πρόσβαση.
 
 ## 8. Πραγματικό κόστος και αναπαραγωγιμότητα
@@ -229,21 +229,21 @@ feature-space corruption protocol. Δεν επιβεβαιώνεται νέα μ
 |Σύνολο|Ίδιος τύπος GPU|150/11.850|52,04|10,84|
 
 Οι χρόνοι είναι synchronized epoch loops με transfers και augmentation, όχι πλήρες
-Kaggle elapsed time. Δεν περιλαμβάνουν container startup, εγκαταστάσεις,ελέγχους,
+Kaggle elapsed time. Δεν περιλαμβάνουν container startup, εγκαταστάσεις, ελέγχους,
 HDF5 inspection και checkpoint I/O. Δεν ανασυνθέσαμε αξιόπιστο συνολικό κόστος όλων
 των sessions από αυτούς τους αριθμούς. Ενδεικτικά η τελευταία εκτέλεση είχε log
-μέχρι300,285s, με πολύ μεγαλύτερο setup κόστος από τον training loop. Οι πρώτες3
-benchmark epochs του αρχικού baseline επαναχρησιμοποιήθηκαν στις50 και δεν
+μέχρι 300,285 s, με πολύ μεγαλύτερο setup κόστος από τον training loop. Οι πρώτες 3
+benchmark epochs του αρχικού baseline επαναχρησιμοποιήθηκαν στις 50 και δεν
 μετρήθηκαν ως πρόσθετο πλήρες training.
 
-Η CPU sensitivity μέτρηση χρειάστηκε47,52s και η ανεξάρτητη επαλήθευση6,07s.
+Η CPU sensitivity μέτρηση χρειάστηκε 47,52 s και η ανεξάρτητη επαλήθευση 6,07 s.
 Αυτοί οι χρόνοι δεν προστίθενται σε GPU timings σαν κοινή compute σύγκριση.
 Η παρούσα σύνθεση διαβάζει υπάρχοντα JSON/checksums, δεν ξανατρέχει εκπαίδευση
-ή ανάκτηση. Συνολικά παραμένουν3πλήρη GPU trainings και1Kaggle notebook.
+ή ανάκτηση. Συνολικά παραμένουν 3 πλήρη GPU trainings και 1 Kaggle notebook.
 Ο source fingerprint είναι
 `84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c`.
 
-Το τελευταίο πλήρες suite είχε44tests passed/14υπάρχοντα deprecation warnings σε32,51s.
+Το τελευταίο πλήρες suite είχε 44 tests passed/14 υπάρχοντα deprecation warnings σε 32,51 s.
 Οι CPU ranks επαληθεύτηκαν με ανεξάρτητο Pearson formula και production corruption
 replay,640endpoints. Συνθετικά tests ελέγχουν κώδικα και όχι φυσική αποτελεσματικότητα.
 Στη συνεδρία σύνθεσης δεν άλλαξαν labels/ranking/splits/transforms/checkpoints,
@@ -266,7 +266,7 @@ replay,640endpoints. Συνθετικά tests ελέγχουν κώδικα κα
 
 Απομένει μία πλήρης GPU εκπαίδευση κάτω από το cap4. Αυτό **δεν αρκεί** για νέο
 baseline και επιτυχημένο conditional combined. Δεν υπάρχει έγκριση για νέο recipe,
-model,data budget,seed ή αλλαγή checkpoint rule. Δεν ετοιμάστηκε ούτε υποβλήθηκε
+model, data budget, seed ή αλλαγή checkpoint rule. Δεν ετοιμάστηκε ούτε υποβλήθηκε
 νέο GPU run. Η recommendation είναι δική μας κρίση από τα ευρήματα, όχι κριτήριο
 του καθηγητή ή εγγύηση αξιολόγησης. Δεν έχει δοθεί συγκεκριμένη ημερομηνία παράδοσης·
 ο χρήστης ανέφερε διαθέσιμο εξάμηνο και απουσία κριτηρίων αξιολόγησης.
@@ -278,7 +278,7 @@ model,data budget,seed ή αλλαγή checkpoint rule. Δεν ετοιμάστ�
 
 Η [evidence.json](evidence.json) συγκεντρώνει τους αριθμούς και SHA-256 κάθε
 εισόδου. Ο companion `notebooks/build_study_synthesis.py` διαβάζει μόνο αποθηκευμένα
-artifacts, επιβεβαιώνει50epochs/3.950steps,minimum-CE selections,archive hashes,
+artifacts, επιβεβαιώνει 50 epochs/3.950 steps, minimum-CE selections, archive hashes,
 κοινά split/data identifiers και το failed gate, και δημιουργεί το γράφημα ιστοριών.
 Δεν ανοίγει HDF5 trace groups, δεν επιλέγει νέο μοντέλο και δεν καλεί Kaggle.
 
@@ -293,9 +293,9 @@ artifacts, επιβεβαιώνει50epochs/3.950steps,minimum-CE selections,arc
 - [Literature CNN training και gate](../kaggle_literature_v7_2026-10-03/REPORT_EL.md)
 - [Masking/point selection](../masking_diagnosis_2026-10-03/REPORT_EL.md)
 - [Frozen CNN και correlation diagnostics](../literature_diagnosis_2026-10-04/REPORT_EL.md)
-- [Παγωμένη sensitivity,πλήρες GE/SR grid και oracle limits](../correlation_robustness_2026-10-05/REPORT_EL.md)
+- [Παγωμένη sensitivity, πλήρες GE/SR grid και oracle limits](../correlation_robustness_2026-10-05/REPORT_EL.md)
 - [Πρωτόκολλο](../../docs/EXPERIMENT_PROTOCOL.md), [βιβλιογραφία](../../literature/REVIEW.md)
 
-Τα προσωπικά credentials,το HDF5,τα run checkpoints και τα environments παραμένουν
+Τα προσωπικά credentials, το HDF5, τα run checkpoints και τα environments παραμένουν
 εκτός Git. Η [verification.json](verification.json) καταγράφει την επαλήθευση της
 σύνθεσης και τη διατήρηση του ενεργού notebook/checkpoint/packet.

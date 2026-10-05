@@ -30,7 +30,7 @@
   "artifact_sha256": {
     "evidence.json": "fb68ee5efd3140c8a27f6eabfb0232bec4cbb79b8710bcd9a34bd5a7d5e5ee09",
     "baseline_histories.png": "3bded71256d27bf6a202e8f18ff9cb33ca088c28e903e5fbb33106625db9c8e8",
-    "REPORT_EL.md": "d6941ad13540a000167f311ba7604685e8967f1122ddc4f4bdb44047f5a37d3f"
+    "REPORT_EL.md": "4c91b9128bf7e907732e24d90748dde54c574e3f5ebb8f03ea0588b694656b5a"
   },
   "documentation_sha256": {
     "README.md": "6daea25a58bbd61765286c9cc27d21db1a1ed2ba4446c61598331cef0b02994d",
@@ -38,6 +38,6 @@
     "PROGRESS.md": "b731217abfd3d1ae95a25d17ac1bab5819f25c9c7b90e6df2b488648ca81afd9",
     "docs/EXPERIMENT_PROTOCOL.md": "f107adbcccbfedf8dd13e5c25f4c960f1287279e614c4b7eb1352323647dea06",
     "literature/REVIEW.md": "887d91c7f23d1be5425b479779688db395873999576af090138e35110b8ccc41",
-    "literature/PRIMARY_AUDIT_2026-10-05.md": "a9065a44a0a6d8a79ffc5ef778c721dc0035dd27b26f5c75ee0cfd38aad9b652"
+    "literature/PRIMARY_AUDIT_2026-10-05.md": "3c4878341e5554b1f050d2bca26a425667735ca6addc8883eb574ae418db9650"
   }
 }
