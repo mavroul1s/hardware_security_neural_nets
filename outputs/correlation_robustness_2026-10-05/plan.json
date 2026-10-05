@@ -1,0 +1,82 @@
+{
+  "scope": "Profiling-validation sensitivity diagnosis, not final attack or trained-method comparison",
+  "split_id": "1c9656f9ba13791a7ba4781a5518420f4fef4e303c979d4c307cc6ed27ee9090",
+  "dataset_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "point_selection_record_sha256": "ea87c374a42f94f4039db99b147cffb73d8f14ddc8b6ba8b9dd0c17d7da54c35",
+  "grid_config_sha256": "ca3a52248aa69881501327f840bb7d6a4222d19e36fde322c6e46707fe9f975e",
+  "pairs": {
+    "rout": [
+      181,
+      521
+    ],
+    "r3": [
+      156,
+      517
+    ]
+  },
+  "conditions": [
+    {
+      "name": "clean",
+      "noise_std": 0.0,
+      "max_shift": 0,
+      "padding": "zero"
+    },
+    {
+      "name": "noise_matched",
+      "noise_std": 0.1,
+      "max_shift": 0,
+      "padding": "zero"
+    },
+    {
+      "name": "shift_matched",
+      "noise_std": 0.0,
+      "max_shift": 5,
+      "padding": "zero"
+    },
+    {
+      "name": "combined_matched",
+      "noise_std": 0.1,
+      "max_shift": 5,
+      "padding": "zero"
+    },
+    {
+      "name": "combined_mild",
+      "noise_std": 0.05,
+      "max_shift": 2,
+      "padding": "zero"
+    },
+    {
+      "name": "combined_noise_ood",
+      "noise_std": 0.2,
+      "max_shift": 5,
+      "padding": "zero"
+    },
+    {
+      "name": "combined_shift_ood",
+      "noise_std": 0.1,
+      "max_shift": 10,
+      "padding": "zero"
+    },
+    {
+      "name": "combined_both_ood",
+      "noise_std": 0.2,
+      "max_shift": 10,
+      "padding": "zero"
+    }
+  ],
+  "budget": 2000,
+  "repetitions": 20,
+  "order_seed": 8001,
+  "corruption_seed": 9001,
+  "batch_size": 256,
+  "normalization": "feature_minmax_training_only",
+  "centering": "Mean normalized training trace; frozen for all conditions",
+  "primary_extraction": "Fixed training-selected pair",
+  "oracle_extraction": "Read original points at point+injected_shift; known synthetic offsets, not an estimated alignment method",
+  "padding_control": "Edge padding with identical within-condition RNG; inspect both products for exact equality",
+  "paired_scope": "Same corrupted traces for both pairs and methods; common trace orders; interleaved RNG does not guarantee same offsets across different conditions",
+  "new_optimization_steps": 0,
+  "new_kaggle_runs": 0,
+  "final_attack_set_read": false
+}
