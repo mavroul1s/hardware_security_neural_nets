@@ -83,7 +83,7 @@ def main():
         "full_gpu_trainings_total": 3, "canonical_notebook_count": 1,
         "final_attack_payloads_read": False,
         "artifact_hashes": {path.relative_to(ROOT).as_posix(): sha(path) for path in sorted(OUT.rglob("*"))
-                            if path.is_file() and path.name not in {"verification.json", "REPORT_EL.md"}}}
+                            if path.is_file() and path not in {OUT / "verification.json", OUT / "REPORT_EL.md"}}}
     write_json(OUT / "verification.json", verification)
     best, last = result["checkpoints"]["best"], result["checkpoints"]["last"]
     text = f"""# Αναπαραγωγή αποθηκευμένων αποτελεσμάτων σε καθαρό CPU περιβάλλον
