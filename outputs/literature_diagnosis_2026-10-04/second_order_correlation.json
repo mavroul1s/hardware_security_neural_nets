@@ -1,0 +1,117 @@
+{
+  "scope": "CPU validation diagnosis with existing training-selected centered products; no classifier training",
+  "split": "profiling_validation",
+  "budget": 2000,
+  "repetitions": 20,
+  "order_seed": 8001,
+  "control_product_permutations": 8,
+  "control_seed_start": 20261004,
+  "controls_are_descriptive_not_formal_p_values": true,
+  "score": "Absolute prefix Pearson correlation with HW(Sbox(plaintext xor candidate key))",
+  "rank": "zero based; all equally good wrong keys precede correct; tolerance1e-12",
+  "model_inputs": "Selected trace products and public plaintext hypotheses; no validation masks or true key as input",
+  "true_key_usage": "Only to report the correct hypothesis rank/correlation",
+  "center_fit": "10k training traces only",
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "checkpoint_hashes_unchanged": {
+    "best.pt": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+    "last.pt": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284"
+  },
+  "attack_set_read": false,
+  "full_gpu_trainings_total": 3,
+  "results": {
+    "rout": {
+      "pair": [
+        181,
+        521
+      ],
+      "selection": "Existing training-only PoI selection; no validation pair search",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "full_validation_true_key_correlation": -0.19777475972903727,
+      "full_validation_absolute_rank": 0,
+      "row_shuffled_product_controls": [
+        {
+          "ge_at_budget": 102.1,
+          "sr_at_budget": 0.1
+        },
+        {
+          "ge_at_budget": 115.2,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 127.85,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 132.75,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 137.75,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 107.45,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 132.15,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 42.8,
+          "sr_at_budget": 0.1
+        }
+      ]
+    },
+    "r3": {
+      "pair": [
+        156,
+        517
+      ],
+      "selection": "Existing training-only PoI selection; no validation pair search",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "full_validation_true_key_correlation": -0.20142479176531475,
+      "full_validation_absolute_rank": 0,
+      "row_shuffled_product_controls": [
+        {
+          "ge_at_budget": 116.7,
+          "sr_at_budget": 0.05
+        },
+        {
+          "ge_at_budget": 115.65,
+          "sr_at_budget": 0.05
+        },
+        {
+          "ge_at_budget": 121.1,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 108.7,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 150.15,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 151.25,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 136.1,
+          "sr_at_budget": 0.0
+        },
+        {
+          "ge_at_budget": 84.4,
+          "sr_at_budget": 0.0
+        }
+      ]
+    }
+  },
+  "seconds": 18.236579900141805
+}

@@ -18,6 +18,13 @@ Gate πριν το combined: clean validation SR@2.000≥0,90, δηλαδή18/20
 Αποτέλεσμα version7: baselineSR0/20, gate failed, combined skipped. Σύνολο3 πλήρη
 GPU trainings. Το M3 robustness comparison δεν ολοκληρώθηκε· δεν τεκμηριώνεται
 όφελος ή βλάβη του training augmentation. ΝέαGPU πρόταση μόνο μετά από διάγνωση.
+CPU διάγνωση4/10: υπάρχοντα training-selected centered products181×521 και156×517
+δίνουν20/20 clean validation recovery με correlation/HW hypothesis scoring.
+Η πληροφορία στα δεδομένα είναι αξιοποιήσιμη· το τρέχον CNN setup δεν τη γενικεύει
+επαρκώς. BN counterfactual χωρίς weight updates δεν επανέφερε ανάκτηση.
+Ο διαγνωστικός έλεγχος δεν αλλάζει το CNN gate ή το budget. Επόμενο: CPU sensitivity
+στα ίδια points, όχι αυτόματο τέταρτο baseline. Για νέο baseline+combined θα απαιτούνταν
+δύο νέα GPU trainings, πέρα από το αρχικό όριο4 με τα3 ήδη ολοκληρωμένα.
 
 ## Προσωρινό ερευνητικό ερώτημα
 

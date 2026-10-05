@@ -110,6 +110,12 @@ GE114,25 και SR0/20. Το gate18/20 απέτυχε, επομένως combined
 Έγιναν3 πλήρη GPU trainings συνολικά στο ίδιο notebook. Η
 [νέα αναφορά](outputs/kaggle_literature_v7_2026-10-03/REPORT_EL.md) περιέχει τους
 ελέγχους, το κόστος και τους περιορισμούς. Καμία νέαGPU εκτέλεση δεν ξεκινά αυτόματα.
+Στη [CPU διάγνωση της4/10](outputs/literature_diagnosis_2026-10-04/REPORT_EL.md),
+δεύτερης τάξης συσχέτιση με δύο ήδη training-selected ζεύγη ανέκτησε το byte σε20/20
+clean validation permutations. Το CNN διατηρεί mask/share signal, αλλά ανεπαρκές
+unmasked-target generalization. Training-only BN recalibration δεν αποκατέστησε SR.
+Ο στατιστικός έλεγχος είναι διαγνωστικός, με διαφορετική πληροφορία στην επιλογή
+features· δεν αντικαθιστά το CNN gate. Παραμένουν3 GPU trainings και1 notebook.
 Το fresh-start opt-in αφορά μόνο το εγκεκριμένο νέο baseline· μετά την ολοκλήρωση
 το packet διατηρεί το νέο checkpoint και η πρώτη cell απαιτεί restore.
 Τα `kaggle_resume_input_leaky.zip` και `kaggle_resume_input.zip` διατηρούν τα παλιά

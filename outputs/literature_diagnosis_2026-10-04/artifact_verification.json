@@ -1,0 +1,23 @@
+{
+  "production_source_unchanged": true,
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "original_best_last_checkpoints_unchanged": true,
+  "resume_packet_unchanged": true,
+  "notebook_matches_saved_private_version8": true,
+  "notebook_count": 1,
+  "original_cnn_gate_still_failed": true,
+  "combined_training_performed": false,
+  "new_kaggle_execution": false,
+  "full_gpu_trainings_total": 3,
+  "final_attack_evaluation_performed": false,
+  "independent_correlation_endpoint_checks": 40,
+  "local_tests": {
+    "passed": 37,
+    "warnings": 14,
+    "seconds": 24.54
+  },
+  "plots_visually_checked": [
+    "correlation_recovery.png",
+    "hidden_leakage.png"
+  ]
+}

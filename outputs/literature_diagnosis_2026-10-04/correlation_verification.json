@@ -1,0 +1,16 @@
+{
+  "method": "Separate centered-dot-product Pearson formula",
+  "validation_only": true,
+  "families": {
+    "rout": {
+      "independent_endpoint_checks": 20,
+      "ranks_and_ge_sr_verified": true,
+      "sustained_success_recomputed": true
+    },
+    "r3": {
+      "independent_endpoint_checks": 20,
+      "ranks_and_ge_sr_verified": true,
+      "sustained_success_recomputed": true
+    }
+  }
+}

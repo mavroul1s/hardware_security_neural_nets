@@ -1,4 +1,10 @@
-# Κατάσταση project — 2026-10-03
+# Κατάσταση project — ενημέρωση 2026-10-04
+
+Τρέχον snapshot:3 full GPU baselines ολοκληρωμένα, όλα με clean validation SR0/20,
+1 Kaggle notebook, κανένα combined training, final attack locked. CPU correlation
+diagnosis4/10: δύο προηγουμένως training-selected pairs δίνουν20/20 validation recovery.
+CNN gate/source/checkpoints/private Input/version8 QUICK_SAVE παραμένουν αμετάβλητα.
+Το ιστορικό που ακολουθεί διατηρεί τις προηγούμενες αποφάσεις και εκτελέσεις.
 
 ## Συμφωνημένο πλαίσιο
 
@@ -337,3 +343,35 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
   `outputs/kaggle_literature_execution_status.json`, `outputs/kaggle_quick_save_literature.json`.
   Το τρέχον GPU scope σταμάτησε μετά το failed gate. Επόμενο: CPU διάγνωση της
   ανεπαρκούς γενίκευσης πριν από νέα πρόταση. Δεν έχει εγκριθεί τέταρτο baseline.
+
+## CPU διάγνωση literature CNN και δεύτερης τάξης correlation — 2026-10-04
+
+- Fixed best/last checkpoint forward στο ίδιο10k/5k profiling split. Training CE
+  5,516667→5,240488, validation5,560782→5,814250. Last training alignment gain
+  έναντι32 label shuffles0,559119· validation−0,000760. Outputs εξαρτώνται απόinput,
+  dense μονάδες χωρίς constant units, αλλά δεν γενικεύουν επαρκώς τον unmasked target.
+- Dense2 held-out HW(unmasked) SNR0,002268/0,002833 έναντι shufflemax0,004327/0,003810.
+  Masked/share signal σαφώς υψηλότερο. Περιγραφικά controls, όχιp-values ή proof capacity.
+- Best BN buffer warmup mismatch:316updates/momentum0,01, ratio(var+eps)1,89–31,26.
+  Training-only exact moments σε frozen-weight clone: valCE5,569355 καιSR0/20.
+  Last moments ήδη κοντά σεrunning buffers· recalibrationCE5,814538/SR0/20.
+  Καμία αλλαγή saved weights/buffers ή checkpoint selection.
+- Επαναχρησιμοποιήθηκαν ήδη training-selected pairs181×521 και156×517, train-only
+  raw centering. Absolute prefix correlation με HW(Sbox(p XOR candidate_key)),
+  256 hypotheses,20 common validation orders/seed8001/budget2000.
+  Και τα δύο GE0/SR20/20. Sustained SR90% στα631 και481traces αντίστοιχα.
+- Training mask/share metadata χρησιμοποιήθηκε μόνο στην παλιότερη point selection.
+  Validation scoring: traces/plaintext, true key μόνο γιαrank. Δεν είναι equal-protocol
+  comparison με CNN, ούτε final attack/unknown-key/cross-device evidence.
+- 8 shuffled-product controls: routSR0–10%, r3SR0–5%.40 endpoint ranks επαληθεύτηκαν
+  με ανεξάρτητο centered-dot-product Pearson τύπο· curves/GE/SR/sustained checks πέρασαν.
+- CPU CNN best curve99,9925% agreement μεGPU (3/40k intermediate ranks διαφορετικά),
+  τελικό GE114,25/SR0 ίδιο. MinMax fit exact, μόλις0,00634% val values outside training range.
+- 37 tests passed/14 existing warnings σε24,54s.4 νέα arithmetic/isolation tests.
+  Main CPU diagnostics16,04s+18,24s, χωρίς νέαGPU εκτέλεση/optimizer update σταdiagnostics.
+- Artifacts: `outputs/literature_diagnosis_2026-10-04/REPORT_EL.md`, diagnosis/summary,
+  correlation JSON/NPZ/independent verification και δύο visually checked scientific plots.
+  Source hash84eff... και own checkpoint hashes αμετάβλητα. Ένα `.ipynb` παραμένει.
+- Επόμενο: CPU sensitivity audit με fixed points/centering στις προκαθορισμένες
+  corruptions. Το CNN gate παραμένειfailed· η correlation επιτυχία δεν ενεργοποιείcombined.
+  Νέαbaseline+combined χρειάζονται2 νέαtrainings, άρα συμφωνία για αλλαγή scope/ορίου.

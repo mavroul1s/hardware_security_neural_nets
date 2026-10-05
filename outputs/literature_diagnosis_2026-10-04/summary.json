@@ -1,0 +1,49 @@
+{
+  "cpu_diagnosis_seconds": 16.038257600041106,
+  "correlation_diagnosis_seconds": 18.236579900141805,
+  "full_gpu_trainings_total": 3,
+  "no_new_kaggle_execution": true,
+  "final_attack_set_read": false,
+  "correlation_results": {
+    "rout": {
+      "pair": [
+        181,
+        521
+      ],
+      "selection": "Existing training-only PoI selection; no validation pair search",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "full_validation_true_key_correlation": -0.19777475972903727,
+      "full_validation_absolute_rank": 0
+    },
+    "r3": {
+      "pair": [
+        156,
+        517
+      ],
+      "selection": "Existing training-only PoI selection; no validation pair search",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "full_validation_true_key_correlation": -0.20142479176531475,
+      "full_validation_absolute_rank": 0
+    }
+  },
+  "cnn": {
+    "best": {
+      "epoch": 4,
+      "training_ce": 5.51666722083435,
+      "validation_ce": 5.560781941575401,
+      "bn_counterfactual_validation_ce": 5.56935525754618,
+      "validation_sr": 0.0
+    },
+    "last": {
+      "epoch": 50,
+      "training_ce": 5.240487714193576,
+      "validation_ce": 5.814249784536694,
+      "bn_counterfactual_validation_ce": 5.814537693887805,
+      "validation_sr": 0.0
+    }
+  }
+}
