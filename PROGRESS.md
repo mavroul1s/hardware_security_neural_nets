@@ -375,3 +375,37 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
 - Επόμενο: CPU sensitivity audit με fixed points/centering στις προκαθορισμένες
   corruptions. Το CNN gate παραμένειfailed· η correlation επιτυχία δεν ενεργοποιείcombined.
   Νέαbaseline+combined χρειάζονται2 νέαtrainings, άρα συμφωνία για αλλαγή scope/ορίου.
+
+## CPU sensitivity audit παγωμένων correlation pairs — 2026-10-05
+
+- Πάγωμα `outputs/correlation_robustness_2026-10-05/plan.json` πριν εκτέλεση.
+  Ίδια ζεύγη 181×521/156×517 από προηγούμενη training-only επιλογή. Train-only
+  MinMax/normalized centers, 20 κοινές σειρές seed8001/budget2000, corruption9001/batch256.
+  Οκτώ εντάσεις από το υπάρχον `configs/evaluation_final.json`, profiling validation μόνο.
+- Σταθερά ζεύγη: clean SR20/20,20/20· noise σ=0,1 επίσης20/20,20/20· shift±5 6/20,17/20·
+  combined σ=0,1/±5 1/20,11/20· mild σ=0,05/±2 20/20,20/20. Noise OOD σ=0,2/±5 0/20,4/20·
+  shift OOD σ=0,1/±10 0/20,2/20· both OOD σ=0,2/±10 0/20,1/20.
+- Oracle εξαγωγή στις θέσεις point+injected_shift με τα παγωμένα κέντρα: 20/20 και στα δύο
+  για clean/noise/shift/matched/mild/shift OOD. Noise OOD4/20,14/20· both OOD9/20,10/20.
+  Γνωστή συνθετική μετατόπιση, όχι εκτίμηση ευθυγράμμισης ή πρακτική attack μέθοδος.
+  Η επαναφορά υποδεικνύει περιορισμό εξαγωγής σε σταθερά σημεία· δεν εξηγεί μόνη της CNN failure.
+- Clean sustained SR90 631/481 traces· noise0,1 860/1194· combined matched oracle1205/1088.
+  Σε όλες τις σ=0,2 δεν επιτεύχθηκε sustained SR90 εντός2000. Καμία επιλογή καλύτερου
+  ζεύγους ή έντασης από τα αποτελέσματα.
+- Zero/edge με ίδιο RNG εντός συνθήκης δίνουν ακριβώς ίδια32 προϊόντα· όλα τα σημεία
+  στο εσωτερικό, κανένα επιλεγμένο σημείο δεν αποκόπηκε. Περίπου0,391%/0,739% των
+  waveform samples απορρίφθηκε για±5/±10. Έλεγχος για αυτά τα προϊόντα, όχι απόδειξη
+  CNN border invariance. Feature-space corruption μετά το MinMax.
+- 640 endpoint ranks επαληθεύτηκαν με ανεξάρτητο Pearson/NumPy extraction. Production
+  augment_batch replay: οκτώ tensor hashes exact, offsets replayed, train-only fit verified.
+  Clean raw comparison: rout100%, r3 99,9975% (1/40k prefix difference), ίδια endpoints/sustained.
+- 44 tests passed/14 υπάρχοντα warnings σε32,51s, 7 νέα RNG/oracle/cropping/padding checks.
+  CPU audit47,52s + verification6,07s, μηδέν νέα optimization steps στα πραγματικά data
+  ή Kaggle sessions. Smoke tests σε synthetic CPU fixtures είναι correctness checks.
+- Αναφορά `outputs/correlation_robustness_2026-10-05/REPORT_EL.md`, results/arrays/CSV,
+  ανεξάρτητη επαλήθευση και δύο οπτικά ελεγμένα διαγράμματα. Παγωμένος source84eff...,
+  best/last checkpoints, active packet και το μοναδικό .ipynb/saved version8 διατηρήθηκαν.
+- Σύνολο3 full GPU trainings/1 notebook. CNN gate failed/combined skipped, final attack
+  δεν διαβάστηκε. Επόμενο: σύνθεση ευρημάτων/ορίων και αναθεώρηση ερευνητικού ερωτήματος
+  πριν νέα GPU πρόταση. Νέο baseline+combined απαιτούν2 νέα trainings και συμφωνία για
+  αλλαγή scope/ορίου.

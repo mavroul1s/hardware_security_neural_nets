@@ -1,0 +1,30 @@
+{
+  "independent_endpoint_checks": 640,
+  "local_tests": {
+    "passed": 44,
+    "warnings": 14,
+    "seconds": 32.51,
+    "log_sha256": "b0e5f25b5810b26687fd0472f6d082ce5bf1540da4f4f8522315c17f9cc6da55"
+  },
+  "plots_visually_checked": [
+    "success_grid.png",
+    "recovery_curves.png"
+  ],
+  "artifact_sha256": {
+    "plan.json": "e454c1df0ae5d83e8472251610c8bfa7fd9e9652120135e0eecad740c6f7ebfc",
+    "results.json": "701808df7594b9b67df6fa8646134d411e62a312f38c44bca7f6824e8b4aaad9",
+    "audit_arrays.npz": "48e210841e792d99aed0763f59775ceeae47d09524bcd27b01ec5962015ee340",
+    "verification.json": "e79becd842434be6699b68ce8290cf73b154ad83e6203c158676ea294ce80911",
+    "metrics.csv": "3d2ab70235f17e5be4f144cb39f61ac90eafd5f3bf3bd4657465c7b64c8868e7",
+    "success_grid.png": "b6df6e229827aa7170201f9ce2bd95f62c97a7b12a20ecafdbec5354cb1d50cd",
+    "recovery_curves.png": "75efeb7d57f437d050dd9c92606dd835c3288f870f319c43a38ede51828191de",
+    "REPORT_EL.md": "64506d55e762fde9a2d608304ee2f291dbfe862e97a75cb4c53f514d829584a6"
+  },
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "production_state_preserved": true,
+  "notebook_count": 1,
+  "full_gpu_trainings_total": 3,
+  "new_kaggle_execution": false,
+  "final_attack_set_read": false,
+  "cnn_gate_still_failed": true
+}

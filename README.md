@@ -116,6 +116,14 @@ clean validation permutations. Το CNN διατηρεί mask/share signal, αλ
 unmasked-target generalization. Training-only BN recalibration δεν αποκατέστησε SR.
 Ο στατιστικός έλεγχος είναι διαγνωστικός, με διαφορετική πληροφορία στην επιλογή
 features· δεν αντικαθιστά το CNN gate. Παραμένουν3 GPU trainings και1 notebook.
+Στον [CPU έλεγχο ευαισθησίας της 5/10](outputs/correlation_robustness_2026-10-05/REPORT_EL.md),
+θόρυβος σ=0,1 διατηρεί 20/20 και στα δύο σταθερά ζεύγη, ενώ ο συνδυασμός με
+μετατόπιση ±5 πέφτει σε 1/20 και 11/20. Με γνωστή τεχνητή μετατόπιση η εξαγωγή
+επανέρχεται σε 20/20· αυτό είναι oracle διάγνωση, όχι έτοιμη πρακτική ευθυγράμμιση.
+Στο σ=0,2 το oracle δεν φτάνει 18/20. Πέρασαν 640 endpoint checks και 44 tests,
+χωρίς νέο GPU training.
+Το final attack παραμένει κλειστό. Επόμενο: σύνθεση ευρημάτων και ερευνητικού
+ερωτήματος πριν από νέα GPU πρόταση που θα χρειαστεί συμφωνία αλλαγής scope/ορίου.
 Το fresh-start opt-in αφορά μόνο το εγκεκριμένο νέο baseline· μετά την ολοκλήρωση
 το packet διατηρεί το νέο checkpoint και η πρώτη cell απαιτεί restore.
 Τα `kaggle_resume_input_leaky.zip` και `kaggle_resume_input.zip` διατηρούν τα παλιά
