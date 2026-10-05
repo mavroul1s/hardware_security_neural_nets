@@ -409,3 +409,36 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
   δεν διαβάστηκε. Επόμενο: σύνθεση ευρημάτων/ορίων και αναθεώρηση ερευνητικού ερωτήματος
   πριν νέα GPU πρόταση. Νέο baseline+combined απαιτούν2 νέα trainings και συμφωνία για
   αλλαγή scope/ορίου.
+
+## Ενιαία αναφορά και στοχευμένη βιβλιογραφική σύνθεση — 2026-10-05
+
+- Δημιουργήθηκαν `outputs/study_synthesis_2026-10-05/REPORT_EL.md`, `evidence.json`
+  και οπτικά ελεγμένο `baseline_histories.png`. Η αναφορά συνδέει τα3 CNN failures,
+  την προηγούμενη masking/correlation διάγνωση και την παγωμένη sensitivity.
+- Ο companion `notebooks/build_study_synthesis.py` εκτελέστηκε σε CPU, χωρίς νέα
+  εκπαίδευση ή HDF5 trace-group reads. Ελέγχθηκαν50epochs/3950steps ανάrun, minimum-CE
+  επιλογές, κοινό split/dataset, archive hashes και οι υπάρχοντες sensitivity hashes.
+  Χρόνος σύνθεσης1,51s μετά τις εισαγωγές βιβλιοθηκών· νέο training δεν έγινε.
+- Τρία TensorT4 baselines:11.850 GPU updates συνολικά, training loops52,04s και
+  validation loops10,84s. Αυτά δεν είναι ο συνολικός session/setup χρόνος· δεν
+  ανασυντέθηκε συνολικό session κόστος από τα loops. Benchmark3epochs ήδη μέσα στις50.
+- `literature/PRIMARY_AUDIT_2026-10-05.md`: στοχευμένα primary checks authorCNN,
+  Li–Perin, shift-invariance preprint/final snippets, EquivSCA§5 και RFA§3/4/5,
+  καθώς και υπάρχουσες second-order/statistical/Scatter εργασίες. Search/access gaps
+  καταγράφηκαν· καμία δήλωση εξαντλητικής αναζήτησης, νέα τεχνική ή confirmed novelty.
+- Author CNN recipe45k/5k/batch50/OneCyclemax0,005 έναντι δικού μας10k/batch128/
+  constant0,001/train-only MinMax. Derived updates45.000 έναντι3.950 (11,39×),
+  χωρίς συμπέρασμα ότι αυτή είναι η μοναδική αιτία failure ή ότι αύξηση θα διορθώσειSR.
+  Το author scaler fit πριν το45k/5k split δεν αντιγράφηκε· κρατάμε αυστηρό train-only fit.
+- Διορθώθηκαν stale scope statements στη βιβλιογραφία/protocol απόfour strategies
+  σε none/conditional combined. Failed CNN gate παραμένει original, δεν ενεργοποιείται
+  από correlation success. Το M3 augmentation effect παραμένει μη μετρημένο.
+- Τελευταίο πλήρες test suite44passed/14warnings/32,51s από την προηγούμενη sensitivity
+  συνεδρία. Δεν επαναλήφθηκε χωρίς αλλαγές labels/ranking/splits/transforms/checkpoints·
+  η παρούσα σύνθεση ελέγχεται απευθείας έναντι αποθηκευμένων ιστοριών και τεκμηρίων.
+- Παγωμένος source84eff..., active checkpoint/Input/notebook διατηρούνται. Σύνολο3
+  πλήρηGPUtrainings/1notebook, καμία νέα Kaggle ενέργεια ή final attack ανάγνωση.
+  Απομένει1training στοcap4· νέοbaseline+combined θα απαιτούσε έως2και αλλαγή ορίου.
+- Επόμενο: αναπαραγωγή των υπαρχόντων αποτελεσμάτων από καθαρό CPU περιβάλλον,
+  χωρίς αλλαγή μοντέλων/data budget/seeds. Το paper παραμένει υπό αξιολόγηση·
+  η παρούσα ελεγμένη συνεισφορά είναι πανεπιστημιακή διαγνωστική μελέτη περίπτωσης.
