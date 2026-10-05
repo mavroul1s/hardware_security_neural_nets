@@ -1,0 +1,269 @@
+Completed frozen-pair corruption: clean
+Completed frozen-pair corruption: noise_matched
+Completed frozen-pair corruption: shift_matched
+Completed frozen-pair corruption: combined_matched
+Completed frozen-pair corruption: combined_mild
+Completed frozen-pair corruption: combined_noise_ood
+Completed frozen-pair corruption: combined_shift_ood
+Completed frozen-pair corruption: combined_both_ood
+{
+  "seconds": 37.202074400149286,
+  "results": [
+    {
+      "condition": "clean",
+      "family": "rout",
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631
+    },
+    {
+      "condition": "clean",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631
+    },
+    {
+      "condition": "clean",
+      "family": "r3",
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481
+    },
+    {
+      "condition": "clean",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481
+    },
+    {
+      "condition": "noise_matched",
+      "family": "rout",
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 860
+    },
+    {
+      "condition": "noise_matched",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 860
+    },
+    {
+      "condition": "noise_matched",
+      "family": "r3",
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1194
+    },
+    {
+      "condition": "noise_matched",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1194
+    },
+    {
+      "condition": "shift_matched",
+      "family": "rout",
+      "method": "fixed",
+      "ge_at_budget": 11.4,
+      "sr_at_budget": 0.3,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "shift_matched",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631
+    },
+    {
+      "condition": "shift_matched",
+      "family": "r3",
+      "method": "fixed",
+      "ge_at_budget": 0.15,
+      "sr_at_budget": 0.85,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "shift_matched",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481
+    },
+    {
+      "condition": "combined_matched",
+      "family": "rout",
+      "method": "fixed",
+      "ge_at_budget": 37.35,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_matched",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1205
+    },
+    {
+      "condition": "combined_matched",
+      "family": "r3",
+      "method": "fixed",
+      "ge_at_budget": 3.3,
+      "sr_at_budget": 0.55,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_matched",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1088
+    },
+    {
+      "condition": "combined_mild",
+      "family": "rout",
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1399
+    },
+    {
+      "condition": "combined_mild",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 775
+    },
+    {
+      "condition": "combined_mild",
+      "family": "r3",
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1234
+    },
+    {
+      "condition": "combined_mild",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 612
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "rout",
+      "method": "fixed",
+      "ge_at_budget": 115.25,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 23.8,
+      "sr_at_budget": 0.2,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "r3",
+      "method": "fixed",
+      "ge_at_budget": 57.55,
+      "sr_at_budget": 0.2,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.8,
+      "sr_at_budget": 0.7,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "rout",
+      "method": "fixed",
+      "ge_at_budget": 68.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 887
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "r3",
+      "method": "fixed",
+      "ge_at_budget": 49.95,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1003
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "rout",
+      "method": "fixed",
+      "ge_at_budget": 118.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 4.7,
+      "sr_at_budget": 0.45,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "r3",
+      "method": "fixed",
+      "ge_at_budget": 82.55,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "ge_at_budget": 3.9,
+      "sr_at_budget": 0.5,
+      "traces_to_sustained_sr90": null
+    }
+  ]
+}

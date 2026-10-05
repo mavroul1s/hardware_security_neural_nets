@@ -1,0 +1,246 @@
+{
+  "independent_method": "Centered-dot-product Pearson endpoints; direct NumPy extraction; production augment_batch replay",
+  "endpoint_checks": 640,
+  "verified_results": [
+    {
+      "condition": "clean",
+      "family": "rout",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "clean",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "clean",
+      "family": "r3",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "clean",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "noise_matched",
+      "family": "rout",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "noise_matched",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "noise_matched",
+      "family": "r3",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "noise_matched",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "shift_matched",
+      "family": "rout",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "shift_matched",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "shift_matched",
+      "family": "r3",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "shift_matched",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_matched",
+      "family": "rout",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_matched",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_matched",
+      "family": "r3",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_matched",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_mild",
+      "family": "rout",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_mild",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_mild",
+      "family": "r3",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_mild",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "rout",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "r3",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "rout",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "r3",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "rout",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "rout",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "r3",
+      "method": "fixed",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "r3",
+      "method": "oracle_known_shift",
+      "independent_endpoint_checks": 20,
+      "products_and_curves_verified": true
+    }
+  ],
+  "production_corrupted_tensor_hashes_match": true,
+  "oracle_offsets_replayed": true,
+  "zero_and_edge_products_exactly_equal": true,
+  "training_only_normalizer_and_center_verified": true,
+  "production_source_unchanged": true,
+  "original_checkpoints_unchanged": true,
+  "resume_packet_unchanged": true,
+  "notebook_matches_saved_version8": true,
+  "notebook_count": 1,
+  "cnn_gate_still_failed": true,
+  "new_kaggle_execution": false,
+  "full_gpu_trainings_total": 3,
+  "final_attack_set_read": false,
+  "seconds": 8.530161200091243,
+  "results_sha256": "1984ed1b86326ee654080a20faced63431bfc38b9f9f405c96eab8d1db4c29cb",
+  "arrays_sha256": "48e210841e792d99aed0763f59775ceeae47d09524bcd27b01ec5962015ee340"
+}

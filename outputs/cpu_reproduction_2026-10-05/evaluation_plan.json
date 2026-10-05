@@ -1,0 +1,33 @@
+{
+  "input_hashes": {
+    "data/ASCAD.h5": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/best.pt": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/last.pt": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/manifest.json": "1b159e5af59e4beb03a96762010498da88a2974e378dc171e61d785432e20f0c",
+    "outputs/kaggle_resume_input_literature.zip": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+    "outputs/kaggle_project_literature.zip": "bd94e0f1e95009e6994aa052a4e275fceb92144a4b26c4c198b51bc57848b368",
+    "notebooks/kaggle_baseline.ipynb": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e",
+    "runs/kaggle_control/saved_kernel_v8/hw-sec-exp2.ipynb": "8cdc2dd33fb30fe9f1a002ef0c7356a912277886507a73d3c8080152fcec7c67",
+    "outputs/masking_diagnosis_2026-10-03/diagnosis.json": "ea87c374a42f94f4039db99b147cffb73d8f14ddc8b6ba8b9dd0c17d7da54c35",
+    "outputs/literature_diagnosis_2026-10-04/diagnosis.json": "bb53f673219388b52d275cfdc1b032cb5d7a8b71ec9a3f296fdd3c3705f8340d",
+    "outputs/literature_diagnosis_2026-10-04/rank_controls.npz": "8b48c4511e5e21752e8fa6ecac06749e0a0bd40723c3c82690c111296d048417",
+    "outputs/literature_diagnosis_2026-10-04/second_order_correlation.json": "1a3dfaf6fbcfcd1fd0a96bff9599e92a52faf7fa5d7a84597bb7d0d1353e1c49",
+    "outputs/literature_diagnosis_2026-10-04/second_order_correlation_curves.npz": "4ccc75303e469f3204c27806823ead149bbb33bad64b946e459c0c9a8d4174db",
+    "outputs/correlation_robustness_2026-10-05/plan.json": "e454c1df0ae5d83e8472251610c8bfa7fd9e9652120135e0eecad740c6f7ebfc",
+    "outputs/correlation_robustness_2026-10-05/results.json": "701808df7594b9b67df6fa8646134d411e62a312f38c44bca7f6824e8b4aaad9",
+    "outputs/correlation_robustness_2026-10-05/audit_arrays.npz": "48e210841e792d99aed0763f59775ceeae47d09524bcd27b01ec5962015ee340",
+    "requirements-lock-cpu-reproduction.txt": "0c5107ad27dc1cb3d5b1b4bd8c2a96eac2d15eecd1dbd19b25965954ca299648"
+  },
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "checkpoint_ce_absolute_tolerance": 1e-07,
+  "cnn_rank_prefixes": "Exact equality to previous CPU best/last curves",
+  "correlation_rank_prefixes": "Exact equality to previous raw CPU curves",
+  "sensitivity": "All 32 saved result rows, arrays, offsets and transform records must match exactly",
+  "new_real_data_optimizer_updates": 0,
+  "new_gpu_trainings": 0,
+  "hdf5_group_read_allowlist": [
+    "Profiling_traces"
+  ],
+  "final_attack_payloads_read": false
+}

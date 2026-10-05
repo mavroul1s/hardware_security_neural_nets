@@ -1,0 +1,999 @@
+{
+  "plan": {
+    "scope": "Profiling-validation sensitivity diagnosis, not final attack or trained-method comparison",
+    "split_id": "1c9656f9ba13791a7ba4781a5518420f4fef4e303c979d4c307cc6ed27ee9090",
+    "dataset_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+    "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+    "point_selection_record_sha256": "ea87c374a42f94f4039db99b147cffb73d8f14ddc8b6ba8b9dd0c17d7da54c35",
+    "grid_config_sha256": "ca3a52248aa69881501327f840bb7d6a4222d19e36fde322c6e46707fe9f975e",
+    "pairs": {
+      "rout": [
+        181,
+        521
+      ],
+      "r3": [
+        156,
+        517
+      ]
+    },
+    "conditions": [
+      {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      }
+    ],
+    "budget": 2000,
+    "repetitions": 20,
+    "order_seed": 8001,
+    "corruption_seed": 9001,
+    "batch_size": 256,
+    "normalization": "feature_minmax_training_only",
+    "centering": "Mean normalized training trace; frozen for all conditions",
+    "primary_extraction": "Fixed training-selected pair",
+    "oracle_extraction": "Read original points at point+injected_shift; known synthetic offsets, not an estimated alignment method",
+    "padding_control": "Edge padding with identical within-condition RNG; inspect both products for exact equality",
+    "paired_scope": "Same corrupted traces for both pairs and methods; common trace orders; interleaved RNG does not guarantee same offsets across different conditions",
+    "new_optimization_steps": 0,
+    "new_kaggle_runs": 0,
+    "final_attack_set_read": false
+  },
+  "plan_sha256": "e454c1df0ae5d83e8472251610c8bfa7fd9e9652120135e0eecad740c6f7ebfc",
+  "audit_script_sha256": "4aab6e5ce94852ddbbbec50b50baf24f24b7b021c24aa06948f5100072e12796",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "versions": {
+      "torch": "2.8.0+cpu",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "cuda_runtime": null,
+    "torch_threads": 2
+  },
+  "results": [
+    {
+      "condition": "clean",
+      "corruption": {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "clean",
+      "corruption": {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "clean",
+      "corruption": {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "clean",
+      "corruption": {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "noise_matched",
+      "corruption": {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 860,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "noise_matched",
+      "corruption": {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 860,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "noise_matched",
+      "corruption": {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1194,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "noise_matched",
+      "corruption": {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1194,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "shift_matched",
+      "corruption": {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 11.4,
+      "sr_at_budget": 0.3,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "shift_matched",
+      "corruption": {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "shift_matched",
+      "corruption": {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.15,
+      "sr_at_budget": 0.85,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "shift_matched",
+      "corruption": {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_matched",
+      "corruption": {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 37.35,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_matched",
+      "corruption": {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1205,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_matched",
+      "corruption": {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 3.3,
+      "sr_at_budget": 0.55,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_matched",
+      "corruption": {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1088,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_mild",
+      "corruption": {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1399,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_mild",
+      "corruption": {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 775,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_mild",
+      "corruption": {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1234,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_mild",
+      "corruption": {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 612,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_noise_ood",
+      "corruption": {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 115.25,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_noise_ood",
+      "corruption": {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 23.8,
+      "sr_at_budget": 0.2,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_noise_ood",
+      "corruption": {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 57.55,
+      "sr_at_budget": 0.2,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_noise_ood",
+      "corruption": {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.8,
+      "sr_at_budget": 0.7,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_shift_ood",
+      "corruption": {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 68.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_shift_ood",
+      "corruption": {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 887,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_shift_ood",
+      "corruption": {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 49.95,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_shift_ood",
+      "corruption": {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1003,
+      "recovery_censored": false,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_both_ood",
+      "corruption": {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "fixed",
+      "ge_at_budget": 118.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_both_ood",
+      "corruption": {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 4.7,
+      "sr_at_budget": 0.45,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": false
+    },
+    {
+      "condition": "combined_both_ood",
+      "corruption": {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "fixed",
+      "ge_at_budget": 82.55,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": null
+    },
+    {
+      "condition": "combined_both_ood",
+      "corruption": {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "method": "oracle_known_shift",
+      "ge_at_budget": 3.9,
+      "sr_at_budget": 0.5,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true,
+      "oracle_information_available_to_real_attacker": false
+    }
+  ],
+  "padding_checks": [
+    {
+      "condition": "clean",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "clean",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "noise_matched",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "noise_matched",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "shift_matched",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "shift_matched",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_matched",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_matched",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_mild",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_mild",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_noise_ood",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_shift_ood",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    },
+    {
+      "condition": "combined_both_ood",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "fixed_products_equal": true,
+      "oracle_products_equal": true,
+      "selected_points_cropped": 0
+    }
+  ],
+  "transforms": [
+    {
+      "condition": "clean",
+      "zero_tensor_sha256": "a9ec7702a24a55413ef5623f44cf8ba1be04c069b3dbe57dd753fc5e0728e41b",
+      "edge_tensor_sha256": "a9ec7702a24a55413ef5623f44cf8ba1be04c069b3dbe57dd753fc5e0728e41b",
+      "zero_edge_changed_samples": 0,
+      "mean_absolute_shift": 0.0,
+      "discarded_waveform_sample_fraction": 0.0
+    },
+    {
+      "condition": "noise_matched",
+      "zero_tensor_sha256": "12d59fda990ee4801d23c4f7a1b28bc9f777cab087e1dabba3a18958a7827b15",
+      "edge_tensor_sha256": "12d59fda990ee4801d23c4f7a1b28bc9f777cab087e1dabba3a18958a7827b15",
+      "zero_edge_changed_samples": 0,
+      "mean_absolute_shift": 0.0,
+      "discarded_waveform_sample_fraction": 0.0
+    },
+    {
+      "condition": "shift_matched",
+      "zero_tensor_sha256": "a0b0af32f76f589e6963d5498702358ea4785ed6c5a13a21dd62e1330b6373ec",
+      "edge_tensor_sha256": "d51120ef2241ae61b2384e6ec190aaffd481fd190c0a2d495336fc05e67cdaf4",
+      "zero_edge_changed_samples": 13695,
+      "mean_absolute_shift": 2.7396,
+      "discarded_waveform_sample_fraction": 0.003913714285714286
+    },
+    {
+      "condition": "combined_matched",
+      "zero_tensor_sha256": "4e83001d7cf2d30b8b134cf0dd0ded551f4a7499600e5fd0e9ea5d166c8fb8d5",
+      "edge_tensor_sha256": "1161deb68d7c9cbdac3b24784e984a36fe5d741bb4980caa16586d093647eab5",
+      "zero_edge_changed_samples": 13701,
+      "mean_absolute_shift": 2.7402,
+      "discarded_waveform_sample_fraction": 0.003914571428571429
+    },
+    {
+      "condition": "combined_mild",
+      "zero_tensor_sha256": "9a7618b67ccda4790f044fa4659764bea41d8b996516b108daa2062b1f29b5fd",
+      "edge_tensor_sha256": "0fa7dc2ecbf358249b6cce179a0206a316c6c12e48cbb3d8741eebe1caa6573a",
+      "zero_edge_changed_samples": 6018,
+      "mean_absolute_shift": 1.2036,
+      "discarded_waveform_sample_fraction": 0.0017194285714285714
+    },
+    {
+      "condition": "combined_noise_ood",
+      "zero_tensor_sha256": "69fe42a7807f83bc3e6e2de7d7b2dd08ad9bd19a4ee30ee3b92d1e550e5ba1a3",
+      "edge_tensor_sha256": "7be9fd5897e2cccdf3fe7dafda52222d0d36893c334c4f6a9884841e65609dd8",
+      "zero_edge_changed_samples": 13701,
+      "mean_absolute_shift": 2.7402,
+      "discarded_waveform_sample_fraction": 0.003914571428571429
+    },
+    {
+      "condition": "combined_shift_ood",
+      "zero_tensor_sha256": "6f63e9922d2709aaff9afab8fbf4de499782797ead079ddadccf57ae051455bf",
+      "edge_tensor_sha256": "2cf73bd1ebbbf8a4e9693473dc1b956bfbb5db4521a6cccde65a17e91f4a0299",
+      "zero_edge_changed_samples": 25868,
+      "mean_absolute_shift": 5.1736,
+      "discarded_waveform_sample_fraction": 0.007390857142857143
+    },
+    {
+      "condition": "combined_both_ood",
+      "zero_tensor_sha256": "e8129c62775b4743f592cfbd956d4f4b66d8f310081c05851b4f47e38afcb79b",
+      "edge_tensor_sha256": "f8ec07d58430e1d1c5252ffd5361b447c8355ee5aca7eef01a5b03d7d76ec51f",
+      "zero_edge_changed_samples": 25868,
+      "mean_absolute_shift": 5.1736,
+      "discarded_waveform_sample_fraction": 0.007390857142857143
+    }
+  ],
+  "clean_vs_previous_raw_rank_agreement": {
+    "rout": 1.0,
+    "r3": 0.999975
+  },
+  "checkpoint_hashes_unchanged": {
+    "best.pt": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+    "last.pt": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284"
+  },
+  "full_gpu_trainings_total": 3,
+  "final_attack_evaluation_performed": false,
+  "seconds": 37.202074400149286
+}
