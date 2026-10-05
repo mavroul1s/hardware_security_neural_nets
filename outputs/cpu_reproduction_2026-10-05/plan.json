@@ -1,0 +1,482 @@
+{
+  "scope": "Fresh CPU venv, fixed saved checkpoints and profiling validation; no real-data training",
+  "python": "3.12.14",
+  "reference_executable": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\.venv\\Scripts\\python.exe",
+  "base_executable": "C:\\Users\\nickb\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "reference_pip": "25.0.1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "targets": {
+    "colorama": "0.4.6",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "filelock": "3.32.3",
+    "fonttools": "4.66.1",
+    "fsspec": "2026.7.0",
+    "h5py": "3.14.0",
+    "iniconfig": "2.3.0",
+    "jinja2": "3.1.6",
+    "kiwisolver": "1.5.1",
+    "markupsafe": "3.0.3",
+    "matplotlib": "3.10.5",
+    "mpmath": "1.3.0",
+    "networkx": "3.6.1",
+    "numpy": "2.2.6",
+    "packaging": "26.3",
+    "pillow": "12.3.0",
+    "pluggy": "1.6.0",
+    "pygments": "2.21.0",
+    "pyparsing": "3.3.3",
+    "pytest": "8.4.2",
+    "python-dateutil": "2.9.0.post0",
+    "setuptools": "78.1.0",
+    "six": "1.17.0",
+    "sympy": "1.14.0",
+    "torch": "2.8.0+cpu",
+    "typing-extensions": "4.16.0"
+  },
+  "cached_wheels": [
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "tag": "py3-none-any",
+      "filename": "colorama-0.4.6-py3-none-any.whl",
+      "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6",
+      "bytes": 25335,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "contourpy",
+      "version": "1.4.0",
+      "tag": "cp312-cp312-win_amd64",
+      "filename": "contourpy-1.4.0-cp312-cp312-win_amd64.whl",
+      "sha256": "6e697d94e69f499ff6bebb899cae97a58d5d14f0e1fe9568b43a0248d2f9af8c",
+      "bytes": 234083,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1",
+      "tag": "py3-none-any",
+      "filename": "cycler-0.12.1-py3-none-any.whl",
+      "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30",
+      "bytes": 8321,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "filelock",
+      "version": "3.32.3",
+      "tag": "py3-none-any",
+      "filename": "filelock-3.32.3-py3-none-any.whl",
+      "sha256": "7f0ca4bcc0e181c60dbbd8aa9ab5b120ebb99e4e064e83636340056f833a1f09",
+      "bytes": 98901,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.66.1",
+      "tag": "cp312-cp312-win_amd64",
+      "filename": "fonttools-4.66.1-cp312-cp312-win_amd64.whl",
+      "sha256": "261d8dc95845e751f975fe8d6075600593ee253470d46d1b84801688051b09f6",
+      "bytes": 2486987,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.7.0",
+      "tag": "py3-none-any",
+      "filename": "fsspec-2026.7.0-py3-none-any.whl",
+      "sha256": "b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279",
+      "bytes": 206583,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "h5py",
+      "version": "3.14.0",
+      "tag": "cp312-cp312-win_amd64",
+      "filename": "h5py-3.14.0-cp312-cp312-win_amd64.whl",
+      "sha256": "bf4897d67e613ecf5bdfbdab39a1158a64df105827da70ea1d90243d796d367f",
+      "bytes": 2862845,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.0",
+      "tag": "py3-none-any",
+      "filename": "iniconfig-2.3.0-py3-none-any.whl",
+      "sha256": "f631c04d2c48c52b84d0d0549c99ff3859c98df65b3101406327ecc7d53fbf12",
+      "bytes": 7484,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "jinja2",
+      "version": "3.1.6",
+      "tag": "py3-none-any",
+      "filename": "jinja2-3.1.6-py3-none-any.whl",
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+      "bytes": 134899,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "tag": "cp312-cp312-win_amd64",
+      "filename": "kiwisolver-1.5.1-cp312-cp312-win_amd64.whl",
+      "sha256": "06a6917674de9e0fe3f66f5430787f59a9f2ddb64af9b714eaec547e29ef5c19",
+      "bytes": 70748,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "markupsafe",
+      "version": "3.0.3",
+      "tag": "cp312-cp312-win_amd64",
+      "filename": "markupsafe-3.0.3-cp312-cp312-win_amd64.whl",
+      "sha256": "26a5784ded40c9e318cfc2bdb30fe164bdb8665ded9cd64d500a34fb42067b1c",
+      "bytes": 15105,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.10.5",
+      "tag": "cp312-cp312-win_amd64",
+      "filename": "matplotlib-3.10.5-cp312-cp312-win_amd64.whl",
+      "sha256": "c04cba0f93d40e45b3c187c6c52c17f24535b27d545f757a2fffebc06c12b98b",
+      "bytes": 8107599,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "tag": "py3-none-any",
+      "filename": "mpmath-1.3.0-py3-none-any.whl",
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "bytes": 536198,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "networkx",
+      "version": "3.6.1",
+      "tag": "py3-none-any",
+      "filename": "networkx-3.6.1-py3-none-any.whl",
+      "sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762",
+      "bytes": 2068504,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "numpy",
+      "version": "2.2.6",
+      "tag": "cp312-cp312-win_amd64",
+      "filename": "numpy-2.2.6-cp312-cp312-win_amd64.whl",
+      "sha256": "c1f9540be57940698ed329904db803cf7a402f3fc200bfe599334c9bd84a40b2",
+      "bytes": 12614190,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "tag": "py3-none-any",
+      "filename": "packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "bytes": 129956,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0",
+      "tag": "cp312-cp312-win_amd64",
+      "filename": "pillow-12.3.0-cp312-cp312-win_amd64.whl",
+      "sha256": "a2b55dd6b2a4c4b7d87ffa56bdb33fdc5fdb9a462173861a7bc097f17d91cb09",
+      "bytes": 7227137,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "pluggy",
+      "version": "1.6.0",
+      "tag": "py3-none-any",
+      "filename": "pluggy-1.6.0-py3-none-any.whl",
+      "sha256": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+      "bytes": 20538,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0",
+      "tag": "py3-none-any",
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "bytes": 1250147,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "tag": "py3-none-any",
+      "filename": "pyparsing-3.3.3-py3-none-any.whl",
+      "sha256": "ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4",
+      "bytes": 126420,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "pytest",
+      "version": "8.4.2",
+      "tag": "py3-none-any",
+      "filename": "pytest-8.4.2-py3-none-any.whl",
+      "sha256": "872f880de3fc3a5bdc88a11b39c9710c3497a547cfa9320bc3c5e62fbf272e79",
+      "bytes": 365750,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "tag": "py3-none-any",
+      "filename": "python_dateutil-2.9.0.post0-py3-none-any.whl",
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+      "bytes": 229892,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "tag": "py3-none-any",
+      "filename": "six-1.17.0-py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "bytes": 11050,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0",
+      "tag": "py3-none-any",
+      "filename": "sympy-1.14.0-py3-none-any.whl",
+      "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5",
+      "bytes": 6299353,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "torch",
+      "version": "2.8.0+cpu",
+      "tag": "cp312-cp312-win_amd64",
+      "filename": "torch-2.8.0+cpu-cp312-cp312-win_amd64.whl",
+      "sha256": "2be20b2c05a0cce10430cc25f32b689259640d273232b2de357c35729132256d",
+      "bytes": 619352539,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "tag": "py3-none-any",
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "bytes": 45571,
+      "origin": "Local pip HTTP cache; original URL not reconstructed"
+    }
+  ],
+  "missing_wheels": [
+    "setuptools"
+  ],
+  "snapshot_files": [
+    {
+      "path": "configs/baseline_cnn.json",
+      "sha256": "23d953ca48b00c3fbbfb5d1108a55956116debef7c6bd333dd18f45ef7a9b20b"
+    },
+    {
+      "path": "configs/baseline_mlp.json",
+      "sha256": "e943387c34ed60e6af459132377bd133e137de08501ec132cf68c68511c44d78"
+    },
+    {
+      "path": "configs/evaluation_final.json",
+      "sha256": "ca3a52248aa69881501327f840bb7d6a4222d19e36fde322c6e46707fe9f975e"
+    },
+    {
+      "path": "configs/evaluation_pilot.json",
+      "sha256": "b46d7924e1fd85ef1901a4e498ff0d6fa068ef450a5530b0579c1eda1a1e7e2a"
+    },
+    {
+      "path": "configs/matrix.json",
+      "sha256": "9417b2def764b43813f67bd8a4a1638300d8ecec7ba4ffaf4814cf0c3b737816"
+    },
+    {
+      "path": "configs/pilot_real.json",
+      "sha256": "477de0c7cafb3fc7f28a7f82411759a68d5b14927b6a61e6f0039f99dd4a112a"
+    },
+    {
+      "path": "configs/pilot_synthetic.json",
+      "sha256": "ef51fb38748e7e00ca52f2566d83de424bf86d652cb1cdb33ed4cc3b5829c44b"
+    },
+    {
+      "path": "notebooks/audit_candidate_architecture.py",
+      "sha256": "015a755f417a4fd87e40f579b1386e8f504d01564dafb020f5b079998e0f342d"
+    },
+    {
+      "path": "notebooks/audit_correlation_robustness.py",
+      "sha256": "4aab6e5ce94852ddbbbec50b50baf24f24b7b021c24aa06948f5100072e12796"
+    },
+    {
+      "path": "notebooks/build_study_synthesis.py",
+      "sha256": "83e23d4efa5f2d6e0a65e2abc638bcb32c493df19764fc56cd5974e817d0ab5e"
+    },
+    {
+      "path": "notebooks/candidate_cnn.py",
+      "sha256": "8a039cee9af3b82b98942fbc5688362ef3fa6d34ddcfe0be54681b181102d5d6"
+    },
+    {
+      "path": "notebooks/candidate_literature_cnn.py",
+      "sha256": "eedd3fb7b5d0a39c46fb1a81912f9af609021ce0a1fdc70ac017f243e924b09b"
+    },
+    {
+      "path": "notebooks/diagnose_baseline.py",
+      "sha256": "14fafff062baaece61f3e06dca0ca2c0d7b0f844cbc44f6cecb7ccd94e549320"
+    },
+    {
+      "path": "notebooks/diagnose_literature.py",
+      "sha256": "360428e8aebb9feb5e9682b2258179cdc8f18a83c233ae570e34a7582d848add"
+    },
+    {
+      "path": "notebooks/diagnose_masking.py",
+      "sha256": "00b4b4dbe82ae28e73bc01e6a1d38bbe669d14732bafaf3ce3ec9e588f085e88"
+    },
+    {
+      "path": "notebooks/diagnose_second_order_correlation.py",
+      "sha256": "db3ea460d44b0ccd66cfe9de16aafe0a39454ac91f8e74e1fc15c56dec2b462a"
+    },
+    {
+      "path": "notebooks/kaggle_baseline.ipynb",
+      "sha256": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e"
+    },
+    {
+      "path": "notebooks/kaggle_bootstrap.py",
+      "sha256": "63f3502600ca41f102eaee5b838839db8f585ccf4af1468b136f0baadc512ec7"
+    },
+    {
+      "path": "notebooks/plot_correlation_robustness.py",
+      "sha256": "f7b57b9dfe64db6359d83243918897edbe54e63fb96500b87c1360ff05f14070"
+    },
+    {
+      "path": "notebooks/plot_literature_diagnosis.py",
+      "sha256": "9897d72d91ab7fda0f9d7404c4daedde805cdd144b01f6a75ba5d7ad52f6df94"
+    },
+    {
+      "path": "notebooks/plot_masking_diagnosis.py",
+      "sha256": "2c85ca6f6886b7aa9171f0bdab07ea9c5c3f20d1bef86c99f149eac6b6c39e76"
+    },
+    {
+      "path": "notebooks/prepare_cpu_reproduction.py",
+      "sha256": "5f8b84b6437cd509009c6eab9974370feb2cd0764e6941bbcf7208407e887baf"
+    },
+    {
+      "path": "notebooks/probe_candidate_gradients.py",
+      "sha256": "0921e33f01ab54861097cd059eb8b2a19856a2de8f6ca319e5d6d1ac9a40cf9b"
+    },
+    {
+      "path": "notebooks/verify_correlation_robustness.py",
+      "sha256": "2beddff1f8be90a90b36074c43a0403554da7070d7adeff328e12ba516247c18"
+    },
+    {
+      "path": "notebooks/verify_literature_diagnosis.py",
+      "sha256": "e3d0a416a9f05f2f46e9fd9cf83006ede0be3d486beb3bcf4aa19c84214b583e"
+    },
+    {
+      "path": "notebooks/verify_second_order_correlation.py",
+      "sha256": "c4fed34bdd93698e70822c4a1796a7588d2b6b92b6959c8e58e50b1980506415"
+    },
+    {
+      "path": "notebooks/verify_study_synthesis.py",
+      "sha256": "d4c228d3bd4c6fe9fb00c96732c9a84c024925ac444ab428b325e184e8a65bdc"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "cfc5862e40b912b2731c0eaea5729d45a86deb1579b6896b81de42c98d54cea4"
+    },
+    {
+      "path": "scripts/audit_boundaries.py",
+      "sha256": "43f934314025cdbca22b4e227d1726f2141b9a4bf80d5f543fc9c064f1d79112"
+    },
+    {
+      "path": "scripts/benchmark_cost.py",
+      "sha256": "82007eafc2451a891dbbf5d4a3ecc112bac6eb267691b4611f8b2e540c814efb"
+    },
+    {
+      "path": "scripts/download_ascad.py",
+      "sha256": "3d2c196217dc93f7fca4db9b5587ba2a117cc4af277e336e5bb02403cdc79102"
+    },
+    {
+      "path": "scripts/prepare_kaggle.py",
+      "sha256": "04e5fadb617ac9d55b85c232601287055de1ad4bb9d583339d35a8f8863b8254"
+    },
+    {
+      "path": "src/sca/__init__.py",
+      "sha256": "a4f993dda67de145f365986c649dbfed713d66ec1b56b958f268bdc53e9a2488"
+    },
+    {
+      "path": "src/sca/aes.py",
+      "sha256": "a2c88f8316208486b0b7e084a64a4ac31f8c3b6885f7eee7b568a7b73a5557c3"
+    },
+    {
+      "path": "src/sca/augment.py",
+      "sha256": "e6f17a1a621ad34ccbc4bc108f320d17c9e2c073f21db84f14fb59fcb530d761"
+    },
+    {
+      "path": "src/sca/cli.py",
+      "sha256": "69cc491337470b0dbe6cd6f0ec45b826cdb691c3b945e7c29024be58f2d6cd1c"
+    },
+    {
+      "path": "src/sca/data.py",
+      "sha256": "f6b6d2650800872ee63875d642855205584a29c300462231fd5d82a1448dadc1"
+    },
+    {
+      "path": "src/sca/evaluate.py",
+      "sha256": "10133eb35e7504d69efc1a7be050b88e7853da1f6576bda5d755b97d3d159ade"
+    },
+    {
+      "path": "src/sca/metrics.py",
+      "sha256": "32e646d0f02ceabf569eafd9a92a557154dabe5f293d2aaf3e65e0c4029b6666"
+    },
+    {
+      "path": "src/sca/models.py",
+      "sha256": "79aa61e33f7e29f31e7fcd4a282c6a28327f1bdbf2e41c83a4e7bfaf58042c05"
+    },
+    {
+      "path": "src/sca/synthetic.py",
+      "sha256": "6384f392be51df815f9c0ba266835acd605dfbf22d815b04b71f58e4b58e02f0"
+    },
+    {
+      "path": "src/sca/train.py",
+      "sha256": "a65048e27e0fcb1e45a19a109cbbbafc1c367e1998d377847ded3c26eea77464"
+    },
+    {
+      "path": "tests/test_core.py",
+      "sha256": "9e2fca6d224795ada30c8b5180aa939bbb0e8322da137663327362bd3bff29ef"
+    },
+    {
+      "path": "tests/test_correlation_robustness.py",
+      "sha256": "fe587bce0c0c9d5ca1f1d8c5782f87216c9b6f5bad8f4904adce677078e9a8b1"
+    },
+    {
+      "path": "tests/test_kaggle_bootstrap.py",
+      "sha256": "aeb4c1a05ce380e1e7e4848c43775329a6719765b63256d97ca039abe9faa06c"
+    },
+    {
+      "path": "tests/test_literature_diagnostics.py",
+      "sha256": "295bfdf6c339666e181549e935e7f78e9738e4d0df5fd242600dc69f96d265f1"
+    },
+    {
+      "path": "tests/test_mask_diagnostics.py",
+      "sha256": "0544feea4cfffd4f822b86f51548b0f2793a15807dc48d33ad6c680241b78314"
+    },
+    {
+      "path": "tests/test_model_candidate.py",
+      "sha256": "5e31382716b3dc89eaa830bc710cdef2492ef6b8dca068abe9435cb95fe62204"
+    },
+    {
+      "path": "tests/test_notebook_plan.py",
+      "sha256": "fa410aabc93b44db715eb1c7f8c0d81bf0a283fad75adddb71215d0415e24636"
+    }
+  ],
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "checkpoint_ce_absolute_tolerance": 1e-07,
+  "saved_cpu_rank_curves_require_exact_match": true,
+  "attack_dataset_payloads_allowed": false,
+  "full_gpu_trainings_total": 3,
+  "new_gpu_trainings": 0,
+  "new_real_data_optimizer_updates": 0,
+  "limitations": "Same Windows host and base interpreter; not an independent OS/device replication"
+}
