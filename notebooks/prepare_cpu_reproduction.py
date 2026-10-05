@@ -41,7 +41,9 @@ def source_hash(root):
 def wheel_specification(path, targets, tag_priority):
     try:
         with zipfile.ZipFile(path) as archive:
-            metadata_paths = [n for n in archive.namelist() if n.endswith(".dist-info/METADATA")]
+            # Setuptools also ships vendored distributions with nested metadata.
+            metadata_paths = [n for n in archive.namelist()
+                              if n.count("/") == 1 and n.endswith(".dist-info/METADATA")]
             if len(metadata_paths) != 1:
                 return None
             metadata_path = metadata_paths[0]
