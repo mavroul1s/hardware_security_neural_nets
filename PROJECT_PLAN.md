@@ -88,6 +88,23 @@ fixed10/20,0/20. Δεν πέρασε το προκαθορισμένο criterion
 Επόμενο ερευνητικό ερώτημα: σταθερότητα και false-selection έλεγχος της point επιλογής
 μόνο σε νέα profiling rows, με νέο frozen plan· καμία επαναρρύθμιση πάνω στο evaluated attack.
 
+Στις6/10 ολοκληρώθηκε το προοπτικό diagnostic signal-replication/permutation audit.
+Ίδια original training10k/points,99 shuffled-label full-search matrices ανά καμπάνια,
+νέο profiling confirmation5k ανά καμπάνια μετά την παγίωση/calibration. Excluded
+35k/15k rows πριν,40k/20k συνολικές viewed/fit profiling rows μετά. Καμία νέα training
+seed, model, budget ή optimizer· οι permutations είναι null diagnostic draws.
+Τα δύο fixed-key και το πρώτο variable-key ζεύγος πέρασαν signed confirmation
+με Bonferroni4×p. Variable pair2:trainr−0,037942/newconfirmationr−0,026326,
+max-nulltail0,69/confirmationpAdjusted0,092,criterion failed. Δεν αποδεικνύει μηδενικό
+signal ή ότι αυτή μόνο η αστάθεια εξηγεί την προηγούμενη αποτυχία του attack.
+70tests passed/73,42s recorded CPU experiment, source/GPU study διατηρούνται.
+Αναφορά `outputs/paper_selection_audit_2026-10-06/REPORT_EL.md`, §15 της εργασίας.
+Η φάση είναι conditional statistical diagnosis, χωρίς νέα key-recovery αποτελέσματα.
+Τα νέα confirmation rows είναι viewed, αποκλείονται από tuning. Καμία attack
+ανάγνωση από αυτή τη φάση. Επόμενο: σύνθεση του publication scope και ορίων πριν
+από πρόταση νέας μεθόδου· κάθε τέτοια πρόταση θέλει νέο training-only frozen plan
+και αχρησιμοποίητη profiling επιβεβαίωση, χωρίς evaluated-attack adaptation.
+
 ## Προσωρινό ερευνητικό ερώτημα
 
 Αρχικό ερώτημα, ακόμη αναπάντητο μετά το failed baseline gate:

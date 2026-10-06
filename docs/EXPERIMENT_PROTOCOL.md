@@ -285,3 +285,46 @@ fixed10/20,0/20. Καμία αλλαγή pair/μεθόδου/noise μετά τη
 & .\.venv\Scripts\python.exe notebooks/verify_variable_campaign_report.py --plot-visually-checked
 & .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
 ```
+
+## Έκτη CPU φάση: παγωμένα σημεία και selected-signal replication
+
+Προοπτικό `outputs/paper_selection_audit_2026-10-06/plan.json` πριν run. Ίδια original
+training10k/τέσσερα pairs, no alignment/refit/new model/optimizer/budget/trainingseed.
+Training-label permutations99 με seed2026, full-search maximum|r| σε αρχικά
+eligible domains211.575/885.115 pairs. Moments/product variance training-only,
+covariance επανυπολογίζεται για κάθε randomized target pairing. Το μέγιστοnull
+είναι conditional global-no-association diagnostic, όχι posterior probability
+false pair ή proof strong FWER υπό partial alternatives.
+
+Νέα confirmation5k ανά καμπάνια με seed20261010, excluded κάθε προηγούμενο
+training/validation/confirmation index. Fixed35kexcluded/40kused μετά, variable15kexcluded/
+20kprofilingused μετά. Completed calibration.json/UTC πριν confirmation-access record.
+Καμία attack payload ή key/mask/plaintext metadata ανάγνωση σε αυτή τη φάση.
+
+Raw selected products με frozen training means. Signed correlation direction από
+historical training coefficient,999 common target pairing permutations, +1 conservative
+Monte Carlo p με numericaltolerance1e−12, Bonferroni4×p για τέσσερις frozen-pair tests.
+Criterion signedr>0/pAdjusted≤0,05. Random pairing/exchangeability assumption,
+όχι ανεξαρτησία φυσικών acquisition traces που ελέγχθηκε ή unconditional security proof.
+Resolution trainingtail0,01/confirmationp0,001· δεν πρόκειται για exact exhaustive p-values.
+
+Fixed δύο pairs και variablepair1πέρασαν. Variablepair2r−0,026326/rawp0,023/
+pAdjusted0,092δενπέρασε. Δεν αποδεικνύεται zero signal/causal overfitting ή ότι pair2
+εξηγεί όλη την αποτυχία του προηγούμενου attack. Κανένα pair ή parameter δεν αλλάζει.
+Ελέγχεται selected-signal replication, όχι spatial argmax stability across training seeds.
+Οι νέες confirmation pools είναι πλέον viewed, αποκλείονται από μελλοντικό tuning.
+
+[Report/στατιστικά/κόστος](../outputs/paper_selection_audit_2026-10-06/REPORT_EL.md),
+[primary sources και υποθέσεις](../literature/SELECTION_AUDIT_2026-10-06.md).
+Πλήρες suite70passed/14warnings. Independent verifier ελέγχει598train/null coefficients,
+6sampled full matrix maxima,3.996confirmation null correlations,4 τελικές γραμμές,
+splits/RNG/time ordering/old preservation. Τα198full null maxima δεν επανεκτελέστηκαν
+όλα με δεύτερη full matrix implementation· το sampling scope αναφέρεται στην αναφορά.
+
+```powershell
+& .\.venv\Scripts\python.exe notebooks/verify_selection_audit.py
+& .\.venv\Scripts\python.exe notebooks/build_selection_audit_report.py
+# Inspect selection_replication.png before setting the visual-check flag:
+& .\.venv\Scripts\python.exe notebooks/verify_selection_audit_report.py --plot-visually-checked
+& .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
+```

@@ -1,10 +1,10 @@
 # Νευρωνικά δίκτυα και διαρροή masked AES: διαγνωστική μελέτη περιορισμένου κόστους
 
 Προσωρινή ελληνική ερευνητική αναφορά για το μάθημα Hardware Security.
-Κατάσταση: **2026-10-05**. Πρόκειται για σύνθεση των εκτελεσμένων πειραμάτων,
+Κατάσταση: **2026-10-06**. Πρόκειται για σύνθεση των εκτελεσμένων πειραμάτων,
 όχι για ολοκληρωμένη μελέτη augmentation ή επιβεβαιωμένη συνεισφορά paper.
 
-Ενημέρωση της ίδιας ημέρας: η [αναπαραγωγή σε καθαρό CPU περιβάλλον](../cpu_reproduction_2026-10-05/REPORT_EL.md)
+Ενημέρωση της5/10: η [αναπαραγωγή σε καθαρό CPU περιβάλλον](../cpu_reproduction_2026-10-05/REPORT_EL.md)
 ολοκληρώθηκε μετά την αρχική σύνθεση, χωρίς νέα GPU εκπαίδευση. Βλ. §11 για το scope.
 Με νεότερη εντολή χρήστη εκτελέστηκαν [τρεις πρόσθετες CPU ερευνητικές φάσεις](../paper_extension_2026-10-05/REPORT_EL.md)
 και ενσωματώθηκαν στη §12. Η έρευνα προς πιθανό paper συνεχίζεται χωρίς επιβεβαιωμένη πρωτοτυπία.
@@ -12,6 +12,8 @@
 ενσωματωμένη στη §13. Η γνωστή SAD ισοφαρίζει το κύριο Gaussian SR endpoint.
 Η [πέμπτη CPU φάση σε νέο ASCAD campaign/attack key](../paper_variable_campaign_2026-10-05/REPORT_EL.md)
 ενσωματώθηκε στη§14: η combined5 επιτυχία δεν επαναλήφθηκε και το criterion απέτυχε.
+Στις6/10 προστέθηκε [έκτη CPU φάση selected-signal replication/permutation audit](../paper_selection_audit_2026-10-06/REPORT_EL.md),
+στη§15. Τρία από τέσσερα παγωμένα pairs επανέλαβαν signed συσχέτιση σε φρέσκο profiling.
 
 ## Περίληψη
 
@@ -41,6 +43,12 @@ cross-device/unknown-key γενίκευση.
 Gaussian clean15/20 και0/20, combined5 0/20 και0/20. Το ίδιο primary criterion απέτυχε.
 Μεταβάλλονται καμπάνια, φυσική χρονική μεταβλητότητα, window και απόλυτα noise units·
 δεν απομονώνεται μόνο το key effect. Δεν τεκμηριώνεται γενική robustness υπεροχή.
+
+Το νέο profiling-only audit της6/10 διατηρεί τα τέσσερα επιλεγμένα pairs και
+επιβεβαιώνει signed συσχέτιση σε τρία. Το δεύτερο variable-key pair δεν πέρασε
+το corrected criterion, παρότι είχε ασθενή συσχέτιση ίδιου προσήμου στη νέα pool.
+Το πρώτο variable-key pair επανέλαβε profiling signal και είχε αποτύχει στην παλιά
+combined επίθεση· δεν εξηγείται όλη η αποτυχία μόνο από μη διατήρηση των σημείων.
 
 ## 1. Στόχος και βασικές έννοιες
 
@@ -513,3 +521,70 @@ checkpoints/παλιά αρνητικά runs/failed gate/conditional combined/si
 [independent verification](../paper_variable_campaign_2026-10-05/verification.json),
 [report verification](../paper_variable_campaign_2026-10-05/report_verification.json),
 [dataset/protocol audit](../../literature/VARIABLE_CAMPAIGN_2026-10-05.md).
+
+## 15. Παγωμένα σημεία, τυχαία maxima και φρέσκο profiling confirmation
+
+Στις6/10 προεγγράφηκε νέο diagnostic plan, με ίδια ιστορικά training10k και pairs,
+χωρίς άλλο model/optimizer/budget/trainingseed.99 training-label permutations
+ανά καμπάνια, με πλήρη αναζήτηση maximum|Pearson| στα211.575/885.115 αρχικά eligible
+ζεύγη. Training moments/product variances επαναχρησιμοποιούνται. Το max null
+δεν αφορά μόνο τα επιλεγμένα points: περιλαμβάνει την προηγούμενη πολλαπλή αναζήτηση.
+
+Η calibration ολοκληρώθηκε πριν διαβαστούν νέες confirmation τιμές. Φρέσκο profiling5k
+ανά campaign με seed20261010, excluded όλα τα προηγούμενα training/validation/
+confirmation indices. Fixed35kexcluded→40kused,variable15kexcluded→20kprofilingused.
+Καμία attack payload/key/mask/plaintext metadata ανάγνωση από αυτή τη φάση.
+Οι ήδη εξετασμένες attack/confirmation pools δεν ανακυκλώνονται ως αθέατες.
+
+Raw fixed-pair products με training centers. Direction κλειδώνει από το historical
+training sign.999 pairing permutations στα νέα labels, statistic=sign(trainr)×r.
+Criterion:signedr>0 και Bonferroni-adjustedp=min(4p,1)≤0,05 για τέσσερις tests.
+Monte Carlo p=(1+count(null≥observed−1e−12))/(B+1), μη μηδενικό,
+με resolution0,01 στο training diagnostic και0,001 στηconfirmation.
+[Επίσημη τεκμηρίωση των pairing tests και +1 correction](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html).
+Η υλοποίηση εδώ είναι NumPy, δεν καλεί SciPy. Random-pairing/exchangeability
+assumption απαιτείται· δεν αποδεικνύεται acquisition stationarity ή unconditional security.
+
+| Campaign / pair | Training r | Fresh confirmation r | Train max-null tail | Confirmation p adjusted | Criterion |
+|---|---:|---:|---:|---:|---|
+| fixed / pair1 | -0.198491 | -0.214335 | 0.01 | 0.004 | Πέρασε |
+| fixed / pair2 | -0.164445 | -0.189627 | 0.01 | 0.004 | Πέρασε |
+| variable / pair1 | -0.070405 | -0.105384 | 0.01 | 0.004 | Πέρασε |
+| variable / pair2 | -0.037942 | -0.026326 | 0.69 | 0.092 | Δεν πέρασε |
+
+Median training null maxima0,039628/0,039531. Στο variablepair2,68/99 full-search
+maxima≥observed|r|−1e−12,tail0,69. Ο συνδυασμός δεν ξεχωρίζει από συνήθη μεγάλα
+τυχαία maxima αυτής της αναζήτησης. Αυτό δεν είναι πιθανότητα ότι το pair είναι
+ψευδές, proof strong FWER υπό partial alternatives ή απόδειξη μηδενικής leakage.
+Το raw confirmationp του είναι0,023,διορθωμένο0,092. Η ίδια-sign correlation είναι
+ασθενής, δεν καλύπτει το προκαθορισμένο criterion. Τα άλλα τρία pAdjusted0,004
+προέρχονται από το Monte Carlo floor raw0,001, όχι exhaustive exact p-values.
+
+Η επιλογή απαιτούσε δύο pairs χωρίς να ελέγχει αν το δεύτερο είναι διακριτό από
+τυχαία maxima. Αυτό αναδεικνύει κίνδυνο selection και άνιση signal replication·
+δεν αποδεικνύει causal overfitting. Ελέγχεται selected-signal stability, όχι spatial
+argmax stability across training seeds. Το πρώτο variable-key pair παραμένει
+profiling-informative, ενώ απέτυχε στο παλιό combined5 attack. Η αδυναμία του δεύτερου
+δεν επαρκεί ως μοναδική εξήγηση της προηγούμενης αποτυχίας. Δεν τροποποιήθηκε pair,
+μέθοδος/θόρυβος ή normalization και δεν πραγματοποιήθηκε νέα key recovery.
+
+70tests passed/14warnings σε19,43s, JUnit19,422s. Independent verifier598train/null
+coefficients,6sampled full-search matrix maxima,όλα3.996confirmation-null coefficients,
+4τελικές γραμμές/splits/RNG/time ordering/artifact preservation. Δεν επανυπολογίστηκαν
+όλα198null matrices με δεύτερη πλήρη implementation· τα198maximizing-pair scores
+και6full-search replays ελέγχθηκαν χωριστά. CPUexperiment73,420532s μετάimports,
+verifier20,746923s. Έξι recorded CPU experiment loops890,388246s συνολικά, εκτός
+imports/tests/reports/session. Recovery summaries448/executionchecks8.960/
+additionalreplays160 διατηρούνται· οι4νέες diagnostic γραμμές δεν είναι recoveries.
+
+Τα νέα profiling confirmations είναι πλέον viewed evidence και αποκλείονται από
+tuning. Ένα Kaggle notebook/3GPUtrainings/cap4/source/checkpoints/failed gate/combined absent
+διατηρούνται. Η μελέτη τεκμηριώνει όρια και διαγνωστικά ευρήματα, όχι νέα attack
+τεχνική ή paper-ready novelty. Πρόσθετη μέθοδος χρειάζεται ξεχωριστό training-only
+frozen plan και αχρησιμοποίητη profiling επιβεβαίωση, χωρίς adaptation στο παλιό attack.
+
+[Αναφορά και γράφημα](../paper_selection_audit_2026-10-06/REPORT_EL.md),
+[τέσσερις γραμμές/statistics](../paper_selection_audit_2026-10-06/results.json),
+[independent verification](../paper_selection_audit_2026-10-06/verification.json),
+[report verification](../paper_selection_audit_2026-10-06/report_verification.json),
+[sources/novelty/access limits](../../literature/SELECTION_AUDIT_2026-10-06.md).

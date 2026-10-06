@@ -1,0 +1,24 @@
+{
+  "result_rows": 4,
+  "replicated_pairs": 3,
+  "report_table_verified": true,
+  "local_links_verified": 10,
+  "costs_verified": true,
+  "plot_visually_checked": true,
+  "no_new_key_recovery_results": true,
+  "new_gpu_trainings": 0,
+  "attack_payloads_or_key_metadata_read_in_this_audit": false,
+  "tests": {
+    "tests": 70,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 19.422
+  },
+  "artifact_sha256": {
+    "REPORT_EL.md": "889fad890d7b15b38bfecf893afd190165364fdaa9c44f0c509a8face7933ac0",
+    "evidence.json": "01a11268b4f4b9bfc05b69c3b05826fddeb5c0027f385e971173f34b5a9ebbdb",
+    "selection_replication.png": "8f91eb517d370ba1b4bf917c8d3ba88e5786f08cb0bdf5357425b84bc23fcf2a",
+    "verification.json": "1a13e655e3898bd243561e788dea47224b435adf44edb2a58f099d16ed9e78a7"
+  }
+}

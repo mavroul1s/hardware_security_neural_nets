@@ -64,7 +64,7 @@ rtrain=−0,037942, rconfirmation=−0,026326, pBonferroni=0,092. Δεν ισχ�
 
 ## 1. Παγωμένο scope και ανεξαρτησία δεδομένων
 
-Το [plan.json](plan.json) γράφτηκε πριν από τη δοκιμή. Ίδια ιστορικά training10k/seed2026,
+Το [plan.json](plan.json) γράφτηκε πριν από τη δοκιμή. Ίδια ιστορικά training10k/splitseed2026,
 ίδια points156×521/182×547 για fixed-key και187×1080/334×573 για variable-key.
 Δεν επιλέχθηκε άλλο ζεύγος, model, training budget ή normalization. Οι label permutations
 είναι null diagnostics, όχι πρόσθετες training seeds ή νέα fitted attack models.

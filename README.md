@@ -38,6 +38,14 @@ Combined5: όλες οι μέθοδοι0/20,0/20· clean Gaussian15/20,0/20 έν
 Το νέο attack subset είναι πλέον viewed evidence, αποκλεισμένο από tuning.
 Το αρχικό fixed-key attack παραμένει κλειστό. Ένα notebook/3 GPU trainings διατηρούνται.
 
+Στις6/10 ολοκληρώθηκε [έλεγχος επιλεγμένου σήματος και τυχαίων maxima](outputs/paper_selection_audit_2026-10-06/REPORT_EL.md)
+σε νέο profiling5k ανά καμπάνια, με τα ήδη παγωμένα σημεία. Τρία από τέσσερα ζεύγη
+πέρασαν signed-correlation confirmation: δύο fixed-key και variable pair1.
+Το variable pair2 είχε r−0,026326/pBonferroni0,092 και δεν πέρασε το criterion.
+Το training score του δεν ξεχωρίζει από συνήθη μεγάλα τυχαία maxima μετά την πλήρη
+αναζήτηση· δεν αποδεικνύεται μηδενική διαρροή ή causal overfitting.70tests passed,
+κανένα attack payload/key read ή νέοGPU. Ενσωμάτωση στη§15 της εργασίας.
+
 Ένα **trace** είναι μια ακολουθία μετρήσεων φυσικής διαρροής κατά την κρυπτογράφηση.
 Στο **profiling**, ο επιτιθέμενος διαθέτει μετρήσεις με γνωστές εσωτερικές τιμές και
 εκπαιδεύει ένα μοντέλο. Το μοντέλο εκτιμά 256 πιθανότητες για ένα ενδιάμεσο AES byte.
@@ -158,10 +166,11 @@ features· δεν αντικαθιστά το CNN gate. Παραμένουν3 GP
 Στο σ=0,2 το oracle δεν φτάνει 18/20. Πέρασαν 640 endpoint checks και 44 tests,
 χωρίς νέο GPU training.
 Το original fixed-key final attack παραμένει κλειστό. Η σύνθεση και η αναπαραγωγή
-σε νέο CPU venv ολοκληρώθηκαν. Οι πέντε paper CPU φάσεις περιλαμβάνονται στην
+σε νέο CPU venv ολοκληρώθηκαν. Οι έξι paper CPU φάσεις περιλαμβάνονται στην
 εργασία, μαζί με το failed primary criterion σε νέο variable-key attack subset.
-Επόμενο ερώτημα: σταθερότητα/false selection μόνο σε unused profiling rows με νέο
-frozen plan. Τα εξετασμένα confirmation/νέοattack subsets δεν χρησιμοποιούνται
+Το signal-replication/permutation audit ολοκληρώθηκε. Πρόσθετη μεθοδολογική πρόταση
+χρειάζεται νέο frozen training-only plan και unused profiling confirmation.
+Τα εξετασμένα confirmation/νέοattack subsets δεν χρησιμοποιούνται
 για tuning ή ως αθέατες επιβεβαιώσεις. Το GPU cap4 διατηρείται.
 Το fresh-start opt-in αφορά μόνο το εγκεκριμένο νέο baseline· μετά την ολοκλήρωση
 το packet διατηρεί το νέο checkpoint και η πρώτη cell απαιτεί restore.

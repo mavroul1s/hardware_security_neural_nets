@@ -165,6 +165,34 @@ def main():
         expected = [" / ".join(f"{round(variable_lookup[(condition, method, family)]['sr_at_budget'] * 20)}/20"
                                for family in ("pair1", "pair2")) for condition in ("clean", "shift5", "combined5", "combined10_ood")]
         assert [cell.strip() for cell in line.strip("|").split("|")][1:] == expected
+    selection_audit = ROOT / "outputs/paper_selection_audit_2026-10-06"
+    audit_report = read(selection_audit / "report_verification.json")
+    audit_verified = read(selection_audit / "verification.json")
+    audit_evidence = read(selection_audit / "evidence.json")
+    for name, expected in audit_report["artifact_sha256"].items():
+        assert sha(selection_audit / name) == expected, name
+    assert audit_verified["source_sha256"] == evidence["production_source_sha256"]
+    assert audit_verified["result_rows_verified"] == audit_report["result_rows"] == 4
+    assert audit_report["replicated_pairs"] == 3
+    assert audit_verified["training_correlations_independently_replayed"] == 598
+    assert audit_verified["sampled_full_search_null_maxima_replayed"] == 6
+    assert audit_verified["confirmation_null_correlations_replayed"] == 3996
+    assert audit_verified["all_splits_and_permutation_rng_replayed"]
+    assert audit_verified["calibration_completed_before_fresh_confirmation"]
+    assert not audit_report["attack_payloads_or_key_metadata_read_in_this_audit"]
+    assert audit_report["new_gpu_trainings"] == 0 and audit_report["no_new_key_recovery_results"]
+    assert audit_report["tests"]["tests"] == 70 and not audit_report["tests"]["failures"]
+    assert not audit_evidence["novelty_verified"] and not audit_evidence["paper_ready"]
+    assert "## 15." in report and "70tests passed/14warnings σε19,43s" in report
+    assert "890,388246s" in report and round(audit_evidence["six_phase_cpu_seconds"], 6) == 890.388246
+    section = report.split("## 15.", 1)[1]
+    for row in audit_evidence["results"]:
+        label = row["campaign"] + " / " + row["family"]
+        line = next(line for line in section.splitlines() if line.startswith("| " + label + " |"))
+        expected = [f"{row['training_correlation']:.6f}", f"{row['confirmation_correlation']:.6f}",
+            f"{row['training_global_max_null_tail']:.2f}", f"{row['confirmation_bonferroni_p']:.3f}",
+            "Πέρασε" if row["signed_signal_replicates"] else "Δεν πέρασε"]
+        assert [cell.strip() for cell in line.strip("|").split("|")][1:] == expected
     record = {"artifact_inputs_verified":len(evidence["input_sha256"]),
         "baseline_report_table_verified":True, "sensitivity_report_table_verified":True,
         "report_local_links_verified":link_count, "cost_totals_verified":True,
@@ -173,7 +201,8 @@ def main():
         "cnn_gate_still_failed":True, "full_gpu_trainings_total":3, "new_training_performed":False,
         "new_kaggle_execution":False, "final_attack_set_read":False,
         "full_test_suite_at_original_synthesis":{**evidence["local_tests"], "rerun_for_document_synthesis":False},
-        "latest_full_test_suite":{**variable_report["tests"], "run_for_variable_campaign":True},
+        "latest_full_test_suite":{**audit_report["tests"], "run_for_selection_audit":True},
+        "variable_campaign_full_test_suite":{**variable_report["tests"], "run_for_variable_campaign":True},
         "alignment_controls_full_test_suite":{**controls_report["tests"], "run_for_alignment_controls":True},
         "first_three_paper_phases_full_test_suite":{**paper_record["tests"], "run_for_paper_extension":True},
         "clean_cpu_reproduction_full_test_suite":{**reproduction_record["tests"], "run_for_clean_cpu_reproduction":True},
@@ -183,6 +212,12 @@ def main():
         "alignment_controls_sha256":{name:sha(controls / name) for name in ("verification.json", "report_verification.json", "evidence.json", "REPORT_EL.md")},
         "variable_campaign_addendum_verified":True,
         "variable_campaign_sha256":{name:sha(variable / name) for name in ("verification.json", "report_verification.json", "evidence.json", "REPORT_EL.md")},
+        "selection_audit_addendum_verified":True,
+        "selection_audit_sha256":{name:sha(selection_audit / name) for name in ("verification.json", "report_verification.json", "evidence.json", "REPORT_EL.md")},
+        "selection_audit_no_attack_or_key_metadata_reads":True,
+        "selection_audit_fixed_used_profiling_rows":40000,
+        "selection_audit_variable_used_profiling_rows":20000,
+        "six_phase_recorded_cpu_experiment_seconds":audit_evidence["six_phase_cpu_seconds"],
         "variable_key_attack_subset_viewed":True,
         "final_attack_set_read_field_scope":"Original fixed-key dataset; new variable-key subset evaluated only after frozen fit",
         "five_phase_recovery_summaries":448, "five_phase_execution_endpoint_checks":8960,
@@ -196,7 +231,7 @@ def main():
             ("README.md", "PROJECT_PLAN.md", "PROGRESS.md", "docs/EXPERIMENT_PROTOCOL.md",
              "literature/REVIEW.md", "literature/PRIMARY_AUDIT_2026-10-05.md",
              "literature/PAPER_ALIGNMENT_AUDIT_2026-10-05.md", "literature/ALIGNMENT_BASELINES_2026-10-05.md",
-             "literature/VARIABLE_CAMPAIGN_2026-10-05.md", "AGENTS.md")}}
+             "literature/VARIABLE_CAMPAIGN_2026-10-05.md", "literature/SELECTION_AUDIT_2026-10-06.md", "AGENTS.md")}}
     write_json(OUT / "verification.json", record)
     print(json.dumps({k:v for k,v in record.items() if k not in ("artifact_sha256", "documentation_sha256", "checkpoint_sha256")}, indent=2))
 

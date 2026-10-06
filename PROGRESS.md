@@ -1,4 +1,4 @@
-# Κατάσταση project — ενημέρωση 2026-10-05
+# Κατάσταση project — ενημέρωση 2026-10-06
 
 Τρέχον snapshot:3 full GPU baselines ολοκληρωμένα, όλα με clean validation SR0/20,
 1 Kaggle notebook, κανένα combined training, original fixed-key final attack locked. CPU correlation
@@ -14,9 +14,55 @@ wrong-row offsets0/20,0/20. SAD ισοφαρίζει το κύριοendpoint. Su
 Πέμπτη CPU φάση σε ASCAD variable-key1400/new actual attack key: primary combined5
 0/20,0/20 για όλες τις μεθόδους· clean Gaussian15/20,0/20, fixed10/20,0/20.
 Το prospective κριτήριο γενίκευσης απέτυχε. Νέο training-only fit10k, όχι zero-shot.
-Τελευταίο suite65tests passed/14warnings. Πέντε φάσεις448summaries/8.960executionchecks,
+Suite τηςφάσης5:65tests passed/14warnings. Πέντε φάσεις448summaries/8.960executionchecks,
 160additionalreplays, χωρίς νέαGPU. Το νέο attack5k είναι viewed/excluded from tuning.
-Το ιστορικό που ακολουθεί διατηρεί τις προηγούμενες αποφάσεις και εκτελέσεις.
+Νεότερη φάση6: signal replication σε unused profiling5k ανά campaign. Τρία από
+τέσσερα pairs πέρασαν signed-correlation criterion· variablepair2δενπέρασε.
+Τελευταίο suite70tests passed, νέαGPU0, κανένα νέοattack read. Το ιστορικό που
+ακολουθεί διατηρεί τις προηγούμενες αποφάσεις και εκτελέσεις.
+
+## Συνέχεια 6/10/2026: signal replication και training-label permutation audit
+
+- Frozen `outputs/paper_selection_audit_2026-10-06/plan.json` πριν εκτέλεση, ίδιο
+  ιστορικό training10k/ίδια τέσσερα pairs. Confirmation5k ανά καμπάνια,seed20261010,
+  disjoint από κάθε προηγούμενο training/validation/confirmation profiling row.
+  Fixed excludes35k→40k συνολικά used rows, variable excludes15k→20k profiling rows.
+- Training null:99 common label permutations ανά καμπάνια με seed2026, full
+  maximum|Pearson| πάνω σε211.575/885.115 αρχικά eligible pairs. Cached product
+  variance από αρχικό training μόνο, covariance ξαναϋπολογίζεται. Καμία νέα model
+  selection, optimizer, training budget/seed ή normalization. Permutations είναι
+  randomized diagnostic draws, όχι ανεξάρτητες φυσικές/training επαναλήψεις.
+- Median null max fixed0,039628/variable0,039531. Τρία observed scores υπερβαίνουν
+  όλα τα99 maxima, conservative +1tail0,01. Variable pair2 tail0,69 (68/99 maxima≥
+  observed|r|−1e−12). Είναι conditional global-null diagnostic υπό exchangeability,
+  όχι πιθανότητα ότι pair είναι ψευδές, strong partial-nullFWER ή απόδειξη μηδενικής leakage.
+- Calibration.json/UTC γράφτηκε πριν οποιαδήποτε νέα confirmation τιμή. Ιστορικό
+  training sign παγώνει direction.999 common confirmation pairing permutations,
+  Monte Carlo +1p και Bonferroni4tests, criterion signedr>0/pAdjusted≤0,05.
+  Fixed pairs:rconfirmation−0,214335/−0,189627,pAdjusted0,004/0,004,πέρασαν.
+  Variable pair1:r−0,105384,pAdjusted0,004,πέρασε. Variable pair2:r−0,026326,
+  rawp0,023/pAdjusted0,092,δεν πέρασε. Ασθενές ίδιο-sign signal, όχι απόδειξη απουσίας του.
+- Ελέγχεται replication του παγωμένου selected signal, όχι spatial selection
+  stability σε πολλά training seeds. Variable pair1 διατηρεί profiling signal ενώ
+  είχε αποτύχει στη combined5 της παλιάς φάσης· pair2 instability δεν εξηγεί όλη
+  την προηγούμενη αποτυχία. Κανένα pair δεν αντικαταστάθηκε/attack subset δεν ξανανοίχτηκε.
+- 70tests passed/14existingwarnings σε19,43s (JUnit19,422s). Independent verifier:
+  598training/null coefficient checks,6sampled πλήρεις null matrix-max replays,
+  όλα3.996confirmation-null coefficients και4result rows, splits/permutation RNG,
+  temporal freeze/calibration/access/source/old artifacts. Δεν αναπαράχθηκαν όλες198
+  null maxima με δεύτερη full matrix implementation· sampled6 και όλα198maximizing-pair
+  coefficients ελέγχθηκαν. Αυτό αναφέρεται χωριστά στην αναφορά.
+- RecordedCPUexperiment73,420532s μετάimports/verifier20,746923s. Έξι paper CPU
+  loops890,388246s συνολικά, όχι tests/imports/reports/session wall time. Recovery
+  rows448/executionendpoints8.960/additionalreplays160 διατηρούνται· νέα4correlation
+  rows δεν είναι νέες key recoveries. ΝέαGPU0/optimizer0,σύνολο3/cap4/1notebook.
+- Αναφορά/evidence/verification/report_verification/οπτικά ελεγμένο PNG στο
+  `outputs/paper_selection_audit_2026-10-06`, primary-source audit στο
+  `literature/SELECTION_AUDIT_2026-10-06.md`, ενσωμάτωση στη§15 της εργασίας.
+  No paper-ready/novelty claim. Οι νέες profiling confirmations είναι πλέον viewed,
+  αποκλεισμένες από tuning· original fixed-key attack locked, variable attack subset
+  διατηρείται ως παλιά viewed evidence. Επόμενο: publication-scope synthesis πριν
+  νέο method proposal/frozen train-only plan με άλλη unused profiling confirmation.
 
 ## Συνέχεια 5/10/2026: προοπτική variable-key επιβεβαίωση CPU
 
