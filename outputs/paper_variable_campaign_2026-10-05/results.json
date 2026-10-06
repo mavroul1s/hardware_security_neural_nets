@@ -1,0 +1,1616 @@
+{
+  "plan_sha256": "f97356b22e7fdc1db97deecd0b38932143f445f80ae223ccbf5b9bcb1657ecc7",
+  "fit_sha256": "354f8702eb1741ac2ff26c75ff267c0026cc8411c96f7273c554561cfd015406",
+  "access_sha256": "f66027865de1b2332623176aa2e3a40feabea6b1d6616ba2ac8452f792f93cf3",
+  "results": [
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 6.55,
+      "sr_at_budget": 0.5,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 156.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.7,
+      "sr_at_budget": 0.7,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 147.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.85,
+      "sr_at_budget": 0.75,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 152.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.9,
+      "sr_at_budget": 0.6,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 150.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 54.0,
+      "sr_at_budget": 0.15,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 149.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 6.55,
+      "sr_at_budget": 0.5,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 156.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 155.3,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 131.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.7,
+      "sr_at_budget": 0.7,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 147.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.85,
+      "sr_at_budget": 0.75,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 152.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.9,
+      "sr_at_budget": 0.6,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 150.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 131.6,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 105.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 6.55,
+      "sr_at_budget": 0.5,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 156.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 138.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 116.35,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 95.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 139.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 105.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 164.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 115.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 135.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 126.7,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 113.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 77.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 173.5,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 131.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 141.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 165.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 130.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 153.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 122.35,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 162.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 119.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 91.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 163.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 159.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 144.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    }
+  ],
+  "validation_correlations": [
+    {
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09748287524506175
+    },
+    {
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0018577228854556552
+    },
+    {
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09927340814251849
+    },
+    {
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.005865749169097035
+    },
+    {
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09436507517896997
+    },
+    {
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.004488467886937177
+    },
+    {
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09052070392613225
+    },
+    {
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.004497167473006671
+    },
+    {
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.038713802179535364
+    },
+    {
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.006947049008428038
+    },
+    {
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09748287524506175
+    },
+    {
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0018577228854556552
+    },
+    {
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.010413097696035902
+    },
+    {
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.007119849086331397
+    },
+    {
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09927340814251849
+    },
+    {
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.005865749169097035
+    },
+    {
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09436507517896997
+    },
+    {
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.004488467886937177
+    },
+    {
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09052070392613225
+    },
+    {
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.004497167473006671
+    },
+    {
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.0030050506436628127
+    },
+    {
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 4.7950666452320813e-05
+    },
+    {
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09748287524506175
+    },
+    {
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0018577228854556552
+    },
+    {
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.01079125880805255
+    },
+    {
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.01660831989385856
+    },
+    {
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.04169796622908806
+    },
+    {
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 5.056405294863015e-05
+    },
+    {
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.04403015551083756
+    },
+    {
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.00063884569904434
+    },
+    {
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.03992368322280452
+    },
+    {
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.0034375404283358635
+    },
+    {
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.0004099397606663472
+    },
+    {
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0026092401264472837
+    },
+    {
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.05921196732222413
+    },
+    {
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.0036602063198844315
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.015003820156197717
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.022334874946421255
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.02188345502063401
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.010001771139911207
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.02151312028498987
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.014432742234174654
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.01620068142959718
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.00994270969733953
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.0036920935998118343
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.002142153408909123
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.026578391145788985
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.0030360729550246842
+    }
+  ],
+  "alignment": [
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "fixed",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "fraction_matching_extra_injected_shift": 0.882,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "fraction_matching_extra_injected_shift": 0.8868,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "fraction_matching_extra_injected_shift": 0.8822,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "fraction_matching_extra_injected_shift": 0.8868,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "fixed",
+      "fraction_matching_extra_injected_shift": 0.0892,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "fraction_matching_extra_injected_shift": 0.882,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "fraction_matching_extra_injected_shift": 0.8868,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "fraction_matching_extra_injected_shift": 0.8822,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "fraction_matching_extra_injected_shift": 0.0872,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "fixed",
+      "fraction_matching_extra_injected_shift": 0.0892,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "fraction_matching_extra_injected_shift": 0.8798,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "fraction_matching_extra_injected_shift": 0.8858,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "fraction_matching_extra_injected_shift": 0.8806,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "fraction_matching_extra_injected_shift": 0.0884,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "fraction_matching_extra_injected_shift": 0.0514,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "fraction_matching_extra_injected_shift": 0.8876,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "fraction_matching_extra_injected_shift": 0.8706,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "fraction_matching_extra_injected_shift": 0.8854,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "fraction_matching_extra_injected_shift": 0.0466,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "fixed",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "ncc_template",
+      "fraction_matching_extra_injected_shift": 0.882,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "fraction_matching_extra_injected_shift": 0.89,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "fraction_matching_extra_injected_shift": 0.8844,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "fraction_matching_extra_injected_shift": 0.89,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "fixed",
+      "fraction_matching_extra_injected_shift": 0.0892,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "fraction_matching_extra_injected_shift": 0.882,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "fraction_matching_extra_injected_shift": 0.89,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "fraction_matching_extra_injected_shift": 0.8844,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "fraction_matching_extra_injected_shift": 0.0864,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "fixed",
+      "fraction_matching_extra_injected_shift": 0.0892,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "fraction_matching_extra_injected_shift": 0.8802,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "fraction_matching_extra_injected_shift": 0.8816,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "fraction_matching_extra_injected_shift": 0.8806,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "fraction_matching_extra_injected_shift": 0.0874,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "fraction_matching_extra_injected_shift": 0.0514,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "fraction_matching_extra_injected_shift": 0.8832,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "fraction_matching_extra_injected_shift": 0.8612,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "fraction_matching_extra_injected_shift": 0.883,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "fraction_matching_extra_injected_shift": 0.0476,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "fraction_matching_extra_injected_shift": 1.0,
+      "scope": "Natural timing shift has no ground truth; matching extra injection is not total alignment accuracy"
+    }
+  ],
+  "key_audit": {
+    "actual_constant_full_attack_key": true,
+    "attack_key_hex": "00112233445566778899aabbccddeeff",
+    "target_key_byte": 34,
+    "different_full_key_from_original": true,
+    "different_target_byte_from_original": true,
+    "attack_full_key_present_in_training_rows": false,
+    "training_unique_full_keys": 10000,
+    "training_and_attack_labels_verified": true,
+    "training_metadata_read_after_frozen_fit_only_for_audit": true,
+    "simulated_constant_key_or_plaintext_key_adjustment": false
+  },
+  "rng_final_states": {
+    "validation": {
+      "uniform_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 144056166388432955585855354044191819797,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "normal_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 133035920587880314885838812794684025224,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "order_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 328323806977832068915296613884341954559,
+          "inc": 99613292239316770727672522984382703477
+        },
+        "has_uint32": 0,
+        "uinteger": 1702769995
+      },
+      "normal_draw_sha256": "3fa86a59137d730efb6ca35223b6bdfed38b847664b1b9c7ab6549d2835769eb"
+    },
+    "attack": {
+      "uniform_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 144056166388432955585855354044191819797,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "normal_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 133035920587880314885838812794684025224,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "order_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 328323806977832068915296613884341954559,
+          "inc": 99613292239316770727672522984382703477
+        },
+        "has_uint32": 0,
+        "uinteger": 1702769995
+      },
+      "normal_draw_sha256": "3fa86a59137d730efb6ca35223b6bdfed38b847664b1b9c7ab6549d2835769eb"
+    }
+  },
+  "primary": [
+    {
+      "family": "pair1",
+      "gaussian_sr": 0.0,
+      "sr_improvement": 0.0,
+      "clean_sr_loss": -0.25,
+      "criterion_met": false
+    },
+    {
+      "family": "pair2",
+      "gaussian_sr": 0.0,
+      "sr_improvement": 0.0,
+      "clean_sr_loss": 0.0,
+      "criterion_met": false
+    }
+  ],
+  "replication_support_criterion_met": false,
+  "independent_execution_endpoints": 960,
+  "seconds": 92.26254989998415,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "versions": {
+      "torch": "2.8.0+cpu",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "cuda_runtime": null,
+    "torch_threads": 2
+  },
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "original_artifacts_preserved": true,
+  "original_fixed_key_attack_payloads_read": false,
+  "new_variable_key_attack_subset_viewed": true,
+  "no_tuning_after_evaluation": true,
+  "new_gpu_trainings": 0,
+  "full_gpu_trainings_total": 3,
+  "new_optimizer_updates": 0
+}

@@ -1,0 +1,85 @@
+{
+  "result_summaries_verified": 64,
+  "sampled_trace_only_estimates_independently_verified": 128,
+  "cpa_endpoints_independently_checked_during_execution": 1280,
+  "disjoint_confirmation_and_seed_selection_verified": true,
+  "selection_checks": {
+    "candidate_pairs": 211575,
+    "independent_real_training_pearson_checks": 13,
+    "pairs": {
+      "pair1": [
+        156,
+        521
+      ],
+      "pair2": [
+        182,
+        547
+      ]
+    },
+    "mask_and_key_metadata_used_for_selection": false
+  },
+  "rng_reconstructed_states": {
+    "validation": {
+      "uniform_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 144056166388432955585855354044191819797,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "noise_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 178890988483121138810503792457774216705,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "standard_normal_sha256": "7433a7076255d6cebf1862f6dc33bec1d6bd4f0bc324cc62e19008c7eeec002a",
+      "note": "Reconstructed from frozen seed, shape and NumPy version; offsets verified"
+    },
+    "confirmation": {
+      "uniform_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 144056166388432955585855354044191819797,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "noise_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 178890988483121138810503792457774216705,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "standard_normal_sha256": "7433a7076255d6cebf1862f6dc33bec1d6bd4f0bc324cc62e19008c7eeec002a",
+      "note": "Reconstructed from frozen seed, shape and NumPy version; offsets verified"
+    }
+  },
+  "original_inputs_preserved": true,
+  "tests": 57,
+  "failures": 0,
+  "pytest_junit_seconds": 19.428,
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "full_gpu_trainings_total": 3,
+  "new_gpu_trainings": 0,
+  "new_real_data_optimizer_updates": 0,
+  "final_attack_payloads_read": false,
+  "artifact_sha256": {
+    "plan.json": "694e0b95d588251b13956934dd0fe168e06b92b35c46b46dae81a945fb6be980",
+    "results.json": "992457a931d9de5eebe87fa6156e36cac73acf58bc2d923de500aeae006228cf",
+    "splits.npz": "0661ef0ba1f3abf0e39264826bbd8d156daeeef64395021a2b5017a528406d54",
+    "arrays.npz": "ab056692e9780828ab5f79eaba6988b8ced35ce52dcfe2a6bc533d0e82ea0cdd",
+    "selection.json": "4afb356e0c747471cfba7f9396fc55947e47caeae4faafe2005be78053851046",
+    "training_pair_scores.npz": "085c835be7c8d1ae951eec1b4cb503f0f9fccc45d79731dcb5efc8317541b9a2",
+    "pytest.xml": "784caf2d2ab15701ed234f26e7154e95abd4cc3d20af7ccfa079a3a9539df974"
+  }
+}

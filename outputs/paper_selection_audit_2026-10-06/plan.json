@@ -1,0 +1,106 @@
+{
+  "authorization": "User requested continuing the paper-oriented CPU point-selection diagnostics on 2026-10-06",
+  "reason": "Test replication of frozen selected signal and compare training-selected scores with the full-search permutation maximum",
+  "campaigns": {
+    "fixed": {
+      "dataset": "data/ASCAD.h5",
+      "n": 50000,
+      "width": 700,
+      "margin": 0,
+      "selection": "outputs/paper_maskfree_2026-10-05/selection.json",
+      "scores": "training_correlations",
+      "splits": "outputs/paper_alignment_controls_2026-10-05/splits.npz",
+      "pairs": {
+        "pair1": [
+          156,
+          521
+        ],
+        "pair2": [
+          182,
+          547
+        ]
+      },
+      "training_scores": {
+        "pair1": -0.19849061214714378,
+        "pair2": -0.1644454865784579
+      },
+      "candidate_pairs": 211575,
+      "previously_used_profiling_rows": 35000
+    },
+    "variable": {
+      "dataset": "data/ASCAD_variable.h5",
+      "n": 200000,
+      "width": 1400,
+      "margin": 10,
+      "selection": "outputs/paper_variable_campaign_2026-10-05/fit.json",
+      "scores": "training_coefficients",
+      "splits": "outputs/paper_variable_campaign_2026-10-05/splits.npz",
+      "pairs": {
+        "pair1": [
+          187,
+          1080
+        ],
+        "pair2": [
+          334,
+          573
+        ]
+      },
+      "training_scores": {
+        "pair1": -0.07040462525514771,
+        "pair2": -0.03794180708297025
+      },
+      "candidate_pairs": 885115,
+      "previously_used_profiling_rows": 15000
+    }
+  },
+  "training_rows_each": 10000,
+  "new_confirmation_rows_each": 5000,
+  "confirmation_seed": 20261010,
+  "train_permutation_seed": 2026,
+  "confirmation_permutation_seed": 2026,
+  "paired_randomness": "Same permutation indices across equally sized campaigns; streams restarted by role, not independent training seeds",
+  "training_permutations": 99,
+  "confirmation_permutations": 999,
+  "training_null": "Permute HW targets on original training10k; recompute maximum absolute correlation over every originally eligible pair on each permutation",
+  "training_null_scope": "Global no-association exchangeable-label diagnostic; not proof of absence of leakage, causal overfitting, or strong FWER under partial alternatives",
+  "confirmation_method": "Raw frozen-pair centered products using original training means; no alignment, new point selection, noise, masks, plaintexts or keys",
+  "confirmation_statistic": "Correlation multiplied by sign of the historical training coefficient; direction fixed before fresh confirmation",
+  "monte_carlo_p": "(1 + count(null >= observed - 1e-12))/(B + 1), never zero",
+  "primary_criterion": "A frozen pair replicates signed signal iff signed fresh correlation>0 and min(4*p,1)<=0.05; four tests across two campaigns",
+  "multiple_testing": "Bonferroni for four fixed-pair confirmation tests; random pairing/exchangeability required; no physical security claim",
+  "train_null_used_to_tune": false,
+  "confirmation_used_to_tune": false,
+  "inference_limitations": "Conditional on fixed training split; Monte Carlo resolution .01/.001; no multiple training seeds or causal attribution from prior attack failures",
+  "no_new_training_budget_or_model": true,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "attack_payloads_or_key_metadata_read_in_this_audit": false,
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "script_sha256": "e4172bcbae6f054431e5678f1691831add7ebcbb51e5a3897ca3077f80593321",
+  "input_hashes": {
+    "data/ASCAD.h5": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+    "outputs/paper_maskfree_2026-10-05/selection.json": "4afb356e0c747471cfba7f9396fc55947e47caeae4faafe2005be78053851046",
+    "outputs/paper_alignment_controls_2026-10-05/splits.npz": "8fdc90761a1c34ff83bed3638d2b224b2a4a589ac72bd3e82bd5320def4c5534",
+    "data/ASCAD_variable.h5": "d834da6ca5a288c4ba5add8e336845270a055d6eaf854dcf2f325a2eb6d7de06",
+    "outputs/paper_variable_campaign_2026-10-05/fit.json": "354f8702eb1741ac2ff26c75ff267c0026cc8411c96f7273c554561cfd015406",
+    "outputs/paper_variable_campaign_2026-10-05/splits.npz": "3049460cb35da4bd1a549895aeded3d9311c32f9ceb10193cc5e4ef20dfe1578",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/best.pt": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/last.pt": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/manifest.json": "1b159e5af59e4beb03a96762010498da88a2974e378dc171e61d785432e20f0c",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "notebooks/kaggle_baseline.ipynb": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e",
+    "outputs/kaggle_resume_input_literature.zip": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+    "outputs/kaggle_project_literature.zip": "bd94e0f1e95009e6994aa052a4e275fceb92144a4b26c4c198b51bc57848b368",
+    "outputs/paper_alignment_2026-10-05/plan.json": "d6bf1302f7d9f430deca959ab1050280974b6299da59a1c29e8857899ec46b61",
+    "outputs/paper_alignment_2026-10-05/results.json": "f21fc29be818b58b6f32a0030309feb10cc6ae6c032802e0886e98fb24345d63",
+    "outputs/paper_alignment_coordinates_2026-10-05/plan.json": "43575da35dbe292ff34daa7c48d6f0dd3745c86bd983ac5fbe323e276b76c194",
+    "outputs/paper_alignment_coordinates_2026-10-05/results.json": "7684bc4e76178225ea5735a3f6221854302df8e3788b927133ee1a8745756ce8",
+    "outputs/paper_maskfree_2026-10-05/plan.json": "694e0b95d588251b13956934dd0fe168e06b92b35c46b46dae81a945fb6be980",
+    "outputs/paper_maskfree_2026-10-05/results.json": "992457a931d9de5eebe87fa6156e36cac73acf58bc2d923de500aeae006228cf",
+    "outputs/paper_alignment_controls_2026-10-05/plan.json": "7bfedb3b95333831fdcfceb518cd93bdede0cdf4065ec93b8879e27316131fd8",
+    "outputs/paper_alignment_controls_2026-10-05/results.json": "7d13d4a83342602152da081ab569b1a6b8559eacb1ebc51e78d37bcb8d6cafa6",
+    "outputs/paper_variable_campaign_2026-10-05/plan.json": "f97356b22e7fdc1db97deecd0b38932143f445f80ae223ccbf5b9bcb1657ecc7",
+    "outputs/paper_variable_campaign_2026-10-05/results.json": "cf869885be280c6bd7f634713753529e865eea808decf0ad2a397ccbcee8abcd"
+  },
+  "frozen_utc": "2026-10-06T06:23:09.131822+00:00"
+}

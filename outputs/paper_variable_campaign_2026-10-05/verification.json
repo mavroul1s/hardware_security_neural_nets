@@ -1,0 +1,37 @@
+{
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "recovery_rows": 48,
+  "validation_correlations_verified": 48,
+  "sampled_offset_estimates_verified": 192,
+  "training_pair_coefficients_verified": 7,
+  "independent_endpoint_replays": 48,
+  "independent_execution_endpoints": 960,
+  "fit_frozen_before_validation_and_attack": true,
+  "split_and_rng_replayed": true,
+  "actual_constant_new_attack_key_verified": true,
+  "new_key_absent_from_training_full_keys": true,
+  "original_artifacts_preserved": true,
+  "original_fixed_key_attack_payloads_read": false,
+  "variable_key_attack_subset_is_viewed_evidence": true,
+  "tests": {
+    "tests": 65,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 18.031
+  },
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "seconds": 18.07219670014456,
+  "artifact_sha256": {
+    "plan.json": "f97356b22e7fdc1db97deecd0b38932143f445f80ae223ccbf5b9bcb1657ecc7",
+    "splits.npz": "3049460cb35da4bd1a549895aeded3d9311c32f9ceb10193cc5e4ef20dfe1578",
+    "fit.json": "354f8702eb1741ac2ff26c75ff267c0026cc8411c96f7273c554561cfd015406",
+    "fit.npz": "8bad15835e51357e84e746f96155d4c96c76c4a5021c4f51a88b76b2d29c5992",
+    "evaluation_access.json": "f66027865de1b2332623176aa2e3a40feabea6b1d6616ba2ac8452f792f93cf3",
+    "arrays.npz": "0a6a2ff728646252fb423198f1c0c7d1a7b5ed5272723fe7445c6d4298d28d24",
+    "results.json": "cf869885be280c6bd7f634713753529e865eea808decf0ad2a397ccbcee8abcd",
+    "pytest.xml": "92cc5f8cf32e7d289b7e5bcf2dcec84de111b9a70e0e045a9d1c39a71e7e4b14",
+    "protocol_correctness_fix.json": "8f6f343ff2f743d0ae55d74436e2ea6e8de4d3cbd8f8a889e7887f6da4d0f367"
+  }
+}

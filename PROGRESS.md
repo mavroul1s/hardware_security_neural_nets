@@ -1,10 +1,65 @@
-# Κατάσταση project — ενημέρωση 2026-10-04
+# Κατάσταση project — ενημέρωση 2026-10-05
 
 Τρέχον snapshot:3 full GPU baselines ολοκληρωμένα, όλα με clean validation SR0/20,
-1 Kaggle notebook, κανένα combined training, final attack locked. CPU correlation
+1 Kaggle notebook, κανένα combined training, original fixed-key final attack locked. CPU correlation
 diagnosis4/10: δύο προηγουμένως training-selected pairs δίνουν20/20 validation recovery.
 CNN gate/source/checkpoints/private Input/version8 QUICK_SAVE παραμένουν αμετάβλητα.
+Νέα εντολή χρήστη: συνέχιση πειραμάτων προς paper και ενσωμάτωση στην εργασία.
+Τρεις CPU φάσεις ολοκληρώθηκαν. Train-label-only points/trace-only Gaussian alignment
+δίνουν20/20,18/20 έναντι0/20,0/20 στο τρίτο disjoint confirmation για raw±5/σ1,3·
+OOD±10/σ2,6 δίνει6/20,0/20. 57tests passed, κανένα νέοGPU training, novelty ανεπιβεβαίωτη.
+Τέταρτη CPU φάση σε νέο confirmation5k: Gaussian/NCC/SAD mean20/20,20/20 στη combined5,
+wrong-row offsets0/20,0/20. SAD ισοφαρίζει το κύριοendpoint. Suite τηςφάσης4:61tests,
+400 summaries/8.000 executionendpointchecks συνολικά, χωρίς νέοGPU ή αλλαγήcap.
+Πέμπτη CPU φάση σε ASCAD variable-key1400/new actual attack key: primary combined5
+0/20,0/20 για όλες τις μεθόδους· clean Gaussian15/20,0/20, fixed10/20,0/20.
+Το prospective κριτήριο γενίκευσης απέτυχε. Νέο training-only fit10k, όχι zero-shot.
+Τελευταίο suite65tests passed/14warnings. Πέντε φάσεις448summaries/8.960executionchecks,
+160additionalreplays, χωρίς νέαGPU. Το νέο attack5k είναι viewed/excluded from tuning.
 Το ιστορικό που ακολουθεί διατηρεί τις προηγούμενες αποφάσεις και εκτελέσεις.
+
+## Συνέχεια 5/10/2026: προοπτική variable-key επιβεβαίωση CPU
+
+- Επίσημο extracted original ASCAD variable-key αποκτήθηκε από ANSSI/data.gouv.fr,
+  438.606.904bytes, επίσημο SHA-256 verified. Νέο `data/ASCAD_variable.h5` και provenance,
+  χωρίς αντικατάσταση fixed-key700 ή raw/desync/model downloads. Τα1400samples και
+  profiling200k/attack100k ελέγχθηκαν ως schema πριν παγώσει το plan.
+- Frozen plan πριν HDF5 payload values, training10k/validation5k seed2026,
+  prospective attack5k subsetseed20261009. Δύο centered-product pairs187×1080/334×573
+  επιλέχθηκαν μόνο από raw training traces/provided labels, separation50/diversity20,
+  προκαθορισμένο margin10,885.115 candidates. Τα moments/pairs αποθηκεύτηκαν πριν
+  evaluation-access UTC. Keys/masks δεν χρησιμοποιήθηκαν σε fitting/selection.
+- Ένα νέο synthetic test εντόπισε slicing μόνο ενός axis στη matrix· δεν είχε
+  διαβαστεί real training/evaluation payload. Διορθώθηκε και διατηρήθηκαν το αρχικό
+  plan,failed JUnit1failed/64passed και explicit correctness amendment. Μόνο script
+  hash/UTC άλλαξαν στο plan, χωρίς αλλαγή υπερπαραμέτρων ή viewed-data tuning.
+- Το evaluated attack5k έχει σταθερό πραγματικό πλήρες AES key, διαφορετικό από
+  original και απόν από10k training full keys, byte2=0x22. Labels επαληθεύτηκαν.
+  Candidate hypotheses από plaintext και256υποθέσεις, key μόνο evaluation/rank.
+  Δεν χρησιμοποιήθηκε simulated key ή plaintext-key adjustment.
+- Primary combined5: όλες οι έξι μέθοδοι0/20,0/20. Gaussian GE105,90/164,55 και
+  κριτήριο γενίκευσης failed. Clean pair1:fixed10/20,Gaussian15/20,NCC14/20,SAD12/20,
+  pair2:0/20 παντού. Κανένα sustainedSR90 εντός2.000. Παρέμειναν και τα δύο pairs,
+  χωρίς adaptation από validation/attack. Validation varying keys: μόνο48descriptive
+  HW correlations. Pair2 trainingr−0,037942 δεν διατηρείται (cleanfixed valr0,001858).
+- Η καμπάνια έχει ήδη φυσική χρονική ασυγχρονία. Πρόσθετες global shifts/noise είναι
+  synthetic stress. Median training range48→σraw4,8/9,6, διαφορετικές απόλυτες μονάδες
+  από1,3/2,6 του fixed-key. Δεν απομονώνεται μόνο key effect, δεν είναι zero-shot,
+  νέα CNN εκπαίδευση, cross-device proof ή πλήρες physical-alignment oracle.
+- 65tests passed/14existingwarnings σε18,03s. Independent verifier:48summaries,
+  48validation correlations,192sampled shifts,7real pair coefficients,
+  48additional endpoints. Execution:960direct-Pearson endpoint checks.
+  CPUexperiment92,262550s μετάimports, fit1,822257s περιλαμβανόμενο,
+  verifier18,072197s. Πέντεφάσεις448summaries/8.960executionchecks/160additionalreplays,
+  recorded experimentCPU816,967714s, εκτόςimports/download/tests/reports/session.
+- Αναφορά `outputs/paper_variable_campaign_2026-10-05/REPORT_EL.md` με48-rowCSV,
+  evidence/verification/report_verification και οπτικά ελεγμένο PNG. Ενσωμάτωση
+  στη§14 της εργασίας. Source/checkpoints/παλιέςφάσεις/activepacket/single notebook
+  διατηρήθηκαν· original gatefailed/combinedabsent/3GPUtrainings/cap4, νέαGPU0.
+- Το νέο attack subset έχει πλέον εξεταστεί και αποκλείεται από tuning. Original
+  fixed-key attack payload δεν ανοίχτηκε σε αυτή την επέκταση. Novelty ανεπιβεβαίωτη,
+  paper-readyfalse. Επόμενη ερευνητική κατεύθυνση: προοπτικό stability/false-selection
+  audit μόνο σε unused profiling confirmation, χωρίς evaluated-attack adaptation.
 
 ## Συμφωνημένο πλαίσιο
 
@@ -442,3 +497,157 @@ parameters και Adam steps. Όλα πέρασαν· όλες οι256 κλάσ�
 - Επόμενο: αναπαραγωγή των υπαρχόντων αποτελεσμάτων από καθαρό CPU περιβάλλον,
   χωρίς αλλαγή μοντέλων/data budget/seeds. Το paper παραμένει υπό αξιολόγηση·
   η παρούσα ελεγμένη συνεισφορά είναι πανεπιστημιακή διαγνωστική μελέτη περίπτωσης.
+
+## Αναπαραγωγή σε καθαρό CPU περιβάλλον — 2026-10-05
+
+- Δημιουργήθηκε νέο `runs/cpu_reproduction_2026-10-05/venv` από wheels και ξεχωριστό
+  source snapshot. 27 exact dependency wheels με SHA256, offline `--require-hashes`,
+  editable project από το snapshot. Python3.12.14/Torch2.8.0+cpu, ίδιο Windows host.
+  Δεν αντιγράφηκαν παλιά site-packages. `python -I`, user-site off, module paths και
+  dependency equality verified· pip check passed.
+- 26 unchanged cache wheels/664.536.135bytes και λήψη setuptools78.1.0 από PyPI/
+  1.256.108bytes wheel. Δεν μετρήθηκε total network traffic ή συνολικό setup wall time.
+  Το αρχικό sandbox network attempt απέτυχε· η στοχευμένη λήψη εκτελέστηκε μετά από
+  εγκεκριμένο sandbox escalation. Δεν εμφανίστηκαν ή χρησιμοποιήθηκαν credentials.
+- Νέο `requirements-lock-cpu-reproduction.txt`, 27 exact versions/hashes για Windows
+  AMD64/CPython3.12CPU. Παλιό lock με editable Git commit3cc007d διατηρείται ιστορικά,
+  δεν χρησιμοποιήθηκε για την αναπαραγωγή του frozen source84eff….
+- Full suite44passed/14existing warnings/597,51s, JUnit597,495s. Logs κάτω από το νέο
+  runs directory και JUnit στο `outputs/cpu_reproduction_2026-10-05/pytest.xml`.
+  Μεγαλύτερος χρόνος από προηγούμενες συνεδρίες, χωρίς μετρημένη αιτία ή απόδοση σε
+  algorithm/environment αλλαγή. Synthetic fixtures μόνο correctness checks.
+- Literature best(epoch4) clean validation CE5,560781941575/GE114,25/SR0· last(epoch50)
+  CE5,814249784537/GE117/SR0. Training/validation CE/accuracy exact με προηγούμενηCPU
+  διάγνωση, CE error0· 80.000 prefix ranks exact. Δεν επαναξιολογήθηκαν εδώ τα
+  ιστορικά ReLU/LeakyReLU runs. Δεν δηλώνεται bitwise GPU training αναπαραγωγή.
+- Raw train-centered pairs181×521/156×517 clean20/20/GE0, sustainedSR90 στα631/481.
+  80.000 correlation prefix ranks exact. Χωρίς νέα επιλογή σημείων ή validation search.
+- Όλες32 sensitivity rows,138 arrays με ίδια dtype/shape/bytes, offsets/tensor hashes/
+  padding records exact. 1.280.000 sensitivity rank values και640 independent Pearson
+  endpoints verified. Oracle εξακολουθεί να γνωρίζει injected shifts.
+- CPU replay62,36s μετά imports: clean15,81s, sensitivity37,20s, verifier8,53s,
+  συν μικρό I/O/checks. Δεν είναι download/install/session χρόνος.
+  Νέα πραγματικά optimizer updates0, νέαGPU trainings0, final attack payload reads0.
+- Παγωμένος source, checkpoint/Input/code/notebook και προηγούμενες διαγνωστικές
+  εισόδοι διατηρήθηκαν βάσει hashes πριν/μετά. Σύνολο3 fullGPU trainings/1canonical
+  Kaggle notebook, CNN gate failed, combined skipped. Τα archival source copies δεν
+  δημιουργούν νέα Kaggle notebooks ή εκτελέσεις.
+- Companions `notebooks/prepare_cpu_reproduction.py`, `reproduce_cpu.py`,
+  `verify_cpu_reproduction.py`, αναφορά `outputs/cpu_reproduction_2026-10-05/REPORT_EL.md`,
+  environment/plan/results/wheel hashes/verification και `docs/CPU_REPRODUCTION.md`.
+  Ο έλεγχος αφορά same-host checkpoint inference/diagnostics· όχι νέο GPU training,
+  ανεξάρτητο OS/device ή unknown-key generalization. BN/shuffled controls δεν επαναλήφθηκαν.
+- Επόμενο: τελική επιμέλεια της ελληνικής διαγνωστικής μελέτης για συζήτηση στο μάθημα.
+  Το αρχικό augmentation ερώτημα παραμένει μη απαντημένο και paper novelty μη τεκμηριωμένη.
+  Νέα GPU πρόταση απαιτεί συγκεκριμένο λόγο και συμφωνία αλλαγής scope/ορίου.
+
+## Επέκταση πειραμάτων προς paper με εντολή χρήστη — 2026-10-05
+
+- Ο χρήστης ζήτησε πρόσθετα πειράματα προς πιθανή δημοσίευση και ενσωμάτωση στην
+  τελική εργασία. Εκτελέστηκαν τρεις CPU φάσεις, χωρίς νέο Kaggle notebook ή GPU run.
+  Διατηρούνται training10k, validation5k, τα δύο πρώτα CNN failures και literature
+  minimum-CE checkpoint/gate. Προστέθηκαν companion `.py`, όχι νέα `.ipynb`.
+- Literature audit `literature/PAPER_ALIGNMENT_AUDIT_2026-10-05.md`: primary
+  preprint2023/1100§2/§5.1 ήδη περιγράφει position-wise normalization/misalignment,
+  second-order Scatter2019 γνωστό προηγούμενο. NCC/Gaussian templates, centered
+  products και supervised selection δεν παρουσιάζονται ως νέα τεχνική. Novelty
+  δεν τεκμηριώθηκε· η αναζήτηση δεν είναι πλήρες systematic/forward-citation review.
+- Φάση1 `paper_alignment.py`:128 recovery summaries,2 pipelines,4 conditions,
+  frozen181×521/156×517,mean/variance template fit από10k training traces χωρίς labels.
+  Πρώτο νέο disjoint confirmation5kseed20261005: rawcombined5 NCC/Gaussian20/20
+  και στα δύο έναντιfixed0/20,0/20. Clean frozen CNN GE112/SR0/20, καμία εκπαίδευση.
+  Gaussian rawshift accuracy92,94%. OODGaussian0/20,8/20. Πλάνο/hash πριν την εκτέλεση.
+- Το surrogate της φάσης1 βαθμολογήθηκε με raw centers/scales, άρα η σύγκριση
+  αναμειγνύει order με coordinate confound. Known-shift surrogate0/20 δεν είναι
+  όριο σωστής εξαγωγής. Αποθηκεύτηκε το αρνητικό control και η διόρθωση εκτελέστηκε
+  προοπτικά σε διαφορετική pool, χωρίς αλλαγή search bound/υπερπαραμέτρων.
+- Φάση2 `paper_alignment_coordinates.py`:96 summaries,correct-domain template και
+  centering για κάθε pipeline. Νέο confirmation5kseed20261006, αποκλείει το πρώτο.
+  RawGaussian combined5 μόνο11/20,20/20· predefinedboth≥18/20 αποτυγχάνει. Surrogate
+  Gaussian13/20,11/20 έναντιfixed5/20,7/20,known-shift18/20,20/20. Shift5raw20/20,
+  OODrawGaussian1/20,4/20. Δεν επιλέγεται μόνο η πρώτη ευνοϊκή confirmation.
+- Φάση3 `paper_maskfree_selection.py`:μόνο παρεχόμενα training identity labels/HW,
+  χωρίς training key/mask/share metadata.211.575 pairs/separation≥50, δεύτερο pair
+  κάθε point≥20 από τα πρώτα, constraints frozen πριν επιλογή. Τρία matrix products,
+  selection0,409511s· frozen156×521/182×547,traincoeff−0,198490612/−0,164445487.
+  Selection record πριν validation/confirmation reads.64 summaries σε raw pipeline.
+- Τρίτο νέο confirmation5kseed20261007, αποκλείει προηγούμενα: clean20/20 και στα δύο,
+  shift5Gaussian20/20,20/20 έναντιfixed0/20,0/20. Combined5Gaussian20/20,18/20,
+  GE0/0,10,sustainedSR90στα899/1998· NCC20/20,18/20,915/1973· fixed0/20,0/20.
+  Known-shift20/20,20/20,1195/1641. Το third-phase predefined criterion επιτεύχθηκε
+  μόνο για αυτή την pool. OODGaussian6/20,0/20, κανένα sustainedSR90 εντός2000.
+- Οι νέες αλλοιώσεις είναι raw shifts+ομοιόμορφος raw Gaussianσ1,3/2,6 από median
+  trainrange13. Δεν εξισώνονται με την παλιά feature-spaceσ0,1/0,2. CommonU/Z seeds9101/2,
+  commonorders8001,20 overlappingorders/έναbytekey, όχι20seeds ή ανεξάρτητακλειδιά.
+  Known-shift δεν είναι αυστηρό άνω SR όριο σε πεπερασμένη noisy CPA.
+- Affine transport επαναφέρειrawpipeline≤1e−10· scalarN αντιμετατίθεται interior.
+  Zero/edge scores/estimates/selectedproducts ίδια. Template/search δεν βλέπουνpadding
+  σε πραγματικάδ≤10. Δεν τεκμηριώνεται γενική CNN padding invariance ή clean failure cause.
+- Συνολικά288 summaries/5.760 ανεξάρτητοι Pearson endpoint checks κατά εκτέλεση.
+  Verifiers επαναϋπολόγισαν576 sampledshiftestimates και13 realtraining coefficients,
+  maxima/constraints,GE/SR/sustained curves,splitseeds. Train/val/3confirm=30kuniquerows.
+  Όλες οι confirmation pools πλέον εξετασμένες· δεν επαναχρησιμοποιούνται ως αθέατες.
+- Full suite57passed/14existingwarnings/19,43s·13 νέα meaningful correctness tests
+  για alignment/coordinates/supervisedselection. Synthetic fixtures μόνο correctness.
+  CPU experiment loops252,248s+201,986s+133,597s=587,831s (9,80min) μετάimports,
+  χωρίς tests/verifiers/report/συνολικήσυνεδρία. Follow-upverifier6,889s.
+- Παγωμένος production source84eff…, bestc374…/last48d0…, activeInputf39f…/codebundle,
+  original splits/datachecksum και canonicalnotebook538c… διατηρήθηκαν με hashes.
+  Σύνολο3 fullGPUtrainings/1notebook,cap4,gatefailed/combinedskipped. ΝέαGPUtrainings0,
+  realdataoptimizerupdates0,finalattackpayloadreads0 από την επέκταση.
+- Αναφορά `outputs/paper_extension_2026-10-05/REPORT_EL.md`, CSV με288 rows/evidence,
+  δύο οπτικά ελεγμένα γραφήματα, ανεξάρτητα verification records ανά φάση. Ενσωματώθηκαν
+  στη §12 της ενιαίας ελληνικής εργασίας· README/PLAN/AGENTS και primary audit ενημερώθηκαν.
+- Επόμενο: έλεγχος άμεσων διαθέσιμων second-order alignment comparisons και frozen
+  protocol για independent campaign/key επιβεβαίωση. Same-device/fixed-key profiling
+  με synthetic global shifts δεν αποδεικνύει cross-device ή φυσική attack efficacy.
+  Το paper δεν είναι έτοιμο και η πρωτοτυπία παραμένει ανεπιβεβαίωτη. Δεν ξοδεύτηκε
+  το τελευταίο GPU training χωρίς συγκεκριμένη υπόθεση· νέο baseline+combined θα
+  χρειαζόταν δύο trainings και αλλαγή cap.
+
+## Γνωστά SAD baselines και έλεγχος αντιστοίχισης — 2026-10-05
+
+- Με νέο «συνέχισε» του χρήστη, εκτελέστηκε η τέταρτη CPU φάση στο
+  `notebooks/paper_alignment_controls.py`. Plan/script hash πριν real-data run.
+  Δεν επιλέχθηκαν νέα points· διατηρήθηκαν 156×521 και 182×547, train10k/validation5k.
+- Primary checks: επίσημη ChipWhisperer ResyncSAD τεκμηρίωση/πηγαίος κώδικας,
+  Scatter2019 §1.1/§2.2/§3.1. SAD γνωστή objective. Οι δικές μας inclusive±10,
+  common tie/no-rejection παραλλαγές δεν είναι exact package reproduction.
+  Audit `literature/ALIGNMENT_BASELINES_2026-10-05.md`, χωρίς exhaustive novelty claim.
+- Training mean/variance και representative reference fit μόνο στα original10k traces.
+  Reference: training index549/profiling row2409, ελάχιστο windowMSE0,5221599987.
+  Χωρίς labels/key/mask για reference, provenance πριν validation/confirmation reads.
+- Confirmation5k seed20261008, αποκλείει train/validation/προηγούμενα3confirmations.
+  Train/val/4confirmations35k unique rows. Common U/Z9101/2 και orders8001 όπως πριν,
+  όχι νέα training/corruption seeds ή data budget. True evaluation key μόνο για ranks.
+- Επτά επιλογές: fixed, NCC, Gaussian, SAD mean, SAD reference, Gaussian offsets
+  rolled by one row, known synthetic shift. Roll preserves exact offset histogram
+  χωρίς χρήση true shifts, αλλά διακόπτει trace-estimate correspondence.
+- Combined5 raw±5/σ1,3, confirmation: Gaussian/NCC/SAD mean20/20,20/20·
+  SAD reference20/20,19/20· fixed0/20,0/20· rolled0/20,0/20· known-shift20/20,19/20.
+  Gaussian GE0/0, sustainedSR90 στα1019/1606. SAD mean1023/1888· reference1023/1300.
+  Primary Gaussian-versus-rolled criterion πέρασε, clean Gaussian20/20,20/20.
+- OOD±10/σ2,6: Gaussian2/20,3/20· NCC2/20,5/20· SAD mean2/20,6/20· reference1/20,6/20.
+  Καμία πρακτική μέθοδος δεν φτάνει sustainedSR90 εντός2000. Gaussian shift accuracy
+  combined5 92,74%, SAD mean92,78%, reference92,60%, wrong-row8,42%.
+- Single-call inference5k: NCC0,657058s, Gaussian1,023762s, SAD mean0,595197s,
+  reference0,601488s. Χωρίς edge replay/I/O/CPA/session. Fixed sequence, χωρίς repeated
+  timing variance ή symmetric warm-up· δεν δηλώνεται σταθερό speedup.
+- 112 νέες summaries και2.240 independent Pearson endpoints κατά εκτέλεση.
+  Verifier επανέπαιξε112 πρόσθετα endpoints,256 sampled estimates, όλαGE/SR/sustained,
+  split/ref/max/tie/RNGdraws/orders/finalstates καιexact rolled histograms.
+  Suite61passed/14existingwarnings/14,88s,4 νέα meaningful SAD/reference/control tests.
+  Synthetic fixtures μόνο correctness· recovery σε πραγματικά ίχνη με synthetic corruptions.
+- Experiment loop136,873901s, verifier5,904531s μετάimports. Τέσσερις experiment loops
+ 724,705165s συνολικά, χωρίς tests/verifiers/report/συνολικήσυνεδρία.
+  Σύνολο400 summaries/8.000 execution endpoint checks και112 πρόσθετα replays.
+- Source84eff…, best/last, original split/dataset, ενεργά Input/code/notebook διατηρήθηκαν
+  με hashes.3GPUtrainings/cap4/1notebook,failedCNNgate,combinedabsent· νέαGPUtrainings0,
+  real-data optimizer updates0,finalattackpayloadreads0 από την τέταρτηφάση.
+- Νέα report/CSV/evidence/verification/report_verification και οπτικά ελεγμένο γράφημα
+  στο `outputs/paper_alignment_controls_2026-10-05/`. Προστέθηκαν στην§13 της εργασίας,
+  README/PLAN/protocol. Προηγούμενα phase artifacts διατηρήθηκαν, όχι rerun για καλύτεραSR.
+- Η σωστή trace-shift αντιστοίχιση στηρίζει την ερμηνεία alignment benefit. Η γνωστή SAD
+  ισοφαρίζει το Gaussian primarySR, οπότε δεν υπάρχει τεκμηριωμένο Gaussian advantage
+  ή novelty. Επόμενο: independent campaign/key protocol και κατάλληλα ισχυρά baselines.
+  Και το τέταρτο confirmation πλέον viewed· δεν ανακυκλώνεται ως αθέατο tuning/confirmation.

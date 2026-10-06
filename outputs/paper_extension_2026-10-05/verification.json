@@ -1,0 +1,52 @@
+{
+  "all_input_sha256_verified": true,
+  "source_and_prior_checkpoint_packet_notebook_preserved": true,
+  "recovery_rows": 288,
+  "report_sr_table_rows_verified": 12,
+  "primary_ge_sr_sustained_table_verified": true,
+  "csv_rows_verified": 288,
+  "local_report_links_verified": 15,
+  "independent_execution_cpa_endpoints": 5760,
+  "sampled_independent_shift_estimates": 576,
+  "independent_training_pair_correlations": 13,
+  "phase_three_support_criterion_met": true,
+  "phase_two_primary_criterion_failed": true,
+  "tests": {
+    "tests": 57,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 19.428,
+    "warnings": 14
+  },
+  "full_gpu_trainings_total": 3,
+  "canonical_notebook_count": 1,
+  "new_gpu_trainings": 0,
+  "new_real_data_optimizer_updates": 0,
+  "final_attack_payloads_read": false,
+  "cnn_gate_still_failed": true,
+  "confirmation_pools_are_now_viewed": true,
+  "plots_visually_checked": [
+    "coordinate_confirmation.png",
+    "training_label_confirmation.png"
+  ],
+  "artifact_sha256": {
+    "REPORT_EL.md": "94538b8ba848f03562eabae7f699c8594c15388f26b5e16e02fa03d3c4b1dd51",
+    "evidence.json": "ea52833a489ad7635dc79596ac20969176cbb9f55ab8849338f63be4e35eef36",
+    "all_results.csv": "db20ae0012ed3315f6944093a20191b8b562e50cc1ee5de07e7986935c719419",
+    "coordinate_confirmation.png": "39492f78d8c293b2832b3ed0f3854713bff751ed22473e02ee89af11bfc68ccb",
+    "training_label_confirmation.png": "7c92727e919d89acb7b4b7ce7cc94ae56a8a66a025217fca711fb865b93e552c"
+  },
+  "companion_sha256": {
+    "notebooks/paper_alignment.py": "a625c0b5dc209501b72729177ed1ba51a72b09865b55a0143f11caf4bd5b3802",
+    "notebooks/paper_alignment_coordinates.py": "02a05e2e07a722a6c46df32663d3aa087521bddc1b56833ba0965011ae4d9893",
+    "notebooks/paper_maskfree_selection.py": "9391a0ad608d57386a668750bc98135b9b2e76eb91448b55c979674119e08612",
+    "notebooks/verify_paper_alignment.py": "8e6f35baba96d6c80ea3434d81652838759f85c8cb6c10740bed32a295086ee2",
+    "notebooks/verify_paper_followups.py": "ba8a2b4afc1492b0e1fb02cd9d03c355899fb73157bf8ee1e957f734001fbeed",
+    "notebooks/build_paper_extension.py": "8d29085d1887d227ebddb1a1c3d308f1ba49191a75c19613bf940e959a7d4e8a",
+    "notebooks/verify_paper_extension.py": "68d1794591201f37508ec8a0f60d94ec0816cb2367da6722488b7a3eaf30f521",
+    "tests/test_paper_alignment.py": "bc47ccdfb5e685cb71d9a1f4bafaba16646574673c38d62475481046cad0df54",
+    "tests/test_alignment_coordinates.py": "c33554e0a4d6529f5775089bd460e604bd61839b93e2e9c1f081c3331ea5dcae",
+    "tests/test_maskfree_selection.py": "90b31e95238973c22e15577cc929b4601441ab0c939700c775e5f783bda03d1d"
+  }
+}

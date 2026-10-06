@@ -1,0 +1,143 @@
+{
+  "authorization": "User approved paper-oriented experiments and continuation to a new-key campaign on 2026-10-05",
+  "scope": "CPU protocol replication with fresh campaign-specific training fit; not zero-shot transfer or cross-device proof",
+  "dataset_sha256": "d834da6ca5a288c4ba5add8e336845270a055d6eaf854dcf2f325a2eb6d7de06",
+  "official_source": "https://github.com/ANSSI-FR/ASCAD/blob/master/ATMEGA_AES_v1/ATM_AES_v1_variable_key/Readme.md",
+  "schema": {
+    "Profiling_traces": {
+      "labels": {
+        "shape": [
+          200000
+        ],
+        "dtype": "int64"
+      },
+      "metadata": {
+        "shape": [
+          200000
+        ],
+        "dtype": "[('plaintext', 'u1', (16,)), ('key', 'u1', (16,)), ('masks', 'u1', (18,)), ('desync', '<u4', (1,))]"
+      },
+      "traces": {
+        "shape": [
+          200000,
+          1400
+        ],
+        "dtype": "int8"
+      }
+    },
+    "Attack_traces": {
+      "labels": {
+        "shape": [
+          100000
+        ],
+        "dtype": "int64"
+      },
+      "metadata": {
+        "shape": [
+          100000
+        ],
+        "dtype": "[('plaintext', 'u1', (16,)), ('key', 'u1', (16,)), ('masks', 'u1', (18,)), ('desync', '<u4', (1,))]"
+      },
+      "traces": {
+        "shape": [
+          100000,
+          1400
+        ],
+        "dtype": "int8"
+      }
+    }
+  },
+  "campaign": "ATMega8515 variable-key, original 1400-sample extracted file, naturally unsynchronized per authors; no desync50/100 variant",
+  "training_rows": 10000,
+  "validation_rows": 5000,
+  "final_attack_rows": 5000,
+  "profiling_split_seed": 2026,
+  "attack_subset_seed": 20261009,
+  "target_byte": 2,
+  "selection": "Same training-label HW/centered-product absolute Pearson, separation50/diversity20, two pairs; exclude point margins10 before any fit to avoid padding under the frozen ±10 search",
+  "no_training_keys_or_masks_for_fit": true,
+  "training_alignment": "None; select points and fit moments on original raw training traces as in phase3",
+  "validation_role": "Descriptive feature/HW correlations only; variable keys preclude unknown-constant-key CPA; no tuning",
+  "attack_role": "One prospective evaluation matrix after all fits frozen; metadata keys only verify constant key and rank it",
+  "methods": [
+    "fixed",
+    "ncc_template",
+    "gaussian_template",
+    "sad_training_mean",
+    "gaussian_offsets_rolled",
+    "known_injected_shift"
+  ],
+  "search_bound": 10,
+  "score_columns": [
+    20,
+    1380
+  ],
+  "tie_rule": "Smallest absolute offset, negative before positive",
+  "conditions": [
+    {
+      "name": "clean",
+      "max_shift": 0,
+      "noise_factor": 0.0
+    },
+    {
+      "name": "shift5",
+      "max_shift": 5,
+      "noise_factor": 0.0
+    },
+    {
+      "name": "combined5",
+      "max_shift": 5,
+      "noise_factor": 0.1
+    },
+    {
+      "name": "combined10_ood",
+      "max_shift": 10,
+      "noise_factor": 0.2
+    }
+  ],
+  "noise": "Uniform raw Gaussian sigma = factor * median(training max-min); zero training ranges replaced by1",
+  "known_shift_scope": "Removes only the extra injected global shift; naturally present timing variation remains unknown",
+  "randomness": {
+    "uniform_seed": 9101,
+    "normal_seed": 9102,
+    "order_seed": 8001
+  },
+  "budget": 2000,
+  "repetitions": 20,
+  "rank_tolerance": 1e-12,
+  "primary_condition": "combined5",
+  "primary_method": "gaussian_template",
+  "support_criterion": "Both pairs on final attack: Gaussian SR>=.90, Gaussian-fixed SR>=.10, fixed-clean minus Gaussian-clean SR<=.10; report naturally unsynchronized clean results separately",
+  "scope_limitations": "One real attack key, 20 overlapping orders, one training split; added shifts/noise synthetic, not extra physical acquisitions",
+  "no_attack_based_selection": true,
+  "no_adaptation_after_validation": true,
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "script_sha256": "05bb89d19a21fedd441968e36e474a7058350fb6e680b99d9b168c74852c13a1",
+  "input_hashes": {
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/best.pt": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/last.pt": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/manifest.json": "1b159e5af59e4beb03a96762010498da88a2974e378dc171e61d785432e20f0c",
+    "data/ASCAD.h5": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+    "notebooks/kaggle_baseline.ipynb": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e",
+    "outputs/kaggle_resume_input_literature.zip": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+    "outputs/kaggle_project_literature.zip": "bd94e0f1e95009e6994aa052a4e275fceb92144a4b26c4c198b51bc57848b368",
+    "outputs/paper_alignment_2026-10-05/results.json": "f21fc29be818b58b6f32a0030309feb10cc6ae6c032802e0886e98fb24345d63",
+    "outputs/paper_alignment_2026-10-05/plan.json": "d6bf1302f7d9f430deca959ab1050280974b6299da59a1c29e8857899ec46b61",
+    "outputs/paper_alignment_coordinates_2026-10-05/results.json": "7684bc4e76178225ea5735a3f6221854302df8e3788b927133ee1a8745756ce8",
+    "outputs/paper_alignment_coordinates_2026-10-05/plan.json": "43575da35dbe292ff34daa7c48d6f0dd3745c86bd983ac5fbe323e276b76c194",
+    "outputs/paper_maskfree_2026-10-05/results.json": "992457a931d9de5eebe87fa6156e36cac73acf58bc2d923de500aeae006228cf",
+    "outputs/paper_maskfree_2026-10-05/plan.json": "694e0b95d588251b13956934dd0fe168e06b92b35c46b46dae81a945fb6be980",
+    "outputs/paper_alignment_controls_2026-10-05/results.json": "7d13d4a83342602152da081ab569b1a6b8559eacb1ebc51e78d37bcb8d6cafa6",
+    "outputs/paper_alignment_controls_2026-10-05/plan.json": "7bfedb3b95333831fdcfceb518cd93bdede0cdf4065ec93b8879e27316131fd8",
+    "notebooks/paper_alignment.py": "a625c0b5dc209501b72729177ed1ba51a72b09865b55a0143f11caf4bd5b3802",
+    "notebooks/paper_maskfree_selection.py": "9391a0ad608d57386a668750bc98135b9b2e76eb91448b55c979674119e08612",
+    "notebooks/paper_alignment_controls.py": "49818822675f86374557b85d6cfbcc2e5d90206c9a08d1a7b492efd5ed1826cb",
+    "notebooks/audit_correlation_robustness.py": "4aab6e5ce94852ddbbbec50b50baf24f24b7b021c24aa06948f5100072e12796",
+    "notebooks/download_ascad_variable.py": "627f37a70df3a0a4beef500c0e6c0b63f00cd030ea862b2e04893bf62b32595c"
+  },
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "original_fixed_key_attack_payloads_read": false,
+  "frozen_utc": "2026-10-05T20:16:43.297804+00:00"
+}

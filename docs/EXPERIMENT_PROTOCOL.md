@@ -151,3 +151,137 @@ offsets μεταξύ διαφορετικών συνθηκών. Zero/edge paddin
 [CPU correlation diagnosis](../outputs/literature_diagnosis_2026-10-04/REPORT_EL.md) και
 [CPU sensitivity](../outputs/correlation_robustness_2026-10-05/REPORT_EL.md).
 Δεν έγινε final attack ούτε επαναπροσδιορίστηκε checkpoint/μοντέλο από final attack metrics.
+
+## Αναπαραγωγή υπαρχόντων CPU αποτελεσμάτων — 2026-10-05
+
+Νέο CPU venv από27 hashed exact wheels και ξεχωριστό frozen source snapshot,
+ίδιο split/normalizer/checkpoints/seeds. Πέρασαν44 tests με14 υπάρχοντα warnings.
+Best/last CNN CE/accuracy/ranks, δύο raw correlation curves και32 sensitivity rows/
+138 arrays αναπαράχθηκαν ακριβώς, με640 ανεξάρτητα Pearson endpoint checks.
+Δεν επαναλήφθηκε επιλογή features, BN counterfactual ή shuffled controls· δεν έγιναν
+real-data weight updates ή Kaggle execution. Το final ASCAD attack payload δεν διαβάστηκε.
+Το CNN gate παραμένει failed και combined skipped. Το αποτέλεσμα αφορά ίδιο
+Windows host/base interpreter, όχι ανεξάρτητη GPU training ή cross-device αναπαραγωγή.
+[Αναφορά και πραγματικοί χρόνοι](../outputs/cpu_reproduction_2026-10-05/REPORT_EL.md),
+[οδηγίες](CPU_REPRODUCTION.md).
+
+## Επέκταση προς paper με εντολή χρήστη — τρεις CPU φάσεις
+
+Ο χρήστης ενέκρινε στις5/10 πρόσθετα πειράματα και ένταξή τους στην εργασία.
+Πλάνα πριν την αντίστοιχη εκτέλεση: `outputs/paper_alignment_2026-10-05/plan.json`,
+`outputs/paper_alignment_coordinates_2026-10-05/plan.json`,
+`outputs/paper_maskfree_2026-10-05/plan.json`. Οι φάσεις ήταν διαδοχικές, με νέες
+ερωτήσεις μετά τα προηγούμενα αποτελέσματα· δεν αποτελούν ενιαία προεγγραφή.
+
+Train10k/validation5k διατηρούνται. Confirmation pools5k με seeds20261005/6/7,
+αμοιβαία disjoint και χωριστά από train/validation, μόνο από Profiling_traces.
+Mean/variance/scaler fit αποκλειστικά στο training. Η φάση3 επιλέγει μόνο από
+παρεχόμενα training identity labels/HW, χωρίς training mask/share/key metadata.
+Η επιλογή και τα211.575 scores αποθηκεύονται πριν validation/confirmation reads.
+Οι εξετασμένες confirmation pools δεν ανακυκλώνονται ως αθέατες.
+
+Raw pipeline S(x)+ε έναντι surrogate N⁻¹(S(N(x)))+ε. Θόρυβος ομοιόμορφου rawσ
+1,3/2,6 από median train range13, διαφορετικός από την παλιά normalized sensitivity.
+Η πρώτη surrogate εξαγωγή με raw centers/scales είχε coordinate confound· η φάση2
+το ελέγχει σε σωστό normalized domain. Δεν αποδίδεται το clean CNN failure στη
+σειρά normalization ούτε το finite-sample known-shift SR θεωρείται αυστηρό upper bound.
+
+Trace-only NCC/Gaussian alignment ±10, template20…679 για αποκλεισμό padding.
+20 common overlapping orders/budget2000/seed8001, U/Z seeds9101/2 κοινά και στις
+ίσου μεγέθους pools. Ένα key byte/campaign, χωρίς independent keys ή training seeds.
+Known injected shift μόνο diagnostic control. True key μόνο rank reporting· δημόσιο
+plaintext μόνο candidate hypothesis scoring. Καμία final Attack_traces ανάγνωση από
+τα νέα πειράματα, νέα GPU trainings0, real-data optimizer updates0.
+
+[Πλήρη αποτελέσματα, verification και όρια](../outputs/paper_extension_2026-10-05/REPORT_EL.md).
+Για έλεγχο αποθηκευμένων αποτελεσμάτων:
+
+```powershell
+& .\.venv\Scripts\python.exe notebooks/verify_paper_alignment.py
+& .\.venv\Scripts\python.exe notebooks/verify_paper_followups.py
+& .\.venv\Scripts\python.exe notebooks/build_paper_extension.py
+# Inspect both figures before setting the visual-check flag:
+& .\.venv\Scripts\python.exe notebooks/verify_paper_extension.py --plots-visually-checked
+& .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
+```
+
+Τα completed experiment directories προστατεύονται από αντικατάσταση. Τα παραπάνω
+επαληθεύουν/συνθέτουν stored evidence, χωρίς νέο training. Η ανεξάρτητη CPU
+αναπαραγωγή της προηγούμενης ενότητας καλύπτει το παλιό frozen suite44tests· η νέα
+πλήρης εκτέλεση57tests έγινε στο ενεργό `.venv`, χωρίς νέο clean environment claim
+για τα13 νέα tests.
+
+## Τέταρτη CPU φάση: SAD και correspondence control
+
+Frozen protocol `outputs/paper_alignment_controls_2026-10-05/plan.json`, πριν run.
+Ίδια points156×521/182×547, raw conditions, training10k/validation5k, κοινά U/Z/orders.
+Νέο confirmation5kseed20261008, disjoint από train/validation/τρία παλιά confirmations.
+Mean/variance και representative reference αποκλειστικά από original training traces.
+Reference επιλέγεται ως closest-to-mean trace στο fixed window20:680, χωρίς labels/keys/masks.
+
+SAD mean/reference συγκρίνονται με NCC/Gaussian στο κοινό inclusive±10 search,
+common tie rule και no rejection. Πρόκειται για SAD adaptations, όχι exact ChipWhisperer
+reproduction. Wrong-row control=np.roll(Gaussian offsets,1), exact ίδιο histogram,
+χωρίς επιλογή roll από τα αποτελέσματα ή injected shifts. Diagnostic μόνο.
+Προκαθορισμένο primary criterion: Gaussian≥18/20 σε κάθε pair, Gaussian−rolled≥0,10,
+clean loss≤0,10. SAD contrasts περιγραφικά, χωρίς επιλογή καλύτερης μεθόδου από confirmation.
+
+Η φάση4 πέρασε61 tests. Η Gaussian/SADmean/NCC primarySR είναι ίδια· δεν τεκμηριώνεται
+Gaussian superiority. Το νέο confirmation είναι πλέον viewed evidence.
+[Μετρήσεις και κόστος](../outputs/paper_alignment_controls_2026-10-05/REPORT_EL.md),
+[primary SAD/Scatter audit](../literature/ALIGNMENT_BASELINES_2026-10-05.md).
+
+```powershell
+& .\.venv\Scripts\python.exe notebooks/verify_alignment_controls.py
+& .\.venv\Scripts\python.exe notebooks/build_alignment_controls_report.py
+# Inspect sad_and_correspondence.png before setting the visual-check flag:
+& .\.venv\Scripts\python.exe notebooks/verify_alignment_controls_report.py --plot-visually-checked
+& .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
+```
+
+## Πέμπτη CPU φάση: νέα καμπάνια και actual unknown attack key
+
+Frozen plan `outputs/paper_variable_campaign_2026-10-05/plan.json`, πριν από τιμές
+training/validation/attack. Επίσημο original ASCAD variable-key1400, ξεχωριστό από
+το fixed-key700. Shapes/dtypes και checksum μόνο πριν την παγίωση. Training10k/val5k,
+splitseed2026, attack5k από100k με subsetseed20261009. Ίδιες επιλογές pair separation50,
+diversity20, relative raw-noise factors0,1/0,2, ±10search/common tie/20orders/budget2000.
+Το interior margin10 παγώθηκε πριν fit για ασφαλή εξαγωγή με±10, 885.115 candidates.
+
+Νέο fit από raw training traces/provided identity labels μόνο. Mean/variance και
+pairs γράφτηκαν πριν το evaluation-access record. Δεν διαβάστηκαν keys/masks για
+fitting, δεν έγινε training alignment, post-validation refit ή optimizer training.
+Πρόκειται για campaign-specific protocol replication, όχι zero-shot, νέο CNN,
+αλλαγή original production protocol ή απόδειξη διαφορετικής φυσικής συσκευής.
+
+Validation varying-key rows: descriptive correlations προς HW labels μόνο.
+Attack5k: ελέγχθηκε πραγματικό σταθερό πλήρες key, διαφορετικό από το αρχικό και
+απόν από το επιλεγμένο train10k. Traces μόνο για μέθοδο, plaintext μόνο για256 CPA
+candidate hypotheses· αληθινό key byte μόνο για correctness και rank reporting.
+Δεν χρησιμοποιήθηκε simulated key/key-adjusted plaintext.
+
+Gaussian/NCC/SADmean/fixed/wrong-row/known-extra-injection υπολογίστηκαν σε ένα
+προκαθορισμένο matrix. Τα original traces έχουν ήδη φυσική χρονική ασυγχρονία:
+known injection δεν είναι πλήρες alignment oracle, matching injection δεν είναι
+μέτρηση total timing accuracy. Train median range48→σraw4,8/9,6, έναντι13→1,3/2,6
+της πρώτης καμπάνιας. Οι εντάσεις δεν είναι ίδιες σε απόλυτες μονάδες και δεν
+απομονώνεται μόνο η αλλαγή κλειδιού/καμπάνιας.
+
+Primary combined5: και τα δύο pairs Gaussian≥18/20, SR improvement από fixed≥0,10,
+clean loss≤0,10. Απέτυχε:0/20,0/20. Νέα καμπάνια clean15/20,0/20 με Gaussian,
+fixed10/20,0/20. Καμία αλλαγή pair/μεθόδου/noise μετά την εξέταση αποτελεσμάτων.
+Το variable-key attack subset είναι πλέον viewed evidence, αποκλεισμένο από tuning.
+Το original fixed-key attack παραμένει κλειστό στην επέκταση· original CNN gate failed.
+
+[Πλήρη αποτελέσματα/κόστος](../outputs/paper_variable_campaign_2026-10-05/REPORT_EL.md),
+[official-source audit](../literature/VARIABLE_CAMPAIGN_2026-10-05.md).
+Η ανεξάρτητη επαλήθευση επαναδιαβάζει τα ίδια viewed evidence για correctness,
+χωρίς tuning, νέα attack pools ή νέα trainings.65tests passed,3GPUtrainings,1notebook.
+
+```powershell
+& .\.venv\Scripts\python.exe notebooks/verify_variable_campaign.py
+& .\.venv\Scripts\python.exe notebooks/build_variable_campaign_report.py
+# Inspect campaign_replication.png before setting the visual-check flag:
+& .\.venv\Scripts\python.exe notebooks/verify_variable_campaign_report.py --plot-visually-checked
+& .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
+```

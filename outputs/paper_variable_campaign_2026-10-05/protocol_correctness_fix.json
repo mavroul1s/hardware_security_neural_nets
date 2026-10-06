@@ -1,0 +1,10 @@
+{
+  "reason": "Slice both axes of the point correlation matrix; caught by synthetic test before any real-data fitting or evaluation",
+  "before_any_real_payload_read": true,
+  "old_plan_sha256": "c93ab71655469cb63c8ce41759121e4744c6761f4bcc5ffe5f552dc9a7b9ae34",
+  "failed_pytest_sha256": "9675a06b3729df4b7c49e7d8033ce02ab60749e30439a8b8e77b486e3543a67f",
+  "old_script_sha256": "05bb89d19a21fedd441968e36e474a7058350fb6e680b99d9b168c74852c13a1",
+  "corrected_script_sha256": "4bb3a590d014fc27ba470099d56c8d80e0fb58c66e6c7df9fca234726d1bf59d",
+  "changed_hyperparameters": false,
+  "amended_utc": "2026-10-05T20:17:46.866580+00:00"
+}

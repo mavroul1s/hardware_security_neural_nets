@@ -1,0 +1,30 @@
+{
+  "recovery_rows": 48,
+  "report_recovery_table_verified": true,
+  "validation_table_verified": true,
+  "csv_verified": true,
+  "costs_verified": true,
+  "local_links_verified": 13,
+  "plot_visually_checked": true,
+  "five_phase_recovery_summaries": 448,
+  "five_phase_execution_endpoints": 8960,
+  "additional_endpoint_replays": 160,
+  "support_criterion_met": false,
+  "new_variable_key_attack_subset_viewed": true,
+  "original_fixed_key_attack_payloads_read": false,
+  "new_gpu_trainings": 0,
+  "tests": {
+    "tests": 65,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 18.031
+  },
+  "artifact_sha256": {
+    "REPORT_EL.md": "354c0b76f7aa2f88e3f41d89c6a1cbd3c735cbae199db0f26fc453e16bddf0b4",
+    "evidence.json": "a81717f595d91561be4cd9e104775a3a1933670e692988fee106e33b4def685a",
+    "recovery_summary.csv": "2f0799c8da70ddc4ea3c74d1d6d8088119dae79dd7019b4e6ed9ee4272d4d5a0",
+    "campaign_replication.png": "850d04cea0cf4d60446717cb3eaf3b0d6f44e74b4034194af0f2e475308baadf",
+    "verification.json": "0cd7714f72043187bc91c1c0bbe3517b12a82ccb65a651bb70ac682053412dfa"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "authorization": "User requested experiments toward a paper, also included in final coursework, on 2026-10-05",
+  "hypotheses": [
+    "Trace-only alignment can improve second-order recovery under bounded global shifts",
+    "Per-position normalization and waveform shifting alter each other; order may change robustness attribution"
+  ],
+  "novelty": "Unverified. Normalization/alignment issue already discussed in Krcek et al. 2023/1100; estimators are baselines, not claimed novel",
+  "training_rows": 10000,
+  "validation_rows": 5000,
+  "confirmation_rows": 5000,
+  "confirmation_selection_seed": 20261005,
+  "confirmation_role": "Previously unused for fitting or reported recovery; same fixed-key profiling campaign, not final attack",
+  "original_split_id": "1c9656f9ba13791a7ba4781a5518420f4fef4e303c979d4c307cc6ed27ee9090",
+  "confirmation_split_id": "2aac781366b16b59e19e2965a4168fa0e4ed69a39f6d85f7d75de11e21c4d175",
+  "pairs": {
+    "rout": [
+      181,
+      521
+    ],
+    "r3": [
+      156,
+      517
+    ]
+  },
+  "point_selection": "Frozen prior training-only mask/share-aided selection; identical points for all CPA methods; no equal-information CNN superiority claim",
+  "methods": [
+    "fixed",
+    "ncc_template",
+    "gaussian_template",
+    "oracle_known_shift"
+  ],
+  "template_fit": "Unlabeled original 10k raw training traces only; mean and diagonal variance",
+  "alignment_search_bound": 10,
+  "alignment_template_columns": [
+    20,
+    680
+  ],
+  "tie_rule": "Lowest absolute offset first, negative before positive; no use of true shift",
+  "gaussian_variance_floor": "max(median(training variance)*1e-6, 1e-12)",
+  "pipelines": [
+    "raw_shift",
+    "feature_shift_surrogate"
+  ],
+  "pipeline_formulas": {
+    "raw_shift": "S(x)+epsilon",
+    "feature_shift_surrogate": "N^-1(S(N(x)))+epsilon"
+  },
+  "normalizer": "Training-only feature MinMax; affine coordinate transform, no clipping",
+  "noise_definition": "Uniform raw-unit Gaussian std = factor * median(training feature range); same realized epsilon for both pipelines",
+  "conditions": [
+    {
+      "name": "clean",
+      "max_shift": 0,
+      "noise_factor": 0.0
+    },
+    {
+      "name": "shift5",
+      "max_shift": 5,
+      "noise_factor": 0.0
+    },
+    {
+      "name": "combined5",
+      "max_shift": 5,
+      "noise_factor": 0.1
+    },
+    {
+      "name": "combined10_ood",
+      "max_shift": 10,
+      "noise_factor": 0.2
+    }
+  ],
+  "randomness": {
+    "uniform_shift_seed": 9101,
+    "standard_normal_seed": 9102,
+    "order_seed": 8001
+  },
+  "randomness_pairing": "Common U and Z within pool across conditions/pipelines; same streams on both equal-size profiling pools, not independent experimental seeds",
+  "repetitions": 20,
+  "budget": 2000,
+  "rank_tolerance": 1e-12,
+  "primary_condition": "combined5",
+  "primary_estimator": "gaussian_template",
+  "primary_contrast": "Gaussian-template minus fixed SR@2000, reported separately for both pairs/pipelines/pools",
+  "support_criterion": "In confirmation raw_shift/combined5: both pairs reach SR>=.9 with estimated shifts and improve fixed SR by >=.1; clean SR decreases by <=.1",
+  "order_effect_criterion": "Confirmation shift5 or combined5: absolute SR difference >=.1 for same pair/method between pipelines; descriptive, not a novelty test",
+  "no_post_validation_method_or_parameter_selection": true,
+  "frozen_cnn_confirmation": "Existing minimum-CE best.pt, clean confirmation only, same normalizer; no real-data weight updates",
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "experiment_script_sha256": "a625c0b5dc209501b72729177ed1ba51a72b09865b55a0143f11caf4bd5b3802",
+  "input_hashes": {
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/best.pt": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/last.pt": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/manifest.json": "1b159e5af59e4beb03a96762010498da88a2974e378dc171e61d785432e20f0c",
+    "data/ASCAD.h5": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+    "outputs/masking_diagnosis_2026-10-03/diagnosis.json": "ea87c374a42f94f4039db99b147cffb73d8f14ddc8b6ba8b9dd0c17d7da54c35",
+    "notebooks/kaggle_baseline.ipynb": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e",
+    "outputs/kaggle_resume_input_literature.zip": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+    "outputs/kaggle_project_literature.zip": "bd94e0f1e95009e6994aa052a4e275fceb92144a4b26c4c198b51bc57848b368"
+  },
+  "final_attack_payloads_read": false,
+  "new_gpu_trainings": 0,
+  "new_real_data_optimizer_updates": 0
+}

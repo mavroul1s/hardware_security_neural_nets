@@ -1,0 +1,9 @@
+{
+  "sorted_training_row_index": 549,
+  "profiling_row_index": 2409,
+  "selection_mse": 0.5221599987424242,
+  "training_trace_sha256": "0797771509dd0e36627fecb7951742b92bf5b04bdfd7d963a12a634c3d48cff4",
+  "training_only": true,
+  "keys_masks_labels_used": false,
+  "plan_sha256": "7bfedb3b95333831fdcfceb518cd93bdede0cdf4065ec93b8879e27316131fd8"
+}

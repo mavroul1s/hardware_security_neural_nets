@@ -1,0 +1,1054 @@
+{
+  "plan_sha256": "694e0b95d588251b13956934dd0fe168e06b92b35c46b46dae81a945fb6be980",
+  "selection_sha256": "4afb356e0c747471cfba7f9396fc55947e47caeae4faafe2005be78053851046",
+  "results": [
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 390,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 755,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 390,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 140.6,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 136.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 755,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 390,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 137.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 146.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1226,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.3,
+      "sr_at_budget": 0.75,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1277,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.35,
+      "sr_at_budget": 0.8,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1191,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.1,
+      "sr_at_budget": 0.9,
+      "traces_to_sustained_sr90": 1998,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 117.5,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 165.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.75,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 105.25,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.95,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 102.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 1.1,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 104.65,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 596,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 658,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 407,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 677,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 395,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 706,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 596,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 658,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 68.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 63.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 407,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 677,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 395,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 706,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 596,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 658,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 65.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 62.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 915,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.1,
+      "sr_at_budget": 0.9,
+      "traces_to_sustained_sr90": 1973,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 899,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.1,
+      "sr_at_budget": 0.9,
+      "traces_to_sustained_sr90": 1998,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1195,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1641,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 62.85,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 125.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 7.5,
+      "sr_at_budget": 0.4,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 58.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 6.9,
+      "sr_at_budget": 0.3,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 47.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 18.5,
+      "sr_at_budget": 0.2,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 35.9,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    }
+  ],
+  "alignment": [
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9238,
+      "padding_independent": true
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9236,
+      "padding_independent": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9238,
+      "padding_independent": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9236,
+      "padding_independent": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9228,
+      "padding_independent": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9216,
+      "padding_independent": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.926,
+      "padding_independent": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9232,
+      "padding_independent": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9262,
+      "padding_independent": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9244,
+      "padding_independent": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9262,
+      "padding_independent": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9244,
+      "padding_independent": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9264,
+      "padding_independent": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9244,
+      "padding_independent": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9288,
+      "padding_independent": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9282,
+      "padding_independent": true
+    }
+  ],
+  "pairs": {
+    "pair1": [
+      156,
+      521
+    ],
+    "pair2": [
+      182,
+      547
+    ]
+  },
+  "candidate_pairs": 211575,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "versions": {
+      "torch": "2.8.0+cpu",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "cuda_runtime": null,
+    "torch_threads": 2
+  },
+  "independent_endpoint_checks": 1280,
+  "training_range_median": 13.0,
+  "mask_metadata_used_for_selection": false,
+  "confirmation_used_for_selection": false,
+  "original_artifacts_preserved": true,
+  "final_attack_payloads_read": false,
+  "new_gpu_trainings": 0,
+  "full_gpu_trainings_total": 3,
+  "new_real_data_optimizer_updates": 0,
+  "selection_seconds": 0.4095111999195069,
+  "seconds": 133.59703310020268
+}

@@ -21,3 +21,15 @@
 - Keep data/, runs/, .venv/ out of Git. Persist configs, splits, provenance and RNG states.
 - Update PROGRESS.md after meaningful work; do not fabricate execution or results.
 - Run meaningful tests after changes to labels, ranking, splits, transforms or checkpoints.
+- On 2026-10-05 the user authorized further experiments toward a paper, also included
+  in the final coursework. The current extension is CPU trace-only alignment and
+  normalization-order comparisons and training-label-only point selection, with each
+  plan frozen before execution and disjoint profiling confirmation.
+  Preserve the existing GPU study, source hash, checkpoints, failed gate and single notebook.
+  Confirmation rows become viewed evidence after execution; do not reuse them for tuning.
+- The 2026-10-05 variable-key CPU replication is complete: original official 1400-sample
+  campaign, a fresh training-only 10k fit, and one new constant-key attack5k subset.
+  Its primary criterion failed; preserve all results and do not tune on that viewed
+  attack subset. The original fixed-key attack remains locked in this extension.
+  Future point-selection diagnostics must freeze a new plan and use unused profiling
+  confirmation rows. No extra GPU trainings, notebooks or neural-model scope was added.

@@ -1,0 +1,33 @@
+{
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "result_rows_verified": 4,
+  "training_correlations_independently_replayed": 598,
+  "sampled_full_search_null_maxima_replayed": 6,
+  "confirmation_null_correlations_replayed": 3996,
+  "all_splits_and_permutation_rng_replayed": true,
+  "calibration_completed_before_fresh_confirmation": true,
+  "new_confirmation_rows_each": 5000,
+  "fixed_used_rows_total": 40000,
+  "variable_used_profiling_rows_total": 20000,
+  "original_artifacts_preserved": true,
+  "attack_payloads_or_key_metadata_read_in_this_audit": false,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "tests": {
+    "tests": 70,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 19.422
+  },
+  "seconds": 20.746923400089145,
+  "artifact_sha256": {
+    "plan.json": "5cbaa900b3fb1f30f5066872074130c018db42ceeb17b86aa86088220d97fcf0",
+    "splits.npz": "fdfc773ce6e4cac2f2d85595106dc0a85b222b6f2bc9997ddc36d86175af8104",
+    "calibration.json": "77d9a58618950b57cfffc60a972b1fa8c01e112185c007c3b142e944db1737f2",
+    "confirmation_access.json": "f077000fde0481ad232707e2d3d4d449a46ecf76437e92106eb1006e255efe9a",
+    "arrays.npz": "2d80791ed71df1cfa5a219cfe0509ad929bddc1234df8e4857250f0eef85fe37",
+    "results.json": "17c37c440156f79179b331a5a8e8250d6b3d99dabd209ebab6f98968f0ba9641",
+    "pytest.xml": "ad1c3b4766094b2f5d328f1c53e8042bad38ce324700b65a53e1fed2e122d45a"
+  }
+}

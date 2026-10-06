@@ -1,0 +1,79 @@
+{
+  "authorization": "User requested experiments toward a paper, also included in final coursework, on 2026-10-05",
+  "reason": "Remove privileged mask/share metadata from point selection; compare train-label-accessible second-order features with frozen trace-only alignment",
+  "training_rows": 10000,
+  "validation_rows": 5000,
+  "fresh_confirmation_rows": 5000,
+  "confirmation_seed": 20261007,
+  "previous_confirmations_excluded": true,
+  "selection_target": "HW of provided profiling-training identity labels; no mask or training key metadata read",
+  "selection_score": "Absolute Pearson(centered product, HW label) over all upper-triangle pairs separated by >=50 samples",
+  "minimum_point_separation": 50,
+  "second_pair_point_diversity": 20,
+  "selection_ties": "First row-major upper-triangle pair at exact maximum",
+  "pair_count": 2,
+  "selection_repeated_after_validation": false,
+  "methods": [
+    "fixed",
+    "ncc_template",
+    "gaussian_template",
+    "oracle_known_shift"
+  ],
+  "conditions": [
+    {
+      "name": "clean",
+      "max_shift": 0,
+      "noise_factor": 0.0
+    },
+    {
+      "name": "shift5",
+      "max_shift": 5,
+      "noise_factor": 0.0
+    },
+    {
+      "name": "combined5",
+      "max_shift": 5,
+      "noise_factor": 0.1
+    },
+    {
+      "name": "combined10_ood",
+      "max_shift": 10,
+      "noise_factor": 0.2
+    }
+  ],
+  "alignment": "Same unconditional raw mean/diagonal variance or NCC; ±10 search, no labels/keys/masks at inference",
+  "pipeline": "Raw global shift followed by uniform raw Gaussian noise; proper raw-centered extraction",
+  "noise_definition": "Uniform raw-unit Gaussian std = factor * median(training feature range); same realized epsilon for both pipelines",
+  "randomness": {
+    "uniform_shift_seed": 9101,
+    "standard_normal_seed": 9102,
+    "order_seed": 8001
+  },
+  "budget": 2000,
+  "repetitions": 20,
+  "primary_condition": "combined5",
+  "primary_method": "gaussian_template",
+  "support_criterion": "Fresh confirmation: both selected pairs have Gaussian SR>=.9 and >=.1 improvement over fixed, clean loss<=.1",
+  "novelty": "Unverified; supervised second-order feature selection and alignment have precedents. Efficient matrix evaluation is not claimed novel",
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "script_sha256": "9391a0ad608d57386a668750bc98135b9b2e76eb91448b55c979674119e08612",
+  "alignment_script_sha256": "a625c0b5dc209501b72729177ed1ba51a72b09865b55a0143f11caf4bd5b3802",
+  "input_hashes": {
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/best.pt": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/last.pt": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/manifest.json": "1b159e5af59e4beb03a96762010498da88a2974e378dc171e61d785432e20f0c",
+    "data/ASCAD.h5": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+    "outputs/masking_diagnosis_2026-10-03/diagnosis.json": "ea87c374a42f94f4039db99b147cffb73d8f14ddc8b6ba8b9dd0c17d7da54c35",
+    "notebooks/kaggle_baseline.ipynb": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e",
+    "outputs/kaggle_resume_input_literature.zip": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+    "outputs/kaggle_project_literature.zip": "bd94e0f1e95009e6994aa052a4e275fceb92144a4b26c4c198b51bc57848b368"
+  },
+  "previous_results_sha256": {
+    "outputs/paper_alignment_2026-10-05/results.json": "f21fc29be818b58b6f32a0030309feb10cc6ae6c032802e0886e98fb24345d63",
+    "outputs/paper_alignment_coordinates_2026-10-05/results.json": "7684bc4e76178225ea5735a3f6221854302df8e3788b927133ee1a8745756ce8"
+  },
+  "final_attack_payloads_read": false,
+  "new_gpu_trainings": 0,
+  "new_real_data_optimizer_updates": 0
+}

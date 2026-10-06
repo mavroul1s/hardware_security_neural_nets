@@ -1,0 +1,22 @@
+{
+  "pairs": {
+    "pair1": [
+      156,
+      521
+    ],
+    "pair2": [
+      182,
+      547
+    ]
+  },
+  "candidate_pairs": 211575,
+  "training_correlations": {
+    "pair1": -0.19849061214714378,
+    "pair2": -0.1644454865784579
+  },
+  "training_only": true,
+  "mask_metadata_read_for_selection": false,
+  "keys_read_for_selection": false,
+  "selection_seconds": 0.4095111999195069,
+  "plan_sha256": "694e0b95d588251b13956934dd0fe168e06b92b35c46b46dae81a945fb6be980"
+}

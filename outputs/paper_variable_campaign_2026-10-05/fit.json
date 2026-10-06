@@ -1,0 +1,25 @@
+{
+  "pairs": {
+    "pair1": [
+      187,
+      1080
+    ],
+    "pair2": [
+      334,
+      573
+    ]
+  },
+  "candidate_pairs": 885115,
+  "training_coefficients": {
+    "pair1": -0.07040462525514771,
+    "pair2": -0.03794180708297025
+  },
+  "training_range_median": 48.0,
+  "variance_floor": 3.0268642150000467e-06,
+  "keys_masks_read_for_fitting": false,
+  "only_training_traces_and_labels": true,
+  "plan_sha256": "f97356b22e7fdc1db97deecd0b38932143f445f80ae223ccbf5b9bcb1657ecc7",
+  "fit_npz_sha256": "8bad15835e51357e84e746f96155d4c96c76c4a5021c4f51a88b76b2d29c5992",
+  "fit_seconds": 1.8222570000216365,
+  "frozen_utc": "2026-10-05T20:18:07.406094+00:00"
+}

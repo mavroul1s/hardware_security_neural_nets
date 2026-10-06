@@ -1,0 +1,289 @@
+﻿phase,pool,condition,pipeline,method,family,pair,ge_at_budget,sr_at_budget,traces_to_sustained_sr90,recovery_censored
+1,validation,clean,raw_shift,fixed,rout,"[181, 521]",0.0,1.0,631,False
+1,validation,clean,raw_shift,fixed,r3,"[156, 517]",0.0,1.0,481,False
+1,validation,clean,raw_shift,ncc_template,rout,"[181, 521]",0.0,1.0,599,False
+1,validation,clean,raw_shift,ncc_template,r3,"[156, 517]",0.0,1.0,404,False
+1,validation,clean,raw_shift,gaussian_template,rout,"[181, 521]",0.0,1.0,534,False
+1,validation,clean,raw_shift,gaussian_template,r3,"[156, 517]",0.0,1.0,404,False
+1,validation,clean,raw_shift,oracle_known_shift,rout,"[181, 521]",0.0,1.0,631,False
+1,validation,clean,raw_shift,oracle_known_shift,r3,"[156, 517]",0.0,1.0,481,False
+1,validation,clean,feature_shift_surrogate,fixed,rout,"[181, 521]",0.0,1.0,631,False
+1,validation,clean,feature_shift_surrogate,fixed,r3,"[156, 517]",0.0,1.0,481,False
+1,validation,clean,feature_shift_surrogate,ncc_template,rout,"[181, 521]",0.0,1.0,599,False
+1,validation,clean,feature_shift_surrogate,ncc_template,r3,"[156, 517]",0.0,1.0,404,False
+1,validation,clean,feature_shift_surrogate,gaussian_template,rout,"[181, 521]",0.0,1.0,534,False
+1,validation,clean,feature_shift_surrogate,gaussian_template,r3,"[156, 517]",0.0,1.0,404,False
+1,validation,clean,feature_shift_surrogate,oracle_known_shift,rout,"[181, 521]",0.0,1.0,631,False
+1,validation,clean,feature_shift_surrogate,oracle_known_shift,r3,"[156, 517]",0.0,1.0,481,False
+1,validation,shift5,raw_shift,fixed,rout,"[181, 521]",151.4,0.0,,True
+1,validation,shift5,raw_shift,fixed,r3,"[156, 517]",121.95,0.0,,True
+1,validation,shift5,raw_shift,ncc_template,rout,"[181, 521]",0.0,1.0,599,False
+1,validation,shift5,raw_shift,ncc_template,r3,"[156, 517]",0.0,1.0,404,False
+1,validation,shift5,raw_shift,gaussian_template,rout,"[181, 521]",0.0,1.0,534,False
+1,validation,shift5,raw_shift,gaussian_template,r3,"[156, 517]",0.0,1.0,404,False
+1,validation,shift5,raw_shift,oracle_known_shift,rout,"[181, 521]",0.0,1.0,631,False
+1,validation,shift5,raw_shift,oracle_known_shift,r3,"[156, 517]",0.0,1.0,481,False
+1,validation,shift5,feature_shift_surrogate,fixed,rout,"[181, 521]",7.55,0.2,,True
+1,validation,shift5,feature_shift_surrogate,fixed,r3,"[156, 517]",0.8,0.65,,True
+1,validation,shift5,feature_shift_surrogate,ncc_template,rout,"[181, 521]",6.8,0.3,,True
+1,validation,shift5,feature_shift_surrogate,ncc_template,r3,"[156, 517]",0.8,0.7,,True
+1,validation,shift5,feature_shift_surrogate,gaussian_template,rout,"[181, 521]",6.65,0.3,,True
+1,validation,shift5,feature_shift_surrogate,gaussian_template,r3,"[156, 517]",0.8,0.65,,True
+1,validation,shift5,feature_shift_surrogate,oracle_known_shift,rout,"[181, 521]",104.6,0.0,,True
+1,validation,shift5,feature_shift_surrogate,oracle_known_shift,r3,"[156, 517]",149.2,0.0,,True
+1,validation,combined5,raw_shift,fixed,rout,"[181, 521]",151.95,0.0,,True
+1,validation,combined5,raw_shift,fixed,r3,"[156, 517]",132.4,0.0,,True
+1,validation,combined5,raw_shift,ncc_template,rout,"[181, 521]",0.0,1.0,1267,False
+1,validation,combined5,raw_shift,ncc_template,r3,"[156, 517]",0.0,1.0,900,False
+1,validation,combined5,raw_shift,gaussian_template,rout,"[181, 521]",0.0,1.0,1274,False
+1,validation,combined5,raw_shift,gaussian_template,r3,"[156, 517]",0.0,1.0,903,False
+1,validation,combined5,raw_shift,oracle_known_shift,rout,"[181, 521]",0.0,1.0,1376,False
+1,validation,combined5,raw_shift,oracle_known_shift,r3,"[156, 517]",0.0,1.0,905,False
+1,validation,combined5,feature_shift_surrogate,fixed,rout,"[181, 521]",49.45,0.1,,True
+1,validation,combined5,feature_shift_surrogate,fixed,r3,"[156, 517]",15.45,0.0,,True
+1,validation,combined5,feature_shift_surrogate,ncc_template,rout,"[181, 521]",59.95,0.05,,True
+1,validation,combined5,feature_shift_surrogate,ncc_template,r3,"[156, 517]",14.75,0.0,,True
+1,validation,combined5,feature_shift_surrogate,gaussian_template,rout,"[181, 521]",53.25,0.05,,True
+1,validation,combined5,feature_shift_surrogate,gaussian_template,r3,"[156, 517]",15.55,0.0,,True
+1,validation,combined5,feature_shift_surrogate,oracle_known_shift,rout,"[181, 521]",109.55,0.0,,True
+1,validation,combined5,feature_shift_surrogate,oracle_known_shift,r3,"[156, 517]",139.95,0.0,,True
+1,validation,combined10_ood,raw_shift,fixed,rout,"[181, 521]",139.9,0.0,,True
+1,validation,combined10_ood,raw_shift,fixed,r3,"[156, 517]",144.45,0.0,,True
+1,validation,combined10_ood,raw_shift,ncc_template,rout,"[181, 521]",1.65,0.65,,True
+1,validation,combined10_ood,raw_shift,ncc_template,r3,"[156, 517]",7.4,0.4,,True
+1,validation,combined10_ood,raw_shift,gaussian_template,rout,"[181, 521]",3.0,0.55,,True
+1,validation,combined10_ood,raw_shift,gaussian_template,r3,"[156, 517]",7.05,0.4,,True
+1,validation,combined10_ood,raw_shift,oracle_known_shift,rout,"[181, 521]",3.45,0.65,,True
+1,validation,combined10_ood,raw_shift,oracle_known_shift,r3,"[156, 517]",9.25,0.4,,True
+1,validation,combined10_ood,feature_shift_surrogate,fixed,rout,"[181, 521]",120.9,0.0,,True
+1,validation,combined10_ood,feature_shift_surrogate,fixed,r3,"[156, 517]",120.1,0.0,,True
+1,validation,combined10_ood,feature_shift_surrogate,ncc_template,rout,"[181, 521]",129.0,0.0,,True
+1,validation,combined10_ood,feature_shift_surrogate,ncc_template,r3,"[156, 517]",121.55,0.0,,True
+1,validation,combined10_ood,feature_shift_surrogate,gaussian_template,rout,"[181, 521]",130.8,0.0,,True
+1,validation,combined10_ood,feature_shift_surrogate,gaussian_template,r3,"[156, 517]",121.2,0.0,,True
+1,validation,combined10_ood,feature_shift_surrogate,oracle_known_shift,rout,"[181, 521]",129.05,0.0,,True
+1,validation,combined10_ood,feature_shift_surrogate,oracle_known_shift,r3,"[156, 517]",140.6,0.0,,True
+1,confirmation,clean,raw_shift,fixed,rout,"[181, 521]",0.0,1.0,639,False
+1,confirmation,clean,raw_shift,fixed,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,clean,raw_shift,ncc_template,rout,"[181, 521]",0.0,1.0,635,False
+1,confirmation,clean,raw_shift,ncc_template,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,clean,raw_shift,gaussian_template,rout,"[181, 521]",0.0,1.0,635,False
+1,confirmation,clean,raw_shift,gaussian_template,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,clean,raw_shift,oracle_known_shift,rout,"[181, 521]",0.0,1.0,639,False
+1,confirmation,clean,raw_shift,oracle_known_shift,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,clean,feature_shift_surrogate,fixed,rout,"[181, 521]",0.0,1.0,639,False
+1,confirmation,clean,feature_shift_surrogate,fixed,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,clean,feature_shift_surrogate,ncc_template,rout,"[181, 521]",0.0,1.0,635,False
+1,confirmation,clean,feature_shift_surrogate,ncc_template,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,clean,feature_shift_surrogate,gaussian_template,rout,"[181, 521]",0.0,1.0,635,False
+1,confirmation,clean,feature_shift_surrogate,gaussian_template,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,clean,feature_shift_surrogate,oracle_known_shift,rout,"[181, 521]",0.0,1.0,639,False
+1,confirmation,clean,feature_shift_surrogate,oracle_known_shift,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,shift5,raw_shift,fixed,rout,"[181, 521]",159.55,0.0,,True
+1,confirmation,shift5,raw_shift,fixed,r3,"[156, 517]",119.25,0.0,,True
+1,confirmation,shift5,raw_shift,ncc_template,rout,"[181, 521]",0.0,1.0,635,False
+1,confirmation,shift5,raw_shift,ncc_template,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,shift5,raw_shift,gaussian_template,rout,"[181, 521]",0.0,1.0,635,False
+1,confirmation,shift5,raw_shift,gaussian_template,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,shift5,raw_shift,oracle_known_shift,rout,"[181, 521]",0.0,1.0,639,False
+1,confirmation,shift5,raw_shift,oracle_known_shift,r3,"[156, 517]",0.0,1.0,469,False
+1,confirmation,shift5,feature_shift_surrogate,fixed,rout,"[181, 521]",24.2,0.1,,True
+1,confirmation,shift5,feature_shift_surrogate,fixed,r3,"[156, 517]",0.4,0.8,,True
+1,confirmation,shift5,feature_shift_surrogate,ncc_template,rout,"[181, 521]",22.9,0.1,,True
+1,confirmation,shift5,feature_shift_surrogate,ncc_template,r3,"[156, 517]",0.15,0.9,2000,False
+1,confirmation,shift5,feature_shift_surrogate,gaussian_template,rout,"[181, 521]",23.45,0.05,,True
+1,confirmation,shift5,feature_shift_surrogate,gaussian_template,r3,"[156, 517]",0.25,0.9,2000,False
+1,confirmation,shift5,feature_shift_surrogate,oracle_known_shift,rout,"[181, 521]",121.55,0.0,,True
+1,confirmation,shift5,feature_shift_surrogate,oracle_known_shift,r3,"[156, 517]",142.95,0.0,,True
+1,confirmation,combined5,raw_shift,fixed,rout,"[181, 521]",145.2,0.0,,True
+1,confirmation,combined5,raw_shift,fixed,r3,"[156, 517]",104.85,0.0,,True
+1,confirmation,combined5,raw_shift,ncc_template,rout,"[181, 521]",0.0,1.0,1426,False
+1,confirmation,combined5,raw_shift,ncc_template,r3,"[156, 517]",0.0,1.0,1036,False
+1,confirmation,combined5,raw_shift,gaussian_template,rout,"[181, 521]",0.0,1.0,1426,False
+1,confirmation,combined5,raw_shift,gaussian_template,r3,"[156, 517]",0.0,1.0,1060,False
+1,confirmation,combined5,raw_shift,oracle_known_shift,rout,"[181, 521]",0.0,1.0,1484,False
+1,confirmation,combined5,raw_shift,oracle_known_shift,r3,"[156, 517]",0.0,1.0,1204,False
+1,confirmation,combined5,feature_shift_surrogate,fixed,rout,"[181, 521]",84.8,0.0,,True
+1,confirmation,combined5,feature_shift_surrogate,fixed,r3,"[156, 517]",8.95,0.3,,True
+1,confirmation,combined5,feature_shift_surrogate,ncc_template,rout,"[181, 521]",80.5,0.0,,True
+1,confirmation,combined5,feature_shift_surrogate,ncc_template,r3,"[156, 517]",9.25,0.25,,True
+1,confirmation,combined5,feature_shift_surrogate,gaussian_template,rout,"[181, 521]",85.75,0.0,,True
+1,confirmation,combined5,feature_shift_surrogate,gaussian_template,r3,"[156, 517]",9.85,0.35,,True
+1,confirmation,combined5,feature_shift_surrogate,oracle_known_shift,rout,"[181, 521]",124.1,0.0,,True
+1,confirmation,combined5,feature_shift_surrogate,oracle_known_shift,r3,"[156, 517]",134.55,0.0,,True
+1,confirmation,combined10_ood,raw_shift,fixed,rout,"[181, 521]",130.15,0.0,,True
+1,confirmation,combined10_ood,raw_shift,fixed,r3,"[156, 517]",157.05,0.0,,True
+1,confirmation,combined10_ood,raw_shift,ncc_template,rout,"[181, 521]",24.5,0.0,,True
+1,confirmation,combined10_ood,raw_shift,ncc_template,r3,"[156, 517]",5.1,0.55,,True
+1,confirmation,combined10_ood,raw_shift,gaussian_template,rout,"[181, 521]",25.4,0.0,,True
+1,confirmation,combined10_ood,raw_shift,gaussian_template,r3,"[156, 517]",5.6,0.4,,True
+1,confirmation,combined10_ood,raw_shift,oracle_known_shift,rout,"[181, 521]",14.6,0.1,,True
+1,confirmation,combined10_ood,raw_shift,oracle_known_shift,r3,"[156, 517]",5.35,0.45,,True
+1,confirmation,combined10_ood,feature_shift_surrogate,fixed,rout,"[181, 521]",146.05,0.0,,True
+1,confirmation,combined10_ood,feature_shift_surrogate,fixed,r3,"[156, 517]",167.35,0.0,,True
+1,confirmation,combined10_ood,feature_shift_surrogate,ncc_template,rout,"[181, 521]",149.85,0.0,,True
+1,confirmation,combined10_ood,feature_shift_surrogate,ncc_template,r3,"[156, 517]",169.45,0.0,,True
+1,confirmation,combined10_ood,feature_shift_surrogate,gaussian_template,rout,"[181, 521]",151.0,0.0,,True
+1,confirmation,combined10_ood,feature_shift_surrogate,gaussian_template,r3,"[156, 517]",166.8,0.0,,True
+1,confirmation,combined10_ood,feature_shift_surrogate,oracle_known_shift,rout,"[181, 521]",99.75,0.0,,True
+1,confirmation,combined10_ood,feature_shift_surrogate,oracle_known_shift,r3,"[156, 517]",113.85,0.0,,True
+2,validation,clean,feature_shift_surrogate,fixed,rout,,0.0,1.0,631,False
+2,validation,clean,feature_shift_surrogate,fixed,r3,,0.0,1.0,481,False
+2,validation,clean,feature_shift_surrogate,ncc_template,rout,,0.0,1.0,1227,False
+2,validation,clean,feature_shift_surrogate,ncc_template,r3,,0.0,1.0,1177,False
+2,validation,clean,feature_shift_surrogate,gaussian_template,rout,,0.0,1.0,803,False
+2,validation,clean,feature_shift_surrogate,gaussian_template,r3,,0.0,1.0,756,False
+2,validation,clean,feature_shift_surrogate,oracle_known_shift,rout,,0.0,1.0,631,False
+2,validation,clean,feature_shift_surrogate,oracle_known_shift,r3,,0.0,1.0,481,False
+2,validation,shift5,feature_shift_surrogate,fixed,rout,,7.55,0.2,,True
+2,validation,shift5,feature_shift_surrogate,fixed,r3,,0.8,0.65,,True
+2,validation,shift5,feature_shift_surrogate,ncc_template,rout,,0.0,1.0,1196,False
+2,validation,shift5,feature_shift_surrogate,ncc_template,r3,,0.0,1.0,1599,False
+2,validation,shift5,feature_shift_surrogate,gaussian_template,rout,,0.0,1.0,744,False
+2,validation,shift5,feature_shift_surrogate,gaussian_template,r3,,0.0,1.0,739,False
+2,validation,shift5,feature_shift_surrogate,oracle_known_shift,rout,,0.0,1.0,631,False
+2,validation,shift5,feature_shift_surrogate,oracle_known_shift,r3,,0.0,1.0,481,False
+2,validation,combined5,feature_shift_surrogate,fixed,rout,,49.45,0.1,,True
+2,validation,combined5,feature_shift_surrogate,fixed,r3,,15.45,0.0,,True
+2,validation,combined5,feature_shift_surrogate,ncc_template,rout,,5.85,0.55,,True
+2,validation,combined5,feature_shift_surrogate,ncc_template,r3,,0.2,0.9,1999,False
+2,validation,combined5,feature_shift_surrogate,gaussian_template,rout,,1.05,0.55,,True
+2,validation,combined5,feature_shift_surrogate,gaussian_template,r3,,0.0,1.0,1084,False
+2,validation,combined5,feature_shift_surrogate,oracle_known_shift,rout,,0.0,1.0,1107,False
+2,validation,combined5,feature_shift_surrogate,oracle_known_shift,r3,,0.0,1.0,778,False
+2,validation,combined10_ood,feature_shift_surrogate,fixed,rout,,120.9,0.0,,True
+2,validation,combined10_ood,feature_shift_surrogate,fixed,r3,,120.1,0.0,,True
+2,validation,combined10_ood,feature_shift_surrogate,ncc_template,rout,,63.75,0.0,,True
+2,validation,combined10_ood,feature_shift_surrogate,ncc_template,r3,,63.95,0.0,,True
+2,validation,combined10_ood,feature_shift_surrogate,gaussian_template,rout,,4.25,0.4,,True
+2,validation,combined10_ood,feature_shift_surrogate,gaussian_template,r3,,14.2,0.25,,True
+2,validation,combined10_ood,feature_shift_surrogate,oracle_known_shift,rout,,1.45,0.7,,True
+2,validation,combined10_ood,feature_shift_surrogate,oracle_known_shift,r3,,1.2,0.6,,True
+2,confirmation,clean,raw_shift,fixed,rout,,0.0,1.0,920,False
+2,confirmation,clean,raw_shift,fixed,r3,,0.0,1.0,1147,False
+2,confirmation,clean,raw_shift,ncc_template,rout,,0.0,1.0,854,False
+2,confirmation,clean,raw_shift,ncc_template,r3,,0.0,1.0,1147,False
+2,confirmation,clean,raw_shift,gaussian_template,rout,,0.0,1.0,854,False
+2,confirmation,clean,raw_shift,gaussian_template,r3,,0.0,1.0,1147,False
+2,confirmation,clean,raw_shift,oracle_known_shift,rout,,0.0,1.0,920,False
+2,confirmation,clean,raw_shift,oracle_known_shift,r3,,0.0,1.0,1147,False
+2,confirmation,clean,feature_shift_surrogate,fixed,rout,,0.0,1.0,920,False
+2,confirmation,clean,feature_shift_surrogate,fixed,r3,,0.0,1.0,1147,False
+2,confirmation,clean,feature_shift_surrogate,ncc_template,rout,,0.05,0.95,1308,False
+2,confirmation,clean,feature_shift_surrogate,ncc_template,r3,,0.0,1.0,1294,False
+2,confirmation,clean,feature_shift_surrogate,gaussian_template,rout,,0.0,1.0,1358,False
+2,confirmation,clean,feature_shift_surrogate,gaussian_template,r3,,0.0,1.0,1294,False
+2,confirmation,clean,feature_shift_surrogate,oracle_known_shift,rout,,0.0,1.0,920,False
+2,confirmation,clean,feature_shift_surrogate,oracle_known_shift,r3,,0.0,1.0,1147,False
+2,confirmation,shift5,raw_shift,fixed,rout,,142.25,0.0,,True
+2,confirmation,shift5,raw_shift,fixed,r3,,150.25,0.0,,True
+2,confirmation,shift5,raw_shift,ncc_template,rout,,0.0,1.0,854,False
+2,confirmation,shift5,raw_shift,ncc_template,r3,,0.0,1.0,1147,False
+2,confirmation,shift5,raw_shift,gaussian_template,rout,,0.0,1.0,854,False
+2,confirmation,shift5,raw_shift,gaussian_template,r3,,0.0,1.0,1147,False
+2,confirmation,shift5,raw_shift,oracle_known_shift,rout,,0.0,1.0,920,False
+2,confirmation,shift5,raw_shift,oracle_known_shift,r3,,0.0,1.0,1147,False
+2,confirmation,shift5,feature_shift_surrogate,fixed,rout,,8.65,0.35,,True
+2,confirmation,shift5,feature_shift_surrogate,fixed,r3,,0.3,0.75,,True
+2,confirmation,shift5,feature_shift_surrogate,ncc_template,rout,,0.0,1.0,1587,False
+2,confirmation,shift5,feature_shift_surrogate,ncc_template,r3,,0.0,1.0,1580,False
+2,confirmation,shift5,feature_shift_surrogate,gaussian_template,rout,,0.0,1.0,1464,False
+2,confirmation,shift5,feature_shift_surrogate,gaussian_template,r3,,0.05,0.95,1369,False
+2,confirmation,shift5,feature_shift_surrogate,oracle_known_shift,rout,,0.0,1.0,920,False
+2,confirmation,shift5,feature_shift_surrogate,oracle_known_shift,r3,,0.0,1.0,1147,False
+2,confirmation,combined5,raw_shift,fixed,rout,,141.15,0.0,,True
+2,confirmation,combined5,raw_shift,fixed,r3,,162.85,0.0,,True
+2,confirmation,combined5,raw_shift,ncc_template,rout,,3.35,0.5,,True
+2,confirmation,combined5,raw_shift,ncc_template,r3,,0.0,1.0,1575,False
+2,confirmation,combined5,raw_shift,gaussian_template,rout,,3.15,0.55,,True
+2,confirmation,combined5,raw_shift,gaussian_template,r3,,0.0,1.0,1593,False
+2,confirmation,combined5,raw_shift,oracle_known_shift,rout,,2.5,0.55,,True
+2,confirmation,combined5,raw_shift,oracle_known_shift,r3,,0.05,0.95,1830,False
+2,confirmation,combined5,feature_shift_surrogate,fixed,rout,,14.85,0.25,,True
+2,confirmation,combined5,feature_shift_surrogate,fixed,r3,,3.0,0.35,,True
+2,confirmation,combined5,feature_shift_surrogate,ncc_template,rout,,0.4,0.8,,True
+2,confirmation,combined5,feature_shift_surrogate,ncc_template,r3,,0.65,0.7,,True
+2,confirmation,combined5,feature_shift_surrogate,gaussian_template,rout,,0.85,0.65,,True
+2,confirmation,combined5,feature_shift_surrogate,gaussian_template,r3,,1.0,0.55,,True
+2,confirmation,combined5,feature_shift_surrogate,oracle_known_shift,rout,,0.1,0.9,1991,False
+2,confirmation,combined5,feature_shift_surrogate,oracle_known_shift,r3,,0.0,1.0,1443,False
+2,confirmation,combined10_ood,raw_shift,fixed,rout,,160.3,0.0,,True
+2,confirmation,combined10_ood,raw_shift,fixed,r3,,121.95,0.0,,True
+2,confirmation,combined10_ood,raw_shift,ncc_template,rout,,15.55,0.05,,True
+2,confirmation,combined10_ood,raw_shift,ncc_template,r3,,13.5,0.15,,True
+2,confirmation,combined10_ood,raw_shift,gaussian_template,rout,,15.35,0.05,,True
+2,confirmation,combined10_ood,raw_shift,gaussian_template,r3,,11.8,0.2,,True
+2,confirmation,combined10_ood,raw_shift,oracle_known_shift,rout,,13.9,0.05,,True
+2,confirmation,combined10_ood,raw_shift,oracle_known_shift,r3,,16.15,0.15,,True
+2,confirmation,combined10_ood,feature_shift_surrogate,fixed,rout,,61.35,0.1,,True
+2,confirmation,combined10_ood,feature_shift_surrogate,fixed,r3,,108.4,0.0,,True
+2,confirmation,combined10_ood,feature_shift_surrogate,ncc_template,rout,,4.3,0.25,,True
+2,confirmation,combined10_ood,feature_shift_surrogate,ncc_template,r3,,46.45,0.15,,True
+2,confirmation,combined10_ood,feature_shift_surrogate,gaussian_template,rout,,49.6,0.05,,True
+2,confirmation,combined10_ood,feature_shift_surrogate,gaussian_template,r3,,33.65,0.05,,True
+2,confirmation,combined10_ood,feature_shift_surrogate,oracle_known_shift,rout,,3.15,0.3,,True
+2,confirmation,combined10_ood,feature_shift_surrogate,oracle_known_shift,r3,,5.65,0.4,,True
+3,validation,clean,,fixed,pair1,"[156, 521]",0.0,1.0,390,False
+3,validation,clean,,fixed,pair2,"[182, 547]",0.0,1.0,765,False
+3,validation,clean,,ncc_template,pair1,"[156, 521]",0.0,1.0,367,False
+3,validation,clean,,ncc_template,pair2,"[182, 547]",0.0,1.0,755,False
+3,validation,clean,,gaussian_template,pair1,"[156, 521]",0.0,1.0,367,False
+3,validation,clean,,gaussian_template,pair2,"[182, 547]",0.0,1.0,765,False
+3,validation,clean,,oracle_known_shift,pair1,"[156, 521]",0.0,1.0,390,False
+3,validation,clean,,oracle_known_shift,pair2,"[182, 547]",0.0,1.0,765,False
+3,validation,shift5,,fixed,pair1,"[156, 521]",140.6,0.0,,True
+3,validation,shift5,,fixed,pair2,"[182, 547]",136.45,0.0,,True
+3,validation,shift5,,ncc_template,pair1,"[156, 521]",0.0,1.0,367,False
+3,validation,shift5,,ncc_template,pair2,"[182, 547]",0.0,1.0,755,False
+3,validation,shift5,,gaussian_template,pair1,"[156, 521]",0.0,1.0,367,False
+3,validation,shift5,,gaussian_template,pair2,"[182, 547]",0.0,1.0,765,False
+3,validation,shift5,,oracle_known_shift,pair1,"[156, 521]",0.0,1.0,390,False
+3,validation,shift5,,oracle_known_shift,pair2,"[182, 547]",0.0,1.0,765,False
+3,validation,combined5,,fixed,pair1,"[156, 521]",137.0,0.0,,True
+3,validation,combined5,,fixed,pair2,"[182, 547]",146.05,0.0,,True
+3,validation,combined5,,ncc_template,pair1,"[156, 521]",0.0,1.0,1226,False
+3,validation,combined5,,ncc_template,pair2,"[182, 547]",0.3,0.75,,True
+3,validation,combined5,,gaussian_template,pair1,"[156, 521]",0.0,1.0,1277,False
+3,validation,combined5,,gaussian_template,pair2,"[182, 547]",0.35,0.8,,True
+3,validation,combined5,,oracle_known_shift,pair1,"[156, 521]",0.0,1.0,1191,False
+3,validation,combined5,,oracle_known_shift,pair2,"[182, 547]",0.1,0.9,1998,False
+3,validation,combined10_ood,,fixed,pair1,"[156, 521]",117.5,0.0,,True
+3,validation,combined10_ood,,fixed,pair2,"[182, 547]",165.65,0.0,,True
+3,validation,combined10_ood,,ncc_template,pair1,"[156, 521]",0.75,0.65,,True
+3,validation,combined10_ood,,ncc_template,pair2,"[182, 547]",105.25,0.0,,True
+3,validation,combined10_ood,,gaussian_template,pair1,"[156, 521]",0.95,0.65,,True
+3,validation,combined10_ood,,gaussian_template,pair2,"[182, 547]",102.9,0.0,,True
+3,validation,combined10_ood,,oracle_known_shift,pair1,"[156, 521]",1.1,0.65,,True
+3,validation,combined10_ood,,oracle_known_shift,pair2,"[182, 547]",104.65,0.05,,True
+3,confirmation,clean,,fixed,pair1,"[156, 521]",0.0,1.0,596,False
+3,confirmation,clean,,fixed,pair2,"[182, 547]",0.0,1.0,658,False
+3,confirmation,clean,,ncc_template,pair1,"[156, 521]",0.0,1.0,407,False
+3,confirmation,clean,,ncc_template,pair2,"[182, 547]",0.0,1.0,677,False
+3,confirmation,clean,,gaussian_template,pair1,"[156, 521]",0.0,1.0,395,False
+3,confirmation,clean,,gaussian_template,pair2,"[182, 547]",0.0,1.0,706,False
+3,confirmation,clean,,oracle_known_shift,pair1,"[156, 521]",0.0,1.0,596,False
+3,confirmation,clean,,oracle_known_shift,pair2,"[182, 547]",0.0,1.0,658,False
+3,confirmation,shift5,,fixed,pair1,"[156, 521]",68.1,0.0,,True
+3,confirmation,shift5,,fixed,pair2,"[182, 547]",63.9,0.0,,True
+3,confirmation,shift5,,ncc_template,pair1,"[156, 521]",0.0,1.0,407,False
+3,confirmation,shift5,,ncc_template,pair2,"[182, 547]",0.0,1.0,677,False
+3,confirmation,shift5,,gaussian_template,pair1,"[156, 521]",0.0,1.0,395,False
+3,confirmation,shift5,,gaussian_template,pair2,"[182, 547]",0.0,1.0,706,False
+3,confirmation,shift5,,oracle_known_shift,pair1,"[156, 521]",0.0,1.0,596,False
+3,confirmation,shift5,,oracle_known_shift,pair2,"[182, 547]",0.0,1.0,658,False
+3,confirmation,combined5,,fixed,pair1,"[156, 521]",65.0,0.0,,True
+3,confirmation,combined5,,fixed,pair2,"[182, 547]",62.65,0.0,,True
+3,confirmation,combined5,,ncc_template,pair1,"[156, 521]",0.0,1.0,915,False
+3,confirmation,combined5,,ncc_template,pair2,"[182, 547]",0.1,0.9,1973,False
+3,confirmation,combined5,,gaussian_template,pair1,"[156, 521]",0.0,1.0,899,False
+3,confirmation,combined5,,gaussian_template,pair2,"[182, 547]",0.1,0.9,1998,False
+3,confirmation,combined5,,oracle_known_shift,pair1,"[156, 521]",0.0,1.0,1195,False
+3,confirmation,combined5,,oracle_known_shift,pair2,"[182, 547]",0.0,1.0,1641,False
+3,confirmation,combined10_ood,,fixed,pair1,"[156, 521]",62.85,0.0,,True
+3,confirmation,combined10_ood,,fixed,pair2,"[182, 547]",125.55,0.0,,True
+3,confirmation,combined10_ood,,ncc_template,pair1,"[156, 521]",7.5,0.4,,True
+3,confirmation,combined10_ood,,ncc_template,pair2,"[182, 547]",58.15,0.0,,True
+3,confirmation,combined10_ood,,gaussian_template,pair1,"[156, 521]",6.9,0.3,,True
+3,confirmation,combined10_ood,,gaussian_template,pair2,"[182, 547]",47.05,0.0,,True
+3,confirmation,combined10_ood,,oracle_known_shift,pair1,"[156, 521]",18.5,0.2,,True
+3,confirmation,combined10_ood,,oracle_known_shift,pair2,"[182, 547]",35.9,0.05,,True

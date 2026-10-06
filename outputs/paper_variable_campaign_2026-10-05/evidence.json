@@ -1,0 +1,1236 @@
+{
+  "results": [
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 6.55,
+      "sr_at_budget": 0.5,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 156.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.7,
+      "sr_at_budget": 0.7,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 147.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.85,
+      "sr_at_budget": 0.75,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 152.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.9,
+      "sr_at_budget": 0.6,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 150.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 54.0,
+      "sr_at_budget": 0.15,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 149.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 6.55,
+      "sr_at_budget": 0.5,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 156.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 155.3,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 131.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.7,
+      "sr_at_budget": 0.7,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 147.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.85,
+      "sr_at_budget": 0.75,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 152.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 0.9,
+      "sr_at_budget": 0.6,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 150.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 131.6,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 105.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 6.55,
+      "sr_at_budget": 0.5,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 156.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 138.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 116.35,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 95.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 139.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 105.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 164.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 115.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 135.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 126.7,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 113.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 77.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 173.5,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 131.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 141.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 165.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 130.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 153.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 122.35,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 162.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 119.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 91.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 163.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "ge_at_budget": 159.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "attack",
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "ge_at_budget": 144.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    }
+  ],
+  "validation_correlations": [
+    {
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09748287524506175
+    },
+    {
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0018577228854556552
+    },
+    {
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09927340814251849
+    },
+    {
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.005865749169097035
+    },
+    {
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09436507517896997
+    },
+    {
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.004488467886937177
+    },
+    {
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09052070392613225
+    },
+    {
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.004497167473006671
+    },
+    {
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.038713802179535364
+    },
+    {
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.006947049008428038
+    },
+    {
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09748287524506175
+    },
+    {
+      "condition": "clean",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0018577228854556552
+    },
+    {
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.010413097696035902
+    },
+    {
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.007119849086331397
+    },
+    {
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09927340814251849
+    },
+    {
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.005865749169097035
+    },
+    {
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09436507517896997
+    },
+    {
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.004488467886937177
+    },
+    {
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09052070392613225
+    },
+    {
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.004497167473006671
+    },
+    {
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.0030050506436628127
+    },
+    {
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 4.7950666452320813e-05
+    },
+    {
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.09748287524506175
+    },
+    {
+      "condition": "shift5",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0018577228854556552
+    },
+    {
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.01079125880805255
+    },
+    {
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.01660831989385856
+    },
+    {
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.04169796622908806
+    },
+    {
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 5.056405294863015e-05
+    },
+    {
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.04403015551083756
+    },
+    {
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.00063884569904434
+    },
+    {
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.03992368322280452
+    },
+    {
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.0034375404283358635
+    },
+    {
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.0004099397606663472
+    },
+    {
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0026092401264472837
+    },
+    {
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.05921196732222413
+    },
+    {
+      "condition": "combined5",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.0036602063198844315
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.015003820156197717
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.022334874946421255
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.02188345502063401
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.010001771139911207
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.02151312028498987
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.014432742234174654
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.01620068142959718
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.00994270969733953
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.0036920935998118343
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.002142153408909123
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": -0.026578391145788985
+    },
+    {
+      "condition": "combined10_ood",
+      "method": "known_injected_shift",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.0030360729550246842
+    }
+  ],
+  "primary": [
+    {
+      "family": "pair1",
+      "gaussian_sr": 0.0,
+      "sr_improvement": 0.0,
+      "clean_sr_loss": -0.25,
+      "criterion_met": false
+    },
+    {
+      "family": "pair2",
+      "gaussian_sr": 0.0,
+      "sr_improvement": 0.0,
+      "clean_sr_loss": 0.0,
+      "criterion_met": false
+    }
+  ],
+  "support_criterion_met": false,
+  "key_audit": {
+    "actual_constant_full_attack_key": true,
+    "attack_key_hex": "00112233445566778899aabbccddeeff",
+    "target_key_byte": 34,
+    "different_full_key_from_original": true,
+    "different_target_byte_from_original": true,
+    "attack_full_key_present_in_training_rows": false,
+    "training_unique_full_keys": 10000,
+    "training_and_attack_labels_verified": true,
+    "training_metadata_read_after_frozen_fit_only_for_audit": true,
+    "simulated_constant_key_or_plaintext_key_adjustment": false
+  },
+  "fit": {
+    "pairs": {
+      "pair1": [
+        187,
+        1080
+      ],
+      "pair2": [
+        334,
+        573
+      ]
+    },
+    "candidate_pairs": 885115,
+    "training_coefficients": {
+      "pair1": -0.07040462525514771,
+      "pair2": -0.03794180708297025
+    },
+    "training_range_median": 48.0,
+    "variance_floor": 3.0268642150000467e-06,
+    "keys_masks_read_for_fitting": false,
+    "only_training_traces_and_labels": true,
+    "plan_sha256": "f97356b22e7fdc1db97deecd0b38932143f445f80ae223ccbf5b9bcb1657ecc7",
+    "fit_npz_sha256": "8bad15835e51357e84e746f96155d4c96c76c4a5021c4f51a88b76b2d29c5992",
+    "fit_seconds": 1.8222570000216365,
+    "frozen_utc": "2026-10-05T20:18:07.406094+00:00"
+  },
+  "paper_ready": false,
+  "novelty_verified": false,
+  "five_phase_recovery_summaries": 448,
+  "five_phase_execution_endpoints": 8960,
+  "additional_endpoint_replays": 160,
+  "five_phase_cpu_seconds": 816.9677145001478,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "original_fixed_key_attack_payloads_read": false,
+  "new_attack_subset_viewed": true,
+  "tests": {
+    "tests": 65,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 18.031
+  },
+  "input_sha256": {
+    "plan.json": "f97356b22e7fdc1db97deecd0b38932143f445f80ae223ccbf5b9bcb1657ecc7",
+    "fit.json": "354f8702eb1741ac2ff26c75ff267c0026cc8411c96f7273c554561cfd015406",
+    "results.json": "cf869885be280c6bd7f634713753529e865eea808decf0ad2a397ccbcee8abcd",
+    "verification.json": "0cd7714f72043187bc91c1c0bbe3517b12a82ccb65a651bb70ac682053412dfa",
+    "pytest.xml": "92cc5f8cf32e7d289b7e5bcf2dcec84de111b9a70e0e045a9d1c39a71e7e4b14"
+  }
+}

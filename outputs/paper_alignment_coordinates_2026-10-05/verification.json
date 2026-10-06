@@ -1,0 +1,68 @@
+{
+  "result_summaries_verified": 96,
+  "sampled_trace_only_estimates_independently_verified": 192,
+  "cpa_endpoints_independently_checked_during_execution": 1920,
+  "disjoint_confirmation_and_seed_selection_verified": true,
+  "selection_checks": null,
+  "rng_reconstructed_states": {
+    "validation": {
+      "uniform_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 144056166388432955585855354044191819797,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "noise_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 178890988483121138810503792457774216705,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "standard_normal_sha256": "7433a7076255d6cebf1862f6dc33bec1d6bd4f0bc324cc62e19008c7eeec002a",
+      "note": "Reconstructed from frozen seed, shape and NumPy version; offsets verified"
+    },
+    "confirmation": {
+      "uniform_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 144056166388432955585855354044191819797,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "noise_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 178890988483121138810503792457774216705,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "standard_normal_sha256": "7433a7076255d6cebf1862f6dc33bec1d6bd4f0bc324cc62e19008c7eeec002a",
+      "note": "Reconstructed from frozen seed, shape and NumPy version; offsets verified"
+    }
+  },
+  "original_inputs_preserved": true,
+  "tests": 57,
+  "failures": 0,
+  "pytest_junit_seconds": 19.428,
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "full_gpu_trainings_total": 3,
+  "new_gpu_trainings": 0,
+  "new_real_data_optimizer_updates": 0,
+  "final_attack_payloads_read": false,
+  "artifact_sha256": {
+    "plan.json": "43575da35dbe292ff34daa7c48d6f0dd3745c86bd983ac5fbe323e276b76c194",
+    "results.json": "7684bc4e76178225ea5735a3f6221854302df8e3788b927133ee1a8745756ce8",
+    "splits.npz": "429cb6cdc86ce831d4f2256184ef840b5d81cbd4abb6ef57d1606d73b48e12f9",
+    "arrays.npz": "dd0f070aa6c7954afba1e730d0f21c8b01596a1fb52ed8ce9670521682c0768a"
+  }
+}

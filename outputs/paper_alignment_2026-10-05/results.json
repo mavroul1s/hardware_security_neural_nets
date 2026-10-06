@@ -1,0 +1,2363 @@
+{
+  "plan_sha256": "d6bf1302f7d9f430deca959ab1050280974b6299da59a1c29e8857899ec46b61",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "versions": {
+      "torch": "2.8.0+cpu",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "cuda_runtime": null,
+    "torch_threads": 2
+  },
+  "results": [
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 599,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 404,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 534,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 404,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 599,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 404,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 534,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 404,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 151.4,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 121.95,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 599,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 404,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 534,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 404,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 631,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 481,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 7.55,
+      "sr_at_budget": 0.2,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.8,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 6.8,
+      "sr_at_budget": 0.3,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.8,
+      "sr_at_budget": 0.7,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 6.65,
+      "sr_at_budget": 0.3,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.8,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 104.6,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 149.2,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 151.95,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 132.4,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1267,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 900,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1274,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 903,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1376,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 905,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 49.45,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 15.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 59.95,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 14.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 53.25,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 15.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 109.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 139.95,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 139.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 144.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 1.65,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 7.4,
+      "sr_at_budget": 0.4,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 3.0,
+      "sr_at_budget": 0.55,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 7.05,
+      "sr_at_budget": 0.4,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 3.45,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 9.25,
+      "sr_at_budget": 0.4,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 120.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 120.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 129.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 121.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 130.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 121.2,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 129.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 140.6,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 639,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 635,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 635,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 639,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 639,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 635,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 635,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 639,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 159.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 119.25,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 635,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 635,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 639,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 469,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 24.2,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.4,
+      "sr_at_budget": 0.8,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 22.9,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.15,
+      "sr_at_budget": 0.9,
+      "traces_to_sustained_sr90": 2000,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 23.45,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.25,
+      "sr_at_budget": 0.9,
+      "traces_to_sustained_sr90": 2000,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 121.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 142.95,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 145.2,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 104.85,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1426,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1036,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1426,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1060,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1484,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1204,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 84.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 8.95,
+      "sr_at_budget": 0.3,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 80.5,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 9.25,
+      "sr_at_budget": 0.25,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 85.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 9.85,
+      "sr_at_budget": 0.35,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 124.1,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 134.55,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 130.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 157.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 24.5,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 5.1,
+      "sr_at_budget": 0.55,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 25.4,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 5.6,
+      "sr_at_budget": 0.4,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 14.6,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 5.35,
+      "sr_at_budget": 0.45,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 146.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "fixed",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 167.35,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 149.85,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 169.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 151.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 166.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "rout",
+      "pair": [
+        181,
+        521
+      ],
+      "ge_at_budget": 99.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "oracle_known_shift",
+      "family": "r3",
+      "pair": [
+        156,
+        517
+      ],
+      "ge_at_budget": 113.85,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    }
+  ],
+  "alignment": [
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9238,
+      "mean_absolute_shift_error": 0.0762,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9236,
+      "mean_absolute_shift_error": 0.0764,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9238,
+      "mean_absolute_shift_error": 0.0762,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9236,
+      "mean_absolute_shift_error": 0.0764,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9238,
+      "mean_absolute_shift_error": 0.0762,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9236,
+      "mean_absolute_shift_error": 0.0764,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.0872,
+      "mean_absolute_shift_error": 2.7404,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.0846,
+      "mean_absolute_shift_error": 2.7454,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9228,
+      "mean_absolute_shift_error": 0.0772,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9216,
+      "mean_absolute_shift_error": 0.0784,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.0868,
+      "mean_absolute_shift_error": 2.741,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.085,
+      "mean_absolute_shift_error": 2.7454,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.926,
+      "mean_absolute_shift_error": 0.074,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9232,
+      "mean_absolute_shift_error": 0.0768,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.05,
+      "mean_absolute_shift_error": 5.2506,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.0486,
+      "mean_absolute_shift_error": 5.2526,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9294,
+      "mean_absolute_shift_error": 0.0706,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9292,
+      "mean_absolute_shift_error": 0.0708,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9294,
+      "mean_absolute_shift_error": 0.0706,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9292,
+      "mean_absolute_shift_error": 0.0708,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9294,
+      "mean_absolute_shift_error": 0.0706,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9292,
+      "mean_absolute_shift_error": 0.0708,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.09,
+      "mean_absolute_shift_error": 2.7388,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.0872,
+      "mean_absolute_shift_error": 2.7436,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.9294,
+      "mean_absolute_shift_error": 0.0706,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9294,
+      "mean_absolute_shift_error": 0.0706,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.0904,
+      "mean_absolute_shift_error": 2.7382,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.0876,
+      "mean_absolute_shift_error": 2.7432,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.93,
+      "mean_absolute_shift_error": 0.07,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "raw_shift",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.9296,
+      "mean_absolute_shift_error": 0.0704,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "ncc_template",
+      "exact_shift_fraction": 0.0518,
+      "mean_absolute_shift_error": 5.2492,
+      "zero_edge_estimates_and_scores_identical": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "pipeline": "feature_shift_surrogate",
+      "method": "gaussian_template",
+      "exact_shift_fraction": 0.0496,
+      "mean_absolute_shift_error": 5.2516,
+      "zero_edge_estimates_and_scores_identical": true
+    }
+  ],
+  "controls": [
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "raw_noise_std": 0.0,
+      "order_difference_rms_raw_units": 6.31647056283168e-17,
+      "affine_transport_max_absolute_error": 1.7763568394002505e-15,
+      "scalar_affine_interior_commutes": true,
+      "border_cues_excluded_from_alignment": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "raw_noise_std": 0.0,
+      "order_difference_rms_raw_units": 19.354118615611913,
+      "affine_transport_max_absolute_error": 1.7763568394002505e-15,
+      "scalar_affine_interior_commutes": true,
+      "border_cues_excluded_from_alignment": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "raw_noise_std": 1.3,
+      "order_difference_rms_raw_units": 19.354118615611913,
+      "affine_transport_max_absolute_error": 3.552713678800501e-15,
+      "scalar_affine_interior_commutes": true,
+      "border_cues_excluded_from_alignment": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "raw_noise_std": 2.6,
+      "order_difference_rms_raw_units": 31.18709279978728,
+      "affine_transport_max_absolute_error": 3.552713678800501e-15,
+      "scalar_affine_interior_commutes": true,
+      "border_cues_excluded_from_alignment": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "raw_noise_std": 0.0,
+      "order_difference_rms_raw_units": 6.390964986399502e-17,
+      "affine_transport_max_absolute_error": 3.552713678800501e-15,
+      "scalar_affine_interior_commutes": true,
+      "border_cues_excluded_from_alignment": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "raw_noise_std": 0.0,
+      "order_difference_rms_raw_units": 19.34739567432341,
+      "affine_transport_max_absolute_error": 3.552713678800501e-15,
+      "scalar_affine_interior_commutes": true,
+      "border_cues_excluded_from_alignment": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "raw_noise_std": 1.3,
+      "order_difference_rms_raw_units": 19.34739567432341,
+      "affine_transport_max_absolute_error": 3.552713678800501e-15,
+      "scalar_affine_interior_commutes": true,
+      "border_cues_excluded_from_alignment": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "raw_noise_std": 2.6,
+      "order_difference_rms_raw_units": 31.185454833979787,
+      "affine_transport_max_absolute_error": 3.552713678800501e-15,
+      "scalar_affine_interior_commutes": true,
+      "border_cues_excluded_from_alignment": true
+    }
+  ],
+  "primary_contrasts": [
+    {
+      "pipeline": "raw_shift",
+      "family": "rout",
+      "confirmation_sr_difference": 1.0,
+      "confirmation_gaussian_sr": 1.0,
+      "clean_sr_loss": 0.0,
+      "support_criterion_passed": true
+    },
+    {
+      "pipeline": "raw_shift",
+      "family": "r3",
+      "confirmation_sr_difference": 1.0,
+      "confirmation_gaussian_sr": 1.0,
+      "clean_sr_loss": 0.0,
+      "support_criterion_passed": true
+    },
+    {
+      "pipeline": "feature_shift_surrogate",
+      "family": "rout",
+      "confirmation_sr_difference": 0.0,
+      "confirmation_gaussian_sr": 0.0,
+      "clean_sr_loss": 0.0,
+      "support_criterion_passed": false
+    },
+    {
+      "pipeline": "feature_shift_surrogate",
+      "family": "r3",
+      "confirmation_sr_difference": 0.04999999999999999,
+      "confirmation_gaussian_sr": 0.35,
+      "clean_sr_loss": 0.0,
+      "support_criterion_passed": false
+    }
+  ],
+  "training_range_median": 13.0,
+  "template_variance_floor": 4.892205520000009e-06,
+  "frozen_cnn_clean_confirmation": {
+    "budget": 2000,
+    "attack_pool_size": 5000,
+    "repetitions": 20,
+    "attack_order_seed": 8001,
+    "rank_convention": "zero_based_conservative_ties",
+    "ge_at_budget": 112.0,
+    "sr_at_budget": 0.0,
+    "success_threshold": 0.9,
+    "traces_to_sustained_success": null,
+    "recovery_censored": true,
+    "criterion": "SR >= threshold at every remaining trace count through budget"
+  },
+  "independent_cpa_endpoint_checks": 2560,
+  "confirmation_method_selection_performed": false,
+  "all_original_inputs_preserved": true,
+  "new_gpu_trainings": 0,
+  "full_gpu_trainings_total": 3,
+  "new_real_data_optimizer_updates": 0,
+  "final_attack_payloads_read": false,
+  "seconds": 252.2481546998024,
+  "limitations": "Same-key/same-campaign profiling confirmation; synthetic global shifts/noise, not cross-device. Existing alignment baselines and mask-aided CPA point selection; novelty unverified"
+}

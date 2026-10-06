@@ -1,0 +1,72 @@
+{
+  "result_summaries_verified": 128,
+  "sampled_trace_only_shift_estimates_independently_verified": 256,
+  "cpa_endpoints_independently_checked_during_execution": 2560,
+  "disjoint_confirmation_indices_verified": true,
+  "template_fit_training_only_verified": true,
+  "rng_draws_and_reconstructed_states": {
+    "validation": {
+      "uniform_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 144056166388432955585855354044191819797,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "noise_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 178890988483121138810503792457774216705,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "standard_normal_draws_sha256": "7433a7076255d6cebf1862f6dc33bec1d6bd4f0bc324cc62e19008c7eeec002a",
+      "note": "States reconstructed from frozen seed/shape/version, with saved uniform draws verified"
+    },
+    "confirmation": {
+      "uniform_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 144056166388432955585855354044191819797,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "noise_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 178890988483121138810503792457774216705,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "standard_normal_draws_sha256": "7433a7076255d6cebf1862f6dc33bec1d6bd4f0bc324cc62e19008c7eeec002a",
+      "note": "States reconstructed from frozen seed/shape/version, with saved uniform draws verified"
+    }
+  },
+  "original_artifacts_preserved": true,
+  "source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "tests": 52,
+  "failures": 0,
+  "pytest_junit_seconds": 29.476,
+  "gate_still_failed": true,
+  "full_gpu_trainings_total": 3,
+  "canonical_notebook_count": 1,
+  "new_gpu_trainings": 0,
+  "new_real_data_optimizer_updates": 0,
+  "final_attack_payloads_read": false,
+  "seconds": 4.184306599898264,
+  "artifact_sha256": {
+    "plan.json": "d6bf1302f7d9f430deca959ab1050280974b6299da59a1c29e8857899ec46b61",
+    "results.json": "f21fc29be818b58b6f32a0030309feb10cc6ae6c032802e0886e98fb24345d63",
+    "splits.npz": "8f2b0bd92b624355c1629fec1e6b12631a42ffd86f1c6b54b988750cad5c8686",
+    "arrays.npz": "74fe5b0dbd1560135570375d445bf7c2222090c1c21d1b63862b44be2962a040",
+    "pytest.xml": "1a8476e9a59859c14451b48651e1cec3ed03cde366400b891d4a0804a99dc3ee"
+  }
+}

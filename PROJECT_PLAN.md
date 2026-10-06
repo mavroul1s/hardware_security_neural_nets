@@ -39,8 +39,54 @@ CPU sensitivity της 5/10 με τα ίδια σημεία/κέντρα: θόρ
 με σύνδεση στα CNN failures και την υπάρχουσα δεύτερης τάξης διαρροή. Το αρχικό
 augmentation ερώτημα παραμένει ανοικτό· δεν μετρήθηκε επίδραση training augmentation.
 Η βιβλιογραφία δεν τεκμηριώνει νέα τεχνική ή εγγυημένο ερευνητικό κενό.
-Επόμενο βήμα μέσα στο ισχύον scope: αναπαραγωγή/έλεγχος των υπαρχόντων artifacts
-από καθαρό CPU περιβάλλον, χωρίς αλλαγή models, budgets, seeds ή πρωτοκόλλου.
+Η αναπαραγωγή σε νέο CPU venv ολοκληρώθηκε στις5/10: 27 exact dependency wheels,
+ξεχωριστό source snapshot, 44 tests passed/14warnings, ίδια best/last CNN CE/ranks,
+ίδιες δύο raw correlation curves και32 sensitivity rows/138 arrays. Επαληθεύτηκαν
+640 Pearson endpoints. Πραγματικό replay62,36s, suite597,51s· χωρίς νέαGPU ή
+real-data optimizer updates. Ίδιο Windows host/base interpreter, όχι cross-device proof.
+Αναφορά `outputs/cpu_reproduction_2026-10-05/REPORT_EL.md`, οδηγίες
+`docs/CPU_REPRODUCTION.md`.
+
+Νεότερη εντολή της 5/10: ο χρήστης ζήτησε πρόσθετα πειράματα προς paper και ένταξή
+τους στην εργασία. Εκτελέστηκαν τρεις CPU φάσεις με πάγωμα κάθε πλάνου πριν τη
+δική του εκτέλεση: trace-only shift estimation, coordinate-consistent normalization
+comparison, training-label-only point selection. Χωριστές profiling confirmation
+pools των5.000 με seeds20261005/6/7, χωρίς αύξηση training10k ή νέα GPU εκπαίδευση.
+Η πρώτη ένδειξη raw Gaussian20/20 και στα δύο παλιά ζεύγη δεν επαναλήφθηκε
+στο δεύτερο confirmation:11/20,20/20. Με νέα train-label-only σημεία και τρίτη pool:
+20/20,18/20 έναντι fixed0/20,0/20 στο ±5/σraw1,3· OOD±10/σraw2,6 μόνο6/20,0/20.
+Η αρχική surrogate σύγκριση είχε λάθος raw-domain centering· διατηρήθηκε και ελέγχθηκε
+προοπτικά σε σωστό domain. Δεν εξηγεί το clean CNN failure ούτε αποδεικνύει novelty.
+Αναφορά `outputs/paper_extension_2026-10-05/REPORT_EL.md`, ενσωμάτωση στη§12 της
+τελικής αναφοράς,288 recovery summaries/5.760 independent CPA endpoints/57 tests.
+Επόμενο: primary overlap/baseline comparison και ανεξάρτητη campaign/key αξιολόγηση
+με νέο frozen protocol. Όλες οι confirmation pools τώρα έχουν εξεταστεί και δεν
+επαναχρησιμοποιούνται ως αθέατες. Παραμένουν3 GPU trainings, cap4,1notebook, failed gate.
+
+Συνέχεια της5/10: τέταρτη CPU φάση με frozen train-label-only pairs και νέο confirmation5k
+seed20261008. Σύγκριση NCC/Gaussian με SAD training mean, SAD training-selected reference
+και deterministic rolled-Gaussian offset control. Gaussian/NCC/SADmean20/20,20/20
+στη combined5, rolled0/20,0/20, SADreference20/20,19/20. GaussianOOD2/20,3/20,
+SADmean2/20,6/20· κανέναOOD sustainedSR90. Η γνωστή SAD ισοφαρίζει το κύριοendpoint,
+δεν τεκμηριώνεται νέα Gaussian μέθοδος.61tests/112νέαsummaries/2.240νέαendpointchecks,
+112 πρόσθετα independent replays. Αναφορά `outputs/paper_alignment_controls_2026-10-05/REPORT_EL.md`.
+Η τέταρτη confirmation pool έχει πλέον εξεταστεί· συνολικά35k unique train/val/confirm rows.
+Επόμενο παραμένει ανεξάρτητη campaign/key αξιολόγηση και κατάλληλη ισχυρή baseline
+σύγκριση, όχι νέο Gaussian superiority claim από το ίδιο fixed-key benchmark.
+
+Τρέχουσα συνέχεια της5/10: ολοκληρώθηκε πέμπτη CPU φάση στην επίσημη variable-key
+καμπάνια1400samples, με νέα train10k/val5k και prospective final attack5k.
+Point selection/moments πάγωσαν πριν από validation/attack. Το νέο πραγματικό key
+και byte2 διαφέρουν από το αρχικό· το πλήρες key απουσιάζει από το training10k.
+Combined5: όλες οι έξι μέθοδοι0/20 και στα δύο pairs. Clean Gaussian15/20,0/20,
+fixed10/20,0/20. Δεν πέρασε το προκαθορισμένο criterion. Fit στην καινούρια καμπάνια,
+όχι zero-shot/cross-device proof ή απομόνωση μόνο της αλλαγής κλειδιού.
+Θόρυβοςσraw4,8/9,6 από train median range48, ίδιοι relative factors με τις παλιές φάσεις.
+Αναφορά `outputs/paper_variable_campaign_2026-10-05/REPORT_EL.md`, ενσωμάτωση στη§14,
+65tests/48νέαsummaries/960νέαexecutionchecks/48additionalreplays, χωρίς νέαGPU.
+Το νέο attack subset εξετάστηκε και αποκλείεται από tuning. Original fixed-key attack locked.
+Επόμενο ερευνητικό ερώτημα: σταθερότητα και false-selection έλεγχος της point επιλογής
+μόνο σε νέα profiling rows, με νέο frozen plan· καμία επαναρρύθμιση πάνω στο evaluated attack.
 
 ## Προσωρινό ερευνητικό ερώτημα
 
@@ -124,3 +170,19 @@ training-only στατιστικοί έλεγχοι και οι frozen CNN δι�
 προκαθορισμένες feature-space corruptions, και ποια όρια έχει το known-shift control;
 Αυτό περιγράφει τα εκτελεσμένα validation πειράματα· δεν είναι νέο GPU scope,
 equal-information μέτρηση υπεροχής correlation ή τελική attack επιβεβαίωση.
+
+## Πρόσθετο ερώτημα της επέκτασης προς paper
+
+Με μόνο training traces/identity labels για επιλογή centered-product σημείων και
+trace-only inference για shifts, πόση recovery διατηρούν απλές NCC/Gaussian εκτιμήσεις
+υπό bounded raw shifts και noise; Πώς αλλάζει η εκτίμηση με feature-space surrogate
+και σωστό coordinate domain; Η θέση του normalization και second-order alignment
+έχουν γνωστά προηγούμενα. Η paired ποσοτικοποίηση/όρια αποτελούν υπό εξέταση
+replication/robustness κατεύθυνση, χωρίς επιβεβαιωμένο νέο βιβλιογραφικό κενό.
+Οι20 κοινές σειρές δεν αποτελούν ανεξάρτητα training seeds ή κλειδιά· same-campaign
+confirmation δεν αντικαθιστά unknown-key/cross-device evidence.
+
+Η phase5 προσθέτει πραγματική αξιολόγηση ενός νέου άγνωστου attack key, μετά από
+campaign-specific training fit. Το primary criterion απέτυχε. Δεν υποστηρίζεται
+γενική robustness πρόταση· οι διαφορές καμπάνιας/κλειδιού/noise units παραμένουν
+συγχυτικοί παράγοντες. Οι είκοσι σειρές δεν πολλαπλασιάζουν τα ανεξάρτητα κλειδιά.

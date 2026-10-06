@@ -1,0 +1,1896 @@
+{
+  "results": [
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 390,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 755,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 762,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "sad_training_reference",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 368,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "sad_training_reference",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 771,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 604,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 926,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 390,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 140.6,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 136.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 755,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 367,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 762,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "sad_training_reference",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 368,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "sad_training_reference",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 771,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 139.4,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 120.95,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 390,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 765,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 137.0,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 146.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1226,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.3,
+      "sr_at_budget": 0.75,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1277,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.35,
+      "sr_at_budget": 0.8,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1207,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.45,
+      "sr_at_budget": 0.75,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "sad_training_reference",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1191,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "sad_training_reference",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.25,
+      "sr_at_budget": 0.8,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 141.75,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 118.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1191,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.1,
+      "sr_at_budget": 0.9,
+      "traces_to_sustained_sr90": 1998,
+      "recovery_censored": false
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 117.5,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 165.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.75,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 105.25,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.95,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 102.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.9,
+      "sr_at_budget": 0.7,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 104.6,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "sad_training_reference",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.8,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "sad_training_reference",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 104.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 113.15,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 144.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 1.1,
+      "sr_at_budget": 0.65,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 104.65,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 416,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 796,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 390,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1010,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 391,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1010,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 391,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1009,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "sad_training_reference",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 471,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "sad_training_reference",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 904,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 775,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 810,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 416,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 796,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 133.5,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 140.3,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 390,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1010,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 391,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1010,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 391,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1009,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "sad_training_reference",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 471,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "sad_training_reference",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 904,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 131.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 136.9,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 416,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 796,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 129.05,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 144.2,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1028,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1888,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1019,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1606,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1023,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1888,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "sad_training_reference",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1023,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "sad_training_reference",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.05,
+      "sr_at_budget": 0.95,
+      "traces_to_sustained_sr90": 1300,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 134.35,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 133.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 0.0,
+      "sr_at_budget": 1.0,
+      "traces_to_sustained_sr90": 1015,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 0.05,
+      "sr_at_budget": 0.95,
+      "traces_to_sustained_sr90": 1893,
+      "recovery_censored": false
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 145.45,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 152.25,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 34.2,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 9.15,
+      "sr_at_budget": 0.25,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 40.2,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 8.45,
+      "sr_at_budget": 0.15,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 43.65,
+      "sr_at_budget": 0.1,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 7.85,
+      "sr_at_budget": 0.3,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "sad_training_reference",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 41.55,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "sad_training_reference",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 7.35,
+      "sr_at_budget": 0.3,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 121.65,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "gaussian_offsets_rolled",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 115.8,
+      "sr_at_budget": 0.0,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "oracle_known_shift",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "ge_at_budget": 33.35,
+      "sr_at_budget": 0.05,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "oracle_known_shift",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "ge_at_budget": 12.65,
+      "sr_at_budget": 0.2,
+      "traces_to_sustained_sr90": null,
+      "recovery_censored": true
+    }
+  ],
+  "primary_confirmation_condition": "combined5",
+  "predefined_correspondence_criterion_met": true,
+  "gaussian_better_than_sad_mean_at_primary_endpoint": false,
+  "shift_inference_timings": [
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "traces": 5000,
+      "inference_seconds": 0.7698053000494838,
+      "microseconds_per_trace": 153.96106000989676,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "traces": 5000,
+      "inference_seconds": 0.9194609997794032,
+      "microseconds_per_trace": 183.89219995588064,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "traces": 5000,
+      "inference_seconds": 0.5940281001385301,
+      "microseconds_per_trace": 118.80562002770603,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "clean",
+      "method": "sad_training_reference",
+      "traces": 5000,
+      "inference_seconds": 0.6046534997876734,
+      "microseconds_per_trace": 120.93069995753467,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "traces": 5000,
+      "inference_seconds": 0.6571822999976575,
+      "microseconds_per_trace": 131.4364599995315,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "traces": 5000,
+      "inference_seconds": 0.9233467001467943,
+      "microseconds_per_trace": 184.66934002935886,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "traces": 5000,
+      "inference_seconds": 0.5925974999554455,
+      "microseconds_per_trace": 118.5194999910891,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "shift5",
+      "method": "sad_training_reference",
+      "traces": 5000,
+      "inference_seconds": 0.5977095998823643,
+      "microseconds_per_trace": 119.54191997647285,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "traces": 5000,
+      "inference_seconds": 0.665232399944216,
+      "microseconds_per_trace": 133.0464799888432,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "traces": 5000,
+      "inference_seconds": 0.9259870999958366,
+      "microseconds_per_trace": 185.19741999916732,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "traces": 5000,
+      "inference_seconds": 0.6115455001126975,
+      "microseconds_per_trace": 122.3091000225395,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined5",
+      "method": "sad_training_reference",
+      "traces": 5000,
+      "inference_seconds": 0.6163360998034477,
+      "microseconds_per_trace": 123.26721996068954,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "traces": 5000,
+      "inference_seconds": 0.6597040998749435,
+      "microseconds_per_trace": 131.9408199749887,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "traces": 5000,
+      "inference_seconds": 0.9083271999843419,
+      "microseconds_per_trace": 181.66543999686837,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "traces": 5000,
+      "inference_seconds": 0.6125930000562221,
+      "microseconds_per_trace": 122.51860001124442,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "validation",
+      "condition": "combined10_ood",
+      "method": "sad_training_reference",
+      "traces": 5000,
+      "inference_seconds": 0.6216323999688029,
+      "microseconds_per_trace": 124.32647999376059,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "ncc_template",
+      "traces": 5000,
+      "inference_seconds": 0.6674969000741839,
+      "microseconds_per_trace": 133.4993800148368,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "gaussian_template",
+      "traces": 5000,
+      "inference_seconds": 0.9377584001049399,
+      "microseconds_per_trace": 187.551680020988,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "sad_training_mean",
+      "traces": 5000,
+      "inference_seconds": 0.6153353000991046,
+      "microseconds_per_trace": 123.06706001982093,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "clean",
+      "method": "sad_training_reference",
+      "traces": 5000,
+      "inference_seconds": 0.5952333998866379,
+      "microseconds_per_trace": 119.04667997732759,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "ncc_template",
+      "traces": 5000,
+      "inference_seconds": 0.6667104999069124,
+      "microseconds_per_trace": 133.3420999813825,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "gaussian_template",
+      "traces": 5000,
+      "inference_seconds": 0.9068706000689417,
+      "microseconds_per_trace": 181.37412001378834,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "sad_training_mean",
+      "traces": 5000,
+      "inference_seconds": 0.5996256999205798,
+      "microseconds_per_trace": 119.92513998411596,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "shift5",
+      "method": "sad_training_reference",
+      "traces": 5000,
+      "inference_seconds": 0.5994409997947514,
+      "microseconds_per_trace": 119.88819995895028,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "ncc_template",
+      "traces": 5000,
+      "inference_seconds": 0.6570584001019597,
+      "microseconds_per_trace": 131.41168002039194,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "gaussian_template",
+      "traces": 5000,
+      "inference_seconds": 1.0237618999090046,
+      "microseconds_per_trace": 204.7523799818009,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "sad_training_mean",
+      "traces": 5000,
+      "inference_seconds": 0.5951971998438239,
+      "microseconds_per_trace": 119.03943996876478,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined5",
+      "method": "sad_training_reference",
+      "traces": 5000,
+      "inference_seconds": 0.6014884999021888,
+      "microseconds_per_trace": 120.29769998043776,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "ncc_template",
+      "traces": 5000,
+      "inference_seconds": 0.65169269987382,
+      "microseconds_per_trace": 130.338539974764,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "gaussian_template",
+      "traces": 5000,
+      "inference_seconds": 0.938047599978745,
+      "microseconds_per_trace": 187.609519995749,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "sad_training_mean",
+      "traces": 5000,
+      "inference_seconds": 0.6187583999708295,
+      "microseconds_per_trace": 123.7516799941659,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    },
+    {
+      "pool": "confirmation",
+      "condition": "combined10_ood",
+      "method": "sad_training_reference",
+      "traces": 5000,
+      "inference_seconds": 0.6617962000891566,
+      "microseconds_per_trace": 132.35924001783133,
+      "scope": "One original-padding inference call; excludes edge replay, I/O, setup and CPA"
+    }
+  ],
+  "tests": {
+    "tests": 61,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 14.877,
+    "warnings": 14
+  },
+  "new_recovery_summaries": 112,
+  "new_independent_execution_cpa_endpoints": 2240,
+  "additional_independent_endpoint_replays": 112,
+  "new_sampled_independent_shift_estimates": 256,
+  "four_phase_recovery_summaries": 400,
+  "four_phase_independent_execution_cpa_endpoints": 8000,
+  "four_phase_cpu_experiment_seconds": 724.7051646001637,
+  "phase_four_cpu_experiment_seconds": 136.87390130013227,
+  "novelty_verified": false,
+  "new_gpu_trainings": 0,
+  "full_gpu_trainings_total": 3,
+  "canonical_notebook_count": 1,
+  "new_real_data_optimizer_updates": 0,
+  "final_attack_payloads_read": false,
+  "input_sha256": {
+    "plan.json": "7bfedb3b95333831fdcfceb518cd93bdede0cdf4065ec93b8879e27316131fd8",
+    "results.json": "7d13d4a83342602152da081ab569b1a6b8559eacb1ebc51e78d37bcb8d6cafa6",
+    "reference.json": "a15802db5bfe0daaf8fd91a8c5e1de89de1adfb8807b598c05e661bb1314eeb9",
+    "splits.npz": "8fdc90761a1c34ff83bed3638d2b224b2a4a589ac72bd3e82bd5320def4c5534",
+    "arrays.npz": "79af6f1e39461aafd8f654f429f3ba8c573ff0f49229dc2fdde681b0d7c38a26",
+    "verification.json": "7d35a4beda29f2280be0e4b0863142e8f24aa16f8b50967db6ed6b6e6f71c381",
+    "pytest.xml": "f3af12b9d4fa5d1aeec64f34ab57c8cec751a16ed446367c58c5395359aa9d8b"
+  }
+}

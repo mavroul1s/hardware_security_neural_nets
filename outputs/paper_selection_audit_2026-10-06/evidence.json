@@ -1,0 +1,151 @@
+{
+  "results": [
+    {
+      "campaign": "fixed",
+      "family": "pair1",
+      "pair": [
+        156,
+        521
+      ],
+      "training_correlation": -0.19849061214714378,
+      "confirmation_correlation": -0.2143347524594098,
+      "training_global_max_null_tail": 0.01,
+      "signed_confirmation_correlation": 0.2143347524594098,
+      "confirmation_one_sided_p": 0.001,
+      "confirmation_bonferroni_p": 0.004,
+      "signed_signal_replicates": true
+    },
+    {
+      "campaign": "fixed",
+      "family": "pair2",
+      "pair": [
+        182,
+        547
+      ],
+      "training_correlation": -0.1644454865784579,
+      "confirmation_correlation": -0.1896268021267169,
+      "training_global_max_null_tail": 0.01,
+      "signed_confirmation_correlation": 0.1896268021267169,
+      "confirmation_one_sided_p": 0.001,
+      "confirmation_bonferroni_p": 0.004,
+      "signed_signal_replicates": true
+    },
+    {
+      "campaign": "variable",
+      "family": "pair1",
+      "pair": [
+        187,
+        1080
+      ],
+      "training_correlation": -0.07040462525514771,
+      "confirmation_correlation": -0.10538424989105774,
+      "training_global_max_null_tail": 0.01,
+      "signed_confirmation_correlation": 0.10538424989105774,
+      "confirmation_one_sided_p": 0.001,
+      "confirmation_bonferroni_p": 0.004,
+      "signed_signal_replicates": true
+    },
+    {
+      "campaign": "variable",
+      "family": "pair2",
+      "pair": [
+        334,
+        573
+      ],
+      "training_correlation": -0.03794180708297025,
+      "confirmation_correlation": -0.026325645903796113,
+      "training_global_max_null_tail": 0.69,
+      "signed_confirmation_correlation": 0.026325645903796113,
+      "confirmation_one_sided_p": 0.023,
+      "confirmation_bonferroni_p": 0.092,
+      "signed_signal_replicates": false
+    }
+  ],
+  "calibrations": {
+    "fixed": {
+      "candidate_pairs": 211575,
+      "observed_maximum": 0.19849061214714378,
+      "null_maximum_median": 0.03962774512126315,
+      "null_maximum_range": [
+        0.031631384875885314,
+        0.050449530566562886
+      ],
+      "max_null_tail": {
+        "pair1": 0.01,
+        "pair2": 0.01
+      },
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 273884247433129849695782552253498230263,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 2205191028
+      },
+      "confirmation_rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 236942618576549476080942383010509472967,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2448276277
+      }
+    },
+    "variable": {
+      "candidate_pairs": 885115,
+      "observed_maximum": 0.07040462525514771,
+      "null_maximum_median": 0.0395308224813493,
+      "null_maximum_range": [
+        0.033252033973404364,
+        0.05421662239925081
+      ],
+      "max_null_tail": {
+        "pair1": 0.01,
+        "pair2": 0.69
+      },
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 273884247433129849695782552253498230263,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 2205191028
+      },
+      "confirmation_rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 236942618576549476080942383010509472967,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2448276277
+      }
+    }
+  },
+  "replicated_pairs": 3,
+  "no_new_recovery_summaries": true,
+  "six_phase_cpu_seconds": 890.3882462002803,
+  "prior_recovery_summaries": 448,
+  "prior_execution_endpoints": 8960,
+  "prior_additional_replays": 160,
+  "tests": {
+    "tests": 70,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 19.422
+  },
+  "new_gpu_trainings": 0,
+  "paper_ready": false,
+  "novelty_verified": false,
+  "attack_payloads_or_key_metadata_read_in_this_audit": false,
+  "input_sha256": {
+    "plan.json": "5cbaa900b3fb1f30f5066872074130c018db42ceeb17b86aa86088220d97fcf0",
+    "results.json": "17c37c440156f79179b331a5a8e8250d6b3d99dabd209ebab6f98968f0ba9641",
+    "verification.json": "1a13e655e3898bd243561e788dea47224b435adf44edb2a58f099d16ed9e78a7",
+    "pytest.xml": "ad1c3b4766094b2f5d328f1c53e8042bad38ce324700b65a53e1fed2e122d45a"
+  }
+}

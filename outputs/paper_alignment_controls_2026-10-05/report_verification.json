@@ -1,0 +1,45 @@
+{
+  "report_sr_table_rows_verified": 4,
+  "primary_ge_sr_sustained_table_verified": true,
+  "alignment_accuracy_and_single_call_timings_verified": true,
+  "csv_rows_verified": 112,
+  "report_local_links_verified": 9,
+  "all_input_sha256_verified": true,
+  "source_checkpoint_packet_and_canonical_notebook_preserved": true,
+  "tests": {
+    "tests": 61,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 14.877,
+    "warnings": 14
+  },
+  "four_phase_recovery_summaries": 400,
+  "four_phase_independent_execution_cpa_endpoints": 8000,
+  "additional_independent_endpoint_replays": 112,
+  "gaussian_primary_sr_equal_to_sad_mean": true,
+  "wrong_correspondence_primary_sr_zero": true,
+  "novelty_unverified": true,
+  "new_gpu_trainings": 0,
+  "full_gpu_trainings_total": 3,
+  "canonical_notebook_count": 1,
+  "final_attack_payloads_read": false,
+  "plots_visually_checked": [
+    "sad_and_correspondence.png"
+  ],
+  "artifact_sha256": {
+    "REPORT_EL.md": "9ac14e9fe83984b03466062437777d605575ff227e6c0dbd0b5aa7783a72a060",
+    "all_results.csv": "9e3416b6139a05ecc09553f498e2d65e11f70f9a098bcf188062e5bdb7e482c0",
+    "evidence.json": "1c0ae64e24d8ef9ab20b0a44cfc0fdc7e419bd20d65f387ffc36ed2f95a6f5f4",
+    "sad_and_correspondence.png": "13cab8f92a63ee149206902a9ed85202b8875557d90bf2d048f5c2011b1cc509",
+    "verification.json": "7d35a4beda29f2280be0e4b0863142e8f24aa16f8b50967db6ed6b6e6f71c381"
+  },
+  "companion_sha256": {
+    "notebooks/paper_alignment_controls.py": "49818822675f86374557b85d6cfbcc2e5d90206c9a08d1a7b492efd5ed1826cb",
+    "notebooks/verify_alignment_controls.py": "345420a4c2ce125cbbe55477235c0c55a93a743d6034fd86121c88c625ef216d",
+    "notebooks/build_alignment_controls_report.py": "e508743c03a94ff1711b1e17d888d981b58bad0a08d15ea59784139329c31e55",
+    "notebooks/verify_alignment_controls_report.py": "a05a1521b8b94ee3ee7587a8c02ef72ac11dbaa27d8fc7fc507f7dc64b9ba038",
+    "tests/test_alignment_controls.py": "ad78b2686f5dc51b76f2bd4ef7ac8b2f23439ff167019ed2cc5bd616fe9b5925",
+    "literature/ALIGNMENT_BASELINES_2026-10-05.md": "6e3e8bb22627906ea6a58f02bc2ce3c6d981e49458c1ce1b02df4b1f9c01551b"
+  }
+}
