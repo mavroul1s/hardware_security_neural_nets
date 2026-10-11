@@ -411,16 +411,88 @@ def main():
         line = f"| {row['name']} | {row['n_train']} | {row['updates']} | {row['best_epoch']} | {row['minimum_ce']:.6f} | {round(row['sr']*20)}/20 | {row['ge']:.6f} |"
         assert line in report
     assert f"{budget_evidence['experiment_seconds']:.6f}s" in report
+    confirmation = ROOT / "outputs/paper_confirmation_2026-10-11"
+    confirmation_plan = read(confirmation / "plan.json")
+    confirmation_evidence = read(confirmation / "evidence.json")
+    confirmation_report = read(confirmation / "report_verification.json")
+    confirmation_training = read(confirmation / "training_verification.json")
+    confirmation_attack = read(confirmation / "attack_verification.json")
+    confirmation_restored = read(confirmation / "restored_source_verification.json")
+    authorization = read(confirmation / "authorization.json")
+    assert authorization["specific_user_agreement"] and authorization["approved_full_gpu_training_cap"] == 6
+    assert authorization["combined_training_authorized"] and authorization["attack_evaluation_authorized"]
+    assert authorization["plan_identity"] == hashlib.sha256(json.dumps(confirmation_plan, sort_keys=True).encode()).hexdigest()
+    for field in ("input_hashes", "preservation_sha256"):
+        for relative, expected in confirmation_plan[field].items():
+            assert sha(ROOT / relative) == expected, relative
+    assert len(confirmation_plan["preservation_sha256"]) == 40
+    for relative, expected in confirmation_evidence["artifact_sha256"].items():
+        assert sha(confirmation / relative) == expected, relative
+    assert confirmation_report["verified"] and confirmation_report["actual_full_gpu_trainings"] == 6
+    assert confirmation_report["report_sha256"] == sha(confirmation / "REPORT_EL.md")
+    assert confirmation_report["condition_table_rows_verified"] == 16 and confirmation_report["paired_rows_verified"] == 8
+    assert confirmation_training["verified"] and confirmation_training["recorded_runtime_matches_baseline"]
+    assert confirmation_training["schedule_values_verified"] == 45000
+    assert confirmation_training["rank_prefixes_verified"] == 40000 and confirmation_training["cpu_predictions_verified"] == 5000
+    assert confirmation_training["best_epoch"] == 4 and confirmation_training["clean_validation_sr_at_2000"] == .05
+    assert confirmation_attack["verified"] and confirmation_attack["rank_prefixes_verified"] == 3200000
+    assert confirmation_attack["baseline_clean_confirmation_met"] and not confirmation_attack["augmentation_joint_primary_met"]
+    assert confirmation_attack["conditional_orders_not_independent_keys"] and confirmation_attack["new_optimizer_updates"] == 0
+    assert confirmation_restored["verified"] and confirmation_restored["original_cells_restored"]
+    assert confirmation_restored["current_version"] == 5 and confirmation_restored["executed_version_preserved"] == 4
+    assert confirmation_restored["private"] and confirmation_restored["same_input"]
+    assert not confirmation_restored["new_training_started"]
+    training_output = ROOT / confirmation_evidence["training_output"]
+    attack_output = ROOT / confirmation_evidence["attack_output"]
+    for folder, verification in ((training_output, confirmation_training), (attack_output, confirmation_attack)):
+        for relative, expected in verification["artifact_sha256"].items():
+            assert sha(folder / relative) == expected, relative
+    training_results = read(training_output / "results.json")
+    attack_results = read(attack_output / "results.json")
+    assert training_results["summary"]["optimization_steps"] == 45000
+    assert training_results["summary"]["epochs"] == 50 and training_results["full_gpu_trainings_total"] == 6
+    assert attack_results["complete"] and not attack_results["selection_from_attack"]
+    assert attack_results["new_optimizer_updates"] == 0
+    tables = {label: {row["condition"]: row for row in rows} for label, rows in attack_results["models"].items()}
+    draft = (ROOT / "docs/PAPER_DRAFT_2026-10-11.md").read_text(encoding="utf-8")
+    assert "## 24." in report and "112 tests passed" in report and "111.850" in report and "6.500.000" in report
+    for condition in confirmation_plan["attack_config"]["conditions"]:
+        name = condition["name"]
+        a, b = tables["baseline"][name], tables["combined"][name]
+        assert a["repetitions"] == b["repetitions"] == 100 and a["budget"] == b["budget"] == 2000
+        line = (f"| {name} | {condition['noise_std']:.2f} | {condition['max_shift']} | "
+                f"{round(a['sr_at_budget']*100)}/100 | {a['ge_at_budget']:.2f} | "
+                f"{round(b['sr_at_budget']*100)}/100 | {b['ge_at_budget']:.2f} |")
+        assert report.count(line) == draft.count(line) == 1, name
+    for value in (training_results["summary"]["train_seconds"], training_results["summary"]["validation_seconds"],
+                  training_results["experiment_seconds"], attack_results["evaluation_seconds"], confirmation_attack["seconds"]):
+        assert f"{value:.6f}s" in report, value
+    confirmation_tests = ET.parse(confirmation / "transport_repair/pytest.xml").getroot().find("testsuite").attrib
+    assert int(confirmation_tests["tests"]) == 112 and confirmation_tests["failures"] == confirmation_tests["errors"] == "0"
+    assert confirmation_plan["variable_profiling_unused_unchanged"] == 30000
+    assert not confirmation_plan["variable_payloads_read"]
     record = {"artifact_inputs_verified":len(evidence["input_sha256"]),
         "baseline_report_table_verified":True, "sensitivity_report_table_verified":True,
         "report_local_links_verified":link_count, "cost_totals_verified":True,
         "production_source_unchanged":True, "checkpoint_sha256":checkpoint_hashes,
         "active_packet_unchanged":True, "notebook_matches_saved_private_version8":True, "notebook_count":1,
         "cnn_gate_still_failed":True, "original_study_gpu_trainings_total":3,
-        "full_gpu_trainings_total":5, "new_training_performed":True,
-        "new_kaggle_execution":True, "final_attack_set_read":False,
+        "full_gpu_trainings_total":6, "new_training_performed":True,
+        "new_kaggle_execution":True, "final_attack_set_read":True,
         "full_test_suite_at_original_synthesis":{**evidence["local_tests"], "rerun_for_document_synthesis":False},
-        "latest_full_test_suite":{**budget_tests, "run_for_budget_transport_portability":True},
+        "latest_full_test_suite":{**confirmation_tests, "run_for_confirmation_transport_repair":True},
+        "kaggle_confirmation_addendum_verified":True,"baseline_attack_confirmation_passed":True,
+        "augmentation_joint_primary_failed":True,"attack_rank_prefixes_verified":3200000,
+        "six_gpu_trainings_total_updates":111850,"six_gpu_trainings_total_exposures":6500000,
+        "six_gpu_training_loop_seconds":evidence["training_loop_seconds_total"]+recipe_evidence["training_loop_seconds"]+budget_evidence["training_seconds"]+training_results["summary"]["train_seconds"],
+        "six_gpu_validation_loop_seconds":evidence["validation_loop_seconds_total"]+recipe_evidence["validation_loop_seconds"]+budget_evidence["validation_seconds"]+training_results["summary"]["validation_seconds"],
+        "confirmation_cpu_evaluation_seconds":attack_results["evaluation_seconds"],
+        "confirmation_independent_rank_verifier_seconds":confirmation_attack["seconds"],
+        "confirmation_frozen_inputs_verified":len(confirmation_plan["input_hashes"]),
+        "confirmation_preserved_artifacts_verified":40,"confirmation_manuscript_attack_table_verified":True,
+        "kaggle_confirmation_sha256":{n:sha(confirmation/n) for n in
+            ("REPORT_EL.md","evidence.json","training_verification.json","attack_verification.json",
+             "report_verification.json","plan.json","restoration.json","restored_source_verification.json")},
         "kaggle_budget_addendum_verified":True,"kaggle_budget_primary_passed":True,
         "kaggle_budget_actual_updates":45000,"five_gpu_trainings_total_updates":66850,
         "five_gpu_trainings_total_exposures":4250000,
@@ -428,7 +500,7 @@ def main():
         "five_gpu_validation_loop_seconds":evidence["validation_loop_seconds_total"]+recipe_evidence["validation_loop_seconds"]+budget_evidence["validation_seconds"],
         "kaggle_budget_sha256":{n:sha(budget/n) for n in ("REPORT_EL.md","evidence.json","verification.json","report_verification.json","plan.json")},
         "active_continuation_notebook_count":1,"preserved_previous_account_notebook":True,
-        "active_account":"nmavros","active_safe_saved_kernel_version":3,
+        "active_account":"nmavros","active_safe_saved_kernel_version":5,
         "window_selection_full_test_suite":{**objective_evidence["tests"], "run_for_window_selection":True},
         "kaggle_recipe_addendum_verified":True,"kaggle_recipe_primary_failed":True,
         "kaggle_recipe_actual_updates":10000,"four_gpu_trainings_total_updates":21850,
@@ -485,20 +557,21 @@ def main():
         "training_alignment_no_attack_reads":True,"training_alignment_new_correlation_rows":432,
         "cpu_closed_form_feature_fits_performed_in_phase9":True,
         "training_alignment_sha256":{n:sha(training_alignment/n) for n in ("REPORT_EL.md","evidence.json","verification.json","report_verification.json")},
-        "new_training_performed_field_scope":"Kaggle recipe10000updates and nested45k45000updates; original synthesis3trainings preserved. CPU phases7/9/10/11 fits recorded separately",
+        "new_training_performed_field_scope":"Kaggle recipe10000updates, baseline45k45000updates, combined45k45000updates; original synthesis3trainings preserved. CPU phases7/9/10/11 fits recorded separately",
         "cpu_closed_form_feature_fits_performed_in_phase11":True,
         "cpu_closed_form_feature_fits_performed_in_phase10":True,
         "cpu_closed_form_feature_fits_performed_in_phase7":True,"no_new_fit_in_phase8":True,
         "window_regression_sha256":{n:sha(windows/n) for n in ("REPORT_EL.md","evidence.json","verification.json","report_verification.json")},
         "precision_replication_sha256":{n:sha(precision/n) for n in ("REPORT_EL.md","evidence.json","verification.json","report_verification.json")},
         "variable_key_attack_subset_viewed":True,
-        "final_attack_set_read_field_scope":"Original fixed-key dataset; new variable-key subset evaluated only after frozen fit",
+        "final_attack_set_read_field_scope":"Original fixed-key attack10k evaluated once after both neural checkpoints locked; now viewed and excluded from tuning. Earlier variable-key subset stays viewed and unchanged",
+        "fixed_viewed_attack_rows":10000,"confirmation_new_independent_keys_or_acquisitions":0,
         "five_phase_recovery_summaries":448, "five_phase_execution_endpoint_checks":8960,
         "additional_independent_endpoint_replays":160,
         "cpu_reproduction_sha256":{name:sha(reproduction / name) for name in
             ("verification.json", "results.json", "REPORT_EL.md", "environment.json", "pytest.xml")},
         "reproduction_addendum_verified":True,
-        "plots_visually_checked":["baseline_histories.png"],
+        "plots_visually_checked":["baseline_histories.png","../paper_confirmation_2026-10-11/sr_attack.png","../paper_confirmation_2026-10-11/ge_attack.png"],
         "artifact_sha256":{name:sha(OUT / name) for name in ("evidence.json", "baseline_histories.png", "REPORT_EL.md")},
         "documentation_sha256":{relative:sha(ROOT / relative) for relative in
             ("README.md", "PROJECT_PLAN.md", "PROGRESS.md", "docs/EXPERIMENT_PROTOCOL.md", "docs/KAGGLE.md",
@@ -510,7 +583,8 @@ def main():
              "literature/SCHEME_AWARE_FULLTEXT_AUDIT_2026-10-06.md",
              "literature/REGRESSION_PRIOR_ART_COMPARISON_2026-10-08.md",
              "literature/SELECTION_OBJECTIVE_AUDIT_2026-10-09.md", "literature/bibliography.bib",
-             "docs/PAPER_CANDIDATE.md", "AGENTS.md")}}
+             "docs/PAPER_CANDIDATE.md", "docs/PAPER_DRAFT_2026-10-11.md",
+             "docs/PAPER_CONFIRMATION_PROTOCOL_2026-10-11.md", "literature/CONTINUATION_AUDIT_2026-10-11.md", "AGENTS.md")}}
     write_json(OUT / "verification.json", record)
     print(json.dumps({k:v for k,v in record.items() if k not in ("artifact_sha256", "documentation_sha256", "checkpoint_sha256")}, indent=2))
 

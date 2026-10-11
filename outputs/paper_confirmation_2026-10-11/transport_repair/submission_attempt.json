@@ -1,0 +1,12 @@
+{
+  "started_utc": "2026-10-11T17:10:44.051529+00:00",
+  "notebook_ref": "nmavros/hw-sec-exp2",
+  "notebook_sha256": "3e267c3030729d552ae046d02f0d9237e946e32b1a58f88e986448f0ab066d28",
+  "automatic_retry": false,
+  "version_number": 4,
+  "url": "https://www.kaggle.com/code/nmavros/hw-sec-exp2",
+  "error": "",
+  "invalid_dataset_sources": [],
+  "accepted": true,
+  "finished_utc": "2026-10-11T17:10:47.410861+00:00"
+}

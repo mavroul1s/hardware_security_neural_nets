@@ -1,5 +1,21 @@
 # Σχέδιο project
 
+Νεότερη ολοκλήρωση 11/10: ο χρήστης ενέκρινε cap6, μία combined45k και την
+τελική fixed-key attack αξιολόγηση μετά το κλείδωμα και των δύο checkpoints.
+[Αναφορά](outputs/paper_confirmation_2026-10-11/REPORT_EL.md): baseline clean
+100/100, GE0, sustainedSR90 από479 traces· combined0/100 σε όλες τις8συνθήκες.
+Το joint augmentation primary απέτυχε. Ίδια CNN16952/seed0/50epochs/batch50/
+45000updates/2250000exposures και ακριβώς ίδιο split/scaler. MinimumCE επέλεξε
+combined epoch4, όχι attack ranking. Το αποτέλεσμα είναι conditional σε ένα
+training seed/key/campaign και συνθετικές perturbations.112tests και ανεξάρτητοι
+έλεγχοι3.200.000attackrankprefixes. Current6trainings/cap6exhausted.
+Το fixedattack10k είναι πλέον viewed, αποκλεισμένο από tuning. Variable170k/30k
+viewed/unused και attack10k unchanged. Η εστιασμένη σύνθεση ολοκληρώθηκε στο
+[paper draft](docs/PAPER_DRAFT_2026-10-11.md) και στη §24 της ενιαίας εργασίας,
+με όλα τα negative results και prior-art/access gaps· νέα εκπαίδευση ή επιλογή
+σε viewedattack δεν περιλαμβάνονται σε αυτή τη φάση. Οι παλαιότερες αποφάσεις
+παρακάτω διατηρούνται ως ιστορικό.
+
 Νεότερη απόφαση11/10: εγκρίθηκε μία baseline45k και cap5, ίδιο CNN/seed0/50epochs/
 batch50/authorcycle, nestedtraining και originalvalidation5k/refittedtrain-onlyMinMax.
 Το [συγκεκριμένο πρωτόκολλο](docs/PAPER_NEXT_PROTOCOL_2026-10-11.md) είναι εγκεκριμένο,

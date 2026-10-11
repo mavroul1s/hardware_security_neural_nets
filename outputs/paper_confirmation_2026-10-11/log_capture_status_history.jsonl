@@ -1,0 +1,1 @@
+{  "started_utc": "2026-10-11T17:12:19.960587+00:00",  "version": 4,  "events": 483,  "readonly": true,  "stream_completed": false,  "error_type": "ChunkedEncodingError",  "error": "Response ended prematurely",  "finished_utc": "2026-10-11T17:15:25.653584+00:00"}

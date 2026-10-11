@@ -1,0 +1,17 @@
+{
+  "verified": true,
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "112",
+    "time": "26.962",
+    "timestamp": "2026-10-11T20:06:47.882360+03:00",
+    "hostname": "mavroul1s"
+  },
+  "frozen_inputs_preserved": true,
+  "preservation_artifacts": 40,
+  "new_training_started": false,
+  "attack_payloads_read": false
+}

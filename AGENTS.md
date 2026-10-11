@@ -1,5 +1,34 @@
 # Stable project instructions
 
+- On 2026-10-11 the user explicitly approved cap6 and final fixed-key attack evaluation.
+  Frozen outputs/paper_confirmation_2026-10-11/plan.json: one combined45k, same
+  CNN16952/seed0/50epochs/batch50/author cycle/splits/scaler as verified baseline45k.
+  One same-private-notebook submission, no automatic retry or tuning. Independently
+  verify and lock both minimum-clean-validation-CE checkpoints BEFORE opening attack.
+  Then one local CPU evaluation of original fixed-key attack10k over all eight frozen
+  conditions/100orders/budget2000. Preserve every success/failure and all five prior
+  trainings. No new seed/model/baseline, variable payloads, or unused profiling rows.
+  H1 clean baseline SR>=0.90; H2 combined_both_ood SR>=0.90 AND paired deltaSR>0
+  AND combined clean SR>=0.90. Other contrasts descriptive; no post-attack selection.
+  Orders are conditional on one pool/key, synthetic corruptions are not acquisitions.
+  Restore original notebook with QUICK_SAVE without execution after verified completion.
+  Initial SaveKernel submission was HTTP400-rejected before any version/training.
+  The user separately approved one corrected submission: unchanged science/code and
+  exact baseline reference bytes, compact TAR/XZ transport and known-working metadata.
+  Preserve both submission receipts; no further automatic retry. CPU suite112passed.
+  Version4 completed and independently verified: combined minimumCE epoch4/5.549329338,
+  viewed clean validation1/20,GE107.2. Same scaler/splits/runtime;45000LRvalues,
+  40000validationranks/5000CPU predictions, maxlogproberror4.91749e-7.
+  Both checkpoints locked before the one authorized fixed-key attack10k evaluation.
+  Baseline clean100/100,GE0,sustainedSR90from479; combined0/100 in all eight conditions.
+  H1 passed, H2 joint augmentation primary failed. Independent3200000rankprefixes
+  and paired/input/order/probability checks verified; no attack-driven selection.
+  Original fixed attack10k is NOW VIEWED and excluded from tuning. Variable profiling
+  170kviewed/30kunused and variableattack10k unchanged. Total6GPUtrainings/cap6exhausted.
+  Version5 QUICK_SAVE restored original canonical source without execution; version4
+  outputs/checkpoints and all earlier histories remain preserved. No seventh training,
+  new seed/model/selector or attack retuning is authorized by this completed phase.
+
 - On 2026-10-11 the user explicitly approved one additional baseline45k and cap5.
   Same literature CNN16952/seed0/50epochs/batch50/author linear cycle; nested45k
   training, original shared validation5k, refitted train-only feature MinMax.

@@ -1,0 +1,29 @@
+{
+  "verified": true,
+  "local_links_checked": 196,
+  "documents_checked": 9,
+  "scientific_tables_match_saved_results": true,
+  "synthesis_provenance_chain_verified": true,
+  "actual_gpu_trainings": 6,
+  "cap_exhausted": true,
+  "active_safe_saved_version": 5,
+  "independent_attack_rank_prefixes": 3200000,
+  "cpu_tests_passed": 112,
+  "preserved_artifacts": 40,
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "fixed_attack_rows_viewed": 10000,
+  "variable_unused_profiling_rows": 30000,
+  "new_experiments_during_integration": 0,
+  "document_sha256": {
+    "README.md": "e356ebf3b59dfc943cefd72e422f8330bca3a5121f64e7f4ea5a0c3d2624ae4e",
+    "PROJECT_PLAN.md": "83bee87e16c153fc2a2d5f2ce159829dfc7299f36a3d19d5212d2be0b90822d8",
+    "PROGRESS.md": "f6419ba3ac859a13fc32876764d11003c47679c16891dc0884bd5ca4317ba659",
+    "AGENTS.md": "1f1f8d3ca53a4b00e73c3599de1b7ba3c5580e2a6d9dd6413055fd4b8b5551b2",
+    "docs/PAPER_DRAFT_2026-10-11.md": "d61f786f1450cf55816d08c2b9601645b893b1b92e50112fb726f9bdd689eb62",
+    "docs/PAPER_CANDIDATE.md": "bb222e8c9c0dc8ca9602240375a94f20a6a90a9ff796dd3e101981d5dac6d45b",
+    "literature/CONTINUATION_AUDIT_2026-10-11.md": "a21224acfb4744e940bf5f165ce1d1acb999cc75c31577857e2a4d76e671b037",
+    "outputs/paper_confirmation_2026-10-11/REPORT_EL.md": "785956546b0b6c0c21541466fc6e46430b08a2c89f3e1d155bfafa5c86af2e71",
+    "outputs/study_synthesis_2026-10-05/REPORT_EL.md": "e9e8e834c6ca6dcbe7125e720dfcfe7ead204df003f452946f4fa08e45ac132e"
+  },
+  "synthesis_verification_sha256": "f8bc06f8115673b985e7dba6c48b71d6dbd15c04b688be7a22c26c68aa6cf034"
+}

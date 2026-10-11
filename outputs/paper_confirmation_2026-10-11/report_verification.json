@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "condition_table_rows_verified": 16,
+  "paired_rows_verified": 8,
+  "local_links_verified": 7,
+  "previous_artifacts_preserved": 40,
+  "actual_full_gpu_trainings": 6,
+  "report_sha256": "785956546b0b6c0c21541466fc6e46430b08a2c89f3e1d155bfafa5c86af2e71"
+}

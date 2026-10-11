@@ -1,14 +1,16 @@
 # Hardware Security × Neural Networks
 
-Νεότερη αποτίμηση11/10: [paper readiness](outputs/paper_readiness_2026-10-11/REPORT_EL.md)
-και [αρχικό αγγλικό working draft](docs/PAPER_DRAFT_2026-10-11.md), με διατήρηση όλων
-των αποτυχιών. Η εγκεκριμένη [baseline45k](outputs/kaggle_budget_2026-10-11/api/REPORT_EL.md)
-ολοκληρώθηκε και επαληθεύτηκε: clean validation **20/20 στα2.000traces, GE0**,
-minimum-CE checkpoint epoch21, έναντι0/20 της ίδιας recipe10k. Η κοινή αλλαγή
-samples/updates/scaler δεν απομονώνει αιτία· το validation ήταν ήδη viewed.
-105tests passed· σύνολο5GPUtrainings/cap5exhausted. No combined/attack.
-Version1 τεχνικό failure πριν training διατηρείται· version2 ολοκληρωμένη,
-version3 QUICK_SAVE της original πηγής χωρίς run. [Πρωτόκολλο](docs/PAPER_NEXT_PROTOCOL_2026-10-11.md).
+Νεότερο αποτέλεσμα 11/10: η [τελική paired αξιολόγηση](outputs/paper_confirmation_2026-10-11/REPORT_EL.md)
+ολοκληρώθηκε μετά τη ρητή έγκριση cap6 και το κλείδωμα των δύο checkpoints.
+Η baseline45k πέτυχε **100/100 clean attack ανακτήσεις**, GE0, στα 2.000 traces.
+Η ίδια CNN με combined augmentation έδωσε **0/100 και στις 8 συνθήκες**· το
+προκαθορισμένο joint primary απέτυχε. Ίδια samples/updates/splits/scaler/seed,
+ένα fixed key και συνθετικές αλλοιώσεις, χωρίς attack-driven επιλογή.
+112 tests passed· 3.200.000 ανεξάρτητα επαληθευμένα rank prefixes.
+Σύνολο 6 GPU trainings/cap6 εξαντλημένο. Όλες οι παλιές αποτυχίες διατηρούνται.
+[Αγγλικό paper draft](docs/PAPER_DRAFT_2026-10-11.md) και
+[υποψήφια συμβολή](docs/PAPER_CANDIDATE.md): ελεγχόμενη διαγνωστική μελέτη,
+χωρίς ακόμη επιβεβαιωμένη πρωτοτυπία ή ανεξάρτητη key/device replication.
 
 
 Ερευνητικό project εξαμήνου: profiling side-channel analysis σε masked AES,
@@ -17,10 +19,12 @@ version3 QUICK_SAVE της original πηγής χωρίς run. [Πρωτόκολ
 δεν έχουν ακόμη επιβεβαιωθεί.
 
 Τρέχον παραδοτέο: [ενιαία ελληνική ερευνητική αναφορά](outputs/study_synthesis_2026-10-05/REPORT_EL.md)
-με τα τρία CNN failures, τις CPU διαγνώσεις, τα όρια και το πραγματικό κόστος.
+με όλα τα CNN failures, τις CPU διαγνώσεις, τη baseline/combined45k attack
+σύγκριση στη §24, τα όρια και το πραγματικό κόστος.
 Η [αναπαραγωγή από καθαρό CPU περιβάλλον](outputs/cpu_reproduction_2026-10-05/REPORT_EL.md)
 ολοκληρώθηκε: 44 tests, ίδια best/last CNN metrics και ακριβώς ίδια sensitivity arrays.
-Το αρχικό ερώτημα augmentation παραμένει αναπάντητο μετά το failed gate.
+Το αρχικό ερώτημα augmentation εξετάστηκε αργότερα στη νέα 45k σύγκριση, με
+αρνητικό αποτέλεσμα για τη συγκεκριμένη combined recipe· το αρχικό failed gate διατηρείται.
 Η [βιβλιογραφική ενημέρωση της 5/10](literature/PRIMARY_AUDIT_2026-10-05.md)
 ελέγχει primary protocols και καταγράφει κενά πρόσβασης, χωρίς novelty claim.
 

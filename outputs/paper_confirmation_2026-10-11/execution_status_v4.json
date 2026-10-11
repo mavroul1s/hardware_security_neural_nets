@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETE",
+  "executed_version": 4,
+  "new_full_gpu_trainings": 1,
+  "full_gpu_trainings_total": 6,
+  "attack_payloads_read": false,
+  "output_archive_sha256": "57108a6309b86535833b08d1ecf769e6c064ddfeccad5e6de7c91396bdd35a8a",
+  "experiment_seconds": 204.84867944199993
+}

@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "baseline_clean_confirmation_met": true,
+  "augmentation_joint_primary_met": false,
+  "full_gpu_trainings_total": 6,
+  "rank_prefixes_verified": 3200000,
+  "preserved_artifacts": 40,
+  "attack_output": "runs\\paper_confirmation_2026-10-11\\attack",
+  "training_output": "runs\\kaggle_control\\confirmation_2026-10-11\\output_v4\\extracted",
+  "recorded_utc": "2026-10-11T17:24:42.059355+00:00",
+  "artifact_sha256": {
+    "plan.json": "6e3d016533598b7da89c5952a578bd9d7a42b39bff0cce3967ba1ffdb7302a9e",
+    "authorization.json": "19ca12f205363653e8ff7ec976353c8bbfde8b0095ff71fdc3a273c7711146cb",
+    "submission_attempt.json": "9fa8eae362f5ae2e935b244033ab2198e13d55a3354261641e61226eee98375a",
+    "transport_repair/submission_attempt.json": "728d4a8ee496e03798d9c73ca05c458d92350dcf8a1b9d783404a7f94657c2f4",
+    "transport_repair/preparation.json": "840099f8f07e35543877609e6e72d344dfa10b86891fffa8a7b652ad58c628a1",
+    "transport_repair/corrected_submission_approval.json": "88f8f297d31f7e5355b34dfe36580e6c5e15ee5f2d05935a648d102d1880914d",
+    "training_verification.json": "ae73ded9b0d4403057a0eb8dbd3cd3fb07eb50c99a40159778a14649eacedcf1",
+    "attack_verification.json": "6f96bcd885616a5ac73e71fd743dd8240d39a4c9851c9dbffb26b2a512c765d7",
+    "attack_access.json": "6748d5954a51686a8a7325161f9031caf61af7531402bd5c2ad8284a8e97da3b",
+    "restoration.json": "06ef2e4f84920c090a363f044365edf8af3b4941174ecaca92b267acc240810c",
+    "restored_source_verification.json": "7e76460c03022f403fd51a59f190f776910d5dd14e7d95c9f2e857a0aae8a626",
+    "REPORT_EL.md": "785956546b0b6c0c21541466fc6e46430b08a2c89f3e1d155bfafa5c86af2e71",
+    "sr_attack.png": "f773a11c7f289da089e5e68c2cc239108cb3c134e7e68ed66e7285399d282928",
+    "ge_attack.png": "127ffc3d1e23007c38d6e6930651d510b072a0d1c1a60f19944d725edd58e577"
+  }
+}

@@ -1168,3 +1168,104 @@ full-textgap και ανεξάρτητη efficacy παραμένουν ανοι�
 [Report/restoration verification](../kaggle_budget_2026-10-11/api/report_verification.json) ·
 [Paper draft](../../docs/PAPER_DRAFT_2026-10-11.md) ·
 [Bilinear code audit](../../literature/BILINEAR_CODE_AUDIT_2026-10-11.md).
+
+## 24. Combined45k και τελική fixed-key attack αξιολόγηση — 11/10/2026
+
+Η ολοκληρωμένη, χωριστά εγκεκριμένη φάση ανεβάζει το όριο από cap5 σε cap6:
+μία combined45k και μία τελική CPU αξιολόγηση των δύο κλειδωμένων checkpoints,
+χωρίς tuning ή αυτόματη επανάληψη. Οι προηγούμενες ενότητες περιγράφουν την
+τότε κατάσταση· το original fixed attack είναι πλέον viewed μετά από αυτή τη φάση.
+
+Η combined εκπαιδεύτηκε με CNN16952/seed0/50epochs/batch50/author cycle0,005,
+ίδια nested45k/validation5k splits, training-only featureMinMax και 45000updates/
+2250000exposures όπως η baseline45k. Μόνη recipe αλλαγή: uniform global shift
+από−5 έως+5 με zero padding, κατόπιν Gaussianσ0,1 μετά MinMax, χωρίς clipping.
+Ανεξάρτητοι augmentation/loader generators διατηρούν τα κοινά shuffle orders.
+Το minimum clean validationCE επιλέγει epoch4/CE5.549329338, SR@2000=1/20,
+GE107.2. Το κοινό validation ήταν ήδη viewed και δεν αποτελεί νέα confirmation.
+
+Και τα δύο minimum-CE checkpoints κλειδώθηκαν πριν από την πρώτη ανάγνωση
+του original fixed-key attack10k. Η τοπική CPU αξιολόγηση χρησιμοποίησε byte2/
+identity256, traces-only inputs, key/plaintext μόνο για scoring, budget2000,
+100commonorders/seed8001 και μία κοινή corruption realization ανά συνθήκη/
+seed9001. Conservative ties, rank0=best. Όλες οι συνθήκες και σειρές διατηρούνται.
+
+| Attack condition | Noise sigma | Maximum shift | Baseline SR@2000 | Baseline GE@2000 | Combined SR@2000 | Combined GE@2000 |
+|---|---:|---:|---:|---:|---:|---:|
+| clean | 0.00 | 0 | 100/100 | 0.00 | 0/100 | 92.42 |
+| noise_matched | 0.10 | 0 | 100/100 | 0.00 | 0/100 | 86.99 |
+| shift_matched | 0.00 | 5 | 54/100 | 4.77 | 0/100 | 99.44 |
+| combined_matched | 0.10 | 5 | 44/100 | 5.17 | 0/100 | 102.98 |
+| combined_mild | 0.05 | 2 | 97/100 | 0.05 | 0/100 | 92.14 |
+| combined_noise_ood | 0.20 | 5 | 27/100 | 10.19 | 0/100 | 101.06 |
+| combined_shift_ood | 0.10 | 10 | 8/100 | 36.93 | 0/100 | 116.65 |
+| combined_both_ood | 0.20 | 10 | 4/100 | 51.62 | 0/100 | 112.87 |
+
+**H1 baseline clean confirmation πέρασε:** SR100/100≥0,90, GE0· το descriptive
+sustainedSR90 ξεκινά στα479traces και ισχύει έως2000. Στο noise_matched ξεκινά
+στα625 και στο combined_mild στα1470. Όλες οι άλλες baseline sustainedSR90 και
+όλες οι combined είναι censored>2000.
+
+**H2 augmentation joint primary απέτυχε:** απαιτεί combined_both_oodSR≥0,90,
+strictlypositive pairedΔSR έναντι baseline στην ίδια συνθήκη και combinedcleanSR≥0,90.
+Παρατηρήθηκαν αντίστοιχα0/100,−0,04 και0/100· απέτυχαν και οι τρεις απαιτήσεις.
+Τα pairedΔSR σε όλες τις συνθήκες είναι−1,00/−1,00/−0,54/−0,44/−0,97/−0,27/−0,08/
+−0,04, με μηδέν combined-only ή both-success orders στο endpoint2000. Δεν
+αλλάζει το primary εκ των υστέρων, δεν επιλέχθηκε άλλο checkpoint από attack
+results και δεν έγινε νέα recipe δοκιμή. Πρόκειται για failure της συγκεκριμένης
+combined recipe/selection rule σε έναν paired trainingseed, όχι καθολική απόρριψη
+του augmentation ή μοναδική causal απόδοση σε noise/shift.
+
+Η held-out trace confirmation αφορά το ίδιο key και acquisition campaign.
+Τα100overlapping orders δεν είναι100ανεξάρτητοι neural seeds, keys ή acquisitions·
+δεν χρησιμοποιούνται ως independentBernoulli samples για CI/p-values.
+Οι πρόσθετες noise/shift αλλοιώσεις είναι συνθετικές, όχι νέες φυσικές μετρήσεις.
+Η baseline10k→45k παραμένει κοινή αλλαγή samples/updates/scalerfit, χωρίς causal
+απομόνωση. Διατηρούνται οι τέσσερις10k failures, η variable attack αποτυχία και
+οι CPU/selection failures· SAD/box/rank1 prior controls περιορίζουν novelty claims.
+
+112 tests passed/14existingwarnings, πλήρης CPU suite26,962s. Το frozen remote
+package πέρασε33tests/14warnings/8,68s. Training verifier9.882743s:45000LRvalues,
+40000validationrankprefixes,5000CPU predictions, minCE, splits/train-onlyscaler,
+ίδιο recordedbaseline runtime· maxCPU/GPUlogproberror4,917491e−7.
+Ο ανεξάρτητος attack verifier ανακατασκεύασε **3.200.000 rank prefixes** και όλα
+GE/SR/sustainedSR/paired endpoints από saved predictions και κοινά scoring metadata.
+Επαληθεύτηκαν40preservedartifact hashes, συμπεριλαμβανομένων των παλιών26,
+της baseline45k και των προηγούμενων αποτυχημένων/διορθωμένων attempt histories.
+
+Combined trainingloops181.405335s, validationloops6.612318s, experiment204.848679s
+μετά setup. CPUattack evaluation32.868586s και independentrank verifier21.687648s
+χωριστά, με μηδέν optimizerupdates στην αξιολόγηση. Queue/setup/full GPU account
+charge δεν καταγράφονται ως μετρημένη συνολική χρέωση.
+
+Η αρχική υποβολή απορρίφθηκε με HTTP400 πριν από version ή training· ο ακριβής
+server-side λόγος δεν επιβεβαιώθηκε. Ο χρήστης ενέκρινε χωριστά μία διορθωμένη
+υποβολή με compactTAR/XZ των ίδιων ακριβώς reference bytes και ήδη επιτυχημένα
+metadata. Η version4 ολοκληρώθηκε χωρίς αλλαγή επιστημονικού πρωτοκόλλου.
+Μετά την επιτυχή λήψη του ZIP, ένα Windows log-encoding σφάλμα δεν επηρέασε
+τα αποτελέσματα· πλήρη UTF-8 logs αποθηκεύτηκαν με read-only API πρόσβαση.
+Version5 QUICK_SAVE αποκαθιστά την original πηγή χωρίς εκτέλεση, cellwise/private/
+Input verified. Executedversion4 και όλη η con1los/nmavros ιστορία διατηρούνται.
+
+Σύνολο6fullGPUtrainings/cap6exhausted, **111.850optimizerupdates/6.500.000exposures**.
+Original source/Input/canonicalnotebook/checkpoints αμετάβλητα. Το fixedattack10k
+είναι πλέον viewed και αποκλείεται από μελλοντικό tuning. Variableprofiling170k
+viewed/30kunused και variableattack10k unchanged. Η εξουσιοδοτημένη φάση
+ολοκληρώθηκε· δεν περιλαμβάνει έβδομη εκπαίδευση, νέο seed/model ή νέα tuning
+αξιοποίηση των viewed attack traces.
+
+Ο επικαιροποιημένος paper άξονας συνδέει conditional key recovery, augmentation
+failure και feature-selection instability. Η εμπειρική διάγνωση είναι τεκμηριωμένη·
+ισχυρότερη γενική efficacy ή πρωτοτυπία χρειάζεται ανεξάρτητες keys/acquisitions/
+seeds και πλήρη prior-art σύγκριση. Το working draft διατηρεί αυτά τα evidence gaps.
+
+![Final fixed-key attack success curves](../paper_confirmation_2026-10-11/sr_attack.png)
+![Final fixed-key attack rank curves](../paper_confirmation_2026-10-11/ge_attack.png)
+
+[Πλήρης τελική αναφορά](../paper_confirmation_2026-10-11/REPORT_EL.md) ·
+[Training verification](../paper_confirmation_2026-10-11/training_verification.json) ·
+[Attack verification](../paper_confirmation_2026-10-11/attack_verification.json) ·
+[Report verification](../paper_confirmation_2026-10-11/report_verification.json) ·
+[Frozen protocol](../../docs/PAPER_CONFIRMATION_PROTOCOL_2026-10-11.md) ·
+[Paper draft](../../docs/PAPER_DRAFT_2026-10-11.md) ·
+[Continuation literature audit](../../literature/CONTINUATION_AUDIT_2026-10-11.md).

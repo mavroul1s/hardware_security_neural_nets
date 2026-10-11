@@ -1,0 +1,18 @@
+{
+  "execution_status": "prepared_not_submitted",
+  "new_real_trainings": 0,
+  "attack_payloads_read": false,
+  "plan_sha256": "6e3d016533598b7da89c5952a578bd9d7a42b39bff0cce3967ba1ffdb7302a9e",
+  "plan_identity": "0e0275b9804d088234f54f9f33cb25448d6665fcb1eca5d70d495d2aaa9d9617",
+  "authorization_sha256": "19ca12f205363653e8ff7ec976353c8bbfde8b0095ff71fdc3a273c7711146cb",
+  "specifically_authorized": true,
+  "notebook_sha256": "68cbfd647090e4032296a3c11dd683de38175a62f7b5329fc41271787fb1db8f",
+  "metadata_sha256": "a33feffbd8dc524e19cc40fe8f0115fe2a26b88100e2844613dbe3cd33fdf11e",
+  "byte_transport_verified": true,
+  "compiled_code_cells": 3,
+  "preserved_artifacts": 40,
+  "current_full_gpu_trainings": 5,
+  "passing_cpu_tests": 111,
+  "notebook_ref": "nmavros/hw-sec-exp2",
+  "deployment_directory": "C:\\Users\\nickb\\Documents\\projects\\hardware_security_neural_nets\\runs\\kaggle_control\\confirmation_2026-10-11\\kernel"
+}

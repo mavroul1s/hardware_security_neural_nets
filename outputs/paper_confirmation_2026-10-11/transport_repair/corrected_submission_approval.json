@@ -1,0 +1,8 @@
+{
+  "specific_corrected_submission_agreement": true,
+  "user_answer": "Ναι, κάνε τη διορθωμένη υποβολή",
+  "frozen_plan_sha256": "6e3d016533598b7da89c5952a578bd9d7a42b39bff0cce3967ba1ffdb7302a9e",
+  "notebook_sha256": "3e267c3030729d552ae046d02f0d9237e946e32b1a58f88e986448f0ab066d28",
+  "scope": "One corrected submission; same frozen combined45k/cap6/final attack protocol; no further automatic retry",
+  "received_utc": "2026-10-11T17:10:41.518721+00:00"
+}

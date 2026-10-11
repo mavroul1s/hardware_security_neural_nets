@@ -1,0 +1,7 @@
+{
+  "plan_identity": "0e0275b9804d088234f54f9f33cb25448d6665fcb1eca5d70d495d2aaa9d9617",
+  "specific_user_agreement": false,
+  "approved_full_gpu_training_cap": 5,
+  "combined_training_authorized": false,
+  "attack_evaluation_authorized": false
+}

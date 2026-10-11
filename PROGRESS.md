@@ -1,5 +1,70 @@
 # Κατάσταση project — ενημέρωση 2026-10-11
 
+## Combined45k και τελική attack αξιολόγηση — ολοκληρώθηκαν 11/10
+
+- Η baseline στο νέο κλειδωμένο fixed-key attack10k έδωσε100/100 clean recovery,
+  GE0 και sustainedSR90 από479traces. Η combined έδωσε0/100 σε όλες8συνθήκες.
+  H1passed/H2jointprimaryfailed. Η baseline έδωσε επιπλέον noise_matched100/100,
+  shift_matched54/100,combined_matched44/100,mild97/100,noiseOOD27/100,
+  shiftOOD8/100,bothOOD4/100. Όλα secondary, χωρίς επιλογή winner/recipe.
+- Ανεξάρτητη verification3200000rankprefixes/21,687648s, pairedcounts/commoninputs/
+  plaintext-key/orders/normalizedprobabilities. CPUevaluation32,868586s και0updates.
+  Fixedattack10k πλέον viewed, αποκλεισμένο απόtuning. Variableprofiling30kunused και
+  variableattack10k unchanged. Current6GPUtrainings/cap6exhausted,111850updates και
+ 6500000exposures. Version5 QUICK_SAVE originalsource χωρίςrun, remoteverified·
+  version4 output και όλεςοι priorattempts/checkpoints preserved.
+- Αναφορά `outputs/paper_confirmation_2026-10-11/REPORT_EL.md`, με όλες τις καμπύλες,
+  κριτήρια, επαληθεύσεις και κόστος. SR/GE plots ελέγχθηκαν οπτικά.
+- Ενημερώθηκαν το αγγλικό working draft `docs/PAPER_DRAFT_2026-10-11.md`, η
+  υποψήφια συμβολή και η §24 της ενιαίας εργασίας. Paper scope: conditional recovery,
+  augmentation failure και feature-selection instability, χωρίς νέα attack/novelty
+  ή general efficacy claim. Primary literature/access gaps καταγράφηκαν στο
+  `literature/CONTINUATION_AUDIT_2026-10-11.md`.
+- Ο synthesis verifier πέρασε όλη την ιστορική provenance chain, τα8frozeninputs,
+  40preservedartifacts, training/attack output hashes, τους16conditionrows, τους8
+  manuscript/coursework rows και112local links. Επαληθεύτηκαν cap6, actualversion5,
+  111850updates/6500000exposures και112passingtests χωρίς νέο training/evaluation.
+  Η εξουσιοδοτημένη φάση και η ενσωμάτωση ολοκληρώθηκαν. Τα παρακάτω βήματα
+  διατηρούν το ιστορικό εκτέλεσης.
+
+- Ο χρήστης ενέκρινε «Ναι, cap6 και τελική attack αξιολόγηση». Παγωμένο πρωτόκολλο:
+  `docs/PAPER_CONFIRMATION_PROTOCOL_2026-10-11.md`, machine plan/χωριστό authorization
+  στο `outputs/paper_confirmation_2026-10-11/`. Μία combined45k στο ίδιο private
+  notebook, ίδια CNN16952/seed0/50epochs/batch50/authorcycle/splits/scaler με baseline45k.
+  Μόνη recipe αλλαγή shifts±5 zero padding και κατόπιν noiseσ0,1 μετάMinMax.
+- Πριν έγκριση πέρασαν111CPUtests/14existingwarnings/37,46s, μαζί με synthetic
+  paired-inference/ranking smoke και CRLF byte-transport test. Το προετοιμασμένο
+  notebook ελέγχθηκε σε όλες3codecells και ακριβή payload/reference bytes.40παλιά
+  artifacts διατηρούνται. Η προετοιμασία δεν αποτελεί νέα πραγματική εκπαίδευση.
+- Πρώτα ένα combined training/μία υποβολή, χωρίς automatic retry. Minimum clean
+  validation CE επιλέγει checkpoint. Μετά ανεξάρτητη training verification και
+  checkpoint lock, μία CPU originalfixedattack10k αξιολόγηση/8frozenconditions/
+  100orders/2000traces. H1baselinecleanSR≥0,90· H2combined_both_oodSR≥0,90,
+  positivepairedΔSR και combinedcleanSR≥0,90. Όλα τα άλλα descriptive, όλα failures
+  διατηρούνται. Καμία attack-driven επιλογή ή αλλαγή του protocol.
+- Current5realGPUtrainings πριν εκτέλεση· cap6 approved. Fixedattack ακόμη κλειστό
+  μέχρι verifiedcombinedcheckpoint. Variableprofiling30k unused/attack10k unchanged.
+- Η μία εγκεκριμένη υποβολή απορρίφθηκε μεHTTP400 πριν από version/training.
+  Read-only APIcurrentversion3 και canonicalcells unchanged. Το originalattempt
+  διατηρείται. Προετοιμάστηκε διορθωμένη compactTAR/XZ μεταφορά των ίδιων9reference
+  filebytes, με known-successful private metadata/original image pinning. Notebook
+  813745bytes αντί1235267, frozen science/code/checkpoints unchanged.112CPUtests
+  passed/14warnings/26,96s· original111test report preserved. Exactservercause
+  unconfirmed. Δεύτερη υποβολή απαιτεί χωριστή συμφωνία λόγω one-submission/no-retry
+  protocol. Αναφορά `outputs/paper_confirmation_2026-10-11/transport_repair/REPORT_EL.md`.
+- Ο χρήστης ενέκρινε χωριστά τη διορθωμένη υποβολή. Το SaveKernel API την αποδέχθηκε
+  ως version4 στο ίδιο `nmavros/hw-sec-exp2`, χωρίς error/invalidInput. Το frozenplan
+  και η αρχική rejected προσπάθεια διατηρούνται. Αναμονή εκτέλεσης/επαλήθευσης·
+  αποδοχή υποβολής δεν είναι ολοκληρωμένο training ή attack αποτέλεσμα.
+- Version4 ολοκλήρωσε50epochs/45000updates. Ανεξάρτητη training verification:
+ 45000LRvalues/40000validationranks/5000CPUpredictions, ίδιοsplit/scaler/runtime.
+ MinimumCE5,549329338/epoch4· cleanvalidationSR1/20,GE107,2 έναντιbaseline20/20,GE0.
+ MaxCPU/GPUlogproberror4,91749e−7· verifier9,882743s. Training181,405335s,
+ validation6,612318s. Actual6fullGPUtrainings/cap6exhausted. Bothcheckpointshashes
+ locked before πρώτη fixedattack payload πρόσβαση· η εγκεκριμένη CPU αξιολόγηση
+ βρίσκεται σε εξέλιξη. CLIZIPdownload επιτυχές, logserializationcharmapfailure μετά
+ download· πλήρεςUTF8SDKlog διατηρείται, χωρίς extra submission/training.
+
 ## Baseline45k ολοκληρώθηκε και επαληθεύτηκε — 11/10
 
 - Version2 private `nmavros/hw-sec-exp2` ολοκλήρωσε τη μία εγκεκριμένη baseline:

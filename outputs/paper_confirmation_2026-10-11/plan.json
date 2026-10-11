@@ -1,0 +1,232 @@
+{
+  "status": "PROPOSED_NOT_APPROVED",
+  "authorization_required": "Specific cap6 and locked attack agreement; preparation is not execution",
+  "hypotheses": {
+    "H1": "Frozen baseline clean attack SR@2000>=0.90",
+    "H2": "Combined_both_ood SR>=0.90 AND paired deltaSR>0 AND combined clean SR>=0.90"
+  },
+  "h2_primary_condition": "combined_both_ood",
+  "secondary": "All other GE/SR/sustainedSR/paired discordances; descriptive",
+  "selection_rule": "Minimum clean profiling-validation CE over all50epochs; attack never selects",
+  "execution_order": [
+    "one combined training",
+    "independent training verification and both checkpoints locked",
+    "one CPU paired attack evaluation",
+    "independent saved-prediction rank verification"
+  ],
+  "training_scope": {
+    "model": "cnn_literature",
+    "normalization": "feature_minmax_training_only",
+    "target_byte": 2,
+    "seed": 0,
+    "split_seed": 2026,
+    "n_train": 45000,
+    "n_validation": 5000,
+    "epochs": 50,
+    "batch_size": 50,
+    "learning_rate": 0.005,
+    "threads": 2,
+    "device": "cuda",
+    "augmentation": {
+      "noise_std": 0.1,
+      "max_shift": 5,
+      "padding": "zero"
+    },
+    "recipe_extension_sha256": "35faf762350da2e3d1b31b38a84907052b7abe95c91f9c3e49e1c0a7a8620768",
+    "recipe": "author_linear_cycle_no_momentum"
+  },
+  "baseline_best_epoch": 21,
+  "baseline_validation_sr_at_2000": 1.0,
+  "clean_validation_config": {
+    "budget": 2000,
+    "repetitions": 20,
+    "success_threshold": 0.9,
+    "attack_order_seed": 8001,
+    "corruption_seed": 9001,
+    "batch_size": 256,
+    "conditions": [
+      {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      }
+    ]
+  },
+  "attack_config": {
+    "budget": 2000,
+    "repetitions": 100,
+    "success_threshold": 0.9,
+    "attack_order_seed": 8001,
+    "corruption_seed": 9001,
+    "batch_size": 256,
+    "conditions": [
+      {
+        "name": "clean",
+        "noise_std": 0.0,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      {
+        "name": "noise_matched",
+        "noise_std": 0.1,
+        "max_shift": 0,
+        "padding": "zero"
+      },
+      {
+        "name": "shift_matched",
+        "noise_std": 0.0,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_matched",
+        "noise_std": 0.1,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_mild",
+        "noise_std": 0.05,
+        "max_shift": 2,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_noise_ood",
+        "noise_std": 0.2,
+        "max_shift": 5,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_shift_ood",
+        "noise_std": 0.1,
+        "max_shift": 10,
+        "padding": "zero"
+      },
+      {
+        "name": "combined_both_ood",
+        "noise_std": 0.2,
+        "max_shift": 10,
+        "padding": "zero"
+      }
+    ]
+  },
+  "baseline_hashes": {
+    "best.pt": "d3e4a19d9696b39d8a5a881275023ff4ef0de8bdf8031425b0d7617b8bd0c557",
+    "code_snapshot.zip": "1c160210246239fe8ec8331744f63009e5899cf359eca55416130acde7f77cae",
+    "config.json": "4de80e558bdb719d57e1b30fbc9d11e408c91cf11329d1e13f413a6874e5d9f4",
+    "history.json": "5304c07a226d367c537f4861f32f6e72001716da36962a909813129b6f67e98a",
+    "inspection.json": "4e0fd90d534b13fa82e5cc35517931b472122fe01ded6c14f5443cb27cc09d15",
+    "last.pt": "a0945264548b876332b5b73ddd094195af178221c8647162f0e4809a6b030fe1",
+    "manifest.json": "0f94eb5d2336a913115fcdbe9fd385207bd64f6470c4acbc56a737a8d45266ec",
+    "splits.npz": "916a432e9a62a0d0852c0e9830e4441137f9d808d175e9a0663c89dc89ba2c9e",
+    "summary.json": "bc91d927f613c32b7f5de49cf6b164590d76ab8a0233d0a10ee2cdcec44f5a5c"
+  },
+  "reference_zip_sha256": "e1819cdbfcb1daf825be1893c67b5c987e61f788c7135a4caac175962dca28b9",
+  "extension_sha256": "7bcb6573af4bbfdc206e7efe64b5537172827b7a587a87afe31507a1174ef972",
+  "cycle_extension_sha256": "35faf762350da2e3d1b31b38a84907052b7abe95c91f9c3e49e1c0a7a8620768",
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "dataset_sha256": "f56625977fb6db8075ab620b1f3ef49a2a349ae75511097505855376e9684f91",
+  "input_hashes": {
+    "docs/PAPER_CONFIRMATION_PROTOCOL_2026-10-11.md": "5778e050ec04b00f04ffe0c99d18d779353599d815c06519f126d3dde5c7744a",
+    "notebooks/prepare_paper_confirmation.py": "3d7f51ff0e0933b967dac1118daa00a81d61d26827eaf2896d5a9b4f277e1f33",
+    "notebooks/verify_confirmation_training.py": "d07eef79fd91cb69125e39ec18ddf7cd14f70f97ff79dcdd3bf54a172224e607",
+    "notebooks/verify_confirmation_attack.py": "93604c79b125cbf2548e67e17bb72ec5b5e88ab61ebafa2cc74bd203664133d6",
+    "tests/test_paper_confirmation.py": "a62c26abcf81ec33fdf84e3b3527b5879524a25c9499936d9316d0c507fa2044",
+    "outputs/paper_confirmation_2026-10-11/pytest.xml": "3ee8e2e3d02dd60b499c782c91bc4c0a449e386945a48b844da48e06ee38fdd7",
+    "configs/evaluation_final.json": "ca3a52248aa69881501327f840bb7d6a4222d19e36fde322c6e46707fe9f975e",
+    "configs/matrix.json": "9417b2def764b43813f67bd8a4a1638300d8ecec7ba4ffaf4814cf0c3b737816"
+  },
+  "preservation_sha256": {
+    "runs/kaggle_control/baseline_v3_output/runs/minimal_v1/none_seed0/best.pt": "c60d72a12fc674d41ed5b4eda24b7bc5684dc569322bd4b72d50e56dd384282a",
+    "runs/kaggle_control/baseline_v3_output/runs/minimal_v1/none_seed0/last.pt": "ed0c56b30f454cacc6a5b65f00f6e7eff32602161a1eb7fadf32f60cf03fded1",
+    "runs/kaggle_control/baseline_v3_output/runs/minimal_v1/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "runs/kaggle_control/baseline_v3_output/runs/minimal_v1/none_seed0/history.json": "8aca20ee13cad85046758f928a297333c11ff4a8ecbc795f9a011e29e7824773",
+    "runs/kaggle_control/baseline_v3_output/runs/minimal_v1/none_seed0/manifest.json": "6e16d6134f5f922373cb02aed666e3af775e1209172093b07e64c9c27bdca826",
+    "runs/kaggle_control/baseline_v3_output/runs/minimal_v1/none_seed0/config.json": "c6c4427500a737ad7b52a635bed3403d945eafc711bd6440389135976ef7cb3a",
+    "runs/kaggle_control/leaky_v5_output/runs/minimal_v2_leaky/none_seed0/best.pt": "a4b47b52d13079189493425f35b112a8db714e219f75de7766301284f03452e5",
+    "runs/kaggle_control/leaky_v5_output/runs/minimal_v2_leaky/none_seed0/last.pt": "65d41dc244fb5777b37a6006278c6704bef2d7da893d7eb107620cd7731c88b6",
+    "runs/kaggle_control/leaky_v5_output/runs/minimal_v2_leaky/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "runs/kaggle_control/leaky_v5_output/runs/minimal_v2_leaky/none_seed0/history.json": "e0892d83139339f725eb2d2081cd486541489595c5c95fb30b426596741a3d7d",
+    "runs/kaggle_control/leaky_v5_output/runs/minimal_v2_leaky/none_seed0/manifest.json": "a3e3b39e36e0d7d02913b843b87a6fbd4ba75cc44188e9ae9b46ca8e3e307f11",
+    "runs/kaggle_control/leaky_v5_output/runs/minimal_v2_leaky/none_seed0/config.json": "4ac5e7e4a6c7204acfa7bf5e0aaf71be7b0860c4c7b71c08acb4bf893cdb79d2",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/best.pt": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/last.pt": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/history.json": "7ea9e0d51dd96f6337ab54138ece8a4279a0e0d9e38ab00e5055e1563c5861e3",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/manifest.json": "1b159e5af59e4beb03a96762010498da88a2974e378dc171e61d785432e20f0c",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/config.json": "49518da6cf789fd2ecd02e74d5a4146aa17626c3ee17f77d6000720d37d71677",
+    "runs/kaggle_control/recipe_2026-10-09/output/extracted/none_seed0/best.pt": "c10abc4a71c4ef47062fafaaeadf205fe446b27072922dd00b91053ad4f3af7c",
+    "runs/kaggle_control/recipe_2026-10-09/output/extracted/none_seed0/last.pt": "613b1e8c24423ff39e2a0eaf1999e9f9283c07188a9762353a337ebb40179c3d",
+    "runs/kaggle_control/recipe_2026-10-09/output/extracted/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "runs/kaggle_control/recipe_2026-10-09/output/extracted/none_seed0/history.json": "7f5aeb1f748327715764f0ee43a3e686a816d972535c75775e154040aac73b99",
+    "runs/kaggle_control/recipe_2026-10-09/output/extracted/none_seed0/manifest.json": "3fa1f4f0ec25e6c9808422b6a85f30867c12a8f9d71e6a71763d80232af1e009",
+    "runs/kaggle_control/recipe_2026-10-09/output/extracted/none_seed0/config.json": "7b00f7de728e9d831e7b2b508d44cb529d322d09bfe9d2af8f3efd794baf7c8b",
+    "notebooks/kaggle_baseline.ipynb": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e",
+    "outputs/kaggle_resume_input_literature.zip": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/extracted/none_seed0/best.pt": "d3e4a19d9696b39d8a5a881275023ff4ef0de8bdf8031425b0d7617b8bd0c557",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/extracted/none_seed0/code_snapshot.zip": "1c160210246239fe8ec8331744f63009e5899cf359eca55416130acde7f77cae",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/extracted/none_seed0/config.json": "4de80e558bdb719d57e1b30fbc9d11e408c91cf11329d1e13f413a6874e5d9f4",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/extracted/none_seed0/history.json": "5304c07a226d367c537f4861f32f6e72001716da36962a909813129b6f67e98a",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/extracted/none_seed0/inspection.json": "4e0fd90d534b13fa82e5cc35517931b472122fe01ded6c14f5443cb27cc09d15",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/extracted/none_seed0/last.pt": "a0945264548b876332b5b73ddd094195af178221c8647162f0e4809a6b030fe1",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/extracted/none_seed0/manifest.json": "0f94eb5d2336a913115fcdbe9fd385207bd64f6470c4acbc56a737a8d45266ec",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/extracted/none_seed0/splits.npz": "916a432e9a62a0d0852c0e9830e4441137f9d808d175e9a0663c89dc89ba2c9e",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/extracted/none_seed0/summary.json": "bc91d927f613c32b7f5de49cf6b164590d76ab8a0233d0a10ee2cdcec44f5a5c",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output/budget_diagnostic_results.zip": "f32d20362ea7ecd4a5642d28a0858fde59ba6115855ced425db0ab76142ce6fb",
+    "runs/kaggle_control/budget_2026-10-11/nmavros/output_v2/budget_diagnostic_results.zip": "575621cd8667b45628615b0a64db0e284b0ca976e8d9da8a195c2ead19c0cb2d",
+    "outputs/kaggle_budget_2026-10-11/api/restoration.json": "29ee9d706f17fbcb09e758e418a5087c44c82dd5adcd65eaac875b4162598998",
+    "outputs/kaggle_budget_2026-10-11/api/verification.json": "d6f033d99f98b5979db287a86e84f9a119cf9f178afc3b26d595f7c2b5f7017a",
+    "outputs/kaggle_budget_2026-10-11/api/plan.json": "948318be769377fe9f09241890b83f7ef8d23ae1d1a4b252098d23d2001f21af"
+  },
+  "notebook_ref": "nmavros/hw-sec-exp2",
+  "dataset_sources": [
+    "nmavros/hardware-sca-resume"
+  ],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f",
+  "accelerator": "NvidiaTeslaT4",
+  "new_remote_notebook": false,
+  "input_packet_changed": false,
+  "original_full_gpu_trainings": 5,
+  "proposed_full_gpu_training_cap": 6,
+  "new_full_gpu_trainings_max": 1,
+  "schedule_knots_updates": [
+    0,
+    18000,
+    36000,
+    45000
+  ],
+  "schedule_knots_lr": [
+    0.0005,
+    0.005,
+    0.0005,
+    5e-06
+  ],
+  "new_optimizer_updates": 45000,
+  "new_trace_exposures": 2250000,
+  "new_models": 0,
+  "new_seeds": 0,
+  "session_timeout_seconds": 1800,
+  "training_loop_cap_seconds": 900,
+  "cpu_evaluation_cap_seconds": 600,
+  "stopping_rule": "One submission/training/evaluation only; preserve partial failures; no automatic retry or tuning",
+  "validation_is_viewed": true,
+  "attack_campaign": "Original fixed-key10k held out traces, same key/acquisition campaign",
+  "independent_keys_or_acquisitions": 0,
+  "orders_are_conditional": true,
+  "synthetic_corruptions_are_not_physical_replications": true,
+  "variable_profiling_unused_unchanged": 30000,
+  "variable_payloads_read": false,
+  "novelty_verified": false,
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "111",
+    "time": "37.457",
+    "timestamp": "2026-10-11T19:57:38.929075+03:00",
+    "hostname": "mavroul1s"
+  },
+  "frozen_utc": "2026-10-11T16:58:51.806367+00:00"
+}

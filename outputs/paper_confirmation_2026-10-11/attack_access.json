@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-10-11T17:20:57.343790+00:00",
+  "plan_identity": "0e0275b9804d088234f54f9f33cb25448d6665fcb1eca5d70d495d2aaa9d9617",
+  "baseline_best_sha256": "d3e4a19d9696b39d8a5a881275023ff4ef0de8bdf8031425b0d7617b8bd0c557",
+  "combined_best_sha256": "3c70300837e3098251e550ce71e501f7ea94eee4286dcebf1595f8f3f543e7b3",
+  "all_model_choices_locked": true,
+  "variable_payloads_read": false
+}

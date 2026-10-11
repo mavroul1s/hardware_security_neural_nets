@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-10-11T17:01:33.606873+00:00",
+  "notebook_ref": "nmavros/hw-sec-exp2",
+  "notebook_sha256": "68cbfd647090e4032296a3c11dd683de38175a62f7b5329fc41271787fb1db8f",
+  "automatic_retry": false,
+  "completed_cli_call": true,
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "400 Client Error: Bad Request for url: https://api.kaggle.com/v1/kernels.KernelsApiService/SaveKernel\n",
+  "finished_utc": "2026-10-11T17:01:42.192450+00:00"
+}

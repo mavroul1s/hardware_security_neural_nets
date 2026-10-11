@@ -1,14 +1,31 @@
 # Υποψήφιος άξονας paper — ενημέρωση11/10/2026
 
-Νεότερο αποτέλεσμα: η [baseline45k](../outputs/kaggle_budget_2026-10-11/api/REPORT_EL.md)
-έδωσε20/20 clean validation recovery/GE0 έναντι0/20 τηςrecipe10k. Το κοινό
-validation ήταν ήδη viewed και η επέκταση αλλάζει μαζί samples/updates/scalerfit.
-Δεν απομονώνει αιτία ή ανεξάρτητη efficacy. Όλες οι προηγούμενες10k και CPU
-αποτυχίες παραμένουν. Το [αγγλικό working draft](PAPER_DRAFT_2026-10-11.md)
-εστιάζει πλέον στη διάκριση leakage, selection stability και budget-dependent
-key recovery. Η ενιαία εργασία περιλαμβάνει το αποτέλεσμα στη§23.
-Actual5GPUtrainings/cap5exhausted,105tests passed. Combined/attack δεν εκτελέστηκαν.
-Οι παρακάτω CPU προτάσεις και διαδοχικές ενημερώσεις διατηρούνται ιστορικά.
+Η [τελική επαληθευμένη σύγκριση](../outputs/paper_confirmation_2026-10-11/REPORT_EL.md)
+ολοκληρώθηκε: baseline45k clean attack SR@2000=100/100/GE0, ενώ combined45k
+έδωσε 0/100 σε όλες τις 8 προκαθορισμένες συνθήκες. Η baseline επιβεβαιώνεται
+σε held-out traces του ίδιου fixed-key campaign· το κύριο joint augmentation
+criterion απέτυχε. Ένας neural seed, ένα key/campaign και επικαλυπτόμενα orders
+δεν τεκμηριώνουν γενική efficacy ή μέσο augmentation effect σε νέες εκπαιδεύσεις.
+
+Ο πλέον τεκμηριωμένος άξονας είναι **Leakage, Augmentation Failure, and
+Feature-Selection Stability in Masked AES**: πότε ένα measurable signal ή καλύτερο
+profiling αποτέλεσμα μεταφράζεται σε recovery, και πού αποτυγχάνουν η συγκεκριμένη
+augmentation recipe και η επανεπιλογή features. Η 45k επέκταση αλλάζει μαζί
+samples/updates/scalerfit· δεν απομονώνει αιτία της βελτίωσης έναντι10k.
+Γνωστοί SAD/box/rank1 controls περιορίζουν τη συμβολή σε empirical diagnostic
+και failure analysis. Πρωτοτυπία και publication readiness δεν έχουν επιβεβαιωθεί.
+
+Το [αγγλικό working draft](PAPER_DRAFT_2026-10-11.md) και η §24 της
+[ενιαίας εργασίας](../outputs/study_synthesis_2026-10-05/REPORT_EL.md) περιλαμβάνουν
+την πλήρη σύγκριση και τις παλιότερες αποτυχίες. Actual6GPUtrainings/cap6exhausted,
+112tests passed και 3.200.000 attack rank prefixes επαληθευμένα ανεξάρτητα.
+Version5 QUICK_SAVE επαναφέρει την αρχική πηγή χωρίς νέα εκτέλεση. Το fixed
+attack10k είναι πλέον viewed και αποκλείεται από tuning· variable profiling30k
+παραμένουν unused. Ισχυρότερα claims χρειάζονται ανεξάρτητες keys/acquisitions,
+νευρωνικούς seeds και πλήρη prior-art σύγκριση, με νέο πρωτόκολλο και συμφωνία.
+
+Οι παρακάτω CPU προτάσεις και διαδοχικές ενημερώσεις διατηρούνται ιστορικά·
+οι παλιές αναφορές σε locked fixed attack αφορούν την τότε κατάσταση πρόσβασης.
 
 **Prospective Robustness Evaluation of Quadratic Feature Extraction for Masked AES**
 
