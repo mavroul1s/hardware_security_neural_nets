@@ -1,0 +1,28 @@
+{
+  "primary_interval_rows": 4,
+  "rank1_control_table_values": 48,
+  "all_csv_rows_verified": 432,
+  "local_links_verified": 17,
+  "plots_visually_checked": [
+    "training_alignment_intervals.png",
+    "training_alignment_families.png"
+  ],
+  "tests": {
+    "tests": 86,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 15.396
+  },
+  "support_met": false,
+  "new_gpu_trainings": 0,
+  "new_attack_reads": false,
+  "artifact_sha256": {
+    "REPORT_EL.md": "7a352f50eceef017caa805b9e367e42ad75a1caaa3d3eb6b430d27b73f32bcab",
+    "correlations.csv": "5d43b123b9f5898512c0bbb76465be8c6a5664c3f7577cd787f7bcb9f1e8df4f",
+    "evidence.json": "e8ffc0337cb7c6e5a61d64f5ed2a3849fee86ec24f91967eea0e83b55fbd5012",
+    "verification.json": "bbdd772ff1b1d6085b30cd275e62e2d1a403ac7e5b20aa99076604d28f6e47af",
+    "training_alignment_intervals.png": "491bb10a5e94d1fa00849005d9da2ba63d937a816bcbccdb4ddc7b3b74281cc9",
+    "training_alignment_families.png": "cff80536cce89a886819c7e844ccd9de38340c443b2c68ca0af55024452fe5c1"
+  }
+}

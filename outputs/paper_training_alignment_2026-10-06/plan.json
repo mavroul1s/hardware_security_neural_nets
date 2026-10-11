@@ -1,0 +1,117 @@
+{
+  "authorization": "User requested further paper experiments; proposed CPU training-side alignment, no extra neural/GPU scope",
+  "reason": "Official variable-key traces have native desynchronization; previous closed-form fits used unaligned training. Test train/evaluation preprocessing consistency. Design comes from profiling methodology and literature, never attack-guided tuning",
+  "novelty": "Unverified; training preprocessing, bounded alignment, averaging and SVD are known baselines",
+  "dataset": "data/ASCAD_variable.h5",
+  "width": 1400,
+  "training_rows": 10000,
+  "stages": [
+    "raw",
+    "aligned_once"
+  ],
+  "alignment_bound": 10,
+  "training_alignment_iterations": 1,
+  "training_alignment": "Initial unconditional raw mean/diagonal variance Gaussian; one pass on original rows. No labels, keys, masks or metadata enter offsets",
+  "template_floor": "max(median variance over columns10:1390)*1e-6,1e-12); excludes potentially padded edges",
+  "score_columns": [
+    20,
+    1380
+  ],
+  "offset_ties": "Smallest absolute offset, negative before positive",
+  "features": [
+    "point",
+    "box_product",
+    "covariance_rank1"
+  ],
+  "alignments": [
+    "fixed",
+    "gaussian_raw",
+    "gaussian_aligned"
+  ],
+  "radius": 5,
+  "selection_margin": 25,
+  "margin_reason": "25=radius5+estimated bound10+maximum injected shift10; selected windows never sample injected padding or training-alignment padding",
+  "old_pairs": {
+    "pair1": [
+      187,
+      1080
+    ],
+    "pair2": [
+      334,
+      573
+    ]
+  },
+  "families": [
+    "old_pair1",
+    "old_pair2",
+    "selected_pair1",
+    "selected_pair2"
+  ],
+  "point_selection": "Training HW identity labels only; full absolute centered-product Pearson maximum, separation50/diversity20/row-major exact ties, same interior in both stages",
+  "feature_fit": "Each stage center and sign are fitted on its training rows only; leading covariance SVD maximizes train covariance with unit-norm rank-one weights. No optimization or parameter search",
+  "conditions": [
+    {
+      "name": "clean",
+      "max_shift": 0,
+      "noise_factor": 0.0
+    },
+    {
+      "name": "combined5",
+      "max_shift": 5,
+      "noise_factor": 0.1
+    },
+    {
+      "name": "combined10_ood",
+      "max_shift": 10,
+      "noise_factor": 0.2
+    }
+  ],
+  "noise_scale": "Same original raw training median feature range for every fit and condition; U9101/Z9102 common within pool across pipelines",
+  "new_confirmation_pools": 2,
+  "rows_per_pool": 20000,
+  "pool_seeds": [
+    20261016,
+    20261017
+  ],
+  "excluded_profiling_rows": 70000,
+  "primary": "Aligned-once minus raw signed HW correlation, old_pair1/covariance_rank1/clean/gaussian_raw. Holding evaluation offsets identical isolates changed feature fit rather than a different evaluation alignment rule",
+  "support_criterion": "Delta>=.01 and lower interval>0 in both pools under both paired-row and index-cluster bootstrap schemes",
+  "bootstrap_draws": 9999,
+  "bootstrap_seed": 2026,
+  "cluster_width": 1000,
+  "interval_alpha": 0.01,
+  "interval_family": 4,
+  "two_sided_tail": 0.00125,
+  "interval_limits": "Conditional approximate paired percentile intervals; HDF5 index bins are a row-order proxy, not verified acquisition-time blocks. Adaptive phase choice has no across-phase alpha-spending guarantee",
+  "secondary_scope": "Report all432 coefficients; new selected pairs and refined-template crosses are secondary, never replace the primary. No attack efficacy or causal native-jitter proof from correlation",
+  "attack_payloads_or_metadata_read": false,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "script_sha256": "7d5e01b1a7a1e6053bf3d2f7ad74c599cc970694381d8368689adaa049759454",
+  "input_hashes": {
+    "outputs/paper_precision_replication_2026-10-06/plan.json": "f24919eff6ecdf5a6cbd59b55d6296f34d98de2c2221c01556ebae53c4d3e274",
+    "outputs/paper_precision_replication_2026-10-06/results.json": "629867b5d33cb9a7776551b2989f8fad04cf71f8ef64611fa7ed62c8360726b8",
+    "outputs/paper_precision_replication_2026-10-06/splits.npz": "fe30908f9c6d551b45f94d41fea29c0f2cc6c960e117e7cf65de2e1b3b428b99",
+    "outputs/paper_window_regression_2026-10-06/plan.json": "42bf17284a580db07961ecc16f7cf39e871e0bda42dced7fede320edd31022c8",
+    "outputs/paper_window_regression_2026-10-06/results.json": "bbc3efb5d5bc45b545e9deba20bdb2ff349da4f92a6a6a2c3da51e5a15cdb448",
+    "outputs/paper_window_regression_2026-10-06/fit.json": "7640e48f06c78e7e1b2a9a9223b4971cd87cbe773703bf84b90337b1a4977e95",
+    "outputs/paper_window_regression_2026-10-06/fit.npz": "18ee87b6ad83e8286a3599804f35ff44a2266c812df0721cca16f1fe66c14379",
+    "outputs/paper_window_regression_2026-10-06/splits.npz": "a1107ef48c2882afeaec1715258eb717d54347a1a2602806b66d6b9b18382092",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/best.pt": "c374ff2dcf7e523341069f7f2e2a9c001f7e81d3ff94039af2de6dda1863ba64",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/last.pt": "48d09b8aae9487fecafb33f4b5bd940cf1ab7f3cbdee9a519c61c44508165284",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/manifest.json": "1b159e5af59e4beb03a96762010498da88a2974e378dc171e61d785432e20f0c",
+    "runs/kaggle_control/literature_v7_output/runs/minimal_v3_literature/none_seed0/splits.npz": "b45dcb830d2687163a77db17d5e4caff40545344c6f7dba9b5bc1bf414c88347",
+    "data/ASCAD_variable.h5": "d834da6ca5a288c4ba5add8e336845270a055d6eaf854dcf2f325a2eb6d7de06",
+    "notebooks/kaggle_baseline.ipynb": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e",
+    "outputs/kaggle_project_literature.zip": "bd94e0f1e95009e6994aa052a4e275fceb92144a4b26c4c198b51bc57848b368",
+    "outputs/kaggle_resume_input_literature.zip": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+    "literature/TRAINING_ALIGNMENT_2026-10-06.md": "973bf7e7568493d1001382603cb4efa982f37c2172fe09c88ad22c0f2e5a7495",
+    "notebooks/paper_alignment.py": "a625c0b5dc209501b72729177ed1ba51a72b09865b55a0143f11caf4bd5b3802",
+    "notebooks/paper_maskfree_selection.py": "9391a0ad608d57386a668750bc98135b9b2e76eb91448b55c979674119e08612",
+    "notebooks/paper_selection_audit.py": "e4172bcbae6f054431e5678f1691831add7ebcbb51e5a3897ca3077f80593321",
+    "notebooks/paper_window_regression.py": "7462443edc0af2f6ade4397dba42b8f402433922e1b96c8e1a765b2383b327fa",
+    "notebooks/paper_precision_replication.py": "2ee3fb56cebde9c616b5b2f32bc4f79c017702dc991f73c2099efd06e22f7b38"
+  },
+  "frozen_utc": "2026-10-06T08:19:10.162490+00:00"
+}

@@ -1,5 +1,70 @@
 # Πειραματικό πρωτόκολλο v0.3 — εγκεκριμένη σύγκριση baseline/combined
 
+## Νεότερο Kaggle diagnostic — 9/10/2026
+
+Με νέα άδεια χρήστη ολοκληρώθηκε μία τέταρτη baseline, χωρίς αλλαγή μοντέλου,
+unique data budget, seed ή epochs. Το [plan](../outputs/kaggle_recipe_2026-10-09/plan.json)
+και το [author-code audit](../outputs/kaggle_recipe_2026-10-09/LITERATURE_AND_PROTOCOL.md)
+πάγωσαν πριν την εκτέλεση. Batch50/author linear LR cycle max0,005 συγκρίθηκε
+με το διατηρημένο batch128/constant Adam0,001. Updates10000 έναντι3950,
+ίδιες500000 trace exposures. Joint recipe diagnostic, χωρίς equal-update causal isolation.
+
+Primary: minimum-CE checkpoint, clean validation SR@2000≥0,90 στα ίδια20 orders.
+Απέτυχε:0/20, GE96, epoch1/CE5,560471. Το validation ήταν ήδη viewed· δεν αποτελεί
+νέα confirmation ή ανεξάρτητο attack efficacy evidence. Διατηρούνται οι προηγούμενες
+αποτυχίες. Μία υποβολή/version9, χωρίς HPO/restart/automatic combined ή attack run.
+Session timeout1200s/training-loop cap600s δεν ενεργοποιήθηκαν.99 local tests πέρασαν.
+Χωριστός verifier έλεγξε LR, checkpoint, splits/normalizer,40000 ranks και CPU inference.
+
+Το Kaggle notebook είναι το ίδιο· version10 QUICK_SAVE επαναφέρει την original πηγή
+χωρίς εκτέλεση. Original source/checkpoints/Input/canonical notebook αμετάβλητα.
+Το cap4 full GPU trainings εξαντλήθηκε. Variable profiling170k viewed/30k unused
+και attacks αμετάβλητα. Η CPU phase11 και οι exclusions της παρακάτω διατηρούνται.
+
+## Νεότερη CPU phase11 — 9/10/2026
+
+Το [frozen plan](../outputs/paper_window_selection_2026-10-09/plan.json) περιλαμβάνει
+H1/H2, baseline/controls, split provenance, primary endpoint/criterion,600s costcap
+και stopping rule πριν νέες αναγνώσεις. Το αρχικό GPU scope παρακάτω διατηρείται.
+Ίδιο originalvariabletraining10k, όλα20phase10 paired draws, fixedphase9offsets.
+Alternative box-objective selection: πλήρη845650center pairs, radius5/margin25/
+separation50/diversity20· ίδιο tie rule, per-draw training-only centering/weights/sign.
+Το selection χρησιμοποιεί providedidentityHWlabels μόνο. Κανένα region constraint
+από βιβλιογραφία/confirmation locations ή winner/ensemble/consensus.
+
+Όλα240internalOOB coefficients και40νέαpairs/120weights πάγωσαν πριν twofresh10k
+profiling pools/seeds20261020/21. Baseline point-selector όλα ταphase10fits unchanged.
+Οι exclusions είναι η union όλωνphase10splits, με provenancechain15k→20k→30k→70k→
+110k→150k. No attack indices στη profiling union. Common clean/combined5/trace-only
+Gaussian evaluation offsets γιαpoint/box/rank1 καιbothselectors. Metadata/keys/attacks
+δεν διαβάζονται. Originalfixedattacklocked καιvariableattack10kunchanged.
+
+H1primary cleanbox rank2: median pairedΔ≥0,02,windowmedian≥0,05,≥16/20positive
+σεbothpools καιfirstfamilypairedloss≤0,01. Failed:median0,007642/0,006647,
+12/20,13/20positive,pairedΔ−0,004170/−0,006408. Η αλλαγήobjective δεν αρκεί για
+σταθερό δεύτερο signal σεαυτότοconditionalpipeline· όχι μοναδικήcausalfailureproof.
+H2secondaryOOB/freshmedianwithin0,02 καιsame≥0,05classification:7/8numericalchecks
+passed αλλάjointfailed, thresholdagreement8/8. OOBrows αποκλείονταιαπόdrawfit/labels,
+αλλά συνέβαλανσεoriginalunlabeledpreprocessing· conditionaldiagnostic μόνο.
+H3independently acquiredactualkeyefficacy παραμένειopen, κανένανέοSR.
+
+95tests passed,40fullsearch/240weights/80traincoefficients/240OOB/960fresh replay,
+100sampledoffsets. Ίδια production hashes/1notebook/3GPUtrainings, νέαoptimizer0.
+Variableprofiling170kviewed/30kunused. Futureexclusions=allphase11splitsunion.
+Cap600s δεν ενεργοποιήθηκε· μίαεκτέλεση, χωρίςadaptation ήδεύτεροtrial. No overall
+adaptivealpha/errorcontrol ή20independenttrainingseeds/acquisitions claim.
+
+```powershell
+& .\.venv\Scripts\python.exe notebooks/verify_window_selection.py
+& .\.venv\Scripts\python.exe notebooks/build_window_selection_report.py
+# Inspect objective_comparison.png before confirming visual QA:
+& .\.venv\Scripts\python.exe notebooks/verify_window_selection_report.py --plot-visually-checked
+& .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
+```
+
+[Report](../outputs/paper_window_selection_2026-10-09/REPORT_EL.md) ·
+[Primary literature/three hypotheses/code audit](../literature/SELECTION_OBJECTIVE_AUDIT_2026-10-09.md).
+
 Αίτημα χρήστη: ένα Kaggle notebook και όσο λιγότερες εκπαιδεύσεις γίνεται.
 Προβλεπόμενη σύγκριση:2 νέα CNNs,10k training traces,seed0. Διατηρούνται δύο ιστορικά failures.
 Έως4 GPU trainings συνολικά. Combined μόνο αν baseline clean SR@2000≥0,90 (18/20).
@@ -205,6 +270,53 @@ plaintext μόνο candidate hypothesis scoring. Καμία final Attack_traces 
 & .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
 ```
 
+## Phase10: paired training reselection sensitivity
+
+Το [frozen protocol](../literature/SELECTION_STABILITY_2026-10-06.md) και
+`outputs/paper_selection_stability_2026-10-06/plan.json` προηγήθηκαν των fits
+και των confirmation reads.20 paired draws seed2026,10000positions με replacement
+από τα ίδιαoriginal10k traces/labels·6281–6417 unique rows ανάdraw. Δεν αλλάζει
+neural training budget/model/seed. Phase9 templates/offsets παραμένουνfixed:
+conditional sensitivity diagnostic, όχι end-to-end preprocessing bootstrap.
+
+Κάθε draw ξανακάνει center/845.650-pair fullsearch/point-box-rank1 weights/sign
+μόνο με training labels, margin25/separation50/diversity20/radius5. Όλα20fits και
+120weightvectors πάγωσαν πριν νέα20k+20kprofiling,seeds20261018/19,exclude110k.
+Κοινό rawGaussianevaluation template/clean καιcombined5. All528corrrows retained,
+κανένα bestdraw/consensus/ensemble/attackread. Frozen controlsακριβώςphase9.
+
+Jointprimary: bothoriginalselectedrank1families cleanr≥.05 καιlower>0 σεbothpools
+καιrow/clusterbootstrap, **και** reselection cleanmedian≥.05 με≥16/20positive
+draws γιαbothfamilyranks/bothpools. Η sensitivity απαίτηση είναι descriptive,
+χωρίς binomial inference/selection-error guarantee.9.999draws/scheme,
+nominal99.875%percentileCI/alpha.01family8,tail.000625≈6.25draws: MonteCarlo
+tail uncertainty. Indexbins1000 δεν είναιverifiedacquisitiontime. Adaptivefollowup,
+χωρίςacross-phasealpha-spending guarantee ή αναδρομική αλλαγή phase9failure.
+
+Frozen-signalpassed, secondfamily sensitivityfailed, **jointfailed**.
+Medianreselectedcleanrank2r.012320/.003294,14/20 και15/20positive· originalpair2
+r.081028/.078217. Δεν αποδεικνύει originalfalsepositive ή causaloverfitting.
+90tests passed/14existingwarnings, independentverifierreplayed20searches/120weights/
+528coefficients/79.992bootstrapdraws/12actualrowclusterchecks/176sampledoffsets.
+Variableprofiling150kviewed/50kunused· futureexclusions=allphase10splitsunion.
+No new recoveries/GPU/ipynb; originalfixedattacklocked/variableattack10kunchanged.
+
+[Report](../outputs/paper_selection_stability_2026-10-06/REPORT_EL.md) ·
+[Scheme-aware access follow-up](../literature/SCHEME_AWARE_FULLTEXT_AUDIT_2026-10-06.md).
+
+Ο [algebra/prior-art audit8/10](../literature/REGRESSION_PRIOR_ART_COMPARISON_2026-10-08.md)
+χρησιμοποιεί μόνοdeterministictoyarrays. Δεν είναι νέοreal-dataexperiment, fitή
+selectionprotocol καιδενμετράphysicalefficacy. Πέντεassertiongroupspassed και
+αποθηκεύτηκανarrays/sourcehashes. Δεν αλλάζει κανέναfrozenfit ήstudyendpoint.
+
+```powershell
+& .\.venv\Scripts\python.exe notebooks/verify_selection_stability.py
+& .\.venv\Scripts\python.exe notebooks/build_selection_stability_report.py
+# Inspect both PNGs before setting the visual-check flag:
+& .\.venv\Scripts\python.exe notebooks/verify_selection_stability_report.py --plots-visually-checked
+& .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
+```
+
 Τα completed experiment directories προστατεύονται από αντικατάσταση. Τα παραπάνω
 επαληθεύουν/συνθέτουν stored evidence, χωρίς νέο training. Η ανεξάρτητη CPU
 αναπαραγωγή της προηγούμενης ενότητας καλύπτει το παλιό frozen suite44tests· η νέα
@@ -326,5 +438,90 @@ splits/RNG/time ordering/old preservation. Τα198full null maxima δεν επα
 & .\.venv\Scripts\python.exe notebooks/build_selection_audit_report.py
 # Inspect selection_replication.png before setting the visual-check flag:
 & .\.venv\Scripts\python.exe notebooks/verify_selection_audit_report.py --plot-visually-checked
+& .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
+```
+
+## CPU window/noise regression και μεγαλύτερη profiling επιβεβαίωση — 6/10
+
+Με νέα εντολή χρήστη εκτελέστηκαν phase7/8, χωρίς νέαGPU ή αλλαγή training10k.
+Οι δύο plans πάγωσαν πριν τα αντίστοιχαunused payloads. Phase7 έξιfeature variants,
+radius5/ίδιοιπαλιοίpoints, ridge0,01 σε standardized121cross-products. Noise covariance
+incrementσ²(C_A⊗I+I⊗C_B)+σ⁴I, με known addedσ1,3/fixed και4,8/variable.
+Identity αφοράiidindependentaddednoise/disjointwindows, όχι native noise ή
+noise-dependent alignmentselection. Δεν γίνεταιHPO/newmodelseed/optimizer.
+
+Δύο5kprofilingpoolsανάcampaign, seeds20261011/12, disjoint απόallpreviousrows·
+fresh variableattack5k/seed20261013, disjoint απόphase5attack5k. Ολόκληροfit
+αποθηκεύτηκεπριν οποιοδήποτεholdout. Νέοtrace subset, ίδιοήδηεξετασμένοconstantkey,
+όχι νέοkey/device. Keys/plaintextμόνοevaluation, masksποτέfit. Fixedattacklocked.
+900correlation/540recoverysummaries,20overlappingorders/budget2000/rank0best.
+Primarynoise−cleanridgepair1/combined5/Gaussian≥.01/positiveBonfbootstrapbounds
+καιστα4poolsfailed· secondaryvariableattack3/20/18targetfailed. Allmethodsreported.
+FixedOODbox/rank1/noiseridge20/20bothpairs/bothpoolssecondaryknownwindoweffect.
+
+Phase8βελτιώνειprecisionμεδύοunusedvariableprofiling20k/seed20261014/15, χωρίςrefit.
+Επιλογήσχεδίουαπόprofilingprecisionμόνο, όχιattack.9.999drawsκαιrowbootstrapκαι
+index-clusterbootstrap:200binsτων1.000HDF5indices, όχιverifiedacquisitiontime.
+Nominal99,75%intervals/family4/alpha.01/tail.00125,approximateiidrow/clusterassumptions,
+χωρίςoverallsequentialalphaspendingguarantee. Δr.041891/.051852positiveboundsόλα,
+criterionpassed. Box/rank1παραμένουνισχυρότερα· noiseridgeδενείναιglobalwinner.
+Phase8κανέναmetadata/key/attackread, κανένανεότεροrecoveryresult.
+
+82tests passed, source/checkpoints/gate/oneKagglenotebook/3GPUtrainingspreserved.
+Fixedprofiling50kused,variableprofiling70kused/130kunused,variableattack10kviewed.
+Οινέεςviewedrowsδενχρησιμοποιούνταιγιαtuning/freshconfirmation. Ηnative-jitter
+training-sidealignment ήταν η επόμενη πρότασηστο[paperoutline](PAPER_CANDIDATE.md).
+
+[Phase7](../outputs/paper_window_regression_2026-10-06/REPORT_EL.md) ·
+[Phase8](../outputs/paper_precision_replication_2026-10-06/REPORT_EL.md) ·
+[Knownpriorart/identity](../literature/WINDOW_REGRESSION_2026-10-06.md).
+
+```powershell
+& .\.venv\Scripts\python.exe notebooks/verify_window_regression.py
+& .\.venv\Scripts\python.exe notebooks/build_window_regression_report.py
+# Inspect both PNGs before setting the visual-check flag:
+& .\.venv\Scripts\python.exe notebooks/verify_window_regression_report.py --plots-visually-checked
+& .\.venv\Scripts\python.exe notebooks/verify_precision_replication.py
+& .\.venv\Scripts\python.exe notebooks/build_precision_replication_report.py
+# Inspect precision_intervals.png before setting the visual-check flag:
+& .\.venv\Scripts\python.exe notebooks/verify_precision_replication_report.py --plot-visually-checked
+& .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
+```
+
+## Training-side alignment — εκτελεσμένη CPU phase9, 6/10
+
+Νέο plan/splits/scripts/hash freeze πριν οποιοδήποτε training ή confirmation read.
+Originalvariable10k training· raw unconditionalGaussianmean/variance, μίαpass±10
+από originalrows, score20:1380/tie(absδ,δ). Mean/variancefloor στα traininginterior
+columns10:1390 ώστε paddingedges να μηνκαθορίζουνfloor. Offsets χρησιμοποιούν μόνοtraces.
+Raw/aligned fit centers και point/box/leading covariance rank1 weights/sign από
+provided trainingidentityHWlabels. Κανέναmetadata/key/mask/plaintextread.
+
+Ταoldpairsκρατιούνταικαισταδύοfits. Δύονέαpairs ανάfit, fullabsolutePearson search,
+separation50/diversity20/margin25/845.650eligiblecandidates. Το25=radius5+estimated10+
+injected10, άραταwindowsαποκλείουνartificialpadding. Fit/weights/points αποθηκεύτηκαν
+πριν νέοprofiling20k+20k, seeds20261016/17, όλες70kpreviousrows excluded.
+
+Primaryaligned−rawoldpair1/rank1/clean με ίδιαGaussianraw offsets:Δ≥.01/positive
+lower σεbothpools×row/clusterbootstrap9.999draws, nominal99,75%intervals/family4.
+HDF5indexbins1000 είναιdependenceproxy, όχιverifiedacquisitiontime· approximate
+conditionalintervals καιχωρίςacross-phasealphaspending. Primaryfailed:
+Δ.003601/.006085, allintervalsinclude0. Pointreselections/refinedtemplate crosses
+είναιsecondary,432reportedcomparisons. Νέαselectedpair2cleanr.076546/.079067,
+χωρίςνέοrecoveryclaim. Καιτα40krowsτώραviewed/excludedfromfuturetuning.
+
+86tests passed/14warnings. Alltrainingoffsets/selectionmatrices/weights καιall432
+coefficients/products επαληθεύονταιανεξάρτητα, μαζίμε39.996bootstrapdraws,
+528sampledevaluationoffsets/6actualrowclusterreplays. Source/checkpoints/gate/ένα
+notebook/3GPUtrainings preserved· variableprofiling110kviewed/90kunused, attacksunchanged.
+
+[Report](../outputs/paper_training_alignment_2026-10-06/REPORT_EL.md) ·
+[Παγωμένη primary βιβλιογραφία](../literature/TRAINING_ALIGNMENT_2026-10-06.md).
+
+```powershell
+& .\.venv\Scripts\python.exe notebooks/verify_training_alignment.py
+& .\.venv\Scripts\python.exe notebooks/build_training_alignment_report.py
+# Inspect both PNGs before setting the visual-check flag:
+& .\.venv\Scripts\python.exe notebooks/verify_training_alignment_report.py --plots-visually-checked
 & .\.venv\Scripts\python.exe notebooks/verify_study_synthesis.py
 ```

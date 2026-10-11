@@ -1,0 +1,41 @@
+{
+  "correlation_rows_verified": 528,
+  "all_training_full_searches_replayed": 20,
+  "all_training_weight_vectors_replayed": 120,
+  "direct_selected_training_coefficients_replayed": 40,
+  "bootstrap_draws_replayed": 79992,
+  "sampled_cluster_draws_replayed_with_actual_rows": 12,
+  "sampled_evaluation_offsets_replayed": 176,
+  "all_locations_splits_rng_and_centers_replayed": true,
+  "training_fit_preceded_confirmation": true,
+  "frozen_controls_unchanged": true,
+  "feature_windows_avoid_padding": true,
+  "variable_used_profiling_rows": 150000,
+  "new_attack_reads": false,
+  "no_bootstrap_winner_chosen": true,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "tests": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 15.069
+  },
+  "frozen_signal_met": true,
+  "pipeline_sensitivity_met": false,
+  "joint_support_met": false,
+  "seconds": 113.11577679985203,
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "artifact_sha256": {
+    "plan.json": "69bdbd798dc88e514fb5417793cf089a64b4102212f6889fed966805c69aa6ba",
+    "splits.npz": "50b3a4ebce2c92fc9714187d3a4921dceba98413563fae2f9cd41a0c9309f183",
+    "training_access.json": "e11eff54322ede4fc91b7f51a9b91a1b3ba0e4ebb4a8b3e45d510786a65ada5e",
+    "evaluation_access.json": "c1ff73de19b730bc80d492b2287b0ddbb91f3296c94a25a2fff0d9efcebfc8ff",
+    "fit.json": "439c58ac29a678a9e9414406349f646e866ca46e21b6c5a2a368e66348e475a9",
+    "fit.npz": "fc271d2ba98ab792249673a8bca835bedf1a68b46a0c0feaa417e0b970ece639",
+    "arrays.npz": "3cb9a91ab86f19068daa19e19c4ad5009cd5cc4d6287e252bfbda0671f4c8a99",
+    "results.json": "b56561be54db38b0f58714f8e17e10f8018561e00a41bea92d93f5103c238884",
+    "pytest.xml": "8e2228fe614f8c05f6f72ef7af8cb1946204c00d392afd8881e046c5ec2a7398"
+  }
+}

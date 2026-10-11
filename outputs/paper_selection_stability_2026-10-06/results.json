@@ -1,0 +1,7177 @@
+{
+  "plan_sha256": "69bdbd798dc88e514fb5417793cf089a64b4102212f6889fed966805c69aa6ba",
+  "fit_sha256": "fc271d2ba98ab792249673a8bca835bedf1a68b46a0c0feaa417e0b970ece639",
+  "access_sha256": "c1ff73de19b730bc80d492b2287b0ddbb91f3296c94a25a2fff0d9efcebfc8ff",
+  "arrays_sha256": "3cb9a91ab86f19068daa19e19c4ad5009cd5cc4d6287e252bfbda0671f4c8a99",
+  "correlations": [
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.0812751185345729
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.08578666615387487
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.097696155572623
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "point",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.001491283262305673
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "box_product",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.009191685149417645
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.011103667999207216
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.090373018881815
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.08772921087857759
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.09258201718979127
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "point",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.07784906812018123
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "box_product",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.07024917227363912
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.08102830926176614
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.14111137865144993
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.12225586397899883
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11955294370735281
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.04911977158343133
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11102844570468641
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": -0.015690692181095516
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.14105462981920167
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1221203677915242
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.12010902837001002
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.048669370636565304
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11059706489474351
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.048248311590495085
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.06357291335867134
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.08575518175232257
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.089961990819838
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": -0.006318692086975916
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": -0.004016300251251604
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": -0.0019148140357925095
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.13599003250852737
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.11710016323543129
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.11626101242415195
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.04921439628603744
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11104297646217044
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11351979251558901
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.059725315644987245
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.08528593787659135
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.09137364993361119
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.07782029761532261
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.07026659267859447
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.09210943102077701
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.07015881086407395
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.08345424431601298
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.08957272120002079
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.07301957191120163
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.06889845107537587
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.09663709991358073
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1410695971769973
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.12222223579101657
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11995834221254276
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.049354450418065826
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.0907494433140582
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": -0.000746386733772891
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.13642822691764792
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.11711539323084655
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.11793455123554195
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.04906376647810977
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11113892873806386
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.06846397283335079
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.0981852338757902
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.08986600505711542
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.08624480509919247
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": -0.005581401423289967
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": 0.01218772252031536
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": 0.008357718931680412
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.08084404137766942
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.08506734395206411
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.1121592924989782
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": 0.009022177809439647
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": 0.014689843810732659
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": 0.013085700130539819
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.07348333346643923
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.08586031185088919
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.08406603532818857
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": 0.01698676003394617
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": 0.014836731132530373
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": 0.014509553037715612
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.0902508838980616
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.08768694503333216
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.09230944642367153
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.054588437270853135
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.06830059442794147
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.09202611117996883
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.0594402859685108
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.08507919156410342
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.09437588595107695
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.05467647772382976
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.06831964690375485
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.09205786882416582
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.07024918949192491
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.08351031124113897
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.08480665616604911
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.006334951846202266
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.008026604935362764
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.01155376819660746
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.07097325311046877
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.08501347680909888
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.09065517370920596
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": 0.006827746447383719
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": -0.007573929909088298
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": -0.0012344812106896018
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.08815537080436112
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.10595367729540439
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.11216990572020075
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": -0.0017839605924930507
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": -0.0015163969963426142
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": -0.008657016604433196
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.09016266848844418
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.08753576547284979
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.0908850652168827
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": -0.0019684250140485785
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": -0.010901464672159205
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": 0.0013591425457948245
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.0733120979014146
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.08383642741405153
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.1050340681966756
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.01627317371847267
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.00885971273042637
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.009003464950624951
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1411643668957003
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.12222263166006223
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11963226059471001
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.0491332212820826
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11122508917657152
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": -0.0155504755064398
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.07018523457296887
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.08347871182833559
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.08920083612779402
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.017173565207942575
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.0009753446972200027
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.01330095480526426
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.024510022980082518
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.07227467990811888
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.08162611579148611
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "point",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.0026480585997550946
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "box_product",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.003681862310286585
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.014534668767007665
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.028406820247322186
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.06562838734468354
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.07010335352683034
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "point",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.005317719194566704
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "box_product",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.04331591398698124
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.03856903085880341
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.06303191006141866
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1141007561823673
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11518963062755445
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.0013838542827714743
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.031246131476558553
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": -0.007084573413492427
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.0628601126700461
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11410199213791095
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11542045342946014
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.001338803065087857
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.030993629733161505
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.02585677483172086
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.020757356537081235
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.06518705155758696
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.06562657072495456
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": -0.0026016288719836805
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": -0.015703117487111774
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": -0.006689874142327819
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.05738108874623464
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.10846985031169555
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.1125029130640257
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.001402938914998322
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.031257450501047404
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.030240758575917938
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.018454634888041277
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.0639438283688097
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.06233448815793926
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.005359663929830909
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.04321039338829166
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.027150986925544105
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.013683933326101922
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.06345486770651232
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.06696622503259876
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.019919441631640826
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.044596160141682904
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.0247751112863185
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.0629227784944163
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11412111149303787
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11546324091237069
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.008121152243700112
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.028789836868913867
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": -0.001134171099551935
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.05766694604227838
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.10831972371139116
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.11371867325564372
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.0013796313182608598
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.03127280003290619
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.029556685413944583
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.03261407873703848
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.08050530953742156
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.0786232455131265
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": -0.011122832692719544
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": 0.010836480819337153
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": 0.009809665157191078
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.03150672469777306
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.07168960701586843
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.07876667482567185
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": -0.0024746631371590708
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": 0.006290325077568637
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": 0.0050386103098030285
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.023509699811526886
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.06645102165617749
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.06322802705385612
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": 0.011222705040728892
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": 0.004035684671716976
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": 0.0035450677832932222
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.02837699599422242
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.06560596567422138
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.07022484607408855
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.004744378386548996
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.046981355737431556
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.04015865179219691
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.018386530679851344
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.06384399966660921
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.07286613250151791
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.004863873676289191
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.04709081117491812
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.0388338224488736
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.013721840777458022
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.06347252373975999
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.05932089419223765
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": -0.0004113274351107635
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.0003525206894531016
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.005173241846233262
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.022586969118383843
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.06414295425906708
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.06455671404568782
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": 0.003411374787014064
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": -0.004180540679703614
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": 0.014014543098709576
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.03898516664863454
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.08958933214908543
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.08738179904633799
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": -0.006779801291791556
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": 0.012476742822033867
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": -0.017676449261024373
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.028333186607416978
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.06545143597190478
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.06439110567235178
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": 0.008783336593639333
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": -0.002470145662147069
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": -0.004100670751165127
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.02800800452962427
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.07212480615435228
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.07984889838772925
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.009659979348653737
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.01000063943311577
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.012516986487461345
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.06305373533285857
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11406376252156629
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11506095193908182
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.0014051516938606969
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.03126512517426717
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": -0.007117031637509891
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.013685337807706146
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.06340139374451952
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.06578350427858048
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.0014204844291276133
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": -0.005843639719920268
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.00494554528895382
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.07468127041824743
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.07585713877469637
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.08902235934512655
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "point",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.013284349883798958
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "box_product",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0030513704220993653
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": -0.0014896339644113723
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.09042437819761855
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.08951191514245524
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.09432929883935927
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "point",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.0618805347070017
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "box_product",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.06886328075844905
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.07821739130042024
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1378331352819109
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11806945327860481
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1149870856090194
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.06930861569820315
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11070312880173168
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.0021370517527529212
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.13715910988538543
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11769928282218309
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11537663660388266
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.0690710294525075
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.1103312324418032
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.053419268356975746
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.06266385155736302
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.08024785336080241
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.08743970072812274
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": 0.007502441360294457
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": -0.0024954334967935954
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": -0.0036501676493730087
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.13458933273459725
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.11272502510261714
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.11184988084305812
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.069427149899761
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11071388593993162
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.1135067494487052
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.07623292223741096
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.08694184073610521
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.09532216875060374
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.06205596450464326
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.06883851045050877
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.08676575730611225
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.07954427597527591
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.08508176934703159
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.09326409059977273
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.054155261338685874
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.06697198498963884
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.09113273604827554
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1377801570067153
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11803722005564546
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11542852103176614
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.0527462552919051
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.08781181928838225
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.010586957121216453
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.13423568439301162
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.11198036975919755
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.1127460665264847
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.06929431313204269
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11087853301010782
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.07327870858259941
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.09729087430553572
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.0891568827438451
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.08487078384977863
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": 0.007794872430967091
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": -0.0032135423203508233
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": -0.0011065198503761296
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.08731638353713861
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.08681683476044082
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.11305248790697574
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": 0.0028266830978966326
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": 0.0027488538921555143
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": 0.0031826626581088584
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.06781745910401676
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.07940213144151843
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.08130439528853715
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": -0.0028104656206933173
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": -0.00111638555476048
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": -0.0003648589091364762
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.09049395787361701
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.08956017009445984
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.09405683361802289
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.05069526215307982
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.06599036960692958
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.08868528350874673
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.07655608959385457
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.08718849949877816
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.09709198257154333
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.050516939139911295
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.06562760118697282
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.08852162088221097
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.07948142558973159
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.08501432762520944
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.08943631617457407
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.002315199013201413
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.005331470978488084
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.005461612818098851
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.08298199159552166
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.08694273456511403
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.09485249953749152
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": -0.0028673897524389602
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": -0.0019028366156046705
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": -0.0019087258067082816
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.07998381701050998
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.0975927784258821
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.1093587586537657
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": -0.0047507953810428
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": 0.003522091110171448
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": -0.003755483923386963
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.0903991886230778
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.08959383535167623
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.09347984385518587
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": -0.001289638142178041
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": -0.003171778296751441
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": 0.0006624862590584079
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.07845234550379455
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.08505505549537799
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.10567672715415628
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.0028446150285827386
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 2.602372236068813e-05
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.0034056350831714755
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.13746602212165232
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11768122748174621
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.11474430311882948
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.06946882961671105
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.11107383866541995
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.002387282384474543
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.07946392625256543
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.0849464614310432
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.0928002585537454
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.019336847538853896
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": -0.009795136268491525
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.0010883528669589652
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.03302433457887059
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.05923878646650218
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1080
+      ],
+      "hw_correlation": 0.0697513675658727
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "point",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.006050743855134003
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "box_product",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.0017018814021069436
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "raw_old_pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        334,
+        573
+      ],
+      "hw_correlation": 0.006630301706927688
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.036472126176688865
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.07035645795265369
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.07259459388191873
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "point",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.011728229919546057
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "box_product",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.047373707410317344
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "frozen",
+      "draw": -1,
+      "family": "aligned_selected_pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.046182104796654425
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.06724379245719075
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1100384119541398
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.10823707816364396
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": -0.0013071538053411784
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.02948944254642729
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 0,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.005226084674401751
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.06685570392541305
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.10978806402586185
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1079491769912366
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": -0.0013126009321609748
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.029388075183672358
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 1,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.03214590557431095
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.02126332997114249
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.06639001937977762
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        61,
+        1078
+      ],
+      "hw_correlation": 0.07189778160495389
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": 0.01654704666276389
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": 0.007857036866718957
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 2,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        327,
+        1293
+      ],
+      "hw_correlation": 0.0034582395855897448
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.06208501996728973
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.1075500057069111
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.10650428263935603
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": -0.0012957904172310436
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.029493822349318775
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 3,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.03132684976315077
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.023018251114504524
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.06800633451358697
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.06564147245623358
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.011638125894997551
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.04735130906989224
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 4,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        199,
+        1013
+      ],
+      "hw_correlation": 0.03607483928100668
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.039399900911152995
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.06710066588085907
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.06520256636898666
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.013575320745494184
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.04456534415719048
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 5,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        201,
+        1013
+      ],
+      "hw_correlation": 0.040352382673007156
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.06714180492780882
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.1100404657488345
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.10848686694697864
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.002269773462665004
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.02472842375856398
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 6,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        999
+      ],
+      "hw_correlation": 0.0023183429089170837
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.06205983382270956
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.10683752102556467
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1071
+      ],
+      "hw_correlation": 0.10683968751705204
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": -0.001306067150610939
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.029499421355694617
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 7,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.03425213463531528
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.03148698113115391
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.07366881972677575
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        70,
+        1070
+      ],
+      "hw_correlation": 0.07101535427317146
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": 0.0029823475931709206
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": -0.006304255121881214
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 8,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        543,
+        1235
+      ],
+      "hw_correlation": 0.0005623711400934217
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.03637516512434506
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.0662358772769359
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1071
+      ],
+      "hw_correlation": 0.08084373184350746
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": -0.01085655380792145
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": -0.010718173108878362
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 9,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        477,
+        732
+      ],
+      "hw_correlation": -0.008588129507683812
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.01589800620369438
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.059321841234516844
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        70,
+        1078
+      ],
+      "hw_correlation": 0.057879853690668476
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": 0.002366691624710793
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": 0.007209937426388271
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 10,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        238,
+        481
+      ],
+      "hw_correlation": 0.0011613677886326754
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.03649565611310602
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.07037935130640453
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.07272187231805922
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.007188624596025368
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.04386631103041234
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 11,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.04607175772404858
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.02323318364992692
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.06809307819441111
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1072
+      ],
+      "hw_correlation": 0.07733278562800527
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.00722808634471137
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.043622435616188955
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 12,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1012
+      ],
+      "hw_correlation": 0.04485205996176297
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.03934799621082561
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.0670631053523796
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.05628376449269386
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.0042488668310764754
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.005400894875217642
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 13,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        178,
+        273
+      ],
+      "hw_correlation": 0.007558990125850228
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.026424209122987267
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.06836679728461659
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1071
+      ],
+      "hw_correlation": 0.06250145958800023
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": -0.0033036808049808977
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": -0.002407557400213883
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 14,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        40,
+        950
+      ],
+      "hw_correlation": -0.007870753830763999
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.029113387234112373
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.0786080627824088
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1078
+      ],
+      "hw_correlation": 0.08266831863943412
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": -0.005406996417288171
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": -0.003675543553386537
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 15,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        41,
+        762
+      ],
+      "hw_correlation": 0.005034122012345995
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.036471355101785764
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.07030933911736842
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        76,
+        1070
+      ],
+      "hw_correlation": 0.06629204525766857
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": 0.006682978879804583
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": 0.007222008448364894
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 16,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        489,
+        730
+      ],
+      "hw_correlation": 0.005442267058234302
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.02940886052073757
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.06468151657127602
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        202,
+        1070
+      ],
+      "hw_correlation": 0.07835810766512552
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": -0.004995321462666939
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.003719084685864765
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 17,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        899,
+        989
+      ],
+      "hw_correlation": 0.0013133444373186474
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.06710485672222448
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.10969462206487977
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        188,
+        1071
+      ],
+      "hw_correlation": 0.10752568475995768
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": -0.001285204619715776
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.029495498154625984
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 18,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        125,
+        1000
+      ],
+      "hw_correlation": 0.0019154064092538386
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "point",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.0393655788344912
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "box_product",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.06696683483395051
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "pair": [
+        77,
+        1070
+      ],
+      "hw_correlation": 0.0642531341376732
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "point",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.005669140239086792
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "box_product",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.0007016432832337035
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "kind": "training_draw",
+      "draw": 19,
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "pair": [
+        187,
+        1170
+      ],
+      "hw_correlation": 0.004454336264754151
+    }
+  ],
+  "intervals": [
+    {
+      "pool": "primary",
+      "family": "aligned_selected_pair1",
+      "scheme": "paired_rows",
+      "correlation": 0.09258201718979127,
+      "lower": 0.06985650675803066,
+      "upper": 0.11404766030421072,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "primary",
+      "family": "aligned_selected_pair1",
+      "scheme": "index_clusters",
+      "correlation": 0.09258201718979127,
+      "lower": 0.07077668222650553,
+      "upper": 0.11492083057440806,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    },
+    {
+      "pool": "primary",
+      "family": "aligned_selected_pair2",
+      "scheme": "paired_rows",
+      "correlation": 0.08102830926176614,
+      "lower": 0.058652325336090855,
+      "upper": 0.1033910588215146,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "primary",
+      "family": "aligned_selected_pair2",
+      "scheme": "index_clusters",
+      "correlation": 0.08102830926176614,
+      "lower": 0.06021794929112128,
+      "upper": 0.1011845418860689,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    },
+    {
+      "pool": "replication",
+      "family": "aligned_selected_pair1",
+      "scheme": "paired_rows",
+      "correlation": 0.09432929883935927,
+      "lower": 0.07221780928668331,
+      "upper": 0.11744346837238384,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "replication",
+      "family": "aligned_selected_pair1",
+      "scheme": "index_clusters",
+      "correlation": 0.09432929883935927,
+      "lower": 0.07182261545752287,
+      "upper": 0.1167689740184556,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    },
+    {
+      "pool": "replication",
+      "family": "aligned_selected_pair2",
+      "scheme": "paired_rows",
+      "correlation": 0.07821739130042024,
+      "lower": 0.05518386591394483,
+      "upper": 0.10234609568394508,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "replication",
+      "family": "aligned_selected_pair2",
+      "scheme": "index_clusters",
+      "correlation": 0.07821739130042024,
+      "lower": 0.0576462089438335,
+      "upper": 0.09914702583960643,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    }
+  ],
+  "sensitivity": [
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "family": "pair1",
+      "median": 0.09334266618737425,
+      "minimum": 0.08406603532818857,
+      "maximum": 0.12010902837001002,
+      "positive_draws": 20,
+      "draws": 20,
+      "support": true
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "family": "pair2",
+      "median": 0.01231973416357364,
+      "minimum": -0.015690692181095516,
+      "maximum": 0.11351979251558901,
+      "positive_draws": 14,
+      "draws": 20,
+      "support": false
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "family": "pair1",
+      "median": 0.0757446890073222,
+      "minimum": 0.05932089419223765,
+      "maximum": 0.11546324091237069,
+      "positive_draws": 20,
+      "draws": 20,
+      "support": true
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "family": "pair2",
+      "median": 0.00749145350171217,
+      "minimum": -0.017676449261024373,
+      "maximum": 0.04015865179219691,
+      "positive_draws": 14,
+      "draws": 20,
+      "support": false
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "family": "pair1",
+      "median": 0.09620707566107353,
+      "minimum": 0.08130439528853715,
+      "maximum": 0.11542852103176614,
+      "positive_draws": 20,
+      "draws": 20,
+      "support": true
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "family": "pair2",
+      "median": 0.003294148870640167,
+      "minimum": -0.003755483923386963,
+      "maximum": 0.1135067494487052,
+      "positive_draws": 15,
+      "draws": 20,
+      "support": false
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "family": "pair1",
+      "median": 0.07502732897303224,
+      "minimum": 0.05628376449269386,
+      "maximum": 0.10848686694697864,
+      "positive_draws": 20,
+      "draws": 20,
+      "support": true
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "family": "pair2",
+      "median": 0.005130103343373873,
+      "minimum": -0.008588129507683812,
+      "maximum": 0.04607175772404858,
+      "positive_draws": 18,
+      "draws": 20,
+      "support": false
+    }
+  ],
+  "frozen_signal_met": true,
+  "pipeline_sensitivity_met": false,
+  "joint_support_met": false,
+  "rng_states": {
+    "primary": {
+      "uniform": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 276625763555800067544212840617897846637,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "normal": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 250051369172808588583560855122220114751,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      }
+    },
+    "replication": {
+      "uniform": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 276625763555800067544212840617897846637,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "normal": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 250051369172808588583560855122220114751,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      }
+    }
+  },
+  "seconds": 221.58112380001694,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "versions": {
+      "torch": "2.8.0+cpu",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "cuda_runtime": null,
+    "torch_threads": 2
+  },
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "variable_used_profiling_rows": 150000,
+  "new_attack_reads": false,
+  "no_holdout_tuning": true,
+  "no_bootstrap_winner_chosen": true,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0
+}

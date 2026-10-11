@@ -5,7 +5,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "notebooks"))
 from paper_window_regression import (FEATURES, window_columns, noise_product_covariance,
-    fit_weights, extract_features, orient_weight, bootstrap_difference)
+    fit_weights, extract_features, orient_weight, bootstrap_difference, alignment_offsets)
 from paper_alignment import shifted
 
 
@@ -94,3 +94,21 @@ def test_invalid_windows_offsets_and_degenerate_fit():
     with pytest.raises(ValueError): fit_weights(np.ones((5, 80)), np.ones(5), [15, 55])
     with pytest.raises(ValueError): orient_weight(np.zeros(4), np.ones((5, 4)), np.arange(5))
     with pytest.raises(ValueError): extract_features(np.ones((5, 80)), np.ones(80), [15, 55], 2, np.ones(5) * 2, {})
+
+
+def test_synthetic_alignment_feature_end_to_end():
+    rng = np.random.default_rng(8)
+    # A common waveform makes global shifts observable without any target labels.
+    waveform = rng.normal(size=100) * 5
+    x = waveform + rng.normal(size=(80, 100)) * .05
+    center, variance = x.mean(0), x.var(0)
+    y = (x[:, 25] - center[25]) * (x[:, 70] - center[70])
+    w, _, _ = fit_weights(x, y, [25, 70], radius=2, sigma=.02)
+    injected = np.resize(np.arange(-5, 6), len(x))
+    corrupted = shifted(x, injected)
+    offsets = alignment_offsets(corrupted, center, variance)
+    for name in ("gaussian_template", "sad_training_mean"):
+        np.testing.assert_array_equal(offsets[name], injected)
+        feature = extract_features(corrupted, center, [25, 70], 2, offsets[name], w)
+        assert feature.shape == (len(x), len(FEATURES))
+        np.testing.assert_allclose(feature, extract_features(x, center, [25, 70], 2, offsets["fixed"], w), atol=1e-12)

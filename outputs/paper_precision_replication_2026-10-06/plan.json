@@ -1,0 +1,97 @@
+{
+  "authorization": "User requested more experiments toward a paper on 2026-10-06; independent larger CPU profiling confirmations, no change to training budget/models/seeds",
+  "reason": "Phase7 profiling-only contrast estimates were positive with wide intervals; increase precision and audit row-order dependence using untouched rows, keeping all methods/parameters fixed. Attack results do not choose this design",
+  "phase7_primary_failure_preserved": true,
+  "no_retuning_or_new_fit": true,
+  "campaign": "variable",
+  "dataset": "data/ASCAD_variable.h5",
+  "width": 1400,
+  "pairs": {
+    "pair1": [
+      187,
+      1080
+    ],
+    "pair2": [
+      334,
+      573
+    ]
+  },
+  "features": [
+    "point",
+    "box_product",
+    "diagonal_products",
+    "covariance_rank1",
+    "ridge_clean",
+    "ridge_noise"
+  ],
+  "alignments": [
+    "fixed",
+    "gaussian_template",
+    "sad_training_mean"
+  ],
+  "conditions": [
+    {
+      "name": "clean",
+      "max_shift": 0,
+      "noise_factor": 0.0
+    },
+    {
+      "name": "noise5",
+      "max_shift": 0,
+      "noise_factor": 0.1
+    },
+    {
+      "name": "shift5",
+      "max_shift": 5,
+      "noise_factor": 0.0
+    },
+    {
+      "name": "combined5",
+      "max_shift": 5,
+      "noise_factor": 0.1
+    },
+    {
+      "name": "combined10_ood",
+      "max_shift": 10,
+      "noise_factor": 0.2
+    }
+  ],
+  "radius": 5,
+  "original_training_rows": 10000,
+  "new_confirmation_pools": 2,
+  "rows_per_pool": 20000,
+  "pool_seeds": [
+    20261014,
+    20261015
+  ],
+  "uniform_seed": 9101,
+  "normal_seed": 9102,
+  "bootstrap_seed": 2026,
+  "bootstrap_draws": 9999,
+  "primary": "Same frozen ridge_noise minus ridge_clean signed HW correlation, pair1/combined5/Gaussian; difference>=.01 and lower interval>0 for both pools under both bootstrap schemes",
+  "cluster_width": 1000,
+  "cluster_definition": "Consecutive HDF5 profiling index bins; sensitivity proxy for row-order dependence, not verified acquisition-time blocks",
+  "interval_alpha": 0.01,
+  "interval_family": 4,
+  "two_sided_tail": 0.00125,
+  "interval_limitations": "Approximate paired percentile bootstrap: iid rows vs iid HDF5-index clusters. Phase chosen after phase7 profiling precision assessment. No overall alpha-spending/optional-stopping guarantee across adaptive research phases; not retroactive success of phase7",
+  "methods_reported": "All360 correlation rows, both families, every feature/condition/alignment; no selected winner replacement",
+  "attack_payloads_or_metadata_read": false,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "script_sha256": "2ee3fb56cebde9c616b5b2f32bc4f79c017702dc991f73c2099efd06e22f7b38",
+  "input_hashes": {
+    "outputs/paper_window_regression_2026-10-06/plan.json": "42bf17284a580db07961ecc16f7cf39e871e0bda42dced7fede320edd31022c8",
+    "outputs/paper_window_regression_2026-10-06/results.json": "bbc3efb5d5bc45b545e9deba20bdb2ff349da4f92a6a6a2c3da51e5a15cdb448",
+    "outputs/paper_window_regression_2026-10-06/fit.json": "7640e48f06c78e7e1b2a9a9223b4971cd87cbe773703bf84b90337b1a4977e95",
+    "outputs/paper_window_regression_2026-10-06/fit.npz": "18ee87b6ad83e8286a3599804f35ff44a2266c812df0721cca16f1fe66c14379",
+    "outputs/paper_window_regression_2026-10-06/splits.npz": "a1107ef48c2882afeaec1715258eb717d54347a1a2602806b66d6b9b18382092",
+    "notebooks/paper_window_regression.py": "7462443edc0af2f6ade4397dba42b8f402433922e1b96c8e1a765b2383b327fa",
+    "notebooks/paper_alignment.py": "a625c0b5dc209501b72729177ed1ba51a72b09865b55a0143f11caf4bd5b3802",
+    "notebooks/paper_alignment_controls.py": "49818822675f86374557b85d6cfbcc2e5d90206c9a08d1a7b492efd5ed1826cb",
+    "notebooks/paper_selection_audit.py": "e4172bcbae6f054431e5678f1691831add7ebcbb51e5a3897ca3077f80593321",
+    "data/ASCAD_variable.h5": "d834da6ca5a288c4ba5add8e336845270a055d6eaf854dcf2f325a2eb6d7de06"
+  },
+  "frozen_utc": "2026-10-06T07:27:38.863791+00:00"
+}

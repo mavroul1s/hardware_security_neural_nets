@@ -1,5 +1,17 @@
 # Kaggle: ενεργή μελέτη baseline/combined
 
+Νεότερη εκτέλεση9/10: [ένα training-recipe diagnostic](../outputs/kaggle_recipe_2026-10-09/REPORT_EL.md),
+version9 του ίδιου notebook, μετά από νέα άδεια χρήστη. Ίδιο CNN/10k/5k/seed0/
+50epochs, batch50 και author linear cycle max0,005.10000updates, cleanSR0/20:
+primary failed. Σύνολο4 full GPU trainings· το cap4 εξαντλήθηκε.
+Version10 είναι QUICK_SAVE που επαναφέρει την original ασφαλή πηγή της version8,
+χωρίς εκτέλεση. Canonical local notebook, Inputversion6 και production/checkpoint
+hashes αμετάβλητα. Η executedversion9 και τα νέα results/checkpoints διατηρούνται
+στο Kaggle history και στο `runs/kaggle_control/recipe_2026-10-09/output/`.
+Μην επανεκκινήσεις τη diagnosticversion9: δεν έχει εγκριθεί δεύτερο ίδιο training.
+Combined/attacks δεν εκτελέστηκαν. Οι λεπτομέρειες παρακάτω αφορούν την αρχική
+baseline/combined μελέτη και τις παλιότερες versions, που διατηρούνται ιστορικά.
+
 Ένα ιδιωτικό notebook: https://www.kaggle.com/code/con1los/hw-sec-exp2.
 Ένα ιδιωτικό Input: con1los/hardware-sca-resume.
 Ο χρήστης εξουσιοδότησε API εκτέλεση και ενέκρινε νέα baseline/combined μελέτη.

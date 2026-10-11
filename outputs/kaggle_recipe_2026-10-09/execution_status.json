@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE_VERIFIED",
+  "kernel_ref": "con1los/hw-sec-exp2",
+  "version": 9,
+  "submitted_utc": "2026-10-09T14:27:29.760906+00:00",
+  "new_full_trainings_authorized_max": 1,
+  "historical_full_gpu_trainings": 3,
+  "maximum_total_full_gpu_trainings": 4,
+  "same_notebook": true,
+  "attack_locked": true,
+  "new_confirmation_rows": 0,
+  "verified_utc": "2026-10-09T14:46:58.651347+00:00",
+  "full_gpu_trainings_completed_total": 4,
+  "primary_met": false,
+  "new_gpu_trainings": 1,
+  "safe_saved_version": 10,
+  "original_source_restored": true,
+  "remote_sources_verified": true,
+  "actual_gpu": "Tesla T4",
+  "experiment_seconds": 70.122320575
+}

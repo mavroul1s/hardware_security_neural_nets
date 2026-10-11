@@ -1,0 +1,28 @@
+{
+  "verified": true,
+  "fresh_csv_rows": 960,
+  "oob_csv_rows": 240,
+  "summary_csv_rows": 24,
+  "selected_pair_rows": 80,
+  "total_verified_csv_rows": 1304,
+  "primary_table_rows": 4,
+  "secondary_table_rows": 8,
+  "local_links": 17,
+  "passing_tests": 95,
+  "H1_primary_met": false,
+  "H2_secondary_met": false,
+  "plots_visually_checked": [
+    "objective_comparison.png"
+  ],
+  "remaining_unused_rows": 30000,
+  "artifact_sha256": {
+    "REPORT_EL.md": "c46330b229e19f8c1786f77e85d1d00c6664cfc85de506c9e1413271d2c0f44b",
+    "evidence.json": "c297f1667a770a4a8b5160fec5654882a8b80853302ff9ea8f581e12916fcd91",
+    "verification.json": "7eb41276f808d83100a98faa8cefb3a949e2ec9ee0b55d26e9a782b89b581691",
+    "correlations.csv": "066ac792fc6c95115e0b226143fc550d07982793db84f4f1ee0cbd6adf297fa6",
+    "oob_correlations.csv": "9b3771044e8f7829c399ceaf451e5c9e175a2b3f0186e51dc848ffb52d0703f8",
+    "summaries.csv": "f8b2cf6b65c23c45b0848178d22e2e50b48aee2f39ec76e067e7c96021d2bd29",
+    "selected_points.csv": "f8029183e991eb07cef8549e989c7263b9f4407580278bc380ea42a4fa84b6ff",
+    "objective_comparison.png": "82408855bf6055922de4609306192501224f36805adeac9f9299b556fd370394"
+  }
+}

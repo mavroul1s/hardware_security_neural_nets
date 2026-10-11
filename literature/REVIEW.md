@@ -1,5 +1,16 @@
 # Αρχική βιβλιογραφική χαρτογράφηση
 
+Νεότερη ενημέρωση9/10/2026: ο [primary/code/notation audit](SELECTION_OBJECTIVE_AUDIT_2026-10-09.md)
+ελέγχει higher-order projection/window selection (Durvaux et al.2015), trace
+resampling (Perin–Wu–Picek2022), recovery-score distribution (Lomné et al.2014)
+και formalstabilityselection access/limits. Οι γνωστές μέθοδοι δεν παρουσιάζονται
+ωςnovel. Το fullJiang–DingXML ανακτήθηκε με hash, MathML/Algorithm1 ελέγχθηκαν·
+retention/penaltydimensions/authorcode/matchedreproduction παραμένουν unknowns.
+Pinned scheme-awaremodels/recombination καιsimulationentrypoints inspected,
+κανέναthirdpartyexecution ήνέοneuralbenchmark. Περιορισμένο targetedcitationsearch,
+όχιexhaustivebackward/forwardreview. Η phase11matchedcomparison απέτυχεστοprimary,
+με νέοfreeze/unusedrows· υποστηρίζεταιboundedfailureanalysis, όχιnewattackclaim.
+
 Αρχική επαλήθευση: 2026-10-03· στοχευμένη ενημέρωση: 2026-10-05, με
 [ξεχωριστό αρχείο ελέγχου](PRIMARY_AUDIT_2026-10-05.md). Πρόκειται για έλεγχο πρωτογενών πηγών,
 όχι ολοκληρωμένο systematic review. Ο πίνακας ξεχωρίζει πλήρες κείμενο, preprint και abstract.
@@ -65,3 +76,37 @@ Queries: `side channel data augmentation combined noise desynchronization 2025 2
 επίλυση EquivSCA code URL και πλήρες backward/forward search παραμένουν ανοικτά.
 Για κάθε κενό πρόσβασης κρατάμε `unknown`, όχι συμπέρασμα απουσίας.
 Οι παλιότερες GE=1 συμβάσεις δεν συγκρίνονται αριθμητικά με το δικό μας zero-based rank χωρίς μετατροπή.
+
+Στις6/10 η νέα [window/regression φάση](WINDOW_REGRESSION_2026-10-06.md)
+παγώθηκε πριν holdouts. Primary Won2020/1134/Wu&Picek2019/1474/Scatter2019/345
+τεκμηριώνουν averaging, denoising και second-order window integration ως γνωστά.
+Ο [συμπληρωματικός έλεγχος Bishop](WINDOW_REGRESSION_PRIOR_ART_FOLLOWUP_2026-10-06.md)
+ελέγχει την ήδη γνωστή noise/regularization σχέση και την small-noise approximation.
+Η exact bilinearσ⁴ correction δεν χαρακτηρίζεται novel πριν ελεγχθούν η μεταγενέστερη
+βιβλιογραφία και τα orthogonal/scheme-aware regression full texts που παραμένουν gaps.
+
+Ο [παγωμένος έλεγχος training alignment](TRAINING_ALIGNMENT_2026-10-06.md)
+τεκμηριώνει από officialASCADREADME την native desynchronization και από NewAE/
+Scatter ότι alignment/window integration έχουν prior art. Τοphase9 ελέγχει
+consistencyτωνtrainingfeaturefits, όχι νέοalignmentalgorithm ή λύσηelasticjitter.
+Στις6/10 δοκιμάστηκε επίσης EuropePMC fullTextXML γιαPMC10048069: τοwebtool
+δεν μπόρεσε νατοπροσπελάσει. Το2022/493PDFεπέστρεψε403. Τα full-text gaps
+παραμένουν· δεν αντλείται περιεχόμενο ή novelty συμπέρασμα από αποτυχημένη πρόσβαση.
+
+Μεταγενέστερη ενημέρωση6/10: το scheme-aware publishedPDF έγινε προσβάσιμο μέσω
+του universityrepository. Το [relevant-section audit](SCHEME_AWARE_FULLTEXT_AUDIT_2026-10-06.md)
+κλείνει το συγκεκριμένο accessgap και διακρίνει πληροφορία/endpoint/πρωτόκολλο
+από τη δική μας μελέτη. Δεν έγινε code reproduction ή matched benchmark.
+Το orthogonalregression fulltextgap και το ευρύτερο citationsearch παραμένουν.
+
+Ηphase10 [παγωμένη βιβλιογραφία](SELECTION_STABILITY_2026-10-06.md) ορίζειpaired
+trainingbootstrap με κοινάindices/nominalίδιοN και replacement. Τα20draws είναι
+conditional sensitivity checks, όχι formal stabilityselection ή γενική
+coverage/errorcontrol απόδειξη. Διατηρούνται όλαresults καιnegativecriterion.
+
+Στις8/10 ο[orthogonal-regression comparison](REGRESSION_PRIOR_ART_COMPARISON_2026-10-08.md)
+διάβασε relevant equations απόindexedprimarypublisher/PMCpages, μεdirectaccess
+failures ακόμηrecorded. Πέντεdeterministicalgebra checks ξεχωρίζουν rotation,
+truncation, fixedrhs adjustment καιnoiseGramcorrection. Noauthorimplementation
+reproduction/physicalefficacy ή noveltyproof. Τοaccessgap περιορίστηκε, αλλάPDF/
+notation/code/fullcitationreview δεν θεωρούνται ολοκληρωμένα.

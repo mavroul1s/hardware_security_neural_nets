@@ -1,0 +1,3029 @@
+{
+  "plan_sha256": "f24919eff6ecdf5a6cbd59b55d6296f34d98de2c2221c01556ebae53c4d3e274",
+  "access_sha256": "5bb3e7cf616b27661ca09bc71311eb519769ee24e60a39443cebcae85598d400",
+  "arrays_sha256": "de3b8cae744e455c848a6f4e2e4a7132fc3d9f137b5c02b46ad0d86d6e74d2e6",
+  "correlations": [
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.07817809620906488
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.0839892024938242
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.06572201634214146
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.09660336946738787
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.08561349665113639
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.07800800160716473
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.005634145127062297
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.0015395198584329296
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0023847902469828967
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.002087212496486778
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.003145012112701435
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.006236172568746322
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.08623526469513064
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.08846780253593456
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.06924553010130545
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.10114653803881477
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0877238519551751
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.0843641948062426
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.007600634111331691
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.005563118313700113
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.003984769375222318
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.0036249868087864976
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.0011199063578614882
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.005466829652839032
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.08350227467461831
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.08688788635166056
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.06852216975981432
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.09943169487174539
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.08638341768390065
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.08204758667035242
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.007481820750463196
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.0053608341582505915
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0038889876007666365
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.002283357277900361
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.00026182931147763485
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.005295998606080481
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.0368347151024763
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.07581744045686876
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.053606840076185526
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.08297189901122606
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.012292227119005992
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.06142901268095863
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.0010264342949371302
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.0018505648207954133
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.008658864851453356
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.0017308561922219847
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.004226147603139798
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.005664080525403306
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.03711768802125296
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.07481919636859065
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.05100786215697923
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.08195531022924078
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.014394681466008554
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.06103456655604225
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.0016466136350894195
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.003281735881619452
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.009915478765957981
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.005022420020776115
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.000929732063577805
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.0043557918770799064
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.037594233988832056
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.07299775001137236
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.054175031663989535
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.08175092937212883
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.015206028738604747
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.060204050473641274
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -3.508724146522242e-05
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.003117695031040444
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.011534062367584795
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.0018794159124248372
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0005074463328704329
+    },
+    {
+      "pool": "primary",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.005061558406333882
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": -0.010203458238185801
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": -0.00777009952726545
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0021188599668644993
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.009178640255065998
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.01080604682666137
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.009635546671602652
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.005938651815885265
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.006763263792603256
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.007867612936657066
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.009444021022040321
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.012669977087146168
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.005718650812053596
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.08623526469513064
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.08846780253593456
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.06924553010130545
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.10114653803881477
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0877238519551751
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.0843641948062426
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.007600634111331691
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.005563118313700113
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.003984769375222318
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.0036249868087864976
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.0011199063578614882
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.005466829652839032
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.08350227467461831
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.08688788635166056
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.06852216975981432
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.09943169487174539
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.08638341768390065
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.08204758667035242
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.007481820750463196
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.0053608341582505915
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0038889876007666365
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.002283357277900361
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.00026182931147763485
+    },
+    {
+      "pool": "primary",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.005295998606080481
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": -0.009836680956153936
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": -0.008022828099394327
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.00338611291815953
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.009227274674925871
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.012902615611839781
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.009542052985337803
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.005220866275402259
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.007186993156265511
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.008419916310224632
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.008573592785442976
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.01481676773821527
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.005960598459966013
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.03573633943651295
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.07651790914379954
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.05134897148708044
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.08668455476982423
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0188722248290441
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.06076284270502832
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.003375355418275343
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.012605289422320478
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.00968142542160106
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.00677007616546507
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.01397424106712286
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.009958912876981587
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.03784512295195554
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.0767927557730773
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.050112764755242366
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.08721197023828363
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.020777385105220588
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.06127296257804058
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.004499306492629456
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.004913502945268963
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0065964728158216905
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.008168636615659185
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.012969481994820776
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.01128350905922654
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": -0.009922101183563192
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": -0.009135577444370706
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.008835383228358902
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.009207798217746489
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.011257655450938531
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.009550875592583278
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.004825180338436345
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.00556769051488198
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.007736273361946297
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.004579063219103665
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.0015116810291510756
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.007016024856633556
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.0003914750110786023
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.048708971048765176
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.016956067643775476
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.050452231103126195
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.005507003049979408
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.03430701135001026
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.01769819102046583
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.00013764690658870962
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0005603101354352873
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.010985103041787096
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0010706830276400424
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.0008775574675939257
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.008670636378815023
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.05213365143150192
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.023567193370031877
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.05434911619419592
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.004850392721490084
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.036203256309681825
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.014137545002414766
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.003364091714791001
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.002177644541871442
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.011351444677291536
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0017624178422625605
+    },
+    {
+      "pool": "primary",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.0030380656227725804
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.08602161535284612
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.093972667851488
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.07184097243199
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.10596257763622682
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0912580781143675
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.08607679582642701
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.0015005426801977173
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.0037344801297074692
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.004879981401378976
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.0022569934169345543
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0065019214041256235
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.010670098651411856
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.08056312465638532
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.09036081387518993
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.07021006677111188
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.10209323195705598
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.08870504787458577
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.08173029895940448
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.001835973699915965
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.0023425753473064518
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0019977682598374424
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.001498423017989556
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0011499870552589657
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.005241862363759566
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.08073453916715402
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.0908573464076098
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.06871947586278607
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.10215418979978917
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.08811934010435843
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.08193653953884684
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.0025222871655905203
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.00024792582537971376
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0007077034276804487
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.003117686102023454
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.000979752879091444
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.0019177182051836955
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.043278160612285836
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.07968837030848981
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.05442041561944373
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.09108308192634307
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.03090789656620295
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.07355557319157167
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.002778048860754828
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.0008291639870280518
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.003990621671610924
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.002825553443253689
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.01194372142510198
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.005072501768587574
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.03725379815899096
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.0770446785713249
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.04919164373330081
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.08736670885603974
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.025093496325520805
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.06986980554036336
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.004021413737135057
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.0035114442817326032
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.0033158671658312963
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.0020712918299380296
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.008397142955094956
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.0063920720150111255
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.036610686199029255
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.07534133382297838
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.046180094561082935
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.08512268326171576
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.022112239720680032
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.06684256262278919
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.002112956305959161
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.0008095672437866336
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.004562366530106286
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.00010885158053420647
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.00997060105411355
+    },
+    {
+      "pool": "replication",
+      "condition": "noise5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.006878807369562367
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.0036152901537438325
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.005636555988489617
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.006783794871470395
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.0046989878379805694
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.001047131236464438
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.004169046472343918
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.007861032626898997
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.006176951147457539
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.005407956650673432
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.0016822878560727253
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.002992918800217396
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.009239235771659762
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.08056312465638532
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.09036081387518993
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.07021006677111188
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.10209323195705598
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.08870504787458577
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.08173029895940448
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.001835973699915965
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.0023425753473064518
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0019977682598374424
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.001498423017989556
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0011499870552589657
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.005241862363759566
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.08073453916715402
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.0908573464076098
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.06871947586278607
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.10215418979978917
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.08811934010435843
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.08193653953884684
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.0025222871655905203
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": -0.00024792582537971376
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": -0.0007077034276804487
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.003117686102023454
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.000979752879091444
+    },
+    {
+      "pool": "replication",
+      "condition": "shift5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.0019177182051836955
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.004967766478753286
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.00564440908271302
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.0074050769046682926
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.0048859529314347625
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.00043341164141104323
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.004169774624562263
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.005090840578743989
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.0057276097464774535
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.005324753131284464
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.006065530817803817
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.006744628344709501
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.009422147545726562
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.031059316598778405
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.07583635290836149
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.052271509628162696
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.08638826557036569
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.010942122531099179
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.06279426693627564
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.0030337781415971997
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.0014809245746768744
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.0007007756666653933
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.001086288157861638
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.014663441274394073
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.0019409920183746181
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.028491413163959645
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.07638063639095753
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.05299182903057496
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.08621108632528506
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.009490602394144206
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.061837474104795724
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.0014931676336225215
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.0026152148535862492
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.0024469240405762113
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.0013558791457784986
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.012815113729109958
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.0033674838970227444
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.001843539435269134
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.001730405649416866
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.0021039199746026574
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.001991913122878406
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0022912221311851516
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.0005755515338378591
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": -0.0017800645593210593
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.002387413455903508
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.0020510229355483957
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.0006274648409032735
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": -0.00893823870798996
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "fixed",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": -0.003531224200530671
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.012220878217880767
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.05147476688194702
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.02953302534568408
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.06161786804888371
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.012049001746798042
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.03968537756644909
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.011315961342172297
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.005545044240194598
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.00404812814521693
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": -0.0025545239840383677
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.007622187011206131
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "gaussian_template",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.010283863097020155
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "point",
+      "hw_correlation": 0.010254634072652122
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "box_product",
+      "hw_correlation": 0.051560019905158155
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.03237377733332906
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.06209137802989169
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.01017571339744755
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair1",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.03877675865436985
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "point",
+      "hw_correlation": 0.012089234191123894
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "box_product",
+      "hw_correlation": 0.000226013878590824
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "diagonal_products",
+      "hw_correlation": 0.000879581708024131
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "covariance_rank1",
+      "hw_correlation": 0.0020544203939453997
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_clean",
+      "hw_correlation": 0.0034579770192965887
+    },
+    {
+      "pool": "replication",
+      "condition": "combined10_ood",
+      "alignment": "sad_training_mean",
+      "family": "pair2",
+      "feature": "ridge_noise",
+      "hw_correlation": 0.011141658915583443
+    }
+  ],
+  "intervals": [
+    {
+      "pool": "primary",
+      "scheme": "paired_rows",
+      "difference": 0.04189061787598422,
+      "lower": 0.01812247984090753,
+      "upper": 0.06464967272247071,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      },
+      "clusters": 200
+    },
+    {
+      "pool": "primary",
+      "scheme": "index_clusters",
+      "difference": 0.04189061787598422,
+      "lower": 0.020496212832490264,
+      "upper": 0.06487793252752397,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      },
+      "clusters": 200
+    },
+    {
+      "pool": "replication",
+      "scheme": "paired_rows",
+      "difference": 0.051852144405176465,
+      "lower": 0.02969753133933655,
+      "upper": 0.07412310639443266,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      },
+      "clusters": 200
+    },
+    {
+      "pool": "replication",
+      "scheme": "index_clusters",
+      "difference": 0.051852144405176465,
+      "lower": 0.030005238399399385,
+      "upper": 0.0739249122179012,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      },
+      "clusters": 200
+    }
+  ],
+  "support_met": true,
+  "rng_states": {
+    "primary": {
+      "uniform": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 276625763555800067544212840617897846637,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "normal": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 250051369172808588583560855122220114751,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      }
+    },
+    "replication": {
+      "uniform": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 276625763555800067544212840617897846637,
+          "inc": 75157156386296829795988916970036679731
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "normal": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 250051369172808588583560855122220114751,
+          "inc": 41963173944598388511029257279070208525
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      }
+    }
+  },
+  "seconds": 252.68487299978733,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "versions": {
+      "torch": "2.8.0+cpu",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "cuda_runtime": null,
+    "torch_threads": 2
+  },
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "phase7_failure_preserved": true,
+  "unchanged_fit": true,
+  "variable_used_profiling_rows": 70000,
+  "new_attack_reads": false,
+  "no_holdout_tuning": true,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0
+}

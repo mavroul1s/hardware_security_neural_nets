@@ -1,7 +1,7 @@
 # Νευρωνικά δίκτυα και διαρροή masked AES: διαγνωστική μελέτη περιορισμένου κόστους
 
 Προσωρινή ελληνική ερευνητική αναφορά για το μάθημα Hardware Security.
-Κατάσταση: **2026-10-06**. Πρόκειται για σύνθεση των εκτελεσμένων πειραμάτων,
+Κατάσταση: **2026-10-09**. Πρόκειται για σύνθεση των εκτελεσμένων πειραμάτων,
 όχι για ολοκληρωμένη μελέτη augmentation ή επιβεβαιωμένη συνεισφορά paper.
 
 Ενημέρωση της5/10: η [αναπαραγωγή σε καθαρό CPU περιβάλλον](../cpu_reproduction_2026-10-05/REPORT_EL.md)
@@ -14,6 +14,11 @@
 ενσωματώθηκε στη§14: η combined5 επιτυχία δεν επαναλήφθηκε και το criterion απέτυχε.
 Στις6/10 προστέθηκε [έκτη CPU φάση selected-signal replication/permutation audit](../paper_selection_audit_2026-10-06/REPORT_EL.md),
 στη§15. Τρία από τέσσερα παγωμένα pairs επανέλαβαν signed συσχέτιση σε φρέσκο profiling.
+Στη συνέχεια προστέθηκαν [window/noise regression](../paper_window_regression_2026-10-06/REPORT_EL.md)
+και [μεγαλύτερη επιβεβαίωση χωρίς νέο fit](../paper_precision_replication_2026-10-06/REPORT_EL.md),
+στις§16–17. Νέα1.260correlation comparisons/540recovery summaries·82tests passed.
+Τα γνωστά window baselines αποκαθιστούν fixed-key OOD recovery, ενώ variable-key
+attack παραμένει κάτω από τοcriterion. Η πρωτοτυπία παραμένει ανεπιβεβαίωτη.
 
 ## Περίληψη
 
@@ -49,6 +54,31 @@ Gaussian clean15/20 και0/20, combined5 0/20 και0/20. Το ίδιο primary
 το corrected criterion, παρότι είχε ασθενή συσχέτιση ίδιου προσήμου στη νέα pool.
 Το πρώτο variable-key pair επανέλαβε profiling signal και είχε αποτύχει στην παλιά
 combined επίθεση· δεν εξηγείται όλη η αποτυχία μόνο από μη διατήρηση των σημείων.
+
+Οι επόμενες φάσεις έδειξαν ότι απλά window/box/rank1 controls αξιοποιούν το
+fixed-key signal υπό τις συγκεκριμένες τεχνητές αλλοιώσεις. Η noise correction
+βελτίωσε ορισμένα profiling endpoints έναντι clean ridge, αλλά δεν υπερέχει των
+απλών controls. Η variable-key attack αξιολόγηση παρέμεινε στα 3/20–4/20, κάτω
+από τον στόχο 18/20. Το training-side alignment και η επανεπιλογή του δεύτερου
+pair απέτυχαν στα προκαθορισμένα κριτήρια, παρότι συγκεκριμένα frozen pairs
+διατήρησαν θετικό signal.
+
+Η φάση 11 άλλαξε μόνο τον στόχο της training-only επιλογής: από γινόμενα σημείων
+σε γινόμενα μέσων παραθύρων. Στα ίδια 20 ζευγαρωμένα draws και δύο νέες ομάδες
+profiling των 10.000 rows, η πρώτη οικογένεια βελτιώθηκε περιγραφικά. Η δεύτερη
+έδωσε διαμέσους 0,007642 και 0,006647, με 12/20 και 13/20 θετικά draws· το κύριο
+κριτήριο απέτυχε. Η αλλαγή του στόχου δεν αρκεί για σταθερό δεύτερο signal.
+Δεν αποδεικνύεται μοναδική αιτία της αποτυχίας ή false positive του αρχικού pair.
+
+Η ισχυρότερη σημερινή συνεισφορά είναι benchmark και failure analysis, με παγωμένα
+πρωτόκολλα, αρνητικά αποτελέσματα και χωριστούς αριθμητικούς ελέγχους. Η πρωτοτυπία
+και η αξιόπιστη ανάκτηση σε ανεξάρτητο πραγματικό key παραμένουν ανοικτές.
+Με νεότερη άδεια χρήστη εκτελέστηκε μία τέταρτη GPU baseline του ίδιου CNN:
+batch 50 και author linear OneCycle, με ίδια 10k/5k/seed0/50 epochs. Τα updates
+αυξήθηκαν 3.950 → 10.000, αλλά clean validation SR@2000 παρέμεινε 0/20.
+Η συγκεκριμένη αλλαγή recipe δεν αρκεί στο περιορισμένο training sample.
+Το τελευταίο suite έχει 99 passing tests. Παραμένουν ένα Kaggle notebook,
+τέσσερις GPU εκπαιδεύσεις και 30.000 αχρησιμοποίητες variable profiling rows.
 
 ## 1. Στόχος και βασικές έννοιες
 
@@ -588,3 +618,490 @@ frozen plan και αχρησιμοποίητη profiling επιβεβαίωση
 [independent verification](../paper_selection_audit_2026-10-06/verification.json),
 [report verification](../paper_selection_audit_2026-10-06/report_verification.json),
 [sources/novelty/access limits](../../literature/SELECTION_AUDIT_2026-10-06.md).
+
+## 16. Window features και αναλυτική noise-aware regression
+
+Με τη νεότερη εντολή για περισσότερα πειράματα προς paper, εκτελέστηκε frozen
+CPU factorial comparison: έξι feature variants, πέντε corruption conditions,
+τρεις alignments, δύο ζεύγη και πέντε νέα pools. Point, box product, diagonal
+products, target-covariance rank1, ridge clean και ridge noise έχουν ίδιο αρχικό
+training10k/ίδιους point centers. Window radius5, standardized ridge0,01, χωρίς
+hyperparameter search ή νέο neural training. Δύο unused profiling5k pools ανά
+campaign και νέο disjoint variable attack5k πάγωσαν πριν payload access.
+Το νέο attack έχει το ίδιο ήδη εξετασμένο actual key/campaign, όχι νέο key/device.
+
+Η ακριβής expected added-noise product covariance είναι
+`σ²(C_A⊗I+I⊗C_B)+σ⁴I` για disjoint centered windows και ανεξάρτητο zero-mean
+noise. Ο όρος προστέθηκε στην ίδια ridge λύση. Η identity δεν μοντελοποιεί native
+noise ή τη noise-dependent επιλογή offsets. Το σ ήταν καθορισμένο από το protocol:
+1,3/fixed και4,8/variable. Δεν εκτιμήθηκε άγνωστο physical noise από attack traces.
+Averaging, regression, SVD και noise/regularization σύνδεση έχουν prior art·
+η στοιχειώδης polynomial παραγωγή δεν τεκμηριώνει novelty.
+
+Primary pair1/combined5/Gaussian: ridge noise−clean signed HW correlation,
+Δr≥0,01 και positive lower bound σε όλα τα τέσσερα profiling pools.
+1.999 paired row bootstrap draws/pool, nominal98,75% percentile intervals,
+Bonferroni family4. Approximate conditional intervals υπό iid-row assumption.
+
+| Campaign / pool | Δr | Lower | Upper | Criterion |
+|---|---:|---:|---:|---|
+| fixed / primary | 0.072050 | 0.048726 | 0.096849 | Πέρασε |
+| fixed / replication | 0.047055 | 0.022898 | 0.071398 | Πέρασε |
+| variable / primary | 0.034367 | -0.004396 | 0.070606 | Δεν πέρασε |
+| variable / replication | 0.030839 | -0.003704 | 0.065703 | Δεν πέρασε |
+
+Το global primary criterion απέτυχε. Secondary actual variable attack,
+pair1/combined5/Gaussian: noise ridge3/20 έναντι point/clean ridge0/20,
+με18/20 criterionfailed. Rank1 έδωσε4/20 και box3/20, άρα δεν τεκμηριώνεται
+υπεροχή της noise correction από τα απλούστερα baselines. Pair2όλες0/20.
+
+Υπάρχει ισχυρό secondary fixed-key OOD αποτέλεσμα υπό raw±10/σ2,6:
+box/rank1/noise ridge πέτυχαν20/20 και στα δύο pairs, και στα δύο νέα pools.
+Τα απλά window baselines ισοφαρίζουν· δεν επιλέγονται εκ των υστέρων ως νέο
+primary endpoint και δεν αποτελούν unknown-key/cross-device confirmation.
+
+| Feature, Gaussian OOD | Fixed primary pair1 / pair2 | Fixed replication pair1 / pair2 |
+|---|---|---|
+| Point | 10/20 / 3/20 | 7/20 / 3/20 |
+| Box | 20/20 / 20/20 | 20/20 / 20/20 |
+| Rank1 | 20/20 / 20/20 | 20/20 / 20/20 |
+| Ridge clean | 8/20 / 2/20 | 13/20 / 0/20 |
+| Ridge noise | 20/20 / 20/20 | 20/20 / 20/20 |
+
+900correlation rows/540recovery summaries, 10.800execution endpoint checks και
+10.800additional direct endpoint replays,24replayed weight vectors/all fit moments,
+7.996bootstrap samples και1.600sampled alignment offsets. 79tests passed/14warnings
+σε17,73s, CPU999,124509s/verifier111,562976s. Δεν προστίθενται ανεξάρτητα keys με
+τις20 επικαλυπτόμενες trace orders. Όλα τα αποτελέσματα, μαζί με failures και SAD
+controls, δημοσιεύονται στο [πλήρες report](../paper_window_regression_2026-10-06/REPORT_EL.md)
+και στα [540 recovery rows](../paper_window_regression_2026-10-06/recovery.csv).
+
+## 17. Μεγαλύτερη variable profiling replication χωρίς νέο fit
+
+Τα imprecise profiling contrasts τηςphase7 οδήγησαν σε follow-up με δύο νέα
+unused variable profiling20k pools και τα ακριβώς ίδια weights/points/parameters.
+Το sampling size αφορά confirmation, όχι νέα training traces ή model seeds.
+Κανένα metadata/key/attack read εδώ. Πάγωμα πριν payload access, seeds20261014/15.
+Καμία viewed row δεν επιστρέφει ως unseen confirmation ή tuning input.
+
+Primary contrast ίδιο: pair1/combined5/Gaussian, noise−clean Δr≥0,01 και positive
+lower bound σε δύο pools υπό δύο bootstrap schemes.9.999 paired-row και9.999
+HDF5-index-cluster draws/pool.200 bins των1.000 consecutive profiling indices·
+δεν επαληθεύτηκε acquisition-time αντιστοίχιση. Nominal99,75% percentile intervals,
+α0,01/family4/tail0,00125· approximate conditional iid-row/iid-cluster assumptions.
+Δεν υπάρχει overall alpha-spending/optional-stopping guarantee στην adaptive
+σειρά φάσεων. Τοphase7primaryfailure διατηρείται και δεν αναθεωρείται.
+
+| Pool / scheme | Δr | Lower | Upper | Criterion |
+|---|---:|---:|---:|---|
+| primary / paired_rows | 0.041891 | 0.018122 | 0.064650 | Πέρασε |
+| primary / index_clusters | 0.041891 | 0.020496 | 0.064878 | Πέρασε |
+| replication / paired_rows | 0.051852 | 0.029698 | 0.074123 | Πέρασε |
+| replication / index_clusters | 0.051852 | 0.030005 | 0.073925 | Πέρασε |
+
+Αυτό το νέο criterion πέρασε. Το αποτέλεσμα είναι καλύτερη conditional profiling
+signal robustness από την clean ridge, όχι νέα επιτυχημένη key recovery.
+Τα φθηνότερα box/rank1 controls παραμένουν ισχυρότερα στο ίδιο endpoint:
+
+| Pool | Point | Box | Rank1 | Ridge clean | Ridge noise |
+|---|---:|---:|---:|---:|---:|
+| primary | 0.035736 | 0.076518 | 0.086685 | 0.018872 | 0.060763 |
+| replication | 0.031059 | 0.075836 | 0.086388 | 0.010942 | 0.062794 |
+
+![Larger confirmation](../paper_precision_replication_2026-10-06/precision_intervals.png)
+
+360νέα correlation rows, κανένα νέο recovery row/attack read.82tests passed/
+14warnings σε22,20s, JUnit22,163s. CPU252,684873s/verifier88,282784s.
+Independent replay όλων360coefficients/products/39.996bootstrap draws,720sampled
+offset decisions,all moments/splits/RNG/immutable fit και6sampled cluster draws
+με actual duplicated row lists.
+
+Οκτώ paper CPU φάσεις:2.142,197628s experimental wall time, χωρίς verifiers/tests/
+reports/session.988recovery summaries,19.760execution checks,10.960additional
+endpoint replays. Οι δύο νέεςφάσεις προσθέτουν1.260correlation comparisons και
+540recovery summaries· αυτά είναι computational counts, όχι ανεξάρτητες συσκευές.
+Ένα Kaggle notebook/3GPUtrainings/source/checkpoints/failed gate/combined absent
+παραμένουν. Fixed profiling50k πλέονused, variableprofiling70kused/130kunused,
+variableattack10kviewed, originalfixedattacklocked.
+
+Τα θετικά και αρνητικά αποτελέσματα διαμορφώνουν συγκεκριμένη υπόθεση για paper:
+reproducible quadratic-window robustness και τα όρια μεταξύ profiling signal και
+key recovery. Δεν έχει επιβεβαιωθεί novelty ή αξιόπιστη variable-key efficacy.
+Η [πρόταση και ο σκελετός paper](../../docs/PAPER_CANDIDATE.md) περιλαμβάνουν
+ακριβείς supported/unsupported claims και συγκεκριμένα επόμενα research gaps.
+
+[Phase8 report/όλα τα controls](../paper_precision_replication_2026-10-06/REPORT_EL.md),
+[independent verification](../paper_precision_replication_2026-10-06/verification.json),
+[report verification](../paper_precision_replication_2026-10-06/report_verification.json),
+[primary sources](../../literature/WINDOW_REGRESSION_2026-10-06.md),
+[Bishop full-text follow-up/access gaps](../../literature/WINDOW_REGRESSION_PRIOR_ART_FOLLOWUP_2026-10-06.md).
+
+## 18. Training-side alignment με νέα prospective confirmations
+
+Η νέα εντολή συνέχισης υλοποιήθηκε με μία CPU φάση που ελέγχει αν το feature fit
+ωφελείται από consistent alignment των training traces. Η επίσημη variable-key
+καμπάνια είναι φυσικά unsynchronized· αυτό δεν σημαίνει ότι ένα global±10 shift
+περιγράφει όλη τη native/elastic μεταβλητότητα. Alignment και window integration
+έχουν prior art, δεν παρουσιάζονται ως νέα επίθεση.
+
+Το πρωτόκολλο πάγωσε πριν το training ή confirmation access. Χρησιμοποιήθηκαν τα
+ίδια αρχικά10k training traces και μία Gaussian pass από raw unconditional mean/
+variance, με trace-only offsets±10, score columns20:1380 και tie rule(absδ,δ).
+Οι αρχικές rows μετατοπίστηκαν κατά−δ μία φορά. Το variance floor υπολογίστηκε από
+τις interior columns10:1390. Τα raw/aligned fits έχουν δικά τους training centers
+και point/box/leading covariance rank1 weights. Η κατεύθυνση και τα σημεία επιλέχθηκαν
+από τα HW των provided training identity labels μόνο, χωρίς key/mask/plaintext/metadata.
+
+Τα παλιά pairs187×1080/334×573 διατηρούνται. Κάθε fit επιλέγει δύο επιπλέον pairs
+με πλήρη absolute product Pearson search: margin25/separation50/diversity20 και
+845.650 candidates. Margin25=radius5+estimated bound10+injected bound10, ώστε να
+αποκλείεται artificial padding. Η raw selection ξαναδίνει τα παλιά pairs· η aligned
+selection δίνει76×1070/199×1013. Selection/weights αποθηκεύτηκαν πριν τα νέα
+confirmations20k+20k, seeds20261016/17, με όλες τις70k previous rows αποκλεισμένες.
+432 rows=2 pools×3 conditions×3 alignments×2 fits×4 families×3 features. Κάποιες raw
+families συμπίπτουν· οι432 rows δεν είναι ανεξάρτητα experiments/keys/devices.
+
+Primary: aligned−raw signed correlation, oldpair1/rank1/clean, με ίδια gaussian_raw
+evaluation offsets. Στο primary αλλάζει το feature fitting(center/weights), ενώ
+κρατιέται σταθερός ο κανόνας επιλογής offsets. Criterion: Δr≥0,01 και lower>0 σε
+αμφότερα pools και row/index-cluster bootstrap.9.999 draws ανά scheme/pool,
+nominal99,75% percentile intervals/family4. Clusters=200 bins των1.000 HDF5 indices,
+χωρίς επιβεβαιωμένη acquisition-time αντιστοίχιση. Approximate conditional
+iid-row/cluster assumptions, χωρίς across-phase alpha-spending guarantee.
+
+| Pool / scheme | Δr | Lower | Upper | Criterion |
+|---|---:|---:|---:|---|
+| primary / paired_rows | 0.003601 | -0.003958 | 0.011358 | Δεν πέρασε |
+| primary / index_clusters | 0.003601 | -0.003822 | 0.011348 | Δεν πέρασε |
+| replication / paired_rows | 0.006085 | -0.002443 | 0.014538 | Δεν πέρασε |
+| replication / index_clusters | 0.006085 | -0.002520 | 0.014471 | Δεν πέρασε |
+
+Το primary criterion δεν πέρασε· δεν τεκμηριώνεται βελτίωση≥0,01 από αυτό το
+single-pass alignment fit. Δεν αποδεικνύεται μηδενικό όφελος ούτε causal εξήγηση της
+παλιότερης attack αποτυχίας. Η νέα point selection, τα refined templates και τα
+combined controls παραμένουν secondary και δεν αντικαθιστούν το primary failure.
+
+Gaussian raw evaluation, rank1 correlations· κάθε κελί raw fit / aligned fit:
+
+| Pool / condition | Old1 | Old2 | Selected1 | Selected2 |
+|---|---:|---:|---:|---:|
+| primary / clean | 0.113760 / 0.117362 | -0.007854 / -0.000910 | 0.113760 / 0.085521 | -0.007854 / 0.076546 |
+| primary / combined5 | 0.088650 / 0.084980 | -0.009763 / 0.005721 | 0.088650 / 0.066077 | -0.009763 / 0.035757 |
+| primary / combined10_ood | 0.054315 / 0.049704 | 0.010600 / 0.015456 | 0.054315 / 0.049346 | 0.010600 / 0.007339 |
+| replication / clean | 0.115552 / 0.121637 | 0.002304 / -0.003622 | 0.115552 / 0.091854 | 0.002304 / 0.079067 |
+| replication / combined5 | 0.093910 / 0.092111 | 0.002341 / -0.004804 | 0.093910 / 0.071915 | 0.002341 / 0.031564 |
+| replication / combined10_ood | 0.057967 / 0.052387 | 0.009449 / -0.006422 | 0.057967 / 0.046820 | 0.009449 / 0.016815 |
+
+Το νέο selected pair2 έχει clean r0,076546/0,079067, ενώ το παλιό pair2 παραμένει
+ασθενές. Αυτό αφορά άλλα points και άλλο fit μαζί· δεν απομονώνει alignment effect
+στα ίδια points. Η κατεύθυνση ήταν frozen από training και αρνητικά confirmation
+coefficients διατηρούνται. Δεν υπάρχει νέο attack read/CPA key recovery. Παραμένουν
+το phase7 variable attack3/20–4/20/failed target18, το phase7 global primary failure
+και το phase8 positive profiling result, όπως καταγράφηκαν.
+
+![Training alignment primary](../paper_training_alignment_2026-10-06/training_alignment_intervals.png)
+
+86tests passed/14warnings σε15,43s, JUnit15,396s. CPU232,517110s, με fit13,345393s
+που περιλαμβάνεται· independent verifier99,027519s. Έγινε replay όλων των10k training
+offsets,2 full selection matrices/64 direct pair coefficients/24 weights, όλων των432
+coefficients/products,39.996 bootstrap draws/6 actual-row cluster checks/528 sampled
+evaluation offsets, splits/RNG/time order/feature padding bounds/preserved artifact
+hashes. Και τα δύο PNG ελέγχθηκαν οπτικά.
+
+Εννέα paper CPU φάσεις:2.374,714738s experimental wall time, με verifier/tests/reports
+χωριστά.988 recovery summaries/19.760 execution checks/10.960 additional endpoint
+replays παραμένουν αμετάβλητα.432 νέες correlation comparisons σε40k νέες profiling
+rows, πλέον viewed και αποκλεισμένες από μελλοντικό tuning. Fixed profiling50k used·
+variable profiling110k used/90k unused, variable attack10k viewed· original fixed
+attack locked. Παραμένουν1 Kaggle notebook/3 GPU trainings/source/checkpoints/failed
+CNN gate. Η novelty και η independent key/acquisition efficacy παραμένουν εκκρεμείς·
+το αρνητικό primary προσθέτει στοιχεία στη failure analysis.
+
+[Phase9 όλα τα results/CSV](../paper_training_alignment_2026-10-06/REPORT_EL.md) ·
+[Independent verification](../paper_training_alignment_2026-10-06/verification.json) ·
+[Report verification](../paper_training_alignment_2026-10-06/report_verification.json) ·
+[Frozen primary audit](../../literature/TRAINING_ALIGNMENT_2026-10-06.md).
+
+## 19. Σταθερότητα επιλογής σημείων με paired training resampling
+
+Το συνολικό παγωμένο criterion δεν πέρασε.
+Το frozen signal criterion πέρασε, ενώ το reselection sensitivity criterion δεν πέρασε.
+
+### Σχεδιασμός
+
+20 paired training bootstrap draws, seed2026, από τα ίδια αρχικά10k traces και labels. Κάθε draw έχει10k θέσεις με replacement, αλλά λιγότερες μοναδικές rows. Αυτά είναι conditional perturbation diagnostics, όχι νέα ανεξάρτητα training seeds, acquisitions ή αλλαγή του neural training budget.
+Distinct training rows ανά draw: 6281–6417. Τα phase9 alignment template και training offsets διατηρήθηκαν ακριβώς. Μέσα σε κάθε draw υπολογίστηκαν νέο center, πλήρης επιλογή δύο pairs και point/box/rank1 weights/sign από training labels μόνο.
+Full search:845.650 eligible pairs, margin25/separation50/diversity20, ίδιο radius5. Όλα τα20 sets και120 weight vectors αποθηκεύτηκαν πριν το πρώτο νέο confirmation read. Δεν επιλέχθηκε bootstrap winner, ensemble, consensus ή άλλη ρύθμιση.
+Δύο νέα profiling20k pools, seeds20261018/19, με όλες τις110k προηγούμενες rows excluded. Clean και combined5 με το ίδιο raw Gaussian evaluation template για όλα τα frozen controls και resampled fits. Noise scale από original raw training median range48, κοινά U9101/Z9102 streams.
+Frozen controls: raw oldpair1/2 και aligned selectedpair1/2, όλα τα point/box/rank1 features.528 rows=48 frozen-control coefficients+480 draw coefficients. Τα20 draws επαναχρησιμοποιούν το ίδιο αρχικό sample και κοινά confirmations· δεν είναι20 ανεξάρτητα πειράματα ή κλειδιά.
+Joint primary: και οι δύο αρχικές aligned-selected rank1 families στο clean πρέπει να έχουν r≥0,05 και lower>0 σε αμφότερα pools/schemes. Επιπλέον, οι reselection rank1 coefficients και των δύο family ranks πρέπει να έχουν median≥0,05 και τουλάχιστον16/20positive draws σε αμφότερα pools. Η τελευταία απαίτηση είναι descriptive criterion, χωρίς binomial inference ή selection-error guarantee.
+Πρόκειται για adaptive follow-up με νέο freeze. Το phase9 primary failure παραμένει. Καμία viewed confirmation ή attack row δεν χρησιμοποιήθηκε για refit, tuning ή επιλογή καλύτερου draw.
+
+### Frozen signal — όλα τα intervals
+
+9.999 paired-row και9.999 index-cluster draws ανά family/pool. Nominal99,875% two-sided percentile intervals, α0,01/family8/tail0,000625. Οι ακραίες quantiles αντιστοιχούν περίπου σε6,25draws, με Monte Carlo αβεβαιότητα. Conditional iid-row/cluster assumptions· HDF5 bins1000 δεν είναι verified acquisition-time blocks. Δεν υπάρχει across-phase alpha-spending ή γενική coverage εγγύηση.
+
+| Pool / family / scheme | r | Lower | Upper | Criterion |
+|---|---:|---:|---:|---|
+| primary / aligned_selected_pair1 / paired_rows | 0.092582 | 0.069857 | 0.114048 | Πέρασε |
+| primary / aligned_selected_pair1 / index_clusters | 0.092582 | 0.070777 | 0.114921 | Πέρασε |
+| primary / aligned_selected_pair2 / paired_rows | 0.081028 | 0.058652 | 0.103391 | Πέρασε |
+| primary / aligned_selected_pair2 / index_clusters | 0.081028 | 0.060218 | 0.101185 | Πέρασε |
+| replication / aligned_selected_pair1 / paired_rows | 0.094329 | 0.072218 | 0.117443 | Πέρασε |
+| replication / aligned_selected_pair1 / index_clusters | 0.094329 | 0.071823 | 0.116769 | Πέρασε |
+| replication / aligned_selected_pair2 / paired_rows | 0.078217 | 0.055184 | 0.102346 | Πέρασε |
+| replication / aligned_selected_pair2 / index_clusters | 0.078217 | 0.057646 | 0.099147 | Πέρασε |
+
+### Reselection sensitivity — όλα τα summaries
+
+| Pool / condition / family | Median r | Min r | Max r | Positive draws | Criterion |
+|---|---:|---:|---:|---:|---|
+| primary / clean / pair1 | 0.093343 | 0.084066 | 0.120109 | 20/20 | Πέρασε |
+| primary / clean / pair2 | 0.012320 | -0.015691 | 0.113520 | 14/20 | Δεν πέρασε |
+| primary / combined5 / pair1 | 0.075745 | 0.059321 | 0.115463 | 20/20 | Πέρασε |
+| primary / combined5 / pair2 | 0.007491 | -0.017676 | 0.040159 | 14/20 | Δεν πέρασε |
+| replication / clean / pair1 | 0.096207 | 0.081304 | 0.115429 | 20/20 | Πέρασε |
+| replication / clean / pair2 | 0.003294 | -0.003755 | 0.113507 | 15/20 | Δεν πέρασε |
+| replication / combined5 / pair1 | 0.075027 | 0.056284 | 0.108487 | 20/20 | Πέρασε |
+| replication / combined5 / pair2 | 0.005130 | -0.008588 | 0.046072 | 18/20 | Δεν πέρασε |
+
+![Signal across reselection fits](../paper_selection_stability_2026-10-06/reselection_signal.png)
+
+Το πρώτο family rank διατηρεί θετικό signal σε όλες τις επαναδειγματοληψίες εδώ. Το δεύτερο είναι ασθενές ή αρνητικό σε πολλές από αυτές, παρότι η αρχική συγκεκριμένη επιλογή έχει επαναλαμβανόμενο θετικό signal. Δεν αποδεικνύεται ότι το original pair είναι false positive, ούτε ότι όλη η αστάθεια προέρχεται από έναν συγκεκριμένο μηχανισμό.
+Training resamples είναι conditional στα ήδη υπολογισμένα alignment parameters. Argmax selection είναι μη ομαλό statistic και τα20 draws είναι λίγα· δεν υποστηρίζονται asymptotic selection confidence ή unconditional data-population guarantees. Η μέθοδος δεν είναι formal stability selection.
+
+### Σταθερότητα τοποθεσιών
+
+Κοινές ανοχές5/20 samples, προκαθορισμένες από radius/diversity. Ordered hits μετρούν το ίδιο family rank· either-family hits επιτρέπουν αλλαγή σειράς. Δεν γίνεται consensus point selection.
+
+| Tolerance | Ordered hits pair1 / pair2 | Either-family hits pair1 / pair2 | Median max distance pair1 / pair2 |
+|---|---|---|---|
+| 5 | 8/20 / 4/20 | 8/20 / 4/20 | 11.5 / 115.5 |
+| 20 | 11/20 / 4/20 | 11/20 / 4/20 | 11.5 / 115.5 |
+
+![Point locations](../paper_selection_stability_2026-10-06/selection_locations.png)
+
+### Κόστος, επαλήθευση και ερμηνεία
+
+90tests passed/14existingwarnings σε15,10s (JUnit15.069s). CPU experiment221.581124s, fit25.277187s περιλαμβάνεται· independent verifier113.115777s.
+Ο verifier επανέλαβε και τα20 full searches,120 weight vectors,40 selected training coefficients, όλα ταcenters/paired draw indices/location summaries.528confirmation coefficients/all products,79.992bootstrap draws,12actual-row cluster checks,176sampled offsets με batch boundaries, όλαsplits/RNG/time ordering/padding bounds/immutable hashes.
+Δέκα paper CPU φάσεις:2.596,295861s experimental wall time. Recovery summaries988/execution checks19.760/additional endpoint replays10.960 αμετάβλητα. Αυτή η φάση δεν διάβασε attacks/metadata/keys και δεν έκανε νέα CPA recovery.
+Variable profiling150k πλέον viewed/50k unused· fixed profiling50k used. Variable attack10k viewed από παλιότερες φάσεις, original fixed attack locked. Οι νέες40k confirmation rows αποκλείονται από κάθε μελλοντικό unseen confirmation ή tuning. Παραμένουν1 Kaggle notebook/3GPUtrainings/failed gate/source/checkpoints.
+Αυτό το αποτέλεσμα απομονώνει εμπειρικά τη διαφορά μεταξύ signal σε συγκεκριμένα frozen points και αξιοπιστίας του full-search selector υπό paired sample perturbations. Υποστηρίζει τη failure-analysis κατεύθυνση, όχι νέα επίθεση, superiority έναντι άλλου selector ή publication-ready novelty. Απαιτείται independent acquisition/key evidence και σύγκριση με prior-art selection methods.
+
+[Plan](../paper_selection_stability_2026-10-06/plan.json) · [Splits](../paper_selection_stability_2026-10-06/splits.npz) · [Training access](../paper_selection_stability_2026-10-06/training_access.json) · [Confirmation access](../paper_selection_stability_2026-10-06/evaluation_access.json) · [All fits](../paper_selection_stability_2026-10-06/fit.json) · [Fit arrays](../paper_selection_stability_2026-10-06/fit.npz)
+[Results](../paper_selection_stability_2026-10-06/results.json) · [Arrays](../paper_selection_stability_2026-10-06/arrays.npz) · [All528 coefficients](../paper_selection_stability_2026-10-06/correlations.csv) · [All40 selected pairs](../paper_selection_stability_2026-10-06/selected_points.csv) · [Tests](../paper_selection_stability_2026-10-06/pytest.xml) · [Verification](../paper_selection_stability_2026-10-06/verification.json) · [Evidence](../paper_selection_stability_2026-10-06/evidence.json)
+[Execution code](../../notebooks/paper_selection_stability.py) · [Independent verifier](../../notebooks/verify_selection_stability.py) · [Frozen source audit](../../literature/SELECTION_STABILITY_2026-10-06.md)
+
+Η σχετική scheme-aware βιβλιογραφία ελέγχθηκε πλέον από το published full text.
+Το συγκεκριμένο access gap έκλεισε, με περιορισμένη relevant-section comparison,
+χωρίς matched implementation benchmark ή novelty claim. Orthogonal regression
+και systematic citation search παραμένουν εκκρεμή.
+
+[Scheme-aware full-text audit](../../literature/SCHEME_AWARE_FULLTEXT_AUDIT_2026-10-06.md).
+
+## 20. Στοχευμένη regression prior-art σύγκριση — 8/10/2026
+
+Συμπληρώθηκε η σύγκριση με την orthogonal-regression εργασία από relevant
+indexedprimarypublisher/PMCtext. Η άμεση πρόσβαση παραμένει ανεπιτυχής· δεν έγινε
+verifiedPDF/codeimplementationaudit ή author-methodreproduction. Το
+[audit](../../literature/REGRESSION_PRIOR_ART_COMPARISON_2026-10-08.md) συνδέει
+τα primarysources και διαχωρίζει τις αναγνωσμένες εξισώσεις από τη δική μας ερμηνεία.
+
+Πλήρης orthogonalrotation διατηρεί rank και Gram eigenvalues· δεν επισκευάζει μόνη
+της singularity. Truncation σε positiveeigenspace μπορεί να δώσει invertible reduced
+Gram, αλλά είναι χωριστή πράξη. Δεν συναγάγεται implementationerror χωρίς έλεγχο
+του component-retentionrule. Fixedlinearpenalty μετακινεί RHS και δεν αλλάζει τον
+Hessian, ενώ η δική μας independentnoise covariancecorrection αλλάζει Gram/Hessian.
+Αυτό διακρίνει algebraicforms, όχι novelty ή superiority. Noise/regularization
+και eigenspace projections παραμένουν γνωστές ιδέες.
+
+Πέντε deterministic synthetic correctness checks πέρασαν:
+
+| Έλεγχος | Αποτέλεσμα |
+|---|---|
+| Rank/eigenvalues σε πλήρη orthogonalrotation | Rank1 πριν/μετά, eigenvalues0/10 εντόςfloattolerance |
+| Positive-eigenspace truncation | Διατηρείται1 component· χωριστήdimensionreduction |
+| Pseudoinverse transport | Ίδιαtransportedsolution εντόςfloattolerance |
+| Bilinear noise Gram correction | Rank2→4, minimumcorrectioneigenvalue0,276751, correctedGram0,288114 |
+| Fixedlinearpenalty | ΊδιοςHessian2G, διαφορετικήλύση απόquadraticpenalty |
+
+Οι αριθμητικές assertions ελέγχουν τα παραπάνω μαθηματικά σε μικρούς προκαθορισμένους
+πίνακες. Δεν διαβάστηκαν πραγματικάdata ή keys, δεν προστέθηκαν models/seeds/GPU
+trainings/recoverytrials, και δεν τεκμηριώνεται φυσική efficacy. Runtimeχωριστάδεν
+μετρήθηκε· αυτά δεν προσμετρώνται στις δέκα real-dataCPUφάσεις/2.596,295861s.
+Το τελευταίο πραγματικό suite παραμένει90tests, καιτα5checks αναφέρονται χωριστά.
+
+Ο πιθανός άξονας paper παραμένει prospective robustness/failureanalysis, με τη
+διάκριση frozenfeature signal/reselection stability. Πλήρης prior-art resolution
+και independentacquisition/key evidence απαιτούνται πρινpublication-readyclaim.
+
+[Executable algebra audit](../../notebooks/audit_regression_prior_art.py) ·
+[Saved arrays](../regression_prior_art_audit_2026-10-08/arrays.npz) ·
+[Assertions/source hashes](../regression_prior_art_audit_2026-10-08/verification.json).
+
+## 21. Training-only επιλογή με στόχο το τελικό χαρακτηριστικό — 9/10/2026
+
+Η νέα σύγκριση απέτυχε στο κύριο κριτήριο. Η επιλογή με στόχο τα γινόμενα
+παραθύρων δεν αρκεί για σταθερό δεύτερο signal στην εξεταζόμενη pipeline.
+Το αποτέλεσμα περιορίζει αυτή τη συγκεκριμένη εξήγηση ως επαρκή λύση.
+Δεν αποδεικνύει false positive του αρχικού pair ή μοναδική αιτία της αποτυχίας recovery.
+
+Η βιβλιογραφική αποτίμηση και οι δύο ελεγχόμενες υποθέσεις προηγήθηκαν του
+[frozen plan](../paper_window_selection_2026-10-09/plan.json). Η H1 συγκρίνει
+την επιλογή βάσει σημείων με την επιλογή βάσει window products. Η H2 εξετάζει
+αν οι εσωτερικές OOB διάμεσοι προβλέπουν τις νέες καθαρές profiling διαμέσους.
+Το θέμα H3 στο frozen audit/plan παραμένει αναβαλλόμενο recovery ερώτημα,
+χωρίς πλήρως ορισμένο νέο πείραμα: αφορά τη σχέση profiling signal/σταθερότητας
+με ανάκτηση σε ανεξάρτητα αποκτημένο πραγματικό key.
+
+Higher-order projection/window selection και averaging έχουν γνωστό prior art.
+Ανακτήθηκε το πλήρες orthogonal-regression XML και επιθεωρήθηκε scheme-aware
+κώδικας σε συγκεκριμένο commit. Τα κενά notation, υλοποίησης, αναπαραγωγής και
+ευρύτερης βιβλιογραφικής κάλυψης καταγράφονται στο
+[primary/code audit](../../literature/SELECTION_OBJECTIVE_AUDIT_2026-10-09.md).
+
+Επαναχρησιμοποιήθηκαν τα ίδια 20 ζευγαρωμένα draws της φάσης 10 από τις αρχικές
+10.000 training traces, με σταθερή ευθυγράμμιση/template της φάσης 9. Baseline
+είναι όλα τα παλιά point-selector fits. Η εναλλακτική αναζητά εξαντλητικά τη μέγιστη
+απόλυτη συσχέτιση Pearson του γινομένου δύο κεντραρισμένων μέσων 11 δειγμάτων.
+Διατηρούνται τα ίδια 845.650 επιτρεπτά ζεύγη κέντρων, radius 5, margin 25,
+separation 50, diversity 20, τα κέντρα ανά draw και τα point/box/rank1 controls.
+Δεν αλλάζουν περιοχή, πλάτος ή παράμετροι offsets και δεν επιλέγεται καλύτερο
+draw ή consensus. Όλα τα νέα fits και οι 240 OOB συσχετίσεις αποθηκεύτηκαν
+πριν από την πρόσβαση στις νέες confirmations.
+
+Χρησιμοποιήθηκαν δύο νέες profiling ομάδες των 10.000 rows, με seeds 20261020/21.
+Επαληθεύτηκε η provenance της ένωσης των προηγούμενων profiling splits:
+15k → 20k → 30k → 70k → 110k → 150k, χωρίς attack indices. Clean και combined5
+χρησιμοποιούν κοινά raw Gaussian offsets και U9101/Z9102. Τα training HW labels
+χρησιμοποιούνται μόνο για επιλογή/fit· η μετατροπή λαμβάνει traces μόνο.
+Δεν διαβάστηκαν metadata, attack payloads ή keys.
+
+Για τη δεύτερη οικογένεια, το κύριο clean box κριτήριο απαιτεί σε κάθε ομάδα
+διάμεση ζευγαρωμένη Δr ≥ 0,02, window median ≥ 0,05 και ≥ 16/20 θετικά draws.
+Η διάμεση ζευγαρωμένη απώλεια της πρώτης οικογένειας πρέπει να είναι ≤ 0,01.
+Υπολογίζεται median(a−b), όχι median(a)−median(b), διατηρώντας όλα τα paired draws.
+
+| Pool / family | Point median | Window median | Median paired Δr | Window positive |
+|---|---:|---:|---:|---:|
+| primary / pair1 | 0.081432 | 0.114983 | 0.032106 | 20/20 |
+| primary / pair2 | 0.031472 | 0.007642 | -0.004170 | 12/20 |
+| replication / pair1 | 0.101993 | 0.118306 | 0.015716 | 20/20 |
+| replication / pair2 | 0.037832 | 0.006647 | -0.006408 | 13/20 |
+
+Η πρώτη οικογένεια βελτιώθηκε περιγραφικά, αλλά η δεύτερη απέτυχε και στις δύο
+ομάδες. Οι αντίστοιχες rank1 window διάμεσοι, 0,006873 και 0,002998, παραμένουν
+επίσης χαμηλές. Δεν επιλέγεται άλλο metric για να ανατραπεί η κύρια αποτυχία.
+Η δεύτερη οικογένεια προκύπτει από κανόνα ποικιλίας επιλογής· δεν αποτελεί
+εγγύηση ανεξάρτητης πληροφορίας διαρροής.
+
+![Matched selector perturbations](../paper_window_selection_2026-10-09/objective_comparison.png)
+
+Η δευτερεύουσα H2 απαιτεί διαφορά OOB/fresh clean διαμέσων ≤ 0,02 και συμφωνία
+στο κατώφλι 0,05, για second-family box/rank1, τις δύο μεθόδους και τις δύο ομάδες.
+Η συμφωνία στο κατώφλι είναι 8/8, με όλες τις διαμέσους κάτω από 0,05. Η αριθμητική
+συμφωνία είναι 7/8, συνεπώς το συνολικό κριτήριο απέτυχε: point-selector/box/replication,
+OOB 0,012072 έναντι fresh 0,037832, διαφορά 0,025760. Τα OOB labels εξαιρούνται
+από το draw fit, αλλά οι traces είχαν συμβάλει στο σταθερό preprocessing χωρίς
+labels. Πρόκειται για conditional εσωτερική διάγνωση. Όλοι οι έλεγχοι δημοσιεύονται.
+
+Τα κριτήρια είναι περιγραφικά. Τα 20 draws μοιράζονται training, confirmations
+και preprocessing· δεν είναι ανεξάρτητα seeds, keys ή acquisitions. Δεν εξάγονται
+independent-binomial συμπεράσματα ή intervals από αυτά, ούτε across-phase
+alpha-spending εγγύηση. Δεν έχει εκτελεστεί matched benchmark δημοσιευμένης
+μεθόδου και δεν τεκμηριώνεται novelty. Διατηρούνται οι αποτυχίες των φάσεων 7/9/10
+και το θετικό profiling αποτέλεσμα της φάσης 8. Τα variable attack 3/20–4/20
+παραμένουν τα τελευταία recovery ευρήματα. Δεν κατασκευάστηκε fixed-key επίθεση
+από varying-key profiling labels.
+
+95 tests passed, με 14 προϋπάρχουσες warnings, σε 15,52s (JUnit 15,522s).
+Τα πέντε νέα synthetic correctness tests είναι χωριστά από τους πέντε παλιούς
+deterministic algebra checks. Το CPU πείραμα διήρκεσε 74.974746s, περιλαμβάνοντας
+41.301021s για fit· ο verifier 111.776592s χωριστά. Οι έντεκα CPU φάσεις έχουν
+2671.270607s experiment wall time, χωρίς imports/tests/verifiers/reports/συνεδρία.
+Το όριο των 600s δεν ενεργοποιήθηκε· έγινε μία εκτέλεση χωρίς επαναρύθμιση.
+
+Ο χωριστός verifier επανέπαιξε 40 πλήρεις αναζητήσεις, 240 διανύσματα βαρών,
+80 επιλεγμένες training συσχετίσεις, όλες τις 240 OOB και 960 fresh συσχετίσεις/
+γινόμενα, 100 δειγματοληπτικούς ελέγχους offsets, splits, RNG, χρονική σειρά και
+hashes. Το plot ελέγχθηκε οπτικά. Η επαλήθευση χρησιμοποιεί ανεξάρτητους
+αριθμητικούς τύπους στον ίδιο host· δεν αποτελεί ανεξάρτητο ανθρώπινο review
+ή cross-host reproduction.
+
+Variable profiling: 170k viewed/30k unused μετά τη φάση 11. Οι νέες 20.000 rows
+είναι πλέον εξετασμένες και αποκλείονται από tuning/μελλοντική fresh confirmation.
+Οι μελλοντικοί αποκλεισμοί περιλαμβάνουν την ένωση όλων των phase11 splits.
+Fixed profiling 50k viewed, variable attack 10k αμετάβλητο, αρχικό fixed attack locked.
+Παραμένουν 3 GPU trainings, ένα Kaggle notebook και αμετάβλητα source/checkpoints/gate.
+Οι 988 recovery summaries, 19.760 execution checks και 10.960 additional replays
+δεν αλλάζουν. Πριν χρησιμοποιηθούν οι τελευταίες 30.000 rows χρειάζεται νέα
+διακριτική ερευνητική ερώτηση. Ανεξάρτητο actual-key/acquisition evidence και
+πληρέστερη επίλυση του prior art παραμένουν ουσιώδη κενά για paper.
+
+[Phase11 report](../paper_window_selection_2026-10-09/REPORT_EL.md) ·
+[All960fresh coefficients](../paper_window_selection_2026-10-09/correlations.csv) ·
+[All240OOB coefficients](../paper_window_selection_2026-10-09/oob_correlations.csv) ·
+[Evidence](../paper_window_selection_2026-10-09/evidence.json) ·
+[Independent verification](../paper_window_selection_2026-10-09/verification.json) ·
+[Report verification](../paper_window_selection_2026-10-09/report_verification.json) ·
+[Splits](../paper_window_selection_2026-10-09/splits.npz).
+
+## 22. Kaggle training-recipe diagnostic — 9/10/2026
+
+Με νέα άδεια χρήστη έγινε μία τέταρτη GPU baseline στο ίδιο ιδιωτικό notebook,
+χωρίς νέο μοντέλο, unique data budget, seed ή epochs. Η υπόθεση ήταν ότι η
+προσαρμογή του author optimizer recipe αρκεί για clean validation SR@2000≥18/20.
+Το [plan](../kaggle_recipe_2026-10-09/plan.json) και το
+[author-code/protocol audit](../kaggle_recipe_2026-10-09/LITERATURE_AND_PROTOCOL.md)
+πάγωσαν πριν από τη νέα εκπαίδευση. Η version9 ολοκληρώθηκε σε TeslaT4.
+
+Ίδιο literature CNN16.952 parameters, original10k/5k, seed0,50epochs,
+training-only per-position MinMax και minimum-CE checkpoint. Η εναλλακτική
+χρησιμοποιεί batch50 και τριφασικό γραμμικό LR cycle max0,005, scale0,1/end0,2,
+χωρίς momentum cycling. Οι 500.000 εκθέσεις traces παραμένουν ίδιες, αλλά
+updates3.950→10.000. Το joint recipe δεν απομονώνει batch/schedule/update-count
+effect και δεν αναπαράγει το πλήρες author45k/Keras protocol.
+
+| Recipe | Updates | Best epoch | Minimum CE | SR@2000 | GE@2000 |
+|---|---:|---:|---:|---:|---:|
+| constant LR / batch128 | 3950 | 4 | 5.560782 | 0/20 | 114.250000 |
+| author linear cycle / batch50 | 10000 | 1 | 5.560471 | 0/20 | 96.000000 |
+
+Το primary criterion απέτυχε. Η συγκεκριμένη αλλαγή recipe δεν αρκεί για recovery
+στο10k/50-epoch setup. Το καλύτερο τελικό trainingCE5,093989 συνυπάρχει με
+χειρότερο τελικό validationCE5,996656. Δεν αποδεικνύεται μοναδική αιτία failure
+ή αποτέλεσμα μεγαλύτερου unique training sample. Το ίδιο validation5k είχε
+ήδη εξεταστεί· δεν αποτελεί νέα prospective confirmation ή independent-key efficacy.
+Τα20orders μοιράζονται τις ίδιες traces/key και δεν είναι20neural seeds ή acquisitions.
+
+99 tests passed/14 προϋπάρχουσες warnings,17,33s (JUnit17,322s). Τα τέσσερα νέα
+tests ελέγχουν ανεξάρτητη LR interpolation, optimizer continuation/budget rejection
+και actual synthetic CPU smoke. Χωριστός verifier επαλήθευσε10.000LR values,
+40.000rankprefixes,5.000GPUpredictions/CPUinference, ίδιοnormalizer/splits,
+minimum-CEcheckpoint και preservationhashes. MaxCPU/GPUlogproberror1,14904e−6.
+Τα αποθηκευμένα περιβάλλοντα είναι ίδια: Python3.13.15/Torch2.8.0+cu126/CUDA12.6/
+TeslaT4/NumPy2.2.6/h5py3.14.0. Το plot ελέγχθηκε οπτικά.
+
+Trainingloops48.935854s καιvalidationloops7.492933s· experiment70.122321s μετάsetup.
+Verifier8.430090s χωριστά. Τα loops δεν είναι ο συνολικός GPU session/account χρόνος.
+Queue/setup/installs/teardown δεν δηλώνονται ως μετρημένη GPU χρέωση.
+Τα όρια1200s session/600s trainingloop δεν ενεργοποιήθηκαν. Μία υποβολή, χωρίς
+HPO, restart, νέοseed ήautomaticcombined. Παραμένουν τέσσερα full GPU trainings,
+που εξαντλούν το cap4, και ένα notebook. Νέο training χρειάζεται νέα αιτιολόγηση
+και συμφωνία χρήστη. Το αρχικό CNN failed gate και όλες οι CPU αποτυχίες διατηρούνται.
+
+Version10 είναι QUICK_SAVE της original ασφαλούς notebook πηγής, χωρίς εκτέλεση.
+Η executedversion9 και τα νέα checkpoints/predictions αποθηκεύτηκαν. Production
+source, παλιά checkpoints, activeInput και canonicalnotebook αμετάβλητα. Η LR
+επέκταση έχει ξεχωριστό hash σε plan/config/checkpoints. Δεν έγιναν combined ή
+attack runs, ούτε αναγνώσεις των30kunusedvariableprofiling. Το fixedattack παραμένει
+locked, variableattack10k αμετάβλητο. Το ισχυρότερο scope παραμένει benchmark/
+failureanalysis, χωρίς novelty ή independent recovery claim.
+
+![Kaggle recipe learning curves](../kaggle_recipe_2026-10-09/recipe_comparison.png)
+
+[Πλήρης αναφορά](../kaggle_recipe_2026-10-09/REPORT_EL.md) ·
+[Αριθμητική επαλήθευση](../kaggle_recipe_2026-10-09/verification.json) ·
+[Report και remote restoration verification](../kaggle_recipe_2026-10-09/report_verification.json) ·
+[Evidence](../kaggle_recipe_2026-10-09/evidence.json).

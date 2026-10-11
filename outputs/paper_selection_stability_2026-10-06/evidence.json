@@ -1,0 +1,306 @@
+{
+  "intervals": [
+    {
+      "pool": "primary",
+      "family": "aligned_selected_pair1",
+      "scheme": "paired_rows",
+      "correlation": 0.09258201718979127,
+      "lower": 0.06985650675803066,
+      "upper": 0.11404766030421072,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "primary",
+      "family": "aligned_selected_pair1",
+      "scheme": "index_clusters",
+      "correlation": 0.09258201718979127,
+      "lower": 0.07077668222650553,
+      "upper": 0.11492083057440806,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    },
+    {
+      "pool": "primary",
+      "family": "aligned_selected_pair2",
+      "scheme": "paired_rows",
+      "correlation": 0.08102830926176614,
+      "lower": 0.058652325336090855,
+      "upper": 0.1033910588215146,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "primary",
+      "family": "aligned_selected_pair2",
+      "scheme": "index_clusters",
+      "correlation": 0.08102830926176614,
+      "lower": 0.06021794929112128,
+      "upper": 0.1011845418860689,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    },
+    {
+      "pool": "replication",
+      "family": "aligned_selected_pair1",
+      "scheme": "paired_rows",
+      "correlation": 0.09432929883935927,
+      "lower": 0.07221780928668331,
+      "upper": 0.11744346837238384,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "replication",
+      "family": "aligned_selected_pair1",
+      "scheme": "index_clusters",
+      "correlation": 0.09432929883935927,
+      "lower": 0.07182261545752287,
+      "upper": 0.1167689740184556,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    },
+    {
+      "pool": "replication",
+      "family": "aligned_selected_pair2",
+      "scheme": "paired_rows",
+      "correlation": 0.07821739130042024,
+      "lower": 0.05518386591394483,
+      "upper": 0.10234609568394508,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "replication",
+      "family": "aligned_selected_pair2",
+      "scheme": "index_clusters",
+      "correlation": 0.07821739130042024,
+      "lower": 0.0576462089438335,
+      "upper": 0.09914702583960643,
+      "support": true,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    }
+  ],
+  "sensitivity": [
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "family": "pair1",
+      "median": 0.09334266618737425,
+      "minimum": 0.08406603532818857,
+      "maximum": 0.12010902837001002,
+      "positive_draws": 20,
+      "draws": 20,
+      "support": true
+    },
+    {
+      "pool": "primary",
+      "condition": "clean",
+      "family": "pair2",
+      "median": 0.01231973416357364,
+      "minimum": -0.015690692181095516,
+      "maximum": 0.11351979251558901,
+      "positive_draws": 14,
+      "draws": 20,
+      "support": false
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "family": "pair1",
+      "median": 0.0757446890073222,
+      "minimum": 0.05932089419223765,
+      "maximum": 0.11546324091237069,
+      "positive_draws": 20,
+      "draws": 20,
+      "support": true
+    },
+    {
+      "pool": "primary",
+      "condition": "combined5",
+      "family": "pair2",
+      "median": 0.00749145350171217,
+      "minimum": -0.017676449261024373,
+      "maximum": 0.04015865179219691,
+      "positive_draws": 14,
+      "draws": 20,
+      "support": false
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "family": "pair1",
+      "median": 0.09620707566107353,
+      "minimum": 0.08130439528853715,
+      "maximum": 0.11542852103176614,
+      "positive_draws": 20,
+      "draws": 20,
+      "support": true
+    },
+    {
+      "pool": "replication",
+      "condition": "clean",
+      "family": "pair2",
+      "median": 0.003294148870640167,
+      "minimum": -0.003755483923386963,
+      "maximum": 0.1135067494487052,
+      "positive_draws": 15,
+      "draws": 20,
+      "support": false
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "family": "pair1",
+      "median": 0.07502732897303224,
+      "minimum": 0.05628376449269386,
+      "maximum": 0.10848686694697864,
+      "positive_draws": 20,
+      "draws": 20,
+      "support": true
+    },
+    {
+      "pool": "replication",
+      "condition": "combined5",
+      "family": "pair2",
+      "median": 0.005130103343373873,
+      "minimum": -0.008588129507683812,
+      "maximum": 0.04607175772404858,
+      "positive_draws": 18,
+      "draws": 20,
+      "support": false
+    }
+  ],
+  "locations": [
+    {
+      "tolerance": 5,
+      "ordered_hits": [
+        8,
+        4
+      ],
+      "either_family_hits": [
+        8,
+        4
+      ],
+      "ordered_median_max_point_distance": [
+        11.5,
+        115.5
+      ]
+    },
+    {
+      "tolerance": 20,
+      "ordered_hits": [
+        11,
+        4
+      ],
+      "either_family_hits": [
+        11,
+        4
+      ],
+      "ordered_median_max_point_distance": [
+        11.5,
+        115.5
+      ]
+    }
+  ],
+  "frozen_signal_met": true,
+  "pipeline_sensitivity_met": false,
+  "joint_support_met": false,
+  "ten_phase_cpu_seconds": 2596.295861400431,
+  "phase_seconds": 221.58112380001694,
+  "verification_seconds": 113.11577679985203,
+  "new_correlation_rows": 528,
+  "new_key_recovery_rows": 0,
+  "training_draws": 20,
+  "unique_training_rows_range": [
+    6281,
+    6417
+  ],
+  "variable_used_profiling_rows": 150000,
+  "variable_unused_profiling_rows": 50000,
+  "prior_recovery_summaries": 988,
+  "prior_execution_endpoint_checks": 19760,
+  "prior_additional_endpoint_replays": 10960,
+  "tests": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 15.069
+  },
+  "no_attack_reads_in_phase10": true,
+  "no_bootstrap_winner_chosen": true,
+  "new_gpu_trainings": 0,
+  "novelty_verified": false,
+  "paper_ready": false,
+  "input_sha256": {
+    "plan.json": "69bdbd798dc88e514fb5417793cf089a64b4102212f6889fed966805c69aa6ba",
+    "results.json": "b56561be54db38b0f58714f8e17e10f8018561e00a41bea92d93f5103c238884",
+    "verification.json": "5d260968ceeaf2d8d65cccac0488d73ec944ffbfcaf0b1c600cdd1509d02ed4e",
+    "fit.json": "439c58ac29a678a9e9414406349f646e866ca46e21b6c5a2a368e66348e475a9"
+  }
+}

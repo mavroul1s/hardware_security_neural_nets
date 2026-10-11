@@ -1,0 +1,142 @@
+{
+  "intervals": [
+    {
+      "pool": "primary",
+      "scheme": "paired_rows",
+      "difference": 0.0036014633219598607,
+      "lower": -0.003958045602130058,
+      "upper": 0.011357533573014748,
+      "support": false,
+      "clusters": 200,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "primary",
+      "scheme": "index_clusters",
+      "difference": 0.0036014633219598607,
+      "lower": -0.0038221008169374887,
+      "upper": 0.011348358191285782,
+      "support": false,
+      "clusters": 200,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    },
+    {
+      "pool": "replication",
+      "scheme": "paired_rows",
+      "difference": 0.00608536949236807,
+      "lower": -0.0024430214159845277,
+      "upper": 0.01453759355903552,
+      "support": false,
+      "clusters": 200,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 176352373161880787811330955175518439379,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 1,
+        "uinteger": 1061623400
+      }
+    },
+    {
+      "pool": "replication",
+      "scheme": "index_clusters",
+      "difference": 0.00608536949236807,
+      "lower": -0.002519951988947531,
+      "upper": 0.014470511971701091,
+      "support": false,
+      "clusters": 200,
+      "rng_final_state": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 260384794094958412807812791648386162241,
+          "inc": 253583831573602660626028118101560951819
+        },
+        "has_uint32": 0,
+        "uinteger": 2053621763
+      }
+    }
+  ],
+  "support_met": false,
+  "nine_phase_cpu_seconds": 2374.714737600414,
+  "new_correlation_rows": 432,
+  "new_key_recovery_rows": 0,
+  "phase_seconds": 232.51710980013013,
+  "verification_seconds": 99.02751879999414,
+  "prior_recovery_summaries": 988,
+  "prior_execution_endpoint_checks": 19760,
+  "prior_additional_endpoint_replays": 10960,
+  "training_selected_pairs": {
+    "raw": {
+      "old_pair1": [
+        187,
+        1080
+      ],
+      "old_pair2": [
+        334,
+        573
+      ],
+      "selected_pair1": [
+        187,
+        1080
+      ],
+      "selected_pair2": [
+        334,
+        573
+      ]
+    },
+    "aligned_once": {
+      "old_pair1": [
+        187,
+        1080
+      ],
+      "old_pair2": [
+        334,
+        573
+      ],
+      "selected_pair1": [
+        76,
+        1070
+      ],
+      "selected_pair2": [
+        199,
+        1013
+      ]
+    }
+  },
+  "tests": {
+    "tests": 86,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 15.396
+  },
+  "paper_ready": false,
+  "novelty_verified": false,
+  "no_attack_reads_in_phase9": true,
+  "variable_used_profiling_rows": 110000,
+  "variable_unused_profiling_rows": 90000,
+  "new_gpu_trainings": 0,
+  "input_sha256": {
+    "plan.json": "4137f97f48c4ffba0265d9cad070353055baf8aae633e4d1306989d711008d7b",
+    "results.json": "0be45dd2a1145c9ae770969bbd0bc437a34387a467fb1fe791ebe04544515b11",
+    "verification.json": "bbdd772ff1b1d6085b30cd275e62e2d1a403ac7e5b20aa99076604d28f6e47af",
+    "fit.json": "eebc607512e996c668d551073ea2827993bad72efb6f1c5451a30001dcd52dc7"
+  }
+}

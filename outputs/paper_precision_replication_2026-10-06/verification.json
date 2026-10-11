@@ -1,0 +1,30 @@
+{
+  "correlation_rows_verified": 360,
+  "bootstrap_draws_replayed": 39996,
+  "sampled_cluster_draws_replayed_with_actual_rows": 6,
+  "sampled_alignment_offsets_replayed": 720,
+  "all_splits_rng_and_moments_replayed": true,
+  "unchanged_fit_verified": true,
+  "variable_used_profiling_rows": 70000,
+  "new_attack_reads": false,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "tests": {
+    "tests": 82,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 22.163
+  },
+  "support_met": true,
+  "seconds": 88.28278370015323,
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "artifact_sha256": {
+    "plan.json": "f24919eff6ecdf5a6cbd59b55d6296f34d98de2c2221c01556ebae53c4d3e274",
+    "splits.npz": "fe30908f9c6d551b45f94d41fea29c0f2cc6c960e117e7cf65de2e1b3b428b99",
+    "evaluation_access.json": "5bb3e7cf616b27661ca09bc71311eb519769ee24e60a39443cebcae85598d400",
+    "arrays.npz": "de3b8cae744e455c848a6f4e2e4a7132fc3d9f137b5c02b46ad0d86d6e74d2e6",
+    "results.json": "629867b5d33cb9a7776551b2989f8fad04cf71f8ef64611fa7ed62c8360726b8",
+    "pytest.xml": "416f63beedb7ad8b176c0719d9a4feb7b6e14ed5b0b5e294734396be1e523cae"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "report_tables_verified": true,
+  "gaussian_recovery_table_cells": 90,
+  "csv_correlation_rows": 900,
+  "csv_recovery_rows": 540,
+  "csv_alignment_rows": 75,
+  "local_links_verified": 19,
+  "costs_verified": true,
+  "plots_visually_checked": true,
+  "tests": {
+    "tests": 79,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 17.698
+  },
+  "primary_support_met": false,
+  "secondary_attack_criterion_met": false,
+  "new_gpu_trainings": 0,
+  "original_fixed_attack_payloads_read": false,
+  "new_variable_attack_subset_viewed": true,
+  "artifact_sha256": {
+    "REPORT_EL.md": "b254ed463195e2c5e7d8d6a810c7b27af1753e77e5620e0674d6b968cd4b82a2",
+    "evidence.json": "d893b07cee7ab9acf229cb942955a5a627b08c92a6c379a9c234d19c2cb5e84f",
+    "verification.json": "a4143ce62e4c043b72d6d82f6e2ba25e3c6abe63036e90d8d7caf9c6b702ed7e",
+    "correlations.csv": "3dde0b0b4ec9817fc7faf7a4f336040711e47294043501ce13a36fa8972037d8",
+    "recovery.csv": "ac64a37f4b60873f0f1524c35063cf16e401d6087984fe391a7b41019c420d63",
+    "alignment.csv": "8a5200a506ecdc2abc1a59d7bc6d7ed048ec68aaebba3304dd438f65933865fd",
+    "profiling_comparison.png": "d5c8cd5c8fba489724bf5f6d22516cddddc8aa7462e3dc81ef2bacd2fcf11ed5",
+    "fresh_attack_recovery.png": "835c45a049b9121ec5892ac004c84f1d95813929fa459e758524922069ff30c1"
+  }
+}

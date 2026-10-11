@@ -203,3 +203,109 @@ confirmation δεν αντικαθιστά unknown-key/cross-device evidence.
 campaign-specific training fit. Το primary criterion απέτυχε. Δεν υποστηρίζεται
 γενική robustness πρόταση· οι διαφορές καμπάνιας/κλειδιού/noise units παραμένουν
 συγχυτικοί παράγοντες. Οι είκοσι σειρές δεν πολλαπλασιάζουν τα ανεξάρτητα κλειδιά.
+
+## Συνέχεια6/10: windows και analytic noise regression
+
+Η νέα εντολή χρήστη για περισσότερα paper experiments εκτελέστηκε σε δύο πρόσθετες
+CPU φάσεις, χωρίςαλλαγή neural/GPU scope ή training10k. Phase7: έξι featurevariants,
+radius5/ίδιαfrozenpoints, ίδιοridge0,01, πέντεconditions/τρίαalignments·900corrrows
+και540recoveries σε νέαprofiling5k pools καιfresh variableattack5k. Knownaveraging/
+SVD/regression/noiseregpriorart. Primarycrosscampaigncriterionfailed:fixedcontrast
+positive, variableintervalswide. Variableattacknoiseridge3/20/target18failed,
+rank14/20. FixedOODbox/rank1/noiseridge20/20bothpairs/bothpools, knownbaselineeffect.
+
+Phase8: ηprecisionαξιολόγηση απόprofilingμόνο δικαιολόγησε μεγαλύτεραunused20k
+confirmationpools, χωρίςrefit/parameterchange. Pairedrows/indexclusters μεbootstrap
+9.999draws/nominalalpha0,01/family4·Δr0,041891/0,051852 καιpositiveboundsπαντού.
+Adaptivefollowup, χωρίςglobalalphaspendingguarantee· phase7failurepreserved και
+κανένανέοkeyrecoveryclaim. Box/rank1παραμένουνισχυρότερααπόnoisecorrection.
+
+Όλαενσωματώθηκανστηνενιαίαεργασία§16–17.82tests passed. Η συγκεκριμένη
+πρόταση[paper](docs/PAPER_CANDIDATE.md) περιλαμβάνειsupportmatrix/outline καιεπόμενα
+κενά:primary fulltextnoveltycomparison, training-side alignment hypothesis σεunused
+variableprofiling καιindependently acquired/newactualkeyevidence μετάfreeze.
+Η training-side alignment πρόταση εκτελέστηκε στηphase9 με νέοfrozenplan:
+ίδια10k training, μία unlabeled Gaussian pass±10, point/box/rank1 fits και παλιά
+ή training-reselectedpairs, δύοunusedprofiling20k pools/seed20261016/17.
+Primary κρατά ίδιαoldpair1/evaluation offsets, αλλάζοντας μόνοfeaturefit:
+Δr0,003601/0,006085, όλα τα row/clusterintervals περιλαμβάνουν0· criterionfailed.
+Νέο δεύτερο selectedpair199×1013 έχει cleanrank1r0,076546/0,079067, secondary
+profiling evidence· δεν αποδεικνύει attack recovery ή causal jitter explanation.
+432νέεςcomparisons/86tests· κανένανέοattackread/GPUtraining/notebook.
+Fixedprofiling50kviewed, variableprofiling110kviewed/90kunused, variableattack10kviewed.
+Επόμενα απαιτούν ξεκάθαρη research hypothesis καιunused confirmations μετά νέοfreeze.
+Prior-art full-text gaps καιindependentacquisition/key evidence παραμένουν ανοικτά.
+
+## Συνέχεια6/10: selection sensitivity αντί περισσότερων neural trainings
+
+Ηphase10 πάγωσε20 paired bootstrap draws των ίδιων original10k training, με
+σταθερά phase9 alignment parameters. Επανυπολογίστηκαν όλα τα training-only
+centers/full pair searches/point-box-rank1 fits πριν δύοunused20k confirmations.
+All528coefficients retained, χωρίς καλύτερο draw ή consensus. Frozenpairs clean
+rank1r≈0,09/0,08 μεpositive intervals: frozen-signalcriterionpassed.
+Reselectedfamilyrank2medianr0,012320/0,003294,14/20 και15/20positive: sensitivity
+καιjointcriteriafailed. Αυτό δεν αποδεικνύει ότι το originalpair είναι false positive.
+20 draws conditional στο originalsample/alignment, όχι20 ανεξάρτηταexperiments.
+
+Ενσωματώθηκε στη§19.90tests passed, δέκαφάσειςCPU2.596,295861s,
+988recoveries/19.760executionchecks/10.960replays αμετάβλητα. Variableprofiling
+150kviewed/50kunused, futureexclusions=unionphase10splits· attacksunchanged.
+Το scheme-aware publishedPDF έγινεaccessible καισυγκρίθηκανrelevantsections,
+με[νέοaudit](literature/SCHEME_AWARE_FULLTEXT_AUDIT_2026-10-06.md).
+Orthogonalregression/fullcitationsearch καιindependentacquisition/key evidence
+παραμένουν ανοικτά. Επόμενη selectorcomparison χρειάζεται training-only νέοfreeze,
+όχι επιλογή bootstrapwinner από τα viewed results. One notebook/3GPUtrainings.
+
+Στις8/10 συμπληρώθηκε [orthogonalregression comparison](literature/REGRESSION_PRIOR_ART_COMPARISON_2026-10-08.md)
+μέσωindexedprimarytext, ενώdirectaccess παραμένειfailed. Πέντεdeterministic
+syntheticalgebrachecks passed, χωρίςreal-datareads ήνέαμετρημένηefficacy (§20).
+Απομένουν notation/authorimplementation resolution, matchedpriorartcomparison
+καιindependentkey/acquisition evidence. Το πλήθοςcoefficients δεν αντικαθιστά
+αυτάτακενά, καικαμίαviewedrow δεν διατίθεταιγιαtuning/νέαunseenconfirmation.
+
+## Συνέχεια9/10: matched objective αντί νέου trial sweep
+
+Πάγωσαν δύο διαψεύσιμες υποθέσεις και καταγράφηκε τρίτο ανοικτό ερώτημα στο
+[primary/code audit](literature/SELECTION_OBJECTIVE_AUDIT_2026-10-09.md): objective
+mismatch, internal OOB prediction και profiling-to-actual-recovery gap. Επιλέχθηκε
+η πρώτη ως primary CPU σύγκριση, με δεύτερη ως diagnostic και τρίτη deferred
+μέχρι independently acquired actual-key evidence. Window selection έχει prior art.
+
+Η [phase11](outputs/paper_window_selection_2026-10-09/REPORT_EL.md) επαναχρησιμοποίησε
+ακριβώς τα20phase10 draws/10k training/phase9preprocessing. Σύγκρινε point-Pearson
+selection με centered11sample-mean-product Pearson, ίδια eligible centers/radius/
+diversity και point/box/rank1 controls. Verified150k προηγούμενη union, νέοfreeze πριν
+twofresh10k payloads· όλα fits/OOBcoefficients πριν νέοconfirmationread.
+Primary second-family boxmedian0,007642/0,006647,12/20 και13/20positive,
+medianpairedΔ−0,004170/−0,006408: failed. Firstfamilypositivecontrast δεν το αναιρεί.
+H2strictjointfailed1/8numericalchecks, ενώthreshold0,05agreement8/8.
+
+95tests passed· experiment74,974746s/verifier111,776592s, κανένα νέοattack/GPU.
+Variableprofiling170kviewed/30kunused, exclusions=allphase11splitsunion· όλεςοι
+φάσειςκαιτοlockedfixedattackδιατηρούνται. Το fullorthogonalXML access gap έκλεισε,
+αλλάnotation/authorimplementation resolution καιmatchedbenchmark παραμένουν.
+Pinned scheme-aware implementation επιθεωρήθηκεμερικώς χωρίςεκτέλεση.
+Δεν επιλέγεταιwinner/consensus ήαυτόματοwidth/region/selectorfollowup. Το επόμενο
+freeze πρέπει να διακρίνει άλλη εξήγηση καινα δικαιολογεί τατελευταία30k· paperaxis
+replication/benchmark/failureanalysis, χωρίςnovelty ή γενικήrecoveryclaim.
+
+## Νέα άδεια Kaggle 9/10: ένα training-recipe diagnostic — ολοκληρώθηκε
+
+Το [παγωμένο πλάνο](outputs/kaggle_recipe_2026-10-09/plan.json) αιτιολόγησε μία
+νέα baseline του ίδιου CNN, με ίδια original 10k/5k, seed 0 και 50 epochs.
+Αλλάζει joint recipe: batch 50 και author linear cycle max 0,005, χωρίς momentum
+cycling. Οι εκθέσεις traces είναι ίδιες· updates 3.950 → 10.000. Πρόκειται για
+έλεγχο του recipe στο περιορισμένο sample, χωρίς equal-update ή πλήρες 45k replication.
+
+Η [εκτέλεση version 9](outputs/kaggle_recipe_2026-10-09/REPORT_EL.md) έδωσε
+clean validation SR0/20, GE96 και minimum CE5,560471 στην epoch1. Primary failed.
+Το καλύτερο training loss δεν συνδυάστηκε με validation recovery. Το παλιό gate
+και όλες οι CPU αποτυχίες διατηρούνται. Το κοινό validation ήταν ήδη viewed.
+Δεν γίνεται νέο independent-key efficacy ή causal claim.
+
+99 tests, 10.000 LR values, 40.000 rank prefixes και CPU/GPU predictions verified.
+Experiment70,122321s μετά το setup· verifier8,430090s χωριστά. Δεν μετρήθηκε
+ολόκληρη η GPU session χρέωση. Ένα notebook, συνολικά4 full trainings/cap4,
+version10 QUICK_SAVE original πηγής χωρίς run. Source/checkpoints/Input διατηρούνται.
+Combined/attacks δεν εκτελέστηκαν και οι variable unused30k παραμένουν αχρησιμοποίητες.
+Νέα GPU εκπαίδευση πέρα από το cap απαιτεί νέα αιτιολόγηση και συμφωνία χρήστη.

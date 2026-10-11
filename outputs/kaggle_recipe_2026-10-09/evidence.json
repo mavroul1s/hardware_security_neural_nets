@@ -1,0 +1,64 @@
+{
+  "primary_met": false,
+  "comparisons": [
+    {
+      "recipe": "constant LR / batch128",
+      "updates": 3950,
+      "best_epoch": 4,
+      "minimum_ce": 5.5607820266723635,
+      "sr": 0.0,
+      "ge": 114.25
+    },
+    {
+      "recipe": "author linear cycle / batch50",
+      "updates": 10000,
+      "best_epoch": 1,
+      "minimum_ce": 5.560470867156982,
+      "sr": 0.0,
+      "ge": 96.0
+    }
+  ],
+  "new_gpu_trainings": 1,
+  "full_gpu_trainings_total": 4,
+  "new_confirmation_rows": 0,
+  "variable_unused_rows": 30000,
+  "training_loop_seconds": 48.935854228999915,
+  "validation_loop_seconds": 7.4929333639996685,
+  "experiment_seconds": 70.122320575,
+  "verifier_seconds": 8.430089600151405,
+  "cpu_tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "99",
+    "time": "17.322",
+    "timestamp": "2026-10-09T17:24:19.240569+03:00",
+    "hostname": "mavroul1s"
+  },
+  "independent_efficacy_claim": false,
+  "novelty_verified": false,
+  "last_epoch_old": {
+    "epoch": 50,
+    "steps": 3950,
+    "train_loss": 5.265615475463867,
+    "train_accuracy": 0.0226,
+    "validation_loss": 5.814249849700928,
+    "validation_accuracy": 0.0044,
+    "train_seconds": 0.29015260899996065,
+    "validation_seconds": 0.06718170800002099
+  },
+  "last_epoch_new": {
+    "epoch": 50,
+    "steps": 10000,
+    "train_loss": 5.09398894071579,
+    "train_accuracy": 0.033,
+    "validation_loss": 5.996655645370484,
+    "validation_accuracy": 0.0044,
+    "train_seconds": 0.9546274119999225,
+    "validation_seconds": 0.14694005000001198
+  },
+  "source_and_old_checkpoints_preserved": true,
+  "same_remote_notebook": true,
+  "attack_locked": true
+}

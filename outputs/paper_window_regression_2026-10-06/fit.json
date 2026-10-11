@@ -1,0 +1,126 @@
+{
+  "completed_utc": "2026-10-06T06:59:41.713162+00:00",
+  "campaigns": {
+    "fixed": {
+      "median_training_feature_range": 13.0,
+      "families": {
+        "pair1": {
+          "training_correlations": {
+            "point": 0.19849061214714386,
+            "box_product": 0.13016942419466837,
+            "diagonal_products": 0.11098742292799693,
+            "covariance_rank1": 0.15956579984032188,
+            "ridge_clean": 0.22752065716370487,
+            "ridge_noise": 0.20957175278003948
+          },
+          "singular_values": [
+            9.750051588105109,
+            0.4450519446555809,
+            0.09348429621432736,
+            0.03970763413695827,
+            0.015271138606504931,
+            0.010320455444407182,
+            0.007942021845552429,
+            0.004937804280697375,
+            0.0026315182867540487,
+            0.0021679951237625595,
+            0.00022477125139752023
+          ],
+          "product_variance_floor": 4.369026163394816e-11,
+          "ridge_penalty_in_training_standardized_product_coordinates": 0.01,
+          "sigma_raw": 1.3
+        },
+        "pair2": {
+          "training_correlations": {
+            "point": 0.1644454865784582,
+            "box_product": 0.1487118583127945,
+            "diagonal_products": 0.060781279861855914,
+            "covariance_rank1": 0.13975789369565042,
+            "ridge_clean": 0.19205905827901865,
+            "ridge_noise": 0.17400369474137367
+          },
+          "singular_values": [
+            3.547172097848654,
+            0.39904459200179404,
+            0.03861958474165662,
+            0.02049935715414486,
+            0.012497477558518558,
+            0.008808090576704307,
+            0.007070004281339264,
+            0.004838562412891997,
+            0.003780598182438886,
+            0.002355767121144397,
+            0.0004479472928948185
+          ],
+          "product_variance_floor": 1.5265841632576143e-11,
+          "ridge_penalty_in_training_standardized_product_coordinates": 0.01,
+          "sigma_raw": 1.3
+        }
+      }
+    },
+    "variable": {
+      "median_training_feature_range": 48.0,
+      "families": {
+        "pair1": {
+          "training_correlations": {
+            "point": 0.07040462525514746,
+            "box_product": 0.046798980288073916,
+            "diagonal_products": 0.049378428574680125,
+            "covariance_rank1": 0.04292123353452891,
+            "ridge_clean": 0.11620072537731232,
+            "ridge_noise": 0.07913864771658143
+          },
+          "singular_values": [
+            22.766701857014176,
+            1.2655680634215944,
+            0.1974756204164173,
+            0.06772772938066071,
+            0.04589433855015631,
+            0.037961915963129186,
+            0.027042604425650145,
+            0.01982331646442653,
+            0.014435614326774888,
+            0.008486079957064008,
+            0.005270652932137988
+          ],
+          "product_variance_floor": 1.0147134782106227e-09,
+          "ridge_penalty_in_training_standardized_product_coordinates": 0.01,
+          "sigma_raw": 4.800000000000001
+        },
+        "pair2": {
+          "training_correlations": {
+            "point": 0.037941807082970236,
+            "box_product": 0.003764640216966442,
+            "diagonal_products": 0.0012905878936626488,
+            "covariance_rank1": 0.006867554072804583,
+            "ridge_clean": 0.08768225488465264,
+            "ridge_noise": 0.022352035472993904
+          },
+          "singular_values": [
+            1.8014717676604561,
+            0.4784935553157878,
+            0.1446012158767173,
+            0.06401114399421323,
+            0.04784533693573804,
+            0.031530124728043986,
+            0.02746504130076131,
+            0.017432224975872195,
+            0.0075752381517361885,
+            0.0036812890788955385,
+            0.0009357570266718517
+          ],
+          "product_variance_floor": 8.397546918556283e-11,
+          "ridge_penalty_in_training_standardized_product_coordinates": 0.01,
+          "sigma_raw": 4.800000000000001
+        }
+      }
+    }
+  },
+  "seconds": {
+    "fixed": 5.207674300065264,
+    "variable": 6.620935799786821
+  },
+  "plan_sha256": "42bf17284a580db07961ecc16f7cf39e871e0bda42dced7fede320edd31022c8",
+  "fit_npz_sha256": "18ee87b6ad83e8286a3599804f35ff44a2266c812df0721cca16f1fe66c14379",
+  "evaluation_payloads_or_metadata_read": false
+}

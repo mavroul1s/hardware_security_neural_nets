@@ -1,0 +1,33 @@
+{
+  "primary_interval_rows": 8,
+  "sensitivity_rows": 8,
+  "location_rows": 2,
+  "all_csv_rows_verified": 528,
+  "all_selected_pairs_csv_rows_verified": 40,
+  "local_links_verified": 18,
+  "plots_visually_checked": [
+    "reselection_signal.png",
+    "selection_locations.png"
+  ],
+  "tests": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 15.069
+  },
+  "frozen_signal_met": true,
+  "pipeline_sensitivity_met": false,
+  "joint_support_met": false,
+  "new_gpu_trainings": 0,
+  "new_attack_reads": false,
+  "artifact_sha256": {
+    "REPORT_EL.md": "6702e3933cb0cc1e5b110d1f4beb1e136e816e3babeb6111af9b91dd2df0bbd9",
+    "correlations.csv": "8b1ba69335b0045b67cb4cc6e1d7ceba3bc8cd41462e50cc9a69f8fb12a82cb9",
+    "selected_points.csv": "a0d0f601a00ce18460169df6af3e1c2f219fae40f42e2e97d44e40e69499ebd7",
+    "evidence.json": "dfdb5babc20dc4a184a18109c09d4ca01b149e756e4262b0d38062e1e09c5f21",
+    "verification.json": "5d260968ceeaf2d8d65cccac0488d73ec944ffbfcaf0b1c600cdd1509d02ed4e",
+    "reselection_signal.png": "ffa52bd380cfcd8de3732482236efd09b78b51d726d3cafa396ba7b53297d174",
+    "selection_locations.png": "98a77b2f78b0ec0e1690483f396db1d414cd6f7ccf118de0e8232bad7e84598a"
+  }
+}

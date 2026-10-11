@@ -1,0 +1,67 @@
+{
+  "access_utc": "2026-10-09T13:41:33.776087+00:00",
+  "access": {
+    "scheme_commit": {
+      "url": "https://api.github.com/repos/uclcrypto/Scheme-Aware-Architectures/commits/main",
+      "status": 200,
+      "bytes": 2676,
+      "sha256": "ca6afcec8824a6048e48ef76411c545806c38c15ff7f973661a64b67521fb8ef"
+    },
+    "scheme_tree": {
+      "url": "https://api.github.com/repos/uclcrypto/Scheme-Aware-Architectures/git/trees/main?recursive=1",
+      "status": 200,
+      "bytes": 3368,
+      "sha256": "189b7049ecb6027405018e8d2527d86790bc004f1ee67526cff49e31b263b669"
+    },
+    "orthogonal_xml": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10048069/fullTextXML",
+      "status": 200,
+      "bytes": 182577,
+      "sha256": "c9828bbc0e983e409c66be7002089baee9d98c99adb0af32dde49f167458e700"
+    }
+  },
+  "code": {
+    "commit": "39add3742576c7add6cd87477f05e87dc5c75a31",
+    "files": {
+      "src/models.py": {
+        "url": "https://raw.githubusercontent.com/uclcrypto/Scheme-Aware-Architectures/39add3742576c7add6cd87477f05e87dc5c75a31/src/models.py",
+        "bytes": 32951,
+        "sha256": "d47eb809f87f9977a85e62fad86b27e217713a2e2e7c1946de3d69c68134fae1"
+      },
+      "src/simulation.py": {
+        "url": "https://raw.githubusercontent.com/uclcrypto/Scheme-Aware-Architectures/39add3742576c7add6cd87477f05e87dc5c75a31/src/simulation.py",
+        "bytes": 21457,
+        "sha256": "0b457721bd676d9305d02463c279b2cdc19045b8cd69d16834548b7811b116ec"
+      },
+      "src/utils.py": {
+        "url": "https://raw.githubusercontent.com/uclcrypto/Scheme-Aware-Architectures/39add3742576c7add6cd87477f05e87dc5c75a31/src/utils.py",
+        "bytes": 15362,
+        "sha256": "7cc77969485bb25acc0706612678a4a57fd3adb8a4f0c190358c79b1926c19a2"
+      },
+      "src/experiment_1.py": {
+        "url": "https://raw.githubusercontent.com/uclcrypto/Scheme-Aware-Architectures/39add3742576c7add6cd87477f05e87dc5c75a31/src/experiment_1.py",
+        "bytes": 17475,
+        "sha256": "e1678f00412a055726d4dbc0e96d2eda66e06c9003ef91b3ee715f1afc9df93b"
+      },
+      "src/experiment_affine.py": {
+        "url": "https://raw.githubusercontent.com/uclcrypto/Scheme-Aware-Architectures/39add3742576c7add6cd87477f05e87dc5c75a31/src/experiment_affine.py",
+        "bytes": 13823,
+        "sha256": "a62f444d4e141ba55786086098ac388158ede029eaaaf027855d0c5f666c839a"
+      }
+    }
+  },
+  "third_party_code_executed": false,
+  "orthogonal_xml_inspected_sections": [
+    "2",
+    "3",
+    "4",
+    "Algorithm1",
+    "MathML15-18"
+  ],
+  "limitations": [
+    "No visual PDF check",
+    "No author orthogonal implementation located by targeted search",
+    "No whole repository/CUDA audit",
+    "No systematic citation census"
+  ]
+}

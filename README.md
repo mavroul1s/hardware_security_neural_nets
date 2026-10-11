@@ -46,6 +46,66 @@ Combined5: όλες οι μέθοδοι0/20,0/20· clean Gaussian15/20,0/20 έν
 αναζήτηση· δεν αποδεικνύεται μηδενική διαρροή ή causal overfitting.70tests passed,
 κανένα attack payload/key read ή νέοGPU. Ενσωμάτωση στη§15 της εργασίας.
 
+Δύο ακόμη [CPU φάσεις](outputs/paper_window_regression_2026-10-06/REPORT_EL.md)
+συγκρίνουν έξι window/regression baselines, με1.260 νέα correlation comparisons
+και540 recovery summaries συνολικά. Fixed-key OOD±10/σraw2,6: box/rank1/noise ridge
+20/20 bothpairs/bothnewpools έναντι point10/20,3/20 και7/20,3/20. Variableattack
+combined5: noise ridge3/20, rank1 4/20, target18/20failed. Η
+[μεγαλύτερη profiling replication](outputs/paper_precision_replication_2026-10-06/REPORT_EL.md)
+χωρίςrefit επιβεβαίωσε noise−cleanridge Δr0,041891/0,051852 σε δύοunused20k pools,
+μεpositive row/index-cluster intervals· box/rank1 παραμένουν καλύτερα controls.
+82tests passed, νέαGPU0/ίδιοέναnotebook, ενσωμάτωσηστις§16–17. Η
+[πρόταση paper](docs/PAPER_CANDIDATE.md) διακρίνει πραγματικά ευρήματα και ανοικτά
+novelty/efficacy gaps. Fixedprofiling50kused, variableprofiling70kused/130kunused·
+κάθε επόμενοconfirmationχρειάζεταινέοfrozenplan καιunusedrows.
+
+Η [ένατη CPU φάση](outputs/paper_training_alignment_2026-10-06/REPORT_EL.md)
+ελέγχει training-side ευθυγράμμιση με το ίδιο10k training και δύο νέα20k profiling
+confirmations. Το primary παλιόpair1/rank1/clean, με κοινά evaluation offsets,
+δεν πέρασε: Δr0,003601/0,006085, όλα τα intervals περιλαμβάνουν0. Τα νέα points
+μετά την ευθυγράμμιση δίνουν δεύτερο pair με clean r0,076546/0,079067, δευτερεύον
+εύρημα χωρίς νέο key recovery.432comparisons,86tests passed· κανένα νέο Kaggle.
+Variableprofiling110kused/90kunused. Η εργασία και η πρόταση paper διατηρούν
+όλα τα failures και τις εκκρεμότητες novelty/independent-key evidence.
+
+Η [δέκατη CPU φάση](outputs/paper_selection_stability_2026-10-06/REPORT_EL.md)
+ελέγχει την επιλογή σημείων με20 paired επαναδειγματοληψίες του ίδιου training10k
+και δύο νέα profiling20k σύνολα. Τα frozen rank1 pairs επιβεβαιώνουν clean signal
+r≈0,09/0,08. Η επανεπιλογή του δεύτερου family rank όμως δίνει medianr0,012320/
+0,003294 και14/20,15/20 positive draws: το joint criterion απέτυχε.
+Αυτό διαχωρίζει το signal συγκεκριμένων points από τη σταθερότητα του selector,
+χωρίς νέο attack claim.528coefficients/90tests passed, νέα Kaggle trainings0.
+Ενσωμάτωση στη§19 της εργασίας· variableprofiling150kviewed/50kunused.
+Ο [νέος έλεγχος scheme-aware full text](literature/SCHEME_AWARE_FULLTEXT_AUDIT_2026-10-06.md)
+κλείνει το συγκεκριμένο access gap, χωρίς να τεκμηριώνει πρωτοτυπία.
+
+Η [regression prior-art ενημέρωση8/10](literature/REGRESSION_PRIOR_ART_COMPARISON_2026-10-08.md)
+προσθέτει relevant-equation comparison και5deterministicalgebra checks (§20).
+Syntheticcorrectness μόνο, χωρίςνέαreal-data/GPUπειράματα ήnoveltyclaim.
+
+Στις9/10 ολοκληρώθηκε [matched point/window selection](outputs/paper_window_selection_2026-10-09/REPORT_EL.md)
+με τα ίδια20 phase10 draws και δύο unused profiling10k pools. Η επιλογή βάσει
+παραθύρων βελτίωσε το πρώτο family αλλά το δεύτερο παρέμεινε ασθενές:
+median0,007642/0,006647,12/20 και13/20positive· primary criterionfailed.
+OOBprediction jointfailed1/8numericalchecks, thresholdagreement8/8.95tests passed,
+ανεξάρτητος verifier40searches/240weights/όλες960freshcorrelations. Variableprofiling
+170kviewed/30kunused· futureexclusions=allphase11splitsunion. §21εργασίας,
+κανένα νέο recovery/GPU/notebook. Ο [νέος prior-art/code audit](literature/SELECTION_OBJECTIVE_AUDIT_2026-10-09.md)
+κλείνει το orthogonal-regression XML access gap και επιθεωρεί pinned scheme-aware
+implementation· notation/code/reproduction gaps και novelty παραμένουν ανοικτά.
+
+Με νέα άδεια χρήστη εκτελέστηκε [μία τέταρτη GPU baseline](outputs/kaggle_recipe_2026-10-09/REPORT_EL.md)
+στο ίδιο Kaggle notebook: ίδιο CNN/10k/5k/seed0/50 epochs, batch 50 και γραμμικό
+author OneCycle αντί για batch 128/constant LR. Updates 3.950 → 10.000, ίδιες
+500.000 εκθέσεις traces. Clean validation SR@2000 παρέμεινε 0/20, με minimum-CE
+checkpoint epoch 1. Το joint recipe δεν αποκατέστησε recovery· δεν απομονώνεται
+batch/schedule/update-count effect ή ελέγχεται το πλήρες author 45k protocol.
+99 tests passed, 40.000 rank prefixes και CPU inference επαληθεύτηκαν.
+Version 9 executed, version 10 QUICK_SAVE της αρχικής ασφαλούς πηγής χωρίς run.
+Το όριο τεσσάρων GPU trainings εξαντλήθηκε. Combined/attacks δεν εκτελέστηκαν,
+30k unused variable profiling και production/checkpoint/Input hashes διατηρούνται.
+Το κοινό validation είναι ήδη viewed· δεν αποτελεί ανεξάρτητο efficacy evidence.
+
 Ένα **trace** είναι μια ακολουθία μετρήσεων φυσικής διαρροής κατά την κρυπτογράφηση.
 Στο **profiling**, ο επιτιθέμενος διαθέτει μετρήσεις με γνωστές εσωτερικές τιμές και
 εκπαιδεύει ένα μοντέλο. Το μοντέλο εκτιμά 256 πιθανότητες για ένα ενδιάμεσο AES byte.
@@ -166,7 +226,7 @@ features· δεν αντικαθιστά το CNN gate. Παραμένουν3 GP
 Στο σ=0,2 το oracle δεν φτάνει 18/20. Πέρασαν 640 endpoint checks και 44 tests,
 χωρίς νέο GPU training.
 Το original fixed-key final attack παραμένει κλειστό. Η σύνθεση και η αναπαραγωγή
-σε νέο CPU venv ολοκληρώθηκαν. Οι έξι paper CPU φάσεις περιλαμβάνονται στην
+σε νέο CPU venv ολοκληρώθηκαν. Οι έντεκα paper CPU φάσεις περιλαμβάνονται στην
 εργασία, μαζί με το failed primary criterion σε νέο variable-key attack subset.
 Το signal-replication/permutation audit ολοκληρώθηκε. Πρόσθετη μεθοδολογική πρόταση
 χρειάζεται νέο frozen training-only plan και unused profiling confirmation.

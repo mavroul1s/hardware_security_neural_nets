@@ -1,0 +1,7 @@
+{
+  "started_utc": "2026-10-06T08:19:31.193769+00:00",
+  "plan_sha256": "4137f97f48c4ffba0265d9cad070353055baf8aae633e4d1306989d711008d7b",
+  "fit_sha256": "abc2f7427ad3c46027784091f6fb4bcafc1ca9d25ec9ec77916b8483ba247859",
+  "fit_record_sha256": "eebc607512e996c668d551073ea2827993bad72efb6f1c5451a30001dcd52dc7",
+  "attack_payloads_or_metadata_read": false
+}

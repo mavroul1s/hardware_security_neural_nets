@@ -31,7 +31,7 @@ def window_columns(pair, radius, width):
     if len(pair) != 2 or radius < 0:
         raise ValueError("Expected two disjoint interior windows")
     a, b = [np.arange(p - radius, p + radius + 1) for p in pair]
-    if a[0] < 0 or b[-1] >= width or np.intersect1d(a, b).size:
+    if min(a[0], b[0]) < 0 or max(a[-1], b[-1]) >= width or np.intersect1d(a, b).size:
         raise ValueError("Windows must be in bounds and disjoint")
     return a, b
 
@@ -131,6 +131,12 @@ def bootstrap_difference(a, b, target, count=1999, seed=2026):
     return np.asarray(draws), rng.bit_generator.state
 
 
+def alignment_offsets(values, center, variance):
+    return {"fixed": np.zeros(len(values), dtype=np.int16),
+        "gaussian_template": estimate_offsets(values, {"mean": center, "variance": variance}, "gaussian_template")[0],
+        "sad_training_mean": sad_offsets(values, center)[0]}
+
+
 def make_plan():
     OUT.mkdir(parents=True, exist_ok=True)
     if (OUT / "results.json").exists():
@@ -159,6 +165,9 @@ def make_plan():
     for config in campaigns.values():
         watched += [ROOT / config["dataset"], ROOT / config["selection_record"]]
     watched += [ROOT / "outputs/paper_variable_campaign_2026-10-05/splits.npz"]
+    for phase in ("paper_alignment_2026-10-05", "paper_alignment_coordinates_2026-10-05", "paper_maskfree_2026-10-05", "paper_alignment_controls_2026-10-05", "paper_variable_campaign_2026-10-05"):
+        watched += [ROOT / "outputs" / phase / name for name in ("plan.json", "results.json")]
+    watched += [ROOT / "literature/WINDOW_REGRESSION_2026-10-06.md"]
     dependencies = ["paper_alignment.py", "paper_alignment_controls.py", "paper_selection_audit.py", "paper_variable_campaign.py", "audit_correlation_robustness.py", "diagnose_second_order_correlation.py"]
     watched += [ROOT / "notebooks" / n for n in dependencies]
     plan = {"authorization": "User explicitly requested more paper-oriented experiments on 2026-10-06; CPU statistical feature fits, preserving neural/GPU scope",
@@ -284,9 +293,7 @@ def main():
                 name, bound = condition["name"], condition["max_shift"]
                 true_offsets = np.floor(u * (2 * bound + 1)).astype(np.int16) - bound
                 values = shifted(x, true_offsets) + z * condition["noise_factor"] * raw_range
-                offsets = {"fixed": np.zeros(len(x), dtype=np.int16),
-                    "gaussian_template": estimate_offsets(values, {"mean": center, "variance": variance}, "gaussian_template")[0],
-                    "sad_training_mean": sad_offsets(values, center)}
+                offsets = alignment_offsets(values, center, variance)
                 for method, delta in offsets.items():
                     prefix = pool_id + "__" + name + "__" + method
                     arrays[prefix + "__offsets"] = delta

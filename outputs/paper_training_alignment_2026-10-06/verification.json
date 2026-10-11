@@ -1,0 +1,38 @@
+{
+  "correlation_rows_verified": 432,
+  "bootstrap_draws_replayed": 39996,
+  "sampled_cluster_draws_replayed_with_actual_rows": 6,
+  "sampled_evaluation_offsets_replayed": 528,
+  "all_training_offsets_replayed": 10000,
+  "training_selection_matrices_replayed": 2,
+  "individual_training_pair_coefficients_replayed": 64,
+  "all_feature_weight_vectors_replayed": 24,
+  "all_splits_rng_and_moments_replayed": true,
+  "training_fit_preceded_confirmation": true,
+  "feature_windows_avoid_padding": true,
+  "variable_used_profiling_rows": 110000,
+  "new_attack_reads": false,
+  "new_gpu_trainings": 0,
+  "new_optimizer_updates": 0,
+  "tests": {
+    "tests": 86,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 15.396
+  },
+  "support_met": false,
+  "seconds": 99.02751879999414,
+  "production_source_sha256": "84eff3cde04c0e9a1756a3d29c44ec82e115a1a08575132686a02520333e2b5c",
+  "artifact_sha256": {
+    "plan.json": "4137f97f48c4ffba0265d9cad070353055baf8aae633e4d1306989d711008d7b",
+    "splits.npz": "19894163d53a2fc51e0ebaf4a49c01c5024518ba21b0ff2f4efd9b2717b3e70a",
+    "training_access.json": "d0d91186e42f0494495fea5a88d4a866260c17f511b6ad657c84831b435b0897",
+    "evaluation_access.json": "68625adc916b407400cd7b95a45870ddabffc5f7b72772f1703da0f8bd7674f2",
+    "fit.json": "eebc607512e996c668d551073ea2827993bad72efb6f1c5451a30001dcd52dc7",
+    "fit.npz": "abc2f7427ad3c46027784091f6fb4bcafc1ca9d25ec9ec77916b8483ba247859",
+    "arrays.npz": "cb38d618ae7caab2589eae388eed8200cb73cf0fc80ea43fbc706fd7f44ca577",
+    "results.json": "0be45dd2a1145c9ae770969bbd0bc437a34387a467fb1fe791ebe04544515b11",
+    "pytest.xml": "bf4fcf2148352f9990e6d01823fa34bff11baa3b32fa9506ce8d0cff5f392ecd"
+  }
+}

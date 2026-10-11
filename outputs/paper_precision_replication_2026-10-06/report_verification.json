@@ -1,0 +1,24 @@
+{
+  "report_tables_verified": true,
+  "csv_rows_verified": 360,
+  "local_links_verified": 14,
+  "plot_visually_checked": true,
+  "costs_verified": true,
+  "support_met": true,
+  "tests": {
+    "tests": 82,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 22.163
+  },
+  "new_attack_reads": false,
+  "new_gpu_trainings": 0,
+  "artifact_sha256": {
+    "REPORT_EL.md": "b1fd629dcb9b08936dac70729ced7e772d853a2efa4356e21d850fb955b5e3a7",
+    "evidence.json": "0457177f37dae6931f993722d50ed371158cf42652d7faba4040c0e3851a4ffe",
+    "verification.json": "b52756b10ab619222ca21c737f31c741d4fe65d8a9716cc3aed9240b7e368703",
+    "correlations.csv": "24a17e6dc1d74ad536a399dddce7f87d95040691d5a1ab64c7f5a0df24bd096e",
+    "precision_intervals.png": "cf14db4f6fd8fa84dbb1c8dac61e96d2270f90eaf451856680096e92e842d3a0"
+  }
+}
