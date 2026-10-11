@@ -1,5 +1,21 @@
 # Σχέδιο project
 
+Νεότερη απόφαση11/10: εγκρίθηκε μία baseline45k και cap5, ίδιο CNN/seed0/50epochs/
+batch50/authorcycle, nestedtraining και originalvalidation5k/refittedtrain-onlyMinMax.
+Το [συγκεκριμένο πρωτόκολλο](docs/PAPER_NEXT_PROTOCOL_2026-10-11.md) είναι εγκεκριμένο,
+με104passingCPUtests πριν το freeze και105 μετά τη διόρθωση μεταφοράς bytes.
+OAuth/account revision ολοκληρώθηκαν. Version1 απέτυχε πριν από training· η χωριστά
+εγκεκριμένη version2 ολοκληρώθηκε και επαληθεύτηκε:20/20 clean validation recovery,
+GE0, minimumCE5,539754/epoch21. Έλεγχοι45000LRvalues/40000ranks/5000CPU predictions.
+Actual5trainings/cap5exhausted. Version3 QUICK_SAVE original source χωρίςrun.
+No combined/attack authorization. Το αρχικό minimal study/failed gate διατηρούνται.
+Η [αναφορά](outputs/kaggle_budget_2026-10-11/api/REPORT_EL.md) τεκμηριώνει το joint
+sample/update/scaler diagnostic στο ήδη viewed validation. Για επόμενο training
+χρειάζεται νέα συγκεκριμένη υπόθεση και συμφωνία χρήστη.
+[Paper αποτίμηση](outputs/paper_readiness_2026-10-11/REPORT_EL.md) και
+[working draft](docs/PAPER_DRAFT_2026-10-11.md): failure-analysis κατεύθυνση, όχι novelty claim.
+
+
 Ημερομηνία έναρξης: 2026-10-03 (Europe/Athens). Ο χρήστης έχει ένα εξάμηνο,
 χωρίς ακόμη συγκεκριμένη ημερομηνία ή κριτήρια μαθήματος. Έχει ήδη πρόσβαση Kaggle GPU.
 Δεν μετατρέπουμε αυθαίρετα το εξάμηνο σε δεσμευτική ημερομηνία παράδοσης.

@@ -1,4 +1,125 @@
-# Κατάσταση project — ενημέρωση 2026-10-09
+# Κατάσταση project — ενημέρωση 2026-10-11
+
+## Baseline45k ολοκληρώθηκε και επαληθεύτηκε — 11/10
+
+- Version2 private `nmavros/hw-sec-exp2` ολοκλήρωσε τη μία εγκεκριμένη baseline:
+  CNN16952/seed0/50epochs/batch50/authorcycle, nested45k και originalvalidation5k,
+  refitted train-only MinMax.45000updates/2250000exposures. Primary πέρασε:
+  **SR@2000=20/20, GE0**, minimumCE5,539753890/epoch21. Recipe10k0/20, GE96.
+  Δευτερεύον sustainedSR90 από504traces. Joint samples/updates/scaler diagnostic,
+  ήδη viewed validation, όχι independent attack efficacy ή isolated cause.
+- Χωριστός verifier12,004843s:45000LRvalues/40000rankprefixes/5000CPU predictions,
+  minimumCE, nested/disjoint splits και training-only fit. Maxlogproberror7,495e−6.
+  Report tables/links/plots/chronology και όλα26 original preservation hashes πέρασαν.
+  105local tests/14warnings, portable suite21,58s· remote frozen suite33passed/8,49s.
+- Trainingloops156,097364s, validationloops6,375075s, experiment180,865040s μετάsetup.
+  Recorded runtime ίδιο μεrecipe10k/TeslaT4. Setup/queue/accountGPUcharge δεν μετρήθηκαν
+  ως συνολική χρέωση. Local live-log stream διακόπηκε προσωρινά· το training συνέχισε.
+  CLI log download είχε Windowsencodingfailure μετά το επιτυχέςZIP download· πλήρες
+  UTF-8log αποθηκεύτηκε μέσωSDK. Καμία νέα υποβολή/training λόγω logging.
+- Version1 failure πριν training/zero updates διατηρείται. Η correctedversion2 είχε
+  χωριστή ρητή έγκριση. Version3 QUICK_SAVE original source χωρίςrun, remotecellwise
+  verified. Oldcon1los history/Input/canonical source/checkpoints unchanged.
+- Actual5fullGPUtrainings/cap5exhausted. No combined/attack. Originalfixedattacklocked,
+  variableattack10k viewed και variableprofiling30k unused. Για έκτοtraining ή attack
+  access χρειάζεται νέο frozen protocol και συμφωνία. Δεν επιλέχθηκε seed/model
+  απόattack. Reports/draft ενσωματώνουν το θετικό αποτέλεσμα και όλες τις αποτυχίες.
+- Αναφορά: `outputs/kaggle_budget_2026-10-11/api/REPORT_EL.md`· reportverification,
+  saved predictions/checkpoints και failure histories διατηρούνται χωριστά.
+  Νέος code-only bilinear prior-art audit: full-paper access gap παραμένει,
+  χωρίς νέα neural architecture/πειράματα ή novelty claim.
+- Ενσωμάτωση στη§23 της ενιαίας εργασίας και στο English paper draft. Ο synthesis
+  verifier έλεγξε103local links, όλους τους νέους πίνακες/hashes/costs και ολόκληρη
+  την προηγούμενη provenance chain. Current5trainings/66850updates/4250000exposures,
+  latest105tests. Ο αρχικός synthesis evidence snapshot και τα ιστορικά metrics
+  διατηρούνται· η current verification διακρίνει τα τρία original από τις δύο extensions.
+
+## Διορθωμένη Kaggle υποβολή — version 2, σε εξέλιξη
+
+- Η version 1 απέτυχε πριν από training: η μεταφορά κειμένου μετέτρεψε CRLF σε LF,
+  ο αυστηρός έλεγχος hash σταμάτησε την εκτέλεση. Μηδέν optimizer updates· όλα τα
+  logs και το failure archive διατηρούνται. Δεν αποτελεί neural research failure.
+- Η συσκευασία πλέον γράφει τα αρχικά bytes ακριβώς, χωρίς αλλαγή επέκτασης,
+  μοντέλου, source hash ή frozen API plan. Πέρασαν 105 tests, με έλεγχο πραγματικού
+  embedded payload. Ο χρήστης ενέκρινε ρητά μία διορθωμένη υποβολή.
+- Η version 2 υποβλήθηκε στο ίδιο private `nmavros/hw-sec-exp2`, ίδιο Input/image/T4.
+  Remote source επαληθεύτηκε cell-for-cell. Αρχικό status QUEUED· ολοκλήρωση και
+  πέμπτο training δεν έχουν ακόμη επιβεβαιωθεί. No automatic retry/combined/attack.
+  Receipt: `outputs/kaggle_budget_2026-10-11/transport_repair/submission.json`.
+
+## OAuth πρόσβαση και Kaggle υποβολή στον nmavros — 11/10, σε εξέλιξη
+
+- OAuth authentication και authenticated notebook listing επιβεβαιώθηκαν.
+  Reported GPU quota πριν υποβολή30h. Κανένα credential περιλαμβάνεται στα artifacts.
+- Δημιουργήθηκε privateInput `nmavros/hardware-sca-resume`,statusready, με ίδιοpacketf39f….
+  Η CLI είχε Windowsupload-cache path bug σεrelative/forwardslashpaths, πριν μεταφορά·
+  uploadαπόtargetdirectoryμεpath`.` ολοκληρώθηκε. Καμία διπλή datasetversion δημιουργήθηκε.
+- Υποβλήθηκε ακριβώςμία version1 τουprivate `nmavros/hw-sec-exp2`,T4,timeout1800s.
+  Machine-readableAPIplan στο `outputs/kaggle_budget_2026-10-11/api/plan.json`,
+  freezeπρινυποβολή/accountrevisionχωρίςscientificprotocolchange.
+  Remote sourcecell-for-cell/privateidentity/Inputverified. Oldpinnedimage preserved.
+- StatusRUNNING: ολοκλήρωσηtrainingδενέχειακόμηεπιβεβαιωθεί. Noautomaticretry/combined/
+  attack. Μετά απαιτούνταιdownload/CPUrank-inferenceverification/report και preservation.
+  Το originalcon1los notebook/source/checkpoints διατηρούνται. Approvedcap5.
+
+- Μετά το user-reported OAuth login, ο νέος έλεγχος βρήκε μόνο
+  `C:/Users/nickb/.kaggle/kaggle.json.disabled`, χωρίς `credentials.json` ή
+  `access_token`. Η επίσημη CLI επιστρέφει Authentication required, χωρίς server
+  request από τον explicit SDK έλεγχο. Δεν έχει αποθηκευτεί OAuth credential στο
+  συγκεκριμένο local profile. Upload/GPU training παραμένουν μη εκτελεσμένα.
+
+- Νέος έλεγχος μετά τη ρητή εντολή χρήστη να εκτελεστούν upload/run με το τοπικό
+  κλειδί: η επίσημη SDK αναγνωρίζει accountnmavros, αλλά ListKernels επιστρέφει
+  ξανάHTTP401Unauthorized. Δεν έγινε upload, υποβολή ή GPUtraining. Η εξουσιοδότηση
+  για privateInput/notebook/μίαbaseline45k παραμένει ενεργή όταν αποκατασταθεί validaccess.
+
+## Έτοιμο χειροκίνητο notebook για nmavros — 11/10
+
+- Με εντολή χρήστη «φτιάξε το notebook και πες πώς να το τρέξουμε», εξήχθη
+  `outputs/kaggle_budget_2026-10-11/manual/kaggle_baseline.ipynb` και ελληνικός
+  οδηγόςRUN_EL.md. Ένα active continuation notebook στον νέο λογαριασμό· το original
+  con1los notebook/τοπικόcanonical538c… παραμένουν αμετάβλητα.
+- Account revision σεξεχωριστόmanual/plan.json, συνδεδεμένο με originalfrozenplan
+  hash. Ίδιο scientificprotocol/extension/splits/seed/budget. Actual URL πρέπει να
+  καταγραφεί μετά import· nmavros/hw-sec-exp2 είναι intended identity, όχι verified URL.
+- Input ίδιοZIPf39f…/25.757.923bytes,4whitelistedmembers/CRCverified. Όλες3codecells
+  compile και frozeninputhashes verified. Δεν απαιτείται APIkey μέσα στο notebook.
+  Τέλοςexperimentcell διατηρείarchive/accountrevision καιpartialfailurerecord.
+- Manual uploadPrivateDataset/AddInput/GPU+Internet/μίαSave&RunAll. Δεν γίνεται
+  προηγούμενοinteractiveRunAll ήautomaticretry. Companion verifier γιαmanualplan.
+  GPUεκτέλεση0/actual4trainings/approvedcap5/unusedvariable30k unchanged.
+
+
+## Paper αποτίμηση και εγκεκριμένη baseline45k — 11/10, δεν εκτελέστηκε ακόμη
+
+- Διαβάστηκαν README/PLAN/PROGRESS, paper candidate και πρόσφατα protocols/results.
+  Νέα αποτίμηση `outputs/paper_readiness_2026-10-11/REPORT_EL.md` και αρχικό αγγλικό
+  working draft `docs/PAPER_DRAFT_2026-10-11.md`. Benchmark/failure-analysis scope,
+  χωρίς confirmed novelty ή submission-ready claim. Το αρχικό augmentation effect
+  παραμένει μη μετρημένο. Νέο bilinear-CNN prior-art lead απαιτεί πλήρη section audit.
+- CPU saved-evidence/sampling audit2,006s, χωρίς trace/attack payloads:190 overlap
+  checks, mean800,942105/min758/max847, union5000 για20orders×2000. Δεν εκτιμάται
+  effective sample size. Source84eff… και original literature artifacts verified.
+- Ρητή απάντηση χρήστη: μία baseline45k/cap5. Ίδιο CNN16952/seed0/50epochs/batch50/
+  authorcycle, nested45k/originalvalidation5k/refittedtrain-onlyMinMax. Joint
+  sample/update/scaler diagnostic,45000updates/2250000exposures, viewed validation.
+  Primary minimum-CE cleanSR@2000≥18/20. No combined/attack/retry/HPO.
+- `docs/PAPER_NEXT_PROTOCOL_2026-10-11.md`, extension/prepare/verifier companions
+  και machine-readable frozen plan στο `outputs/kaggle_budget_2026-10-11/`.
+  Deployment compiled και embedded extension/plan verified. Local full suite104passed/
+  14warnings/17,14s με no-cache. Πέντε νέα meaningful tests incl.synthetic CPU smoke.
+  Προηγούμενο99-test audit είχε ένα επιπλέον cache-permission warning, χωρίςfailure.
+- API con1los notebook access denied/browser unavailable. Ο χρήστης ζήτησε νέο
+  λογαριασμό και διευκρίνισε username nmavros/ενημερωμένο credential folder.
+  Η επίσημη SDK φόρτωση αναγνωρίζει username nmavros και διαθέσιμη legacyρύθμιση,
+  αλλά authenticated ListKernels επέστρεψε HTTP401Unauthorized. Δεν εμφανίστηκαν
+  secrets. Δεν έγινε upload/submit/training ή αλλαγή αρχικού private notebook/Input.
+- Actual4trainings/approvedcap5. Το αρχικό packet είναι frozen προςcon1los· απαιτείται
+  account/notebook/dataset revision πριν εκτέλεση στονnmavros, μετά valid authentication.
+  `execution_status.json` καταγράφει pending access και hashes24artifacts από όλα4runs,
+  canonicalnotebook/Input. Variable30kunused και attacks unchanged. Η έγκριση45k
+  παραμένει ενεργή· η προετοιμασία δεν καταγράφεται ως εκτέλεση ή ερευνητικό failure.
+
 
 ## Kaggle συνέχεια 9/10: μία παγωμένη αλλαγή training recipe — ολοκληρώθηκε
 

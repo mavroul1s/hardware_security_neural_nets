@@ -3,6 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import xml.etree.ElementTree as ET
 
 import numpy as np
 from sca.train import code_identity, write_json
@@ -386,16 +387,48 @@ def main():
         line = f"| {row['recipe']} | {row['updates']} | {row['best_epoch']} | {row['minimum_ce']:.6f} | {round(row['sr']*20)}/20 | {row['ge']:.6f} |"
         assert line in report
     assert f"{recipe_evidence['experiment_seconds']:.6f}s" in report
+    budget = ROOT / "outputs/kaggle_budget_2026-10-11/api"
+    budget_report = read(budget / "report_verification.json")
+    budget_evidence = read(budget / "evidence.json")
+    budget_verified = read(budget / "verification.json")
+    budget_plan = read(budget / "plan.json")
+    budget_results = read(budget / "results.json")
+    for name, expected in budget_report["artifact_sha256"].items():
+        assert sha(budget / name) == expected, name
+    for relative, expected in budget_plan["input_hashes"].items():
+        assert sha(ROOT / relative) == expected, relative
+    assert budget_report["verified"] and budget_report["preserved_original_files"] == 26
+    assert budget_report["original_remote_source_restored"] and budget_report["safe_quick_save_version"] == 3
+    assert budget_results["primary_met"] and budget_results["full_gpu_trainings_total"] == 5
+    assert not budget_results["combined_training_performed"] and not budget_results["attack_payloads_read"]
+    assert budget_verified["schedule_values_verified"] == 45000 and budget_verified["rank_prefixes_verified"] == 40000
+    assert budget_verified["gpu_predictions_verified"] == 5000
+    assert budget_evidence["same_runtime_environment"] and budget_evidence["traces_to_sustained_sr90"] == 504
+    budget_tests = ET.parse(budget.parent / "transport_repair/portable_pytest.xml").getroot().find("testsuite").attrib
+    assert int(budget_tests["tests"]) == 105 and budget_tests["failures"] == budget_tests["errors"] == "0"
+    assert "## 23." in report and "105 tests passed" in report and "66.850" in report
+    for row in budget_evidence["comparisons"]:
+        line = f"| {row['name']} | {row['n_train']} | {row['updates']} | {row['best_epoch']} | {row['minimum_ce']:.6f} | {round(row['sr']*20)}/20 | {row['ge']:.6f} |"
+        assert line in report
+    assert f"{budget_evidence['experiment_seconds']:.6f}s" in report
     record = {"artifact_inputs_verified":len(evidence["input_sha256"]),
         "baseline_report_table_verified":True, "sensitivity_report_table_verified":True,
         "report_local_links_verified":link_count, "cost_totals_verified":True,
         "production_source_unchanged":True, "checkpoint_sha256":checkpoint_hashes,
         "active_packet_unchanged":True, "notebook_matches_saved_private_version8":True, "notebook_count":1,
         "cnn_gate_still_failed":True, "original_study_gpu_trainings_total":3,
-        "full_gpu_trainings_total":4, "new_training_performed":True,
+        "full_gpu_trainings_total":5, "new_training_performed":True,
         "new_kaggle_execution":True, "final_attack_set_read":False,
         "full_test_suite_at_original_synthesis":{**evidence["local_tests"], "rerun_for_document_synthesis":False},
-        "latest_full_test_suite":{**recipe_plan["tests"], "run_for_kaggle_recipe_diagnostic":True},
+        "latest_full_test_suite":{**budget_tests, "run_for_budget_transport_portability":True},
+        "kaggle_budget_addendum_verified":True,"kaggle_budget_primary_passed":True,
+        "kaggle_budget_actual_updates":45000,"five_gpu_trainings_total_updates":66850,
+        "five_gpu_trainings_total_exposures":4250000,
+        "five_gpu_training_loop_seconds":evidence["training_loop_seconds_total"]+recipe_evidence["training_loop_seconds"]+budget_evidence["training_seconds"],
+        "five_gpu_validation_loop_seconds":evidence["validation_loop_seconds_total"]+recipe_evidence["validation_loop_seconds"]+budget_evidence["validation_seconds"],
+        "kaggle_budget_sha256":{n:sha(budget/n) for n in ("REPORT_EL.md","evidence.json","verification.json","report_verification.json","plan.json")},
+        "active_continuation_notebook_count":1,"preserved_previous_account_notebook":True,
+        "active_account":"nmavros","active_safe_saved_kernel_version":3,
         "window_selection_full_test_suite":{**objective_evidence["tests"], "run_for_window_selection":True},
         "kaggle_recipe_addendum_verified":True,"kaggle_recipe_primary_failed":True,
         "kaggle_recipe_actual_updates":10000,"four_gpu_trainings_total_updates":21850,
@@ -452,7 +485,7 @@ def main():
         "training_alignment_no_attack_reads":True,"training_alignment_new_correlation_rows":432,
         "cpu_closed_form_feature_fits_performed_in_phase9":True,
         "training_alignment_sha256":{n:sha(training_alignment/n) for n in ("REPORT_EL.md","evidence.json","verification.json","report_verification.json")},
-        "new_training_performed_field_scope":"One phase12 Kaggle recipe training10000updates; original synthesis3trainings preserved. CPU phases7/9/10/11 fits recorded separately",
+        "new_training_performed_field_scope":"Kaggle recipe10000updates and nested45k45000updates; original synthesis3trainings preserved. CPU phases7/9/10/11 fits recorded separately",
         "cpu_closed_form_feature_fits_performed_in_phase11":True,
         "cpu_closed_form_feature_fits_performed_in_phase10":True,
         "cpu_closed_form_feature_fits_performed_in_phase7":True,"no_new_fit_in_phase8":True,

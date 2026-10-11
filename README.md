@@ -1,5 +1,16 @@
 # Hardware Security × Neural Networks
 
+Νεότερη αποτίμηση11/10: [paper readiness](outputs/paper_readiness_2026-10-11/REPORT_EL.md)
+και [αρχικό αγγλικό working draft](docs/PAPER_DRAFT_2026-10-11.md), με διατήρηση όλων
+των αποτυχιών. Η εγκεκριμένη [baseline45k](outputs/kaggle_budget_2026-10-11/api/REPORT_EL.md)
+ολοκληρώθηκε και επαληθεύτηκε: clean validation **20/20 στα2.000traces, GE0**,
+minimum-CE checkpoint epoch21, έναντι0/20 της ίδιας recipe10k. Η κοινή αλλαγή
+samples/updates/scaler δεν απομονώνει αιτία· το validation ήταν ήδη viewed.
+105tests passed· σύνολο5GPUtrainings/cap5exhausted. No combined/attack.
+Version1 τεχνικό failure πριν training διατηρείται· version2 ολοκληρωμένη,
+version3 QUICK_SAVE της original πηγής χωρίς run. [Πρωτόκολλο](docs/PAPER_NEXT_PROTOCOL_2026-10-11.md).
+
+
 Ερευνητικό project εξαμήνου: profiling side-channel analysis σε masked AES,
 με Python/PyTorch, ανάπτυξη σε Windows CPU και μεγαλύτερα πειράματα στο Kaggle GPU.
 Το αρχικό pipeline λειτουργεί. Η πρωτοτυπία και η αποτελεσματικότητα των augmentations

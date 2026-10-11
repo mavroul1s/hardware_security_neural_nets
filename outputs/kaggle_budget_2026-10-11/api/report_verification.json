@@ -1,0 +1,30 @@
+{
+  "verified": true,
+  "report_table_rows": 2,
+  "local_links_verified": 6,
+  "preserved_original_files": 26,
+  "passing_cpu_tests": 105,
+  "remote_executed_source_verified": true,
+  "safe_quick_save_version": 3,
+  "original_remote_source_restored": true,
+  "private_notebook_and_input_verified": true,
+  "original_fixed_attack_locked": true,
+  "variable_unused_rows": 30000,
+  "full_gpu_trainings_total": 5,
+  "primary_met": true,
+  "plot_visually_checked": true,
+  "first_failed_attempt_preserved": true,
+  "frozen_before_submission_and_training": true,
+  "download_zip_sha256": "575621cd8667b45628615b0a64db0e284b0ca976e8d9da8a195c2ead19c0cb2d",
+  "artifact_sha256": {
+    "REPORT_EL.md": "f5bf030fa9858e86482e5ce5890719d18562a8b6f3b6b33d3fe374c457bb6db0",
+    "budget_comparison.png": "67b7fca0c336f058e8a451ef6724a51d5d82d0b7e814dd1bc7d86d4d9b99cfb7",
+    "recovery_comparison.png": "9c8c41f5e89b292100f21732755de83d9528d0250584abadaff83082330947b0",
+    "results.json": "9d04814887d6afb67d68825e31d472ff48852b991161b2dfa3f12d279fc3de53",
+    "evidence.json": "d088f621994f70f1d901a695eab206ed30683656acd851d0f74ecc94761e593e",
+    "verification.json": "d6f033d99f98b5979db287a86e84f9a119cf9f178afc3b26d595f7c2b5f7017a",
+    "execution_status_v2.json": "9e85db0a4f31d0af2c6ed66dd2134d4f740807592684c30fd3baec20e313aec1",
+    "restoration.json": "29ee9d706f17fbcb09e758e418a5087c44c82dd5adcd65eaac875b4162598998",
+    "plan.json": "948318be769377fe9f09241890b83f7ef8d23ae1d1a4b252098d23d2001f21af"
+  }
+}

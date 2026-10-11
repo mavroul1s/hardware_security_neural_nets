@@ -1,0 +1,57 @@
+{
+  "primary_met": true,
+  "comparisons": [
+    {
+      "name": "recipe10k",
+      "n_train": 10000,
+      "updates": 10000,
+      "best_epoch": 1,
+      "minimum_ce": 5.560470867156982,
+      "sr": 0.0,
+      "ge": 96.0,
+      "last_train_ce": 5.09398894071579,
+      "last_validation_ce": 5.996655645370484
+    },
+    {
+      "name": "budget45k",
+      "n_train": 45000,
+      "updates": 45000,
+      "best_epoch": 21,
+      "minimum_ce": 5.539753890037536,
+      "sr": 1.0,
+      "ge": 0.0,
+      "last_train_ce": 5.409819623099433,
+      "last_validation_ce": 5.5697792577743535
+    }
+  ],
+  "new_gpu_trainings": 1,
+  "total_full_gpu_trainings": 5,
+  "approved_cap_exhausted": true,
+  "new_confirmation_rows": 0,
+  "unused_variable_profiling_rows": 30000,
+  "same_runtime_environment": true,
+  "actual_environment": {
+    "python": "3.13.15",
+    "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "logical_cpu_count": 4,
+    "versions": {
+      "torch": "2.8.0+cu126",
+      "numpy": "2.2.6",
+      "h5py": "3.14.0",
+      "matplotlib": "3.10.5"
+    },
+    "device": "cuda",
+    "device_name": "Tesla T4",
+    "cuda_runtime": "12.6",
+    "torch_threads": 2
+  },
+  "training_seconds": 156.09736379900016,
+  "validation_seconds": 6.3750751590001755,
+  "experiment_seconds": 180.86503950299993,
+  "verifier_seconds": 12.004842900205404,
+  "traces_to_sustained_sr90": 504,
+  "novelty_verified": false,
+  "independent_efficacy_claim": false,
+  "archive_result_sha256": "df6c2df64b0f4fe0dff98fc44d5d4b07e9aec20176dca45a1ffa725dbab1fd76"
+}

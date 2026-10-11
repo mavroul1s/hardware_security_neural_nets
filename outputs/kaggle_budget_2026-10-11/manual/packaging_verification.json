@@ -1,0 +1,20 @@
+{
+  "prepared": true,
+  "submitted": false,
+  "executed": false,
+  "owner": "nmavros",
+  "original_plan_sha256": "a39c2e4cf476239062ce3ea420f056b8b844cea2b91407c228bb1ce470e1b10f",
+  "revised_plan_sha256": "78fe25ac17f0351fcdc07c727b8b61030144725e5d27cb7e66d1ba3027ad6706",
+  "notebook_sha256": "a1956a0c3a154c9d038bbafee010a8737436736352db69be0b1209ae250e5ee7",
+  "input_sha256": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+  "input_bytes": 25757923,
+  "input_zip_integrity_verified": true,
+  "compiled_code_cells": 3,
+  "scientific_protocol_changed": false,
+  "original_notebook_sha256": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e",
+  "extension_transport": "exact bytes; CRLF preserved",
+  "previous_export_retained": "pre_transport_fix",
+  "manual_execution_superseded_by_api": true,
+  "active_notebook": "nmavros/hw-sec-exp2",
+  "active_submitted_version": 2
+}

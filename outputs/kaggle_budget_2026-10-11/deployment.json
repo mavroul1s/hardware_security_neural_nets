@@ -1,0 +1,10 @@
+{
+  "notebook_ref": "con1los/hw-sec-exp2",
+  "notebook_sha256": "01304e00b3edeb1289a840d2b539262fbf0e9831ed851b6916817abf22d4773f",
+  "metadata_sha256": "f26dc3d8b957c85fa5504c0b1cf7d1bdaab227ad93aa4af4a160d0dd7b53e206",
+  "private": true,
+  "new_remote_notebook": false,
+  "canonical_v8_notebook_unchanged": true,
+  "frozen_plan_sha256": "a39c2e4cf476239062ce3ea420f056b8b844cea2b91407c228bb1ce470e1b10f",
+  "execution_status": "prepared_not_submitted"
+}

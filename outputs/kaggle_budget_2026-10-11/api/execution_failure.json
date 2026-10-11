@@ -1,0 +1,6 @@
+{
+  "complete": false,
+  "error_type": "ValueError",
+  "message": "Optimizer extension changed",
+  "automatic_retry": false
+}

@@ -1,0 +1,30 @@
+{
+  "status": "ERROR_BEFORE_TRAINING",
+  "account": "nmavros",
+  "notebook_ref": "nmavros/hw-sec-exp2",
+  "dataset_ref": "nmavros/hardware-sca-resume",
+  "version": 1,
+  "submission_confirmed_utc": "2026-10-11T10:39:17.031782+00:00",
+  "submission_attempts": 1,
+  "dataset_ready": true,
+  "private_notebook": true,
+  "remote_source_verified": true,
+  "original_study_preserved": true,
+  "training_completion_not_yet_observed": true,
+  "approved_cap": 5,
+  "original_gpu_trainings": 4,
+  "automatic_retry": false,
+  "reported_gpu_quota_hours_before_submission": 30,
+  "training_started": false,
+  "new_optimizer_updates": 0,
+  "new_gpu_trainings": 0,
+  "actual_total_trainings": 4,
+  "error": {
+    "complete": false,
+    "error_type": "ValueError",
+    "message": "Optimizer extension changed",
+    "automatic_retry": false
+  },
+  "archive_sha256": "f32d20362ea7ecd4a5642d28a0858fde59ba6115855ced425db0ab76142ce6fb",
+  "cause": "CRLF on Windows normalized to LF by read_text/write_text transport; strict byte hash mismatch"
+}

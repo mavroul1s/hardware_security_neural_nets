@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE_VERIFIED",
+  "version": 2,
+  "notebook_ref": "nmavros/hw-sec-exp2",
+  "submission_receipt": "Kernel version 2 successfully pushed",
+  "receipt_recorded_utc": "2026-10-11T10:49:14.535427+00:00",
+  "specific_corrected_submission_authorized": true,
+  "scientific_protocol_changed": false,
+  "automatic_retry": false,
+  "remote_source_cellwise_verified": true,
+  "private_notebook": true,
+  "dataset_sources": [
+    "nmavros/hardware-sca-resume"
+  ],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f",
+  "machine_shape": "NvidiaTeslaT4",
+  "notebook_sha256": "462affc5541f7425c6082c65151393526779b6273f7a62ddd3067fb3f3054205",
+  "plan_sha256": "948318be769377fe9f09241890b83f7ef8d23ae1d1a4b252098d23d2001f21af",
+  "previous_version": 1,
+  "previous_version_optimizer_updates": 0,
+  "approved_training_cap": 5,
+  "training_completion_observed": false,
+  "verified_utc": "2026-10-11T11:05:56.567443+00:00",
+  "actual_total_trainings": 5,
+  "new_gpu_trainings": 1,
+  "primary_met": true,
+  "safe_saved_version": 3,
+  "original_source_restored": true,
+  "new_optimizer_updates": 45000,
+  "actual_gpu": "Tesla T4",
+  "experiment_seconds": 180.86503950299993
+}

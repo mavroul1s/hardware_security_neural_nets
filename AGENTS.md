@@ -1,5 +1,14 @@
 # Stable project instructions
 
+- On 2026-10-11 the user explicitly approved one additional baseline45k and cap5.
+  Same literature CNN16952/seed0/50epochs/batch50/author linear cycle; nested45k
+  training, original shared validation5k, refitted train-only feature MinMax.
+  This is a joint sample/update/scaler diagnostic on viewed profiling data, not
+  an equal-compute isolation or fresh efficacy confirmation. One same-private-notebook
+  submission, no automatic retry, combined or attack run. Preserve all four previous
+  trainings, original source/Input/canonical notebook and unused variable30k.
+  Approval persists if Kaggle access needs restoration; preparation is not execution.
+
 - Communicate with the user in Greek; code, identifiers and code comments in English.
 - Read README.md, PROJECT_PLAN.md and PROGRESS.md before continuing work.
 - Use Python/PyTorch, local CPU for smoke tests and Kaggle CUDA for full experiments.
@@ -79,3 +88,19 @@
   reason and user agreement. Variable profiling170k viewed/30k unused unchanged.
   This diagnostic used previously viewed shared validation, not a new confirmation.
   Latest full suite99passing tests; independent saved-rank and CPU inference verification.
+- On 2026-10-11 the user explicitly approved one nested45k baseline and cap5:
+  same CNN16952/seed0/50epochs/batch50/author cycle, original validation5k and
+  refitted training-only MinMax. This jointly changes samples, updates and scaler.
+  No combined, attack, new seed/model, HPO or automatic retry was approved.
+  OAuth access is verified for nmavros; con1los history is preserved. Private
+  continuation notebook nmavros/hw-sec-exp2 uses unchanged input packet in
+  nmavros/hardware-sca-resume. Version1 failed before training due CRLF/LF transport,
+  zero optimizer updates. User separately approved one corrected version2 submission.
+  Version2 completed and was independently verified: clean validation SR@2000=20/20,
+  GE0, minimum-CE checkpoint epoch21/CE5.539753890. SustainedSR90 starts at504 traces.
+  Same viewed validation; no independent attack/key/acquisition efficacy claim.
+  Verify45000LRvalues/40000rankprefixes/5000CPU predictions; all26 original artifacts
+  preserved. Total5fullGPUtrainings/cap5exhausted. Version3 QUICK_SAVE restores original
+  source without execution; preserve version2 output and both attempt histories.
+  No automatic combined or sixth training. Latest CPU suite105passing tests. All
+  earlier viewed/unused profiling exclusions and locked attacks remain in force.

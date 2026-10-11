@@ -1,0 +1,19 @@
+{
+  "status": "AUTHORIZED_FOR_ONE_RESUBMISSION",
+  "automatic_retry": false,
+  "requires_specific_resubmission_agreement": true,
+  "change": "write_bytes replaces write_text for extension transport; original CRLF bytes and original SHA256 preserved",
+  "scientific_protocol_changed": false,
+  "extension_bytes_changed": false,
+  "original_plan_sha256": "948318be769377fe9f09241890b83f7ef8d23ae1d1a4b252098d23d2001f21af",
+  "extension_sha256": "35faf762350da2e3d1b31b38a84907052b7abe95c91f9c3e49e1c0a7a8620768",
+  "notebook_sha256": "462affc5541f7425c6082c65151393526779b6273f7a62ddd3067fb3f3054205",
+  "metadata_sha256": "1403b81a5bfe7cdb5624e3f02cc0034d86616eb440071d44d9eaad6c86fb6efb",
+  "original_failed_version": 1,
+  "original_total_trainings": 4,
+  "approved_full_training_cap": 5,
+  "specific_user_agreement": "User explicitly approved corrected submission on2026-10-11; same notebook, one45k baseline/cap5",
+  "agreement_recorded_utc": "2026-10-11T10:46:08.889665+00:00",
+  "passing_tests": 105,
+  "pytest_sha256": "918780422186a1265260c6955c8eee3ddc5ef805d5499591eb96e45e465f6d06"
+}

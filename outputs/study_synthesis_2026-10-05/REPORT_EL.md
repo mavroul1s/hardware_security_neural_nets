@@ -1,7 +1,7 @@
 # Νευρωνικά δίκτυα και διαρροή masked AES: διαγνωστική μελέτη περιορισμένου κόστους
 
 Προσωρινή ελληνική ερευνητική αναφορά για το μάθημα Hardware Security.
-Κατάσταση: **2026-10-09**. Πρόκειται για σύνθεση των εκτελεσμένων πειραμάτων,
+Κατάσταση: **2026-10-11**. Πρόκειται για σύνθεση των εκτελεσμένων πειραμάτων,
 όχι για ολοκληρωμένη μελέτη augmentation ή επιβεβαιωμένη συνεισφορά paper.
 
 Ενημέρωση της5/10: η [αναπαραγωγή σε καθαρό CPU περιβάλλον](../cpu_reproduction_2026-10-05/REPORT_EL.md)
@@ -77,8 +77,13 @@ profiling των 10.000 rows, η πρώτη οικογένεια βελτιώθ�
 batch 50 και author linear OneCycle, με ίδια 10k/5k/seed0/50 epochs. Τα updates
 αυξήθηκαν 3.950 → 10.000, αλλά clean validation SR@2000 παρέμεινε 0/20.
 Η συγκεκριμένη αλλαγή recipe δεν αρκεί στο περιορισμένο training sample.
-Το τελευταίο suite έχει 99 passing tests. Παραμένουν ένα Kaggle notebook,
-τέσσερις GPU εκπαιδεύσεις και 30.000 αχρησιμοποίητες variable profiling rows.
+Στις11/10, η χωριστά εγκεκριμένη baseline45k αποκατέστησε clean validation recovery:
+20/20 στα2.000traces, GE0, minimum-CE epoch21, με ίδιοCNN/seed/50epochs/batch50/cycle.
+Η κοινή αλλαγή unique samples/updates/scaler δεν απομονώνει αιτία· αξιολογείται το
+ίδιο ήδη viewed validation, χωρίς independent attack claim. Βλ.§23.
+Το τελευταίο suite έχει105 passing tests. Παραμένουν ένα ενεργό continuation Kaggle
+notebook στονnmavros, preservedcon1loshistory, πέντε full GPU εκπαιδεύσεις/cap5 και
+30.000 αχρησιμοποίητες variable profiling rows. Combined training δεν εκτελέστηκε.
 
 ## 1. Στόχος και βασικές έννοιες
 
@@ -1105,3 +1110,61 @@ failureanalysis, χωρίς novelty ή independent recovery claim.
 [Αριθμητική επαλήθευση](../kaggle_recipe_2026-10-09/verification.json) ·
 [Report και remote restoration verification](../kaggle_recipe_2026-10-09/report_verification.json) ·
 [Evidence](../kaggle_recipe_2026-10-09/evidence.json).
+
+## 23. Nested45k Kaggle budget diagnostic — 11/10/2026
+
+Ο χρήστης ενέκρινε μία επιπλέον baseline45k και cap5 μετά από συγκεκριμένο
+research protocol. Η ίδια αρχιτεκτονική16952parameters/seed0/50epochs/batch50/
+authorlinearcycle0,005 εκπαιδεύτηκε σε45.000 traces που περιλαμβάνουν το αρχικό10k,
+χωρίς επικαλύψεις με το ίδιοvalidation5k. Το featureMinMax προσαρμόστηκε μόνο
+στο νέο training45k. Updates10000→45000, exposures500000→2250000. Ελέγχεται η
+κοινή αλλαγή samples, updates και scalerfit· δεν απομονώνεται κάποια από αυτές.
+
+| Run | Training | Updates | Best epoch | Minimum CE | SR@2000 | GE@2000 |
+|---|---:|---:|---:|---:|---:|---:|
+| recipe10k | 10000 | 10000 | 1 | 5.560471 | 0/20 | 96.000000 |
+| budget45k | 45000 | 45000 | 21 | 5.539754 | 20/20 | 0.000000 |
+
+Το προκαθορισμένο primary minimum-CE cleanSR@2000≥18/20 **πέρασε**. Το
+δευτερεύον sustainedSR90 ξεκινά στα504traces και διατηρείται μέχρι2000.
+Η επιλογή checkpoint έγινε αποκλειστικά από validationCE, όχι από ranking ήattack.
+Τα ίδια20orders/seed8001 είναι επικαλυπτόμενα δείγματα από ένα pool5k, με ένα
+κλειδί και έναν neural seed. Ο νέος έλεγχος overlap δείχνει mean800,94 κοινές traces,
+εύρος758–847, union5000. Το20/20 δεν είναι20independent keys/acquisitions.
+
+Η θετική διάγνωση περιορίζει το προηγούμενο failure συμπέρασμα στα δοκιμασμένα10k
+recipes. Δεν αποδεικνύει γενική neuralSCA υπεροχή, μοναδική αιτία της βελτίωσης ή
+efficacy σε ανεξάρτητο attack. Το αρχικό failedgate και οι τέσσερις10k αποτυχίες
+διατηρούνται· augmentation effect παραμένει αναπάντητο.
+
+Η account migration έγινε στονnmavros μετά από επιβεβαιωμένοOAuth και frozen
+account revision. Private continuation notebook/Input, unchangedpacket και
+preservedcon1loshistory. Version1 σταμάτησε πριν training λόγω CRLF→LFtransport,
+με μηδέν optimizer updates. Ο χρήστης ενέκρινε χωριστά μία διορθωμένη version2,
+με ακριβώςίδια frozen extension bytes/model/protocol. Version2 ολοκληρωμένη.
+Version3 QUICK_SAVE original source χωρίς execution, remotecellwise verified.
+Οι δύο προσπάθειες και όλα τα αρχεία διατηρούνται· καμία automatic resubmission.
+
+105 tests passed/14warnings, portable suite21,58s· frozenpackage33tests/8,49s στοT4.
+Verifier12,004843s:45000LRvalues,40000rankprefixes,5000CPU/GPUlogprobabilities,
+minimumCE, nested/disjointsplits και train-onlyfit. MaxCPU/GPUerror7,495e−6.
+Όλα26originalartifacthashes διατηρούνται. Ίδιο recordedruntime με recipe10k.
+Trainingloops156.097364s, validationloops6.375075s, experiment180.865040s μετάsetup.
+Το setup/queue/fullaccountGPUcost δεν καταγράφηκε ως συνολική χρέωση. Η version1
+κατανάλωσε setup χρόνο παρότι δεν έκανε training· το σχετικό log διατηρείται.
+
+Σύνολο5fullGPUtrainings/cap5exhausted,66.850optimizerupdates/4.250.000exposures.
+Δεν έγινε combined ήattackrun. Fixedattacklocked, variableattack10k unchanged,
+variableprofiling170kviewed/30kunused. Πριν από νέο training/attackaccess χρειάζεται
+νέο discriminating frozenprotocol και συμφωνία. Η ισχυρότερη paper κατεύθυνση
+περιλαμβάνει το budget-dependent validationrecovery μαζί με τις selection failures.
+Ο code-onlybilinear prior-art έλεγχος επιβεβαιώνει προηγούμενα neuralproducts·
+full-textgap και ανεξάρτητη efficacy παραμένουν ανοικτά.
+
+![Clean recovery comparison](../kaggle_budget_2026-10-11/api/recovery_comparison.png)
+
+[Πλήρης αναφορά](../kaggle_budget_2026-10-11/api/REPORT_EL.md) ·
+[Αριθμητική επαλήθευση](../kaggle_budget_2026-10-11/api/verification.json) ·
+[Report/restoration verification](../kaggle_budget_2026-10-11/api/report_verification.json) ·
+[Paper draft](../../docs/PAPER_DRAFT_2026-10-11.md) ·
+[Bilinear code audit](../../literature/BILINEAR_CODE_AUDIT_2026-10-11.md).

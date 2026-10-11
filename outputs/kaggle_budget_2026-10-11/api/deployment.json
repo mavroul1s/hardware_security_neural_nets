@@ -1,0 +1,18 @@
+{
+  "frozen_utc": "2026-10-11T10:37:48.359405+00:00",
+  "account": "nmavros",
+  "oauth_access_verified": true,
+  "existing_matching_notebook_found": false,
+  "existing_matching_dataset_found": false,
+  "private_dataset": true,
+  "private_notebook": true,
+  "scientific_protocol_changed": false,
+  "plan_sha256": "948318be769377fe9f09241890b83f7ef8d23ae1d1a4b252098d23d2001f21af",
+  "notebook_sha256": "fd99ee384859c4bb2270fb68bb2de6853a207ae6a2d8040c215ceaef87a465bb",
+  "metadata_sha256": "1403b81a5bfe7cdb5624e3f02cc0034d86616eb440071d44d9eaad6c86fb6efb",
+  "input_sha256": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+  "session_timeout_seconds": 1800,
+  "gpu_available_hours_reported": 30,
+  "new_gpu_trainings_max": 1,
+  "submitted": false
+}

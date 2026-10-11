@@ -1,0 +1,15 @@
+{
+  "prepared": true,
+  "submitted": false,
+  "executed": false,
+  "owner": "nmavros",
+  "original_plan_sha256": "a39c2e4cf476239062ce3ea420f056b8b844cea2b91407c228bb1ce470e1b10f",
+  "revised_plan_sha256": "78fe25ac17f0351fcdc07c727b8b61030144725e5d27cb7e66d1ba3027ad6706",
+  "notebook_sha256": "563b1e6be551b20dd1ec94a2e66e297d53e6e5526dd9cd554b53dfc4e49a953e",
+  "input_sha256": "f39f82a77cacbe64d024d5f40d4f858cae90f95452e355ebb49b015cae513c56",
+  "input_bytes": 25757923,
+  "input_zip_integrity_verified": true,
+  "compiled_code_cells": 3,
+  "scientific_protocol_changed": false,
+  "original_notebook_sha256": "538c8d30ad2dc01611629522347068806374ef2a01674d00ce408522a9b6bd0e"
+}

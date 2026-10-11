@@ -1,4 +1,14 @@
-# Υποψήφιος άξονας paper — ενημέρωση9/10/2026
+# Υποψήφιος άξονας paper — ενημέρωση11/10/2026
+
+Νεότερο αποτέλεσμα: η [baseline45k](../outputs/kaggle_budget_2026-10-11/api/REPORT_EL.md)
+έδωσε20/20 clean validation recovery/GE0 έναντι0/20 τηςrecipe10k. Το κοινό
+validation ήταν ήδη viewed και η επέκταση αλλάζει μαζί samples/updates/scalerfit.
+Δεν απομονώνει αιτία ή ανεξάρτητη efficacy. Όλες οι προηγούμενες10k και CPU
+αποτυχίες παραμένουν. Το [αγγλικό working draft](PAPER_DRAFT_2026-10-11.md)
+εστιάζει πλέον στη διάκριση leakage, selection stability και budget-dependent
+key recovery. Η ενιαία εργασία περιλαμβάνει το αποτέλεσμα στη§23.
+Actual5GPUtrainings/cap5exhausted,105tests passed. Combined/attack δεν εκτελέστηκαν.
+Οι παρακάτω CPU προτάσεις και διαδοχικές ενημερώσεις διατηρούνται ιστορικά.
 
 **Prospective Robustness Evaluation of Quadratic Feature Extraction for Masked AES**
 
