@@ -8,8 +8,16 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 data/*
-!data/README.md
 runs/*
 !runs/.gitkeep
 notebooks/.ipynb_checkpoints/
 .cache/
+
+# Keep newly added Markdown private except for the project README.
+*.[mM][dD]
+!/README.md
+
+# Publish only the compiled paper and slides from this directory.
+/report/*
+!/report/paper.pdf
+!/report/presentation.pptx

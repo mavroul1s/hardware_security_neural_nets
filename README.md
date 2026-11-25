@@ -1,287 +1,160 @@
-# Hardware Security × Neural Networks
+# When Trace Augmentation Fails
 
-Νεότερο αποτέλεσμα 11/10: η [τελική paired αξιολόγηση](outputs/paper_confirmation_2026-10-11/REPORT_EL.md)
-ολοκληρώθηκε μετά τη ρητή έγκριση cap6 και το κλείδωμα των δύο checkpoints.
-Η baseline45k πέτυχε **100/100 clean attack ανακτήσεις**, GE0, στα 2.000 traces.
-Η ίδια CNN με combined augmentation έδωσε **0/100 και στις 8 συνθήκες**· το
-προκαθορισμένο joint primary απέτυχε. Ίδια samples/updates/splits/scaler/seed,
-ένα fixed key και συνθετικές αλλοιώσεις, χωρίς attack-driven επιλογή.
-112 tests passed· 3.200.000 ανεξάρτητα επαληθευμένα rank prefixes.
-Σύνολο 6 GPU trainings/cap6 εξαντλημένο. Όλες οι παλιές αποτυχίες διατηρούνται.
-[Αγγλικό paper draft](docs/PAPER_DRAFT_2026-10-11.md) και
-[υποψήφια συμβολή](docs/PAPER_CANDIDATE.md): ελεγχόμενη διαγνωστική μελέτη,
-χωρίς ακόμη επιβεβαιωμένη πρωτοτυπία ή ανεξάρτητη key/device replication.
+**A Controlled Study of Masked AES on ASCAD**  
+Nikolaos Mavros · Hardware Security × Neural Networks
 
+[IEEE paper (PDF)](report/paper.pdf) · [Six-slide presentation (PowerPoint)](report/presentation.pptx) · [Final experiment record](outputs/paper_confirmation_2026-10-11/REPORT_EL.md)
 
-Ερευνητικό project εξαμήνου: profiling side-channel analysis σε masked AES,
-με Python/PyTorch, ανάπτυξη σε Windows CPU και μεγαλύτερα πειράματα στο Kaggle GPU.
-Το αρχικό pipeline λειτουργεί. Η πρωτοτυπία και η αποτελεσματικότητα των augmentations
-δεν έχουν ακόμη επιβεβαιωθεί.
+## Abstract
 
-Τρέχον παραδοτέο: [ενιαία ελληνική ερευνητική αναφορά](outputs/study_synthesis_2026-10-05/REPORT_EL.md)
-με όλα τα CNN failures, τις CPU διαγνώσεις, τη baseline/combined45k attack
-σύγκριση στη §24, τα όρια και το πραγματικό κόστος.
-Η [αναπαραγωγή από καθαρό CPU περιβάλλον](outputs/cpu_reproduction_2026-10-05/REPORT_EL.md)
-ολοκληρώθηκε: 44 tests, ίδια best/last CNN metrics και ακριβώς ίδια sensitivity arrays.
-Το αρχικό ερώτημα augmentation εξετάστηκε αργότερα στη νέα 45k σύγκριση, με
-αρνητικό αποτέλεσμα για τη συγκεκριμένη combined recipe· το αρχικό failed gate διατηρείται.
-Η [βιβλιογραφική ενημέρωση της 5/10](literature/PRIMARY_AUDIT_2026-10-05.md)
-ελέγχει primary protocols και καταγράφει κενά πρόσβασης, χωρίς novelty claim.
+Synthetic noise and time shifts can expose a model to more varied traces during
+training. On masked AES, those changes may also obscure relationships between
+parts of a trace. We studied this trade-off on the public ASCAD benchmark.
+Four convolutional neural networks (CNNs) trained on 10,000 profiling traces
+failed the clean validation criterion. An expanded baseline passed, and we
+compared it with a matched 45,000-trace run that used combined augmentation.
+At 2,000 held-out traces, the unaugmented CNN recovered one target byte in
+100/100 clean orders. The augmented CNN recovered it in 0/100 orders in every
+test condition. Separate CPU diagnostics detected second-order leakage and
+showed that a feature could retain signal on fresh profiling data while its
+selection procedure remained unstable. The results apply to a specific
+augmentation recipe, training seed, and acquisition campaign.
 
-Με νέα εντολή χρήστη για πειράματα προς paper, ολοκληρώθηκαν
-[τρεις πρόσθετες CPU φάσεις](outputs/paper_extension_2026-10-05/REPORT_EL.md):
-trace-only alignment, έλεγχος συντεταγμένων και επιλογή σημείων μόνο από training labels.
-Στο τρίτο disjoint profiling confirmation, raw shift ±5/σ=1,3: Gaussian alignment
-20/20 και 18/20 έναντι fixed 0/20 και 0/20. Στο ±10/σ=2,6: 6/20 και 0/20.
-57 tests passed, 5.760 ανεξάρτητοι CPA endpoint έλεγχοι, κανένα νέο Kaggle training.
-Η πρωτοτυπία παραμένει ανεπιβεβαίωτη· τα αποτελέσματα ενσωματώθηκαν στη §12 της εργασίας.
+## 1. Introduction and related work
 
-Η [τέταρτη CPU φάση](outputs/paper_alignment_controls_2026-10-05/REPORT_EL.md)
-συνέκρινε γνωστές SAD παραλλαγές και λανθασμένη αντιστοίχιση shifts σε νέο confirmation5k.
-Gaussian/NCC/SAD mean έδωσαν20/20 και20/20 στο±5/σraw1,3· wrong-row0/20,0/20.
-Η SAD ισοφαρίζει το primary SR endpoint, άρα δεν τεκμηριώνεται Gaussian advantage.
-61 tests passed/14 υπάρχοντα warnings. Τέσσερις φάσεις:400 summaries/8.000 execution
-endpoint checks,112 πρόσθετα replays. Ενσωματώθηκαν στη§13, χωρίς νέο Kaggle training.
+A trace records measurements from the physical implementation of a
+cryptographic algorithm. When an implementation uses masking, useful
+dependence may appear in the joint behavior of multiple samples. Our question
+was whether a compact CNN trained with noise and shifts could improve recovery
+under corruption while preserving recovery on clean traces.
 
-Η [πέμπτη CPU φάση](outputs/paper_variable_campaign_2026-10-05/REPORT_EL.md)
-επανέλαβε το παγωμένο πρωτόκολλο στο επίσημο ASCAD variable-key1400samples,
-με νέο training-only fit10k και διαφορετικό πραγματικό attack key, απόν από το training.
-Combined5: όλες οι μέθοδοι0/20,0/20· clean Gaussian15/20,0/20 έναντι fixed10/20,0/20.
-Το κριτήριο γενίκευσης απέτυχε. Οι noise factors είναι ίδιοι, αλλά σraw4,8/9,6 εδώ·
-δεν απομονώνεται η αλλαγή κλειδιού από τις υπόλοιπες διαφορές καμπάνιας.
-65 tests passed. Προστέθηκαν48 summaries/960 execution checks· §14 της εργασίας.
-Το νέο attack subset είναι πλέον viewed evidence, αποκλεισμένο από tuning.
-Το αρχικό fixed-key attack παραμένει κλειστό. Ένα notebook/3 GPU trainings διατηρούνται.
+ASCAD provides a public benchmark for studying masked AES. Previous studies
+proposed compact profiling CNNs and tested augmentation for timing variation
+and noise. The project adapts a literature-inspired CNN and uses a matched
+comparison to measure the outcome of one combined augmentation recipe. The
+CPU diagnostics test a complementary question about how reliably features
+retain signal when they are selected again. [Selected references](#7-selected-references)
 
-Στις6/10 ολοκληρώθηκε [έλεγχος επιλεγμένου σήματος και τυχαίων maxima](outputs/paper_selection_audit_2026-10-06/REPORT_EL.md)
-σε νέο profiling5k ανά καμπάνια, με τα ήδη παγωμένα σημεία. Τρία από τέσσερα ζεύγη
-πέρασαν signed-correlation confirmation: δύο fixed-key και variable pair1.
-Το variable pair2 είχε r−0,026326/pBonferroni0,092 και δεν πέρασε το criterion.
-Το training score του δεν ξεχωρίζει από συνήθη μεγάλα τυχαία maxima μετά την πλήρη
-αναζήτηση· δεν αποδεικνύεται μηδενική διαρροή ή causal overfitting.70tests passed,
-κανένα attack payload/key read ή νέοGPU. Ενσωμάτωση στη§15 της εργασίας.
+## 2. Experimental design
 
-Δύο ακόμη [CPU φάσεις](outputs/paper_window_regression_2026-10-06/REPORT_EL.md)
-συγκρίνουν έξι window/regression baselines, με1.260 νέα correlation comparisons
-και540 recovery summaries συνολικά. Fixed-key OOD±10/σraw2,6: box/rank1/noise ridge
-20/20 bothpairs/bothnewpools έναντι point10/20,3/20 και7/20,3/20. Variableattack
-combined5: noise ridge3/20, rank1 4/20, target18/20failed. Η
-[μεγαλύτερη profiling replication](outputs/paper_precision_replication_2026-10-06/REPORT_EL.md)
-χωρίςrefit επιβεβαίωσε noise−cleanridge Δr0,041891/0,051852 σε δύοunused20k pools,
-μεpositive row/index-cluster intervals· box/rank1 παραμένουν καλύτερα controls.
-82tests passed, νέαGPU0/ίδιοέναnotebook, ενσωμάτωσηστις§16–17. Η
-[πρόταση paper](docs/PAPER_CANDIDATE.md) διακρίνει πραγματικά ευρήματα και ανοικτά
-novelty/efficacy gaps. Fixedprofiling50kused, variableprofiling70kused/130kunused·
-κάθε επόμενοconfirmationχρειάζεταινέοfrozenplan καιunusedrows.
+The fixed-key ASCAD campaign contains 50,000 profiling traces and a separate
+10,000-trace test pool, with 700 samples per trace. The initial experiments
+trained on 10,000 traces and validated on 5,000. The expanded baseline used
+45,000 training traces and retained the original validation pool. The expansion
+changed the number of distinct traces, optimization updates, and fitted scaler
+together. [Expanded baseline report](outputs/kaggle_budget_2026-10-11/api/REPORT_EL.md)
 
-Η [ένατη CPU φάση](outputs/paper_training_alignment_2026-10-06/REPORT_EL.md)
-ελέγχει training-side ευθυγράμμιση με το ίδιο10k training και δύο νέα20k profiling
-confirmations. Το primary παλιόpair1/rank1/clean, με κοινά evaluation offsets,
-δεν πέρασε: Δr0,003601/0,006085, όλα τα intervals περιλαμβάνουν0. Τα νέα points
-μετά την ευθυγράμμιση δίνουν δεύτερο pair με clean r0,076546/0,079067, δευτερεύον
-εύρημα χωρίς νέο key recovery.432comparisons,86tests passed· κανένα νέο Kaggle.
-Variableprofiling110kused/90kunused. Η εργασία και η πρόταση paper διατηρούν
-όλα τα failures και τις εκκρεμότητες novelty/independent-key evidence.
+The final pair used the same model, training rows, scaler, initialization seed,
+and update count. One model added combined noise and shifts during training.
+Both checkpoints were selected by clean validation loss and frozen before
+accessing the test pool. The held-out comparison used eight prespecified
+conditions, with common trace inputs and orders for the two models.
+[Experiment protocol](docs/EXPERIMENT_PROTOCOL.md) · [Frozen comparison](docs/PAPER_CONFIRMATION_PROTOCOL_2026-10-11.md)
 
-Η [δέκατη CPU φάση](outputs/paper_selection_stability_2026-10-06/REPORT_EL.md)
-ελέγχει την επιλογή σημείων με20 paired επαναδειγματοληψίες του ίδιου training10k
-και δύο νέα profiling20k σύνολα. Τα frozen rank1 pairs επιβεβαιώνουν clean signal
-r≈0,09/0,08. Η επανεπιλογή του δεύτερου family rank όμως δίνει medianr0,012320/
-0,003294 και14/20,15/20 positive draws: το joint criterion απέτυχε.
-Αυτό διαχωρίζει το signal συγκεκριμένων points από τη σταθερότητα του selector,
-χωρίς νέο attack claim.528coefficients/90tests passed, νέα Kaggle trainings0.
-Ενσωμάτωση στη§19 της εργασίας· variableprofiling150kviewed/50kunused.
-Ο [νέος έλεγχος scheme-aware full text](literature/SCHEME_AWARE_FULLTEXT_AUDIT_2026-10-06.md)
-κλείνει το συγκεκριμένο access gap, χωρίς να τεκμηριώνει πρωτοτυπία.
+**Success rate (SR)** is the fraction of orders in which the correct byte ranked
+first at a given trace budget. **Guessing entropy (GE)** is the mean zero-based
+rank across those orders. Lower GE indicates a better rank. The clean baseline
+criterion required at least 90% SR. The joint augmentation criterion required
+at least 90% SR under stronger joint corruption, a positive paired gain over
+the baseline under that condition, and at least 90% clean SR.
 
-Η [regression prior-art ενημέρωση8/10](literature/REGRESSION_PRIOR_ART_COMPARISON_2026-10-08.md)
-προσθέτει relevant-equation comparison και5deterministicalgebra checks (§20).
-Syntheticcorrectness μόνο, χωρίςνέαreal-data/GPUπειράματα ήnoveltyclaim.
+## 3. Results
 
-Στις9/10 ολοκληρώθηκε [matched point/window selection](outputs/paper_window_selection_2026-10-09/REPORT_EL.md)
-με τα ίδια20 phase10 draws και δύο unused profiling10k pools. Η επιλογή βάσει
-παραθύρων βελτίωσε το πρώτο family αλλά το δεύτερο παρέμεινε ασθενές:
-median0,007642/0,006647,12/20 και13/20positive· primary criterionfailed.
-OOBprediction jointfailed1/8numericalchecks, thresholdagreement8/8.95tests passed,
-ανεξάρτητος verifier40searches/240weights/όλες960freshcorrelations. Variableprofiling
-170kviewed/30kunused· futureexclusions=allphase11splitsunion. §21εργασίας,
-κανένα νέο recovery/GPU/notebook. Ο [νέος prior-art/code audit](literature/SELECTION_OBJECTIVE_AUDIT_2026-10-09.md)
-κλείνει το orthogonal-regression XML access gap και επιθεωρεί pinned scheme-aware
-implementation· notation/code/reproduction gaps και novelty παραμένουν ανοικτά.
+### Clean validation
 
-Με νέα άδεια χρήστη εκτελέστηκε [μία τέταρτη GPU baseline](outputs/kaggle_recipe_2026-10-09/REPORT_EL.md)
-στο ίδιο Kaggle notebook: ίδιο CNN/10k/5k/seed0/50 epochs, batch 50 και γραμμικό
-author OneCycle αντί για batch 128/constant LR. Updates 3.950 → 10.000, ίδιες
-500.000 εκθέσεις traces. Clean validation SR@2000 παρέμεινε 0/20, με minimum-CE
-checkpoint epoch 1. Το joint recipe δεν αποκατέστησε recovery· δεν απομονώνεται
-batch/schedule/update-count effect ή ελέγχεται το πλήρες author 45k protocol.
-99 tests passed, 40.000 rank prefixes και CPU inference επαληθεύτηκαν.
-Version 9 executed, version 10 QUICK_SAVE της αρχικής ασφαλούς πηγής χωρίς run.
-Το όριο τεσσάρων GPU trainings εξαντλήθηκε. Combined/attacks δεν εκτελέστηκαν,
-30k unused variable profiling και production/checkpoint/Input hashes διατηρούνται.
-Το κοινό validation είναι ήδη viewed· δεν αποτελεί ανεξάρτητο efficacy evidence.
+All four small-budget configurations recorded 0/20 successes at 2,000 traces.
+The expanded baseline reached 20/20 on the same validation pool and the matched
+augmented model reached 1/20. The small-to-expanded comparison leaves the
+individual effects of more data, more updates, and scaler refitting unresolved.
+[ReLU](outputs/kaggle_baseline_v3_2026-10-03/REPORT_EL.md) ·
+[LeakyReLU](outputs/kaggle_leaky_v5_2026-10-03/REPORT_EL.md) ·
+[Literature-inspired CNN](outputs/kaggle_literature_v7_2026-10-03/REPORT_EL.md) ·
+[Revised schedule](outputs/kaggle_recipe_2026-10-09/REPORT_EL.md)
 
-Ένα **trace** είναι μια ακολουθία μετρήσεων φυσικής διαρροής κατά την κρυπτογράφηση.
-Στο **profiling**, ο επιτιθέμενος διαθέτει μετρήσεις με γνωστές εσωτερικές τιμές και
-εκπαιδεύει ένα μοντέλο. Το μοντέλο εκτιμά 256 πιθανότητες για ένα ενδιάμεσο AES byte.
-Στην αξιολόγηση, το γνωστό plaintext μετατρέπει αυτές τις πιθανότητες σε βαθμολογίες
-για κάθε υποψήφιο key byte. Πολλά traces συνδυάζονται για να διακριθεί το σωστό byte.
-Ο στόχος μας είναι **ένα byte**, όχι ολόκληρο κλειδί AES.
+### Held-out fixed-key evaluation
 
-## Έναρξη σε Windows
+Each row summarizes 100 overlapping evaluation orders at 2,000 traces.
 
-Απαιτείται Python 3.11+ 64 bit. Στην πρώτη συνεδρία βρέθηκε Python 3.12.14 από το
-bundled runtime του Codex και δημιουργήθηκε `.venv`. Δεν χρειάζεται activation:
+| Condition | Baseline successes | Augmented successes | Baseline GE | Augmented GE |
+| --- | ---: | ---: | ---: | ---: |
+| Clean | 100/100 | 0/100 | 0.00 | 92.42 |
+| Matched noise | 100/100 | 0/100 | 0.00 | 86.99 |
+| Matched shifts | 54/100 | 0/100 | 4.77 | 99.44 |
+| Matched noise and shifts | 44/100 | 0/100 | 5.17 | 102.98 |
+| Mild noise and shifts | 97/100 | 0/100 | 0.05 | 92.14 |
+| Higher noise | 27/100 | 0/100 | 10.19 | 101.06 |
+| Higher shifts | 8/100 | 0/100 | 36.93 | 116.65 |
+| Higher noise and shifts | 4/100 | 0/100 | 51.62 | 112.87 |
 
-```powershell
-# From the project root, once Python is installed:
-py -3.12 -m venv .venv
-& .\.venv\Scripts\python.exe -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
-& .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-& .\.venv\Scripts\python.exe -m pip install --no-deps --no-build-isolation -e .
-& .\.venv\Scripts\python.exe -m pytest -q
-```
+The baseline passed clean confirmation and maintained at least 90% SR from
+479 traces through the budget. The augmented model failed all three parts of
+the joint criterion. Under stronger joint corruption, its paired SR change was
+−4 percentage points. [Final report](outputs/paper_confirmation_2026-10-11/REPORT_EL.md)
 
-Στο παρόν laptop το `.venv` είναι ήδη εγκατεστημένο, παρότι το `py` δεν εντοπίζει system Python.
-Το base executable που χρησιμοποιήθηκε ήταν
-`C:\Users\nickb\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe`.
-Αν αφαιρεθεί αυτό το runtime, μπορεί να χρειαστεί αναδημιουργία του `.venv` με κανονική Python.
-Το `requirements-lock-cpu.txt` καταγράφει ακριβώς την εγκατάσταση της πρώτης συνεδρίας·
-η editable Git αναφορά στο τέλος δείχνει παλιότερο commit. Δεν είναι CUDA lockfile.
-Για το τρέχον frozen source χρησιμοποιείται το νέο `requirements-lock-cpu-reproduction.txt`
-με hashes· [οδηγίες και όρια αναπαραγωγής](docs/CPU_REPRODUCTION.md).
+![Success-rate curves over the trace budget. The baseline improves on clean and matched-noise traces, while the augmented model remains near zero across the eight conditions.](outputs/paper_confirmation_2026-10-11/sr_attack.png)
 
-## Πραγματικά δεδομένα και CPU pilot
+*Figure 1. Success across the tested trace budgets. The dashed line marks 90%
+SR. Each panel uses orders from the same fixed-key acquisition.*
 
-```powershell
-& .\.venv\Scripts\python.exe scripts/download_ascad.py
-& .\.venv\Scripts\python.exe -m sca.cli inspect data/ASCAD.h5 --output outputs/ascad_inspection.json
-& .\.venv\Scripts\python.exe -m sca.cli train --config configs/pilot_real.json --run-dir runs/ascad_cpu_pilot_new
-& .\.venv\Scripts\python.exe -m sca.cli evaluate --run-dir runs/ascad_cpu_pilot_new --config configs/evaluation_pilot.json --split validation --device cpu
-```
+### CPU diagnostics
 
-Η λήψη αποσπά αποκλειστικά το προεπεξεργασμένο HDF5 από το επίσημο ZIP και ελέγχει
-το επίσημο checksum. Δεν κατεβάζει raw traces. Το HDF5 έχει 50.000×700 profiling,
-10.000×700 attack, traces int8, labels int64 και structured metadata.
-Πηγή/schema: [επίσημος κώδικας παραγωγής](https://github.com/ANSSI-FR/ASCAD/blob/master/ASCAD_generate.py).
+| Question | Observed outcome |
+| --- | --- |
+| Did useful leakage remain after the small CNNs failed? | Profiling diagnostics detected second-order signal on fixed-key traces. [Masking analysis](outputs/masking_diagnosis_2026-10-03/REPORT_EL.md) |
+| Did alignment help under controlled corruption? | Gaussian and sum-of-absolute-differences alignment each reached 20/20 for both feature pairs under moderate corruption. Fixed positions and mismatched offsets reached 0/20. Under stronger corruption, the best point-based control reached 6/20. [Alignment controls](outputs/paper_alignment_controls_2026-10-05/REPORT_EL.md) |
+| Did frozen features and reselection behave the same way? | Some features retained signal in fresh pools. When the second family was reselected using the window objective, median correlations were 0.0076 and 0.0066, below the 0.05 floor. [Resampling](outputs/paper_selection_stability_2026-10-06/REPORT_EL.md) · [Point versus window](outputs/paper_window_selection_2026-10-09/REPORT_EL.md) |
+| Did the result extend to a variable-key campaign? | The prespecified recovery criterion failed, and the campaign differed in acquisition and noise scale. [Variable-key evaluation](outputs/paper_variable_campaign_2026-10-05/REPORT_EL.md) |
 
-Τα paths των configs είναι σχετικά με τον τρέχοντα root· `--dataset`, `--run-dir`,
-`--device cpu|cuda|auto` και `--epochs` επιτρέπουν αλλαγή χωρίς αντιγραφή κώδικα.
-Η εκπαίδευση σταματά αν το πραγματικό dataset δεν έχει το επίσημο fixed-key checksum.
-Το attack set δεν ανοίγεται για εκπαίδευση ή επιλογή μοντέλου.
+## 4. Discussion and limitations
 
-## Συνθετική δοκιμή και checkpoint
+The matched pair documents a failed augmentation recipe under a checkpoint
+rule chosen in advance. The CPU evidence shows that detectable leakage,
+stable feature selection, and held-out recovery can diverge. The mechanism
+behind the neural failure remains open.
 
-```powershell
-& .\.venv\Scripts\python.exe -m sca.cli synthetic data/synthetic_new.h5
-& .\.venv\Scripts\python.exe -m sca.cli train --config configs/pilot_synthetic.json --dataset data/synthetic_new.h5 --run-dir runs/synthetic_new
-& .\.venv\Scripts\python.exe -m sca.cli train --config configs/pilot_synthetic.json --dataset data/synthetic_new.h5 --run-dir runs/synthetic_new --epochs 3 --resume
-```
+The 100 orders reuse traces from one campaign with one fixed key. The
+comparison uses one training seed and applies synthetic perturbations to
+measured traces. The design leaves between-seed and cross-device variation,
+independent acquisition, and the separate training effects of noise and shifts
+unresolved. The [study synthesis](outputs/study_synthesis_2026-10-05/REPORT_EL.md)
+and [prior-art review](literature/CONTINUATION_AUDIT_2026-10-11.md) retain the
+negative results and remaining evidence gaps.
 
-Το fixture είναι τεχνητή, unmasked διαρροή bits για **έλεγχο κώδικα**.
-Η συνέχιση γίνεται στα όρια epochs, με model/optimizer, Python/NumPy/Torch/CUDA RNG
-και RNG του shuffle. Για ακριβή συνέχεια επιτρέπεται αύξηση epochs και μεταφορά paths,
-με ίδιο περιεχόμενο δεδομένων, code hash, συσκευή, dependencies και ρυθμίσεις.
-Φορτώνουμε μόνο έμπιστα δικά μας checkpoints (`torch.load` περιέχει Python objects).
-Τα υπάρχοντα run directories προστατεύονται από ακούσια αντικατάσταση.
+## 5. Reproducibility
 
-## Baseline και τελική αξιολόγηση
+The project retained configurations, split identities, checkpoint histories,
+and evidence for all six GPU trainings. The archived verification records
+document 112 passing CPU tests and an independent replay of 3.2 million saved
+rank prefixes. An earlier clean CPU environment reproduced the archived metrics
+and sensitivity arrays. [CPU reproduction](docs/CPU_REPRODUCTION.md) ·
+[Hash-pinned dependencies](requirements-lock-cpu-reproduction.txt) ·
+[Final verification](outputs/paper_confirmation_2026-10-11/attack_verification.json)
 
-Το [Kaggle notebook](notebooks/kaggle_baseline.ipynb) καλεί τον ίδιο κώδικα.
-Κρατάμε **ένα notebook και δύο τρέχουσες CNN στρατηγικές**: none/combined,
-10.000 traces, seed0, 50 epochs. Το προηγούμενο πλάνο 46 trainings αντικαταστάθηκε μετά
-από αίτημα του χρήστη για ελάχιστο Kaggle κόστος. Το MLP και δεύτερα budgets/seeds δεν εκτελούνται.
+| Location | Contents |
+| --- | --- |
+| [`src/sca/`](src/sca/) and [`configs/`](configs/) | Python/PyTorch package and experiment settings |
+| [`tests/`](tests/) and [`notebooks/`](notebooks/) | Implementation checks, experiment records, and verification code |
+| [`outputs/`](outputs/) and [`docs/`](docs/) | Archived results, protocols, and the [earlier working draft](docs/PAPER_DRAFT_2026-10-11.md) |
+| [`literature/`](literature/) | Prior-art bibliography and audits |
 
-Στο ίδιο αρχείο αλλάζουμε μόνο `STAGE`: `benchmark` (οι πρώτες 3 epochs του none),
-`baseline` (ολοκλήρωση/επαναχρησιμοποίηση του baseline σε50), `compare` (baseline και conditional combined),
-`attack` (μόνο αξιολόγηση μετά το protocol freeze). Ολοκληρωμένα runs και ίδιες evaluations
-επαναχρησιμοποιούνται. Οι 3 benchmark epochs περιλαμβάνονται στις 50· δεν υπάρχει extra training.
-Ένα seed επιτρέπει διερευνητική σύγκριση και όχι εκτίμηση training variability.
+The package targets Python 3.11 or newer. The local paper sources are
+`report/main.tex`, `report/references.bib`, `report/graphs/`, and
+`report/tables/`. With LaTeX, IEEEtran, and BibTeX installed, build from
+`report/` with `latexmk -pdf -jobname=paper main.tex`.
 
-Η ενεργή έκδοση έχει `STAGE="compare"`, `RUN_TAG="minimal_v3_literature"`,
-`model="cnn_literature"`,16.952 parameters και train-only per-position MinMax.
-Το ίδιο notebook εκτελεί baseline50epochs και combined μόνο αν clean validation
-SR@2.000≥0,90 (18/20), με το minimum-CE checkpoint. Διαφορετικά εξάγει το failure
-χωρίς να ξεκινήσει combined. Έως4 trainings συνολικά με τα δύο ιστορικά failures.
+## 6. Conclusion
 
-Ιστορικό: το αρχικό ReLU baseline ολοκληρώθηκε στο ίδιο `con1los/hw-sec-exp2`, version3:
-συνέχεια epoch3→50, ίδιο περιβάλλον/splits/source. Clean validation SR@2.000=0/20·
-best checkpoint epoch2. Η [αναφορά baseline](outputs/kaggle_baseline_v3_2026-10-03/REPORT_EL.md)
-περιέχει ελεγμένες καμπύλες και περιορισμούς.
-Ο χρήστης ενέκρινε ένα διορθωτικό baseline με LeakyReLU0,1 μετά τη διάγνωση inactive units.
-Η προηγούμενη έκδοση χρησιμοποίησε `model="cnn_leaky"`, `RUN_TAG="minimal_v2_leaky"`, ίδιο
-seed/split/budget/optimizer. Το παλιό ReLU run διατηρείται. Το τότε πλάνο έως5
-trainings αντικαταστάθηκε πριν γίνουν οι augmentations. Η version5 ολοκλήρωσε το διορθωμένο
-baseline από epoch0→50. Best epoch1 / CE5,547114, clean validation GE89,25 / SR0/20.
-Στην epoch50 train CE5,267826, validation CE5,809435: η γενίκευση παραμένει ανεπαρκής.
-Η [αναφορά διορθωτικού baseline](outputs/kaggle_leaky_v5_2026-10-03/REPORT_EL.md)
-περιέχει την επαλήθευση και τη σύγκριση. Έγιναν δύο πλήρη GPU trainings συνολικά.
-Οι τότε προγραμματισμένες3 augmentations δεν εκτελέστηκαν και το πλάνο αντικαταστάθηκε.
-Η [διάγνωση masking](outputs/masking_diagnosis_2026-10-03/REPORT_EL.md) βρήκε
-mask/share leakage και training-selected centered products που διατηρούν διαρροή
-στο validation. Δεν αποδεικνύουν key recovery. Προετοιμάστηκε untrained literature
-CNN prototype16.952 parameters. Ο χρήστης ενέκρινε την ενσωμάτωσή του και το μειωμένο
-πλάνο baseline/combined. Η έκδοση δεν αποτελεί ακριβή αναπαραγωγή της δημοσίευσης.
-Το ενεργό Input packet είναι `outputs/kaggle_resume_input_literature.zip`.
-Η version7 ολοκλήρωσε το νέο baseline: best epoch4, clean validation CE5,560782,
-GE114,25 και SR0/20. Το gate18/20 απέτυχε, επομένως combined δεν εκπαιδεύτηκε.
-Έγιναν3 πλήρη GPU trainings συνολικά στο ίδιο notebook. Η
-[νέα αναφορά](outputs/kaggle_literature_v7_2026-10-03/REPORT_EL.md) περιέχει τους
-ελέγχους, το κόστος και τους περιορισμούς. Καμία νέαGPU εκτέλεση δεν ξεκινά αυτόματα.
-Στη [CPU διάγνωση της4/10](outputs/literature_diagnosis_2026-10-04/REPORT_EL.md),
-δεύτερης τάξης συσχέτιση με δύο ήδη training-selected ζεύγη ανέκτησε το byte σε20/20
-clean validation permutations. Το CNN διατηρεί mask/share signal, αλλά ανεπαρκές
-unmasked-target generalization. Training-only BN recalibration δεν αποκατέστησε SR.
-Ο στατιστικός έλεγχος είναι διαγνωστικός, με διαφορετική πληροφορία στην επιλογή
-features· δεν αντικαθιστά το CNN gate. Παραμένουν3 GPU trainings και1 notebook.
-Στον [CPU έλεγχο ευαισθησίας της 5/10](outputs/correlation_robustness_2026-10-05/REPORT_EL.md),
-θόρυβος σ=0,1 διατηρεί 20/20 και στα δύο σταθερά ζεύγη, ενώ ο συνδυασμός με
-μετατόπιση ±5 πέφτει σε 1/20 και 11/20. Με γνωστή τεχνητή μετατόπιση η εξαγωγή
-επανέρχεται σε 20/20· αυτό είναι oracle διάγνωση, όχι έτοιμη πρακτική ευθυγράμμιση.
-Στο σ=0,2 το oracle δεν φτάνει 18/20. Πέρασαν 640 endpoint checks και 44 tests,
-χωρίς νέο GPU training.
-Το original fixed-key final attack παραμένει κλειστό. Η σύνθεση και η αναπαραγωγή
-σε νέο CPU venv ολοκληρώθηκαν. Οι έντεκα paper CPU φάσεις περιλαμβάνονται στην
-εργασία, μαζί με το failed primary criterion σε νέο variable-key attack subset.
-Το signal-replication/permutation audit ολοκληρώθηκε. Πρόσθετη μεθοδολογική πρόταση
-χρειάζεται νέο frozen training-only plan και unused profiling confirmation.
-Τα εξετασμένα confirmation/νέοattack subsets δεν χρησιμοποιούνται
-για tuning ή ως αθέατες επιβεβαιώσεις. Το GPU cap4 διατηρείται.
-Το fresh-start opt-in αφορά μόνο το εγκεκριμένο νέο baseline· μετά την ολοκλήρωση
-το packet διατηρεί το νέο checkpoint και η πρώτη cell απαιτεί restore.
-Τα `kaggle_resume_input_leaky.zip` και `kaggle_resume_input.zip` διατηρούν τα παλιά
-checkpoints/source snapshots και δεν ταιριάζουν με την ενεργή έκδοση.
-Η διορθωμένη πρώτη cell κάνει discovery/restore και εμφανίζει τα paths και το ολοκληρωμένο epoch.
-Για αντιγραφή στο ίδιο Kaggle notebook υπάρχει το `outputs/kaggle_first_cell.py`.
+The 45,000-trace baseline recovered the target byte consistently in the clean
+held-out evaluation. Combined synthetic noise and time shifts failed to improve
+recovery under the tested corruption and eliminated clean successes at the
+endpoint. The diagnostic studies explain why a benchmark needs separate
+evidence for leakage, selection stability, and held-out recovery.
 
-```powershell
-# Only after freezing the protocol and checkpoint-selection rule:
-& .\.venv\Scripts\python.exe -m sca.cli evaluate --run-dir runs/minimal_v3_literature/none_seed0 --config configs/evaluation_final.json --split attack
-```
+## 7. Selected references
 
-Κάθε run γράφει config, inspection, train/validation indices, split ID, normalizer,
-εκδόσεις, συσκευή, Git commit όπου υπάρχει, source hash, χρόνο, steps, history,
-`best.pt`, `last.pt` και summary. Η αξιολόγηση γράφει GE/SR curves ως CSV/NPZ,
-ανά επανάληψη ranks, censoring, χρόνους και PNG. Το checkpoint επιλέγεται με ελάχιστο
-clean validation cross-entropy, από κοινό και σταθερό πλήθος epochs.
-
-## Αρχεία για τη συνέχεια
-
-- [PROJECT_PLAN.md](PROJECT_PLAN.md): ερώτημα, milestones και αποφάσεις.
-- [PROGRESS.md](PROGRESS.md): πραγματική κατάσταση και ακριβές επόμενο βήμα.
-- [Πρωτόκολλο](docs/EXPERIMENT_PROTOCOL.md): splits, threat model, μετασχηματισμοί και μετρικές.
-- [Αναπαραγωγή σε CPU](docs/CPU_REPRODUCTION.md): exact hashed dependencies και ελεγμένο replay.
-- [Νέα πειράματα για paper](outputs/paper_extension_2026-10-05/REPORT_EL.md): τρεις φάσεις,
-  disjoint confirmations, training-label-only επιλογή, θετικά και αρνητικά αποτελέσματα.
-- [SAD και έλεγχος αντιστοίχισης](outputs/paper_alignment_controls_2026-10-05/REPORT_EL.md):
-  τέταρτο disjoint confirmation, γνωστά baselines και περιορισμός Gaussian novelty claim.
-- [Kaggle](docs/KAGGLE.md): setup, έλεγχος GPU quota, benchmark και αποθήκευση.
-- [Βιβλιογραφία](literature/REVIEW.md): συγκριτικός πίνακας, επιβεβαιωμένα στοιχεία και κενά πρόσβασης.
-- [Διάγνωση masking και αρχιτεκτονικής](outputs/masking_diagnosis_2026-10-03/REPORT_EL.md):
-  profiling-only έλεγχοι και συγκεκριμένη πρόταση συνέχειας χωρίς νέα GPU εκτέλεση.
-- [Αναφορά πρώτης συνεδρίας](outputs/SESSION_REPORT_EL.md): τι εκτελέστηκε και τι σημαίνουν τα αποτελέσματα.
-- [Πρώτο Kaggle benchmark](outputs/kaggle_benchmark_2026-10-03_07b13e6f/REPORT_EL.md):
-  πραγματικό 3-epoch T4 output και συνέχεια στο ίδιο baseline checkpoint.
-
-Τα `data/`, `runs/`, `.venv/` αγνοούνται από το Git. Τα επιλεγμένα παραδοτέα είναι στο `outputs/`.
-Μην διαβάζετε έναν χαμηλό classification loss ως απόδειξη ανάκτησης κλειδιού.
+1. R. Benadjila et al., “Deep learning for side-channel analysis and introduction to ASCAD database,” 2020. [DOI](https://doi.org/10.1007/s13389-019-00220-8)
+2. G. Zaid et al., “Methodology for efficient CNN architectures in profiling attacks,” 2020. [DOI](https://doi.org/10.46586/tches.v2020.i1.1-36)
+3. L. Wouters et al., “Revisiting a methodology for efficient CNN architectures in profiling attacks,” 2020. [DOI](https://doi.org/10.46586/tches.v2020.i3.147-168)
+4. E. Cagli, C. Dumas, and E. Prouff, “Convolutional neural networks with data augmentation against jitter-based countermeasures,” 2017. [DOI](https://doi.org/10.1007/978-3-319-66787-4_3)
+5. H. Li and G. Perin, “A systematic study of data augmentation for protected AES implementations,” 2024. [DOI](https://doi.org/10.1007/s13389-024-00363-3)
+6. G. Perin, L. Wu, and S. Picek, “Exploring feature selection scenarios for deep learning-based side-channel analysis,” 2022. [DOI](https://doi.org/10.46586/tches.v2022.i4.828-861)
